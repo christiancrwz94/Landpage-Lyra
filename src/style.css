@@ -644,6 +644,159 @@ body.dark-theme .mobile-mockup {
   object-position: top center;
 }
 
+/* --- New Hero Sales Elements & Floating Tags --- */
+
+/* Promo Badge */
+.promo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--badge-bg);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  max-width: fit-content;
+  margin-bottom: 0.75rem;
+}
+
+.badge-tag {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+}
+
+.badge-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Hero Benefits List */
+.hero-benefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  margin-top: 0.5rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.benefit-icon-check {
+  background-color: var(--badge-bg);
+  color: var(--primary-color);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefit-icon-check svg {
+  width: 11px;
+  height: 11px;
+  color: var(--primary-color);
+}
+
+.benefit-item span {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  text-align: left;
+}
+
+.benefit-item span strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Hero Trust Text */
+.hero-trust-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.75rem;
+  font-weight: 500;
+}
+
+/* Floating Tags */
+.floating-tag {
+  position: absolute;
+  background: rgba(22, 22, 23, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  padding: 0.5rem 0.85rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+body.light-theme .floating-tag {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.06);
+  color: #1d1d1f;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.tag-agenda {
+  left: -40px;
+  top: 20%;
+}
+
+.tag-whatsapp {
+  right: -20px;
+  top: 15%;
+}
+
+.tag-caixa {
+  left: -20px;
+  bottom: 25%;
+}
+
+.tag-prontuario {
+  right: 15%;
+  bottom: -15px;
+}
+
+/* Float Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float 4.5s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float 3.5s ease-in-out infinite;
+}
+
 /* --- 8. Features Section --- */
 .features-section {
   background-color: var(--bg-card);
@@ -1154,6 +1307,10 @@ body.dark-theme .mobile-mockup {
 
   .mockup-wrapper {
     height: 340px;
+  }
+
+  .floating-tag {
+    display: none !important;
   }
 
   @keyframes fadeInLeft {
