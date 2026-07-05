@@ -834,6 +834,30 @@ body.dark-theme .mobile-mockup {
   gap: 4rem;
 }
 
+.responsive-container.reverse-layout {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.responsive-container.reverse-layout .responsive-text-content {
+  order: 2;
+}
+
+.responsive-container.reverse-layout .responsive-showcase-content {
+  order: 1;
+}
+
+@media (max-width: 992px) {
+  .responsive-container.reverse-layout {
+    grid-template-columns: 1fr;
+  }
+  .responsive-container.reverse-layout .responsive-text-content {
+    order: 1;
+  }
+  .responsive-container.reverse-layout .responsive-showcase-content {
+    order: 2;
+  }
+}
+
 .responsive-text-content {
   display: flex;
   flex-direction: column;
