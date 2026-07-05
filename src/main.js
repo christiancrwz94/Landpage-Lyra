@@ -121,13 +121,11 @@ const phoneInput = document.getElementById('reg-phone');
 
 // Inputs for validation
 const clinicInput = document.getElementById('reg-clinic');
-const branchInput = document.getElementById('reg-branch');
 const nameInput = document.getElementById('reg-name');
 const emailInput = document.getElementById('reg-email');
 
 // Error message elements
 const errorClinic = document.getElementById('error-clinic');
-const errorBranch = document.getElementById('error-branch');
 const errorName = document.getElementById('error-name');
 const errorEmail = document.getElementById('error-email');
 const errorPhone = document.getElementById('error-phone');
@@ -217,13 +215,7 @@ if (registerForm) {
       isValid = false;
     }
     
-    // Validate Branch
-    if (!branchInput.value) {
-      branchInput.classList.add('invalid');
-      errorBranch.classList.add('visible');
-      isValid = false;
-    }
-    
+
     // Validate Name
     if (!nameInput.value.trim()) {
       nameInput.classList.add('invalid');
@@ -250,19 +242,17 @@ if (registerForm) {
     if (isValid) {
       // Collect values and redirect to app registration screen with query params
       const clinic = clinicInput.value.trim();
-      const branch = branchInput.value;
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
       const phone = phoneInput.value.trim();
       
       const encodedClinic = encodeURIComponent(clinic);
-      const encodedBranch = encodeURIComponent(branch);
       const encodedName = encodeURIComponent(name);
       const encodedEmail = encodeURIComponent(email);
       const encodedPhone = encodeURIComponent(phone);
       
       // Go to register url
-      const registerUrl = `https://app.getlyra.com.br/register?email=${encodedEmail}&nome=${encodedName}&telefone=${encodedPhone}&clinica=${encodedClinic}&ramo=${encodedBranch}`;
+      const registerUrl = `https://app.getlyra.com.br/register?email=${encodedEmail}&nome=${encodedName}&telefone=${encodedPhone}&clinica=${encodedClinic}`;
       
       window.location.href = registerUrl;
     }
