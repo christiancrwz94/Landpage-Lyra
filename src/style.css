@@ -1003,9 +1003,11 @@ body.dark-theme .mobile-mockup {
 
 .pricing-cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   align-items: stretch;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .pricing-card {
