@@ -499,8 +499,8 @@ body.dark-theme .moon-icon {
 .mockup-wrapper {
   position: relative;
   width: 100%;
-  max-width: 590px;
-  height: 400px;
+  max-width: 700px;
+  height: 480px;
 }
 
 /* Desktop Browser Mockup Frame */
@@ -579,9 +579,9 @@ body.dark-theme .moon-icon {
 /* Mobile Phone Mockup Frame (Realistic iPhone Layout) */
 .mobile-mockup {
   position: absolute;
-  right: 0;
+  right: -20px;
   bottom: 0;
-  width: 32%;
+  width: 36%;
   aspect-ratio: 236/500;
   background-color: #000000;
   border-radius: 38px;
@@ -606,6 +606,7 @@ body.dark-theme .mobile-mockup {
   height: 100%;
   overflow: hidden;
   position: relative;
+  border-radius: 27px;
 }
 
 /* iPhone Dynamic Island / Notch */
