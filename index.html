@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/logo_lyra.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lyra — Gestão Inteligente para Clínicas Odontológicas</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body class="light-theme">
+    <div id="app">
+      <!-- Header / Navbar -->
+      <header class="navbar">
+        <div class="container navbar-container">
+          <a href="#" class="nav-brand">
+            <img class="logo-img" src="/src/assets/logo_lyra.svg" alt="Lyra" id="navbar-logo" />
+            <span class="brand-name">Lyra</span>
+          </a>
+          
+          <nav class="nav-menu" id="nav-menu">
+            <a href="#features" class="nav-link">Recursos</a>
+            <a href="#responsive" class="nav-link">Diferencial</a>
+            <a href="#pricing" class="nav-link">Planos</a>
+            <a href="#contact" class="nav-link">Contato</a>
+          </nav>
+          
+          <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+              <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+              <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            </button>
+            <a href="https://app.getlyra.com.br/login" class="btn btn-text">Entrar</a>
+            <a href="https://app.getlyra.com.br/register" class="btn btn-pill">Experimentar grátis</a>
+          </div>
+
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menu">
+            <span class="hamburger"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <div class="mobile-menu-header">
+          <span class="mobile-menu-title">MENU</span>
+          <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Fechar menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <nav class="mobile-nav">
+          <a href="#features" class="mobile-nav-link">Recursos</a>
+          <a href="#responsive" class="mobile-nav-link">Diferencial</a>
+          <a href="#pricing" class="mobile-nav-link">Planos</a>
+          <a href="#contact" class="mobile-nav-link">Contato</a>
+        </nav>
+        <div class="mobile-menu-footer">
+          <a href="https://app.getlyra.com.br/login" class="btn btn-outline btn-block">Entrar no sistema</a>
+          <a href="https://app.getlyra.com.br/register" class="btn btn-solid btn-block">Começar teste grátis</a>
+        </div>
+      </div>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <!-- Background glows -->
+        <div class="glow-container">
+          <div class="glow glow-1"></div>
+          <div class="glow glow-2"></div>
+        </div>
+        
+        <div class="container hero-container">
+          <div class="hero-text-content">
+            <span class="hero-tagline">Lyra Gestão Odontológica</span>
+            <h1 class="hero-title">Simplicidade na agenda.<br><span class="gradient-text">Eficiência no consultório.</span></h1>
+            <p class="hero-description">Gerencie consultas, prontuários, financeiro e campanhas de WhatsApp em uma plataforma limpa e integrada. Projetada do zero para carregar instantaneamente no seu celular.</p>
+            <div class="hero-buttons">
+              <a href="https://app.getlyra.com.br/register" class="btn btn-pill btn-primary btn-large">Começar teste gratuito</a>
+              <a href="#pricing" class="btn btn-pill btn-secondary btn-large">Ver planos</a>
+            </div>
+          </div>
+          
+          <div class="hero-mockup-content">
+            <div class="mockup-wrapper">
+              <!-- Desktop Mockup -->
+              <div class="desktop-mockup animate-fade-in-left">
+                <div class="browser-bar">
+                  <div class="browser-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                  </div>
+                  <div class="browser-address">app.getlyra.com.br/agenda</div>
+                </div>
+                <div class="browser-content">
+                  <img src="/src/assets/real_desktop.png" alt="Lyra Dashboard Desktop" class="mockup-img" />
+                </div>
+              </div>
+              
+              <!-- Mobile Mockup -->
+              <div class="mobile-mockup animate-fade-in-right">
+                <div class="phone-screen">
+                  <img src="/src/assets/real_mobile.jpg" alt="Lyra Dashboard Mobile" class="mockup-img" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="features-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">RECURSOS INTEGRADOS</span>
+            <h2 class="section-title">Tudo o que sua clínica necessita</h2>
+          </div>
+          
+          <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              </div>
+              <h3 class="feature-card-title">Agenda ágil</h3>
+              <p class="feature-card-description">Gerenciamento visual inteligente de consultas. Mude status em dois cliques e visualize por dia, semana ou mês.</p>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="feature-card-title">Prontuário e evoluções</h3>
+              <p class="feature-card-description">Fichas clínicas completas. Faça anamneses e registre orçamentos e evoluções com total conformidade.</p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+              </div>
+              <h3 class="feature-card-title">Controle de caixa</h3>
+              <p class="feature-card-description">Lance pagamentos recebidos e pendentes. Tenha uma visão limpa do fluxo de caixa e lucros do consultório.</p>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <h3 class="feature-card-title">WhatsApp integrado</h3>
+              <p class="feature-card-description">Envie lembretes automáticos e mensagens em lote diretamente pela plataforma wa.me. Sem segredos.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Responsive Detail Section -->
+      <section id="responsive" class="responsive-section">
+        <div class="container responsive-container">
+          <div class="responsive-text-content">
+            <span class="section-tag">100% RESPONSIVO</span>
+            <h2 class="section-title">Seu consultório no bolso ou na tela grande.</h2>
+            <p class="section-description">Não importa onde você está. O Lyra adapta todo o seu fluxo de trabalho para rodar incrivelmente rápido no celular do seu bolso ou no monitor da recepção. Nossa interface foi pensada para toque ágil, botões grandes e carregamento offline por banco local.</p>
+            
+            <div class="checkpoints-list">
+              <div class="checkpoint-item">
+                <div class="checkpoint-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>Otimizado principalmente para visualização em celulares</span>
+              </div>
+              <div class="checkpoint-item">
+                <div class="checkpoint-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>Sincronização imediata de dados com Supabase Cloud</span>
+              </div>
+              <div class="checkpoint-item">
+                <div class="checkpoint-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>Tema Escuro e Claro automáticos que poupam a bateria</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="responsive-showcase-content">
+            <div class="tech-box">
+              <div class="tech-box-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c0 3.61 2.55 6.63 6 7.39V21M6 21v-4.61c3.45-.76 6-3.78 6-7.39a6 6 0 0 0-12 0c0 3.61 2.55 6.63 6 7.39"/></svg>
+              </div>
+              <h3>Tecnologia Cross-Platform</h3>
+              <p>Carregamento instantâneo via Web App (Vercel) ou rodando localmente em computadores Windows.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="pricing-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">PLANOS DE ASSINATURA</span>
+            <h2 class="section-title">Valores transparentes para o seu negócio</h2>
+          </div>
+
+          <!-- Mobile Segment Control -->
+          <div class="segmented-control-wrapper">
+            <div class="segmented-control" id="plan-selector">
+              <button class="segment-btn" data-index="0">Inicial</button>
+              <button class="segment-btn active" data-index="1">Profissional</button>
+              <button class="segment-btn" data-index="2">Premium</button>
+            </div>
+          </div>
+
+          <!-- Plans Container -->
+          <div class="pricing-cards-container" id="pricing-cards">
+            <!-- Plan 1 -->
+            <div class="pricing-card" data-plan="0">
+              <h3 class="plan-title">Plano Inicial</h3>
+              <p class="plan-description">Essencial para consultórios em fase de abertura.</p>
+              <div class="plan-price">
+                <span class="currency">R$</span>
+                <span class="amount">99</span>
+                <span class="period">/mês</span>
+              </div>
+              <hr class="plan-divider">
+              <ul class="plan-features">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 1 Profissional ativo</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Agenda ágil integrada</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Cadastro de pacientes</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Prontuário simplificado</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Suporte por e-mail</li>
+              </ul>
+              <a href="https://app.getlyra.com.br/register" class="btn btn-pill btn-outline btn-block mt-auto">Assinar plano</a>
+            </div>
+
+            <!-- Plan 2 (Highlighted) -->
+            <div class="pricing-card highlighted active" data-plan="1">
+              <span class="badge">RECOMENDADO</span>
+              <h3 class="plan-title">Plano Profissional</h3>
+              <p class="plan-description">Ideal para clínicas que desejam automatizar o WhatsApp.</p>
+              <div class="plan-price">
+                <span class="currency">R$</span>
+                <span class="amount">199</span>
+                <span class="period">/mês</span>
+              </div>
+              <hr class="plan-divider">
+              <ul class="plan-features">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Profissionais ilimitados</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Campanhas de WhatsApp</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Financeiro e caixa completo</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Upload de documentos & orçamentos</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Suporte prioritário via chat</li>
+              </ul>
+              <a href="https://app.getlyra.com.br/register" class="btn btn-pill btn-primary btn-block mt-auto">Assinar plano</a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="pricing-card" data-plan="2">
+              <h3 class="plan-title">Plano Premium</h3>
+              <p class="plan-description">Para redes de clínicas com alta demanda operacional.</p>
+              <div class="plan-price">
+                <span class="currency">R$</span>
+                <span class="amount">349</span>
+                <span class="period">/mês</span>
+              </div>
+              <hr class="plan-divider">
+              <ul class="plan-features">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Tudo do Profissional</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Migração assistida de dados</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Treinamento completo da equipe</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Estatísticas & relatórios avançados</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Suporte dedicado 24h</li>
+              </ul>
+              <a href="https://app.getlyra.com.br/register" class="btn btn-pill btn-outline btn-block mt-auto">Assinar plano</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-card">
+            <h2>Simplifique sua rotina hoje mesmo.</h2>
+            <p>Crie sua conta em segundos e teste o Lyra Profissional gratuitamente por 30 dias. Sem compromisso.</p>
+            <a href="https://app.getlyra.com.br/register" class="btn btn-pill btn-large btn-cta">Começar teste grátis</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer id="contact" class="footer-section">
+        <div class="container footer-container">
+          <div class="footer-brand-info">
+            <div class="footer-logo">
+              <img class="logo-img" src="/src/assets/logo_lyra.svg" alt="Lyra" id="footer-logo" />
+              <span class="brand-name">Lyra</span>
+            </div>
+            <p class="footer-tagline">Gestão Inteligente para Clínicas Odontológicas</p>
+          </div>
+          <div class="footer-copyright">
+            © 2026 Lyra. Todos os direitos reservados.
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Script Entry Point -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
