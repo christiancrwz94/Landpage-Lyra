@@ -5,9 +5,9 @@
 
 /* --- 1. Variables & Design Tokens --- */
 :root {
-  --primary-color: #4F6BED;
-  --primary-hover: #3b54d1;
-  --primary-glow: rgba(79, 107, 237, 0.15);
+  --primary-color: #0D9488;
+  --primary-hover: #0F766E;
+  --primary-glow: rgba(13, 148, 136, 0.15);
   --success-color: #22C55E;
   --warning-color: #F59E0B;
   --danger-color: #EF4444;
@@ -26,29 +26,13 @@
   --hero-glow-2: rgba(99, 102, 241, 0.05);
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.08);
-  --badge-bg: rgba(79, 107, 237, 0.08);
-  --badge-text: #4F6BED;
-  --gradient-text-start: #4F6BED;
-  --gradient-text-end: #6366F1;
+  --badge-bg: rgba(13, 148, 136, 0.08);
+  --badge-text: #0D9488;
+  --gradient-text-start: #0D9488;
+  --gradient-text-end: #14B8A6;
 }
 
-body.dark-theme {
-  /* Theme Dark */
-  --bg-color: #000000;
-  --bg-card: #161617;
-  --text-primary: #F5F5F7;
-  --text-secondary: #86868B;
-  --border-color: #333336;
-  --navbar-bg: rgba(0, 0, 0, 0.8);
-  --hero-glow-1: rgba(79, 107, 237, 0.15);
-  --hero-glow-2: rgba(99, 102, 241, 0.08);
-  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.45);
-  --badge-bg: rgba(79, 107, 237, 0.15);
-  --badge-text: #818CF8;
-  --gradient-text-start: #818CF8;
-  --gradient-text-end: #A5B4FC;
-}
+
 
 /* --- 2. CSS Reset --- */
 *, *::before, *::after {
