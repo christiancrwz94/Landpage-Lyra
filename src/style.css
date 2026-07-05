@@ -510,36 +510,36 @@ body.dark-theme .moon-icon {
   top: 10%;
   width: 85%;
   background-color: var(--bg-card);
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid var(--border-color);
   box-shadow: var(--card-shadow);
   overflow: hidden;
   z-index: 1;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .desktop-mockup:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.01);
   box-shadow: var(--card-shadow-hover);
 }
 
 .browser-bar {
   background-color: var(--bg-color);
   border-bottom: 0.5px solid var(--border-color);
-  padding: 0.6rem 1rem;
+  padding: 0.75rem 1.25rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .browser-dots {
   display: flex;
-  gap: 5px;
+  gap: 6px;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   display: inline-block;
 }
@@ -552,13 +552,15 @@ body.dark-theme .moon-icon {
   flex-grow: 1;
   background-color: var(--bg-card);
   border: 0.5px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 0.625rem;
+  border-radius: 6px;
+  font-size: 0.6875rem;
   color: var(--text-secondary);
   text-align: center;
-  padding: 0.15rem 0;
-  max-width: 320px;
+  padding: 0.25rem 0;
+  max-width: 340px;
   margin: 0 auto;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .browser-content {
@@ -574,7 +576,7 @@ body.dark-theme .moon-icon {
   object-position: top center;
 }
 
-/* Mobile Phone Mockup Frame */
+/* Mobile Phone Mockup Frame (Realistic iPhone Layout) */
 .mobile-mockup {
   position: absolute;
   right: 0;
@@ -582,22 +584,57 @@ body.dark-theme .moon-icon {
   width: 32%;
   aspect-ratio: 236/500;
   background-color: #000000;
-  border-radius: 28px;
-  border: 5px solid #333336;
-  box-shadow: var(--card-shadow-hover);
+  border-radius: 38px;
+  border: 11px solid #161617; /* Physical dark metal bezel */
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
   overflow: hidden;
   z-index: 2;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.dark-theme .mobile-mockup {
+  border-color: #2c2c2e;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
 }
 
 .mobile-mockup:hover {
-  transform: translateY(-5px) scale(1.02);
+  transform: translateY(-8px) scale(1.03) rotate(1deg);
 }
 
 .phone-screen {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  position: relative;
+}
+
+/* iPhone Dynamic Island / Notch */
+.phone-screen::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 58px;
+  height: 15px;
+  background-color: #000000;
+  border-radius: 10px;
+  z-index: 10;
+  box-shadow: inset 0 0 1px rgba(255,255,255,0.2);
+}
+
+/* iPhone Home Bar indicator */
+.phone-screen::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3.5px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  z-index: 10;
 }
 
 .phone-screen .mockup-img {
@@ -1232,3 +1269,358 @@ body.dark-theme .moon-icon {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ==========================================================================
+   13. SaaS Apple Standard Modal & Bottom Sheet
+   ========================================================================== */
+
+/* Modal Backdrop */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Box Container */
+.modal-wrapper {
+  background-color: var(--bg-card);
+  width: 90%;
+  max-width: 860px;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  transform: scale(0.94) translateY(10px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.3s ease, 
+              border-color 0.3s ease;
+}
+
+body.dark-theme .modal-wrapper {
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay.active .modal-wrapper {
+  transform: scale(1) translateY(0);
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(120, 120, 128, 0.1);
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background-color: rgba(120, 120, 128, 0.2);
+  color: var(--text-primary);
+  transform: scale(1.05);
+}
+
+.modal-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Grid layout */
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+/* Left side (Form) */
+.modal-form-side {
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.modal-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Input Fields (Apple Sleek Input) */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.input-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.input-group input {
+  padding: 0.875rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.input-group input:focus {
+  border-color: var(--primary-color);
+  background-color: var(--bg-card);
+  box-shadow: 0 0 0 4px rgba(79, 107, 237, 0.15);
+}
+
+/* Invalid inputs */
+.input-group input.invalid {
+  border-color: var(--danger-color);
+  background-color: rgba(239, 68, 68, 0.02);
+}
+
+.input-group input.invalid:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
+}
+
+.error-msg {
+  font-size: 0.725rem;
+  font-weight: 500;
+  color: var(--danger-color);
+  margin-top: 0.35rem;
+  display: none;
+}
+
+.error-msg.visible {
+  display: block;
+  animation: fadeInError 0.2s ease-out;
+}
+
+@keyframes fadeInError {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Checkbox (Terms) */
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.form-checkbox input[type="checkbox"] {
+  accent-color: var(--primary-color);
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  border-radius: 4px;
+}
+
+.form-checkbox label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  user-select: none;
+}
+
+.accent-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.accent-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Submit Button & Animations */
+.btn-submit {
+  font-size: 0.95rem;
+  padding: 0.875rem 1.5rem;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.submit-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.btn-submit:hover .submit-arrow {
+  transform: translateX(4px);
+}
+
+.modal-footer-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* Right side (Benefits / Value Proposition) */
+.modal-benefits-side {
+  background-color: var(--bg-color);
+  padding: 3.5rem 2.5rem;
+  border-left: 1.5px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.benefits-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.benefits-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.benefit-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(34, 197, 94, 0.1);
+  color: var(--success-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefit-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.benefits-list li strong {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+
+.benefits-list li p {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+  margin-top: 0.15rem;
+}
+
+/* --- 14. Mobile Drawer Behavior (Bottom Sheet) --- */
+@media (max-width: 768px) {
+  .modal-overlay {
+    align-items: flex-end; /* Align content to bottom */
+  }
+  
+  .modal-wrapper {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 28px 28px 0 0;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    transform: translateY(100%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .modal-overlay.active .modal-wrapper {
+    transform: translateY(0);
+  }
+  
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-form-side {
+    padding: 3rem 1.5rem 2.5rem;
+  }
+  
+  .modal-close {
+    top: 16px;
+    right: 16px;
+  }
+  
+  .modal-benefits-side {
+    display: none; /* Hide side panel on tablets/mobiles */
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+  
+  /* Add drag handle bar indicator */
+  .modal-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 4px;
+    background-color: var(--border-color);
+    border-radius: 2px;
+  }
+}
+

@@ -33,7 +33,7 @@
               <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
             </button>
             <a href="https://app.getlyra.com.br/login" class="btn btn-text">Entrar</a>
-            <a href="https://app.getlyra.com.br/register" class="btn btn-pill">Experimentar grátis</a>
+            <button class="btn btn-pill trigger-modal">Experimentar grátis</button>
           </div>
 
           <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menu">
@@ -58,7 +58,7 @@
         </nav>
         <div class="mobile-menu-footer">
           <a href="https://app.getlyra.com.br/login" class="btn btn-outline btn-block">Entrar no sistema</a>
-          <a href="https://app.getlyra.com.br/register" class="btn btn-solid btn-block">Começar teste grátis</a>
+          <button class="btn btn-solid btn-block trigger-modal">Começar teste grátis</button>
         </div>
       </div>
 
@@ -76,7 +76,7 @@
             <h1 class="hero-title">Simplicidade na agenda.<br><span class="gradient-text">Eficiência no consultório.</span></h1>
             <p class="hero-description">Gerencie consultas, prontuários, financeiro e campanhas de WhatsApp em uma plataforma limpa e integrada. Projetada do zero para carregar instantaneamente no seu celular.</p>
             <div class="hero-buttons">
-              <a href="https://app.getlyra.com.br/register" class="btn btn-pill btn-primary btn-large">Começar teste gratuito</a>
+              <button class="btn btn-pill btn-primary btn-large trigger-modal">Começar teste gratuito</button>
               <a href="#pricing" class="btn btn-pill btn-secondary btn-large">Ver planos</a>
             </div>
           </div>
@@ -235,7 +235,7 @@
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Prontuário simplificado</li>
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Suporte por e-mail</li>
               </ul>
-              <a href="https://app.getlyra.com.br/register" class="btn btn-pill btn-outline btn-block mt-auto">Assinar plano</a>
+              <button class="btn btn-pill btn-outline btn-block mt-auto trigger-modal" data-plan="Inicial">Assinar plano</button>
             </div>
 
             <!-- Plan 2 (Highlighted) -->
@@ -256,7 +256,7 @@
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Upload de documentos & orçamentos</li>
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Suporte prioritário via chat</li>
               </ul>
-              <a href="https://app.getlyra.com.br/register" class="btn btn-pill btn-primary btn-block mt-auto">Assinar plano</a>
+              <button class="btn btn-pill btn-primary btn-block mt-auto trigger-modal" data-plan="Profissional">Assinar plano</button>
             </div>
 
             <!-- Plan 3 -->
@@ -276,7 +276,7 @@
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Estatísticas & relatórios avançados</li>
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Suporte dedicado 24h</li>
               </ul>
-              <a href="https://app.getlyra.com.br/register" class="btn btn-pill btn-outline btn-block mt-auto">Assinar plano</a>
+              <button class="btn btn-pill btn-outline btn-block mt-auto trigger-modal" data-plan="Premium">Assinar plano</button>
             </div>
           </div>
         </div>
@@ -288,7 +288,7 @@
           <div class="cta-card">
             <h2>Simplifique sua rotina hoje mesmo.</h2>
             <p>Crie sua conta em segundos e teste o Lyra Profissional gratuitamente por 30 dias. Sem compromisso.</p>
-            <a href="https://app.getlyra.com.br/register" class="btn btn-pill btn-large btn-cta">Começar teste grátis</a>
+            <button class="btn btn-pill btn-large btn-cta trigger-modal">Começar teste grátis</button>
           </div>
         </div>
       </section>
@@ -308,6 +308,103 @@
           </div>
         </div>
       </footer>
+    </div>
+
+    <!-- Registration Modal (SaaS Apple Standard) -->
+    <div class="modal-overlay" id="register-modal">
+      <div class="modal-wrapper">
+        <button class="modal-close" id="modal-close" aria-label="Fechar modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        
+        <div class="modal-grid">
+          <!-- Left side: Form -->
+          <div class="modal-form-side">
+            <h2 class="modal-title">Experimente o Lyra grátis</h2>
+            <p class="modal-subtitle">Crie sua conta em 30 segundos. Sem compromisso.</p>
+            
+            <form id="register-form" novalidate>
+              <div class="input-group">
+                <label for="reg-clinic">Nome do Consultório</label>
+                <input type="text" id="reg-clinic" placeholder="Ex: Clínica Odonto" required />
+                <span class="error-msg" id="error-clinic">O nome do consultório é obrigatório.</span>
+              </div>
+              
+              <div class="input-group">
+                <label for="reg-name">Seu Nome Completo</label>
+                <input type="text" id="reg-name" placeholder="Ex: Dra. Ana Costa" required />
+                <span class="error-msg" id="error-name">Seu nome é obrigatório.</span>
+              </div>
+              
+              <div class="input-group">
+                <label for="reg-email">E-mail Profissional</label>
+                <input type="email" id="reg-email" placeholder="Ex: contato@consultorio.com" required />
+                <span class="error-msg" id="error-email">Digite um e-mail válido.</span>
+              </div>
+              
+              <div class="input-group">
+                <label for="reg-phone">Celular (WhatsApp)</label>
+                <input type="tel" id="reg-phone" placeholder="Ex: (11) 99999-9999" required />
+                <span class="error-msg" id="error-phone">Digite um celular válido com DDD.</span>
+              </div>
+              
+              <div class="form-checkbox">
+                <input type="checkbox" id="reg-terms" checked required />
+                <label for="reg-terms">Aceito os <a href="#" class="accent-link">Termos de Uso</a> e a <a href="#" class="accent-link">Política de Privacidade</a>.</label>
+              </div>
+              
+              <button type="submit" class="btn btn-pill btn-primary btn-block btn-submit">
+                <span>Começar teste gratuito</span>
+                <svg class="submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </form>
+            <p class="modal-footer-text">Já é nosso cliente? <a href="https://app.getlyra.com.br/login" class="accent-link">Entrar no sistema</a></p>
+          </div>
+          
+          <!-- Right side: Benefits -->
+          <div class="modal-benefits-side">
+            <h3 class="benefits-title">O que está incluso no teste:</h3>
+            <ul class="benefits-list">
+              <li>
+                <div class="benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <strong>Acesso completo ao Lyra</strong>
+                  <p>Sem bloqueios de recursos por 30 dias.</p>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <strong>Agenda odontológica ágil</strong>
+                  <p>Organize seus horários de forma extremamente ágil e visual.</p>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <strong>Campanhas de WhatsApp</strong>
+                  <p>Envie lembretes e confirmações automáticas aos pacientes.</p>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <strong>Fluxo de caixa integrado</strong>
+                  <p>Gerencie orçamentos, faturamento e evoluções clínicas.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Script Entry Point -->

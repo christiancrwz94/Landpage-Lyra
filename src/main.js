@@ -110,3 +110,151 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+
+// --- 5. Registration Modal Management (SaaS Apple Standard) ---
+const registerModal = document.getElementById('register-modal');
+const modalCloseBtn = document.getElementById('modal-close');
+const triggerModalBtns = document.querySelectorAll('.trigger-modal');
+const registerForm = document.getElementById('register-form');
+const phoneInput = document.getElementById('reg-phone');
+
+// Inputs for validation
+const clinicInput = document.getElementById('reg-clinic');
+const nameInput = document.getElementById('reg-name');
+const emailInput = document.getElementById('reg-email');
+
+// Error message elements
+const errorClinic = document.getElementById('error-clinic');
+const errorName = document.getElementById('error-name');
+const errorEmail = document.getElementById('error-email');
+const errorPhone = document.getElementById('error-phone');
+
+function openModal() {
+  registerModal.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Lock page scroll
+}
+
+function closeModal() {
+  registerModal.classList.remove('active');
+  document.body.style.overflow = ''; // Unlock page scroll
+  resetFormErrors();
+}
+
+function resetFormErrors() {
+  const errorMsgs = registerForm.querySelectorAll('.error-msg');
+  const inputs = registerForm.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
+  
+  errorMsgs.forEach(msg => msg.classList.remove('visible'));
+  inputs.forEach(input => input.classList.remove('invalid'));
+}
+
+// Attach triggers
+triggerModalBtns.forEach(btn => {
+  btn.addEventListener('click', openModal);
+});
+
+// Close triggers
+if (modalCloseBtn) {
+  modalCloseBtn.addEventListener('click', closeModal);
+}
+
+if (registerModal) {
+  registerModal.addEventListener('click', (e) => {
+    if (e.target === registerModal) {
+      closeModal();
+    }
+  });
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && registerModal.classList.contains('active')) {
+    closeModal();
+  }
+});
+
+// Phone Input Masking (Brazil formatting: (XX) XXXXX-XXXX)
+if (phoneInput) {
+  phoneInput.addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+    
+    if (value.length > 11) {
+      value = value.slice(0, 11);
+    }
+    
+    if (value.length > 10) {
+      // (XX) XXXXX-XXXX
+      e.target.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+    } else if (value.length > 6) {
+      // (XX) XXXX-XXXX
+      e.target.value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`;
+    } else if (value.length > 2) {
+      // (XX) XXXX
+      e.target.value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+    } else if (value.length > 0) {
+      // (XX
+      e.target.value = `(${value}`;
+    } else {
+      e.target.value = '';
+    }
+  });
+}
+
+// Form Submission with pre-filled redirect parameters
+if (registerForm) {
+  registerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    resetFormErrors();
+    
+    let isValid = true;
+    
+    // Validate Clinic
+    if (!clinicInput.value.trim()) {
+      clinicInput.classList.add('invalid');
+      errorClinic.classList.add('visible');
+      isValid = false;
+    }
+    
+    // Validate Name
+    if (!nameInput.value.trim()) {
+      nameInput.classList.add('invalid');
+      errorName.classList.add('visible');
+      isValid = false;
+    }
+    
+    // Validate Email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+      emailInput.classList.add('invalid');
+      errorEmail.classList.add('visible');
+      isValid = false;
+    }
+    
+    // Validate Phone (at least 10 digits without mask)
+    const rawPhone = phoneInput.value.replace(/\D/g, '');
+    if (rawPhone.length < 10) {
+      phoneInput.classList.add('invalid');
+      errorPhone.classList.add('visible');
+      isValid = false;
+    }
+    
+    if (isValid) {
+      // Collect values and redirect to app registration screen with query params
+      const clinic = clinicInput.value.trim();
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const phone = phoneInput.value.trim();
+      
+      const encodedClinic = encodeURIComponent(clinic);
+      const encodedName = encodeURIComponent(name);
+      const encodedEmail = encodeURIComponent(email);
+      const encodedPhone = encodeURIComponent(phone);
+      
+      // Go to register url
+      const registerUrl = `https://app.getlyra.com.br/register?email=${encodedEmail}&nome=${encodedName}&telefone=${encodedPhone}&clinica=${encodedClinic}`;
+      
+      window.location.href = registerUrl;
+    }
+  });
+}
+
