@@ -572,7 +572,7 @@ body.dark-theme .moon-icon {
 .browser-content .mockup-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   object-position: top center;
 }
 
@@ -640,7 +640,7 @@ body.dark-theme .mobile-mockup {
 .phone-screen .mockup-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   object-position: top center;
 }
 
