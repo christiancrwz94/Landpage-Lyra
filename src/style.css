@@ -21,7 +21,7 @@
   --text-primary: #1D1D1F;
   --text-secondary: #6E6E73;
   --border-color: #E2E2E7;
-  --navbar-bg: rgba(245, 245, 247, 0.8);
+  --navbar-bg: #FFFFFF;
   --hero-glow-1: rgba(79, 107, 237, 0.08);
   --hero-glow-2: rgba(99, 102, 241, 0.05);
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
@@ -39,7 +39,7 @@ body.dark-theme {
   --text-primary: #F5F5F7;
   --text-secondary: #86868B;
   --border-color: #333336;
-  --navbar-bg: rgba(0, 0, 0, 0.8);
+  --navbar-bg: #000000;
   --hero-glow-1: rgba(79, 107, 237, 0.15);
   --hero-glow-2: rgba(99, 102, 241, 0.08);
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
@@ -593,7 +593,7 @@ body.dark-theme .moon-icon {
   aspect-ratio: 236/500;
   background-color: #000000;
   border-radius: 38px;
-  border: 11px solid #161617; /* Physical dark metal bezel */
+  border: 6px solid #161617; /* Physical dark metal bezel */
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
   overflow: hidden;
   z-index: 2;
@@ -614,7 +614,7 @@ body.dark-theme .mobile-mockup {
   height: 100%;
   overflow: hidden;
   position: relative;
-  border-radius: 27px;
+  border-radius: 32px;
 }
 
 /* iPhone Dynamic Island / Notch */
