@@ -1167,23 +1167,36 @@ body.dark-theme {
   margin-bottom: 1.75rem;
 }
 
-/* One UI Squircle Icon Container */
-.logo-badge.oneui-squircle {
-  width: 64px;
-  height: 64px;
-  background-color: var(--oneui-card-secondary-bg);
-  border: 1px solid var(--oneui-divider);
-  border-radius: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  transition: var(--oneui-transition);
+.login-logo-large {
+  width: 76px;
+  height: 76px;
+  display: block;
+  margin: 0 auto 0.6rem auto;
+  filter: drop-shadow(0 6px 16px rgba(54, 133, 255, 0.35));
+  transition: transform 0.3s ease;
 }
 
-.login-logo-icon {
-  width: 36px;
-  height: 36px;
+.login-logo-large:hover {
+  transform: scale(1.05);
+}
+
+.login-brand-name {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--oneui-text-primary);
+  margin-bottom: 0.2rem;
+  font-family: var(--oneui-font-family);
+  line-height: 1.1;
+}
+
+.login-tagline {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--oneui-text-secondary);
+  opacity: 0.85;
 }
 
 .login-form {
