@@ -1074,6 +1074,296 @@ body.light-theme .moon-icon { display: none; }
 
 .error-msg.visible { display: block; }
 
+/* --- SAMSUNG ONE UI DESIGN SYSTEM SKILL INTEGRATION --- */
+:root {
+  /* One UI Tokens - Light Mode */
+  --oneui-bg: #F2F2F7;
+  --oneui-card-bg: #FFFFFF;
+  --oneui-card-secondary-bg: #F8F9FA;
+  --oneui-primary: #0381FE;
+  --oneui-primary-hover: #026CD8;
+  --oneui-text-primary: #000000;
+  --oneui-text-secondary: #8E8E93;
+  --oneui-text-muted: #AEAED2;
+  --oneui-divider: rgba(0, 0, 0, 0.08);
+  --oneui-danger: #FF3B30;
+  --oneui-success: #34C759;
+  --oneui-warning: #FF9500;
+  
+  --oneui-radius-card: 28px;
+  --oneui-radius-input: 20px;
+  --oneui-radius-button: 20px;
+  --oneui-radius-pill: 9999px;
+  
+  --oneui-font-family: 'One UI Sans', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --oneui-transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+}
+
+body.dark-theme {
+  --oneui-bg: #000000;
+  --oneui-card-bg: #1C1C1E;
+  --oneui-card-secondary-bg: #2C2C2E;
+  --oneui-primary: #3685FF;
+  --oneui-primary-hover: #5496FF;
+  --oneui-text-primary: #FFFFFF;
+  --oneui-text-secondary: #8E8E93;
+  --oneui-text-muted: #636366;
+  --oneui-divider: rgba(255, 255, 255, 0.08);
+}
+
+/* One UI Clickable Micro-interaction (Active Haptic Scale) */
+.oneui-clickable {
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1), background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.oneui-clickable:active {
+  transform: scale(0.96) !important;
+}
+
+/* Base Layout */
+.login-page-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--oneui-bg);
+  color: var(--oneui-text-primary);
+  font-family: var(--oneui-font-family);
+  transition: var(--oneui-transition);
+}
+
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--oneui-bg);
+}
+
+.login-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* One UI Grouped Card Container */
+.login-card-container.oneui-card {
+  width: 100%;
+  max-width: 410px;
+  background-color: var(--oneui-card-bg);
+  border: 1px solid var(--oneui-divider);
+  border-radius: var(--oneui-radius-card);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  transition: var(--oneui-transition);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+/* One UI Squircle Icon Container */
+.logo-badge.oneui-squircle {
+  width: 64px;
+  height: 64px;
+  background-color: var(--oneui-card-secondary-bg);
+  border: 1px solid var(--oneui-divider);
+  border-radius: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: var(--oneui-transition);
+}
+
+.login-logo-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--oneui-text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-link {
+  font-size: 0.8rem;
+  color: var(--oneui-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-link:hover {
+  color: var(--oneui-primary-hover);
+  text-decoration: underline;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  color: var(--oneui-text-secondary);
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+/* One UI Soft Rounded Input Fields */
+.form-input.oneui-input {
+  width: 100%;
+  background-color: var(--oneui-card-secondary-bg);
+  border: 1px solid var(--oneui-divider);
+  border-radius: var(--oneui-radius-input);
+  padding: 0.9rem 1rem 0.9rem 2.8rem;
+  color: var(--oneui-text-primary);
+  font-family: var(--oneui-font-family);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--oneui-transition);
+}
+
+.form-input.oneui-input:focus {
+  border-color: var(--oneui-primary);
+  box-shadow: 0 0 0 3.5px rgba(54, 133, 255, 0.22);
+}
+
+.form-input.oneui-input:focus + .input-icon,
+.input-with-icon:focus-within .input-icon {
+  color: var(--oneui-primary);
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: var(--oneui-text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle-btn:hover {
+  color: var(--oneui-text-primary);
+}
+
+.password-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* One UI Button Pill/Rounded */
+.btn-login-submit.oneui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.95rem;
+  background-color: var(--oneui-primary);
+  color: #FFFFFF;
+  border-radius: var(--oneui-radius-button);
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--oneui-font-family);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  box-shadow: 0 6px 20px rgba(54, 133, 255, 0.3);
+  transition: var(--oneui-transition);
+}
+
+.btn-login-submit.oneui-button:hover {
+  background-color: var(--oneui-primary-hover);
+}
+
+.btn-arrow-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.btn-login-submit:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+.login-footer-links {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--oneui-divider);
+  text-align: center;
+}
+
+.login-footer-links p {
+  font-size: 0.85rem;
+  color: var(--oneui-text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.btn-register-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--oneui-primary);
+  text-decoration: none;
+}
+
+.btn-register-link:hover {
+  color: var(--oneui-primary-hover);
+  text-decoration: underline;
+}
+
+/* One UI Security Badge */
+.login-security-badge.oneui-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  font-size: 0.8rem;
+  color: var(--oneui-text-secondary);
+  background-color: var(--oneui-card-bg);
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--oneui-radius-pill);
+  border: 1px solid var(--oneui-divider);
+}
+
+.login-security-badge.oneui-badge svg {
+  width: 15px;
+  height: 15px;
+  color: var(--oneui-success);
+}
+
+
 /* --- MINIMALIST LOGIN PAGE STYLES --- */
 .login-page-body {
   min-height: 100vh;
