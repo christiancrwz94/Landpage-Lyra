@@ -4,18 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/assets/logo_lyra.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Lyra — Automação Inteligente para Clínicas Odontológicas</title>
-    <meta name="description" content="Enquanto você atende pacientes, o Lyra trabalha por você. Teste grátis por 7 dias." />
+    <title>Lyra — Login</title>
+    <meta name="description" content="Acesse o Lyra — O sistema inteligente de gestão odontológica." />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="dark-theme mobile-first-page">
-    <div id="app">
-      <!-- Navbar Mobile-First -->
-      <header class="navbar" id="navbar">
+  <body class="dark-theme login-page-body">
+    <div id="app" class="login-wrapper">
+      <!-- Glow Backgrounds -->
+      <div class="glow-bg glow-primary"></div>
+      <div class="glow-bg glow-secondary"></div>
+
+      <!-- Top Header / Navigation -->
+      <header class="navbar-login">
         <div class="container navbar-container">
           <a href="#" class="nav-brand">
             <img class="logo-img" src="/src/assets/logo_lyra.svg" alt="Lyra Logo" id="navbar-logo" />
@@ -27,567 +31,81 @@
               <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
               <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
             </button>
-            <a href="https://app.getlyra.com.br/login" class="btn btn-text btn-sm">Entrar</a>
-            <button class="btn btn-primary btn-pill btn-sm trigger-modal">7 Dias Grátis</button>
           </div>
         </div>
       </header>
 
-      <!-- Hero Screen (Primeira Dobra) -->
-      <section class="mobile-hero-screen">
-        <div class="glow-bg glow-primary"></div>
-        
-        <div class="container mobile-screen-content text-center">
-          <div class="hero-badge">
-            <span class="badge-icon">⚡</span>
-            <span class="badge-content">Enquanto você atende pacientes, o Lyra trabalha por você.</span>
-          </div>
-          
-          <h1 class="mobile-hero-title">
-            Automatize sua clínica odontológica e <span class="gradient-text">economize horas de trabalho</span> toda semana.
-          </h1>
-          
-          <p class="mobile-hero-subtitle">
-            Agenda inteligente, automações no WhatsApp, assinatura digital, prontuário eletrônico, financeiro e inteligência artificial trabalhando juntos para simplificar a rotina da sua clínica.
-          </p>
-
-
-
-          <!-- Mobile Checklist (Selos Exclusivos Empilhados Centralizados) -->
-          <div class="hero-seals-stacked margin-top-md">
-            <div class="seal-chip">
-              <svg class="seal-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><path d="M12 6v2m0 8v2m-6-6h2m8 0h2"/></svg>
-              <span>Inteligência Artificial Integrada</span>
+      <!-- Center Login Card -->
+      <main class="login-main-content">
+        <div class="login-card-container">
+          <div class="login-header">
+            <div class="logo-badge">
+              <img src="/src/assets/logo_lyra.svg" alt="Lyra" class="login-logo-icon" />
             </div>
-
-            <div class="seal-chip">
-              <svg class="seal-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
-              <span>Agendamento por voz</span>
-            </div>
-
-            <div class="seal-chip seal-whatsapp">
-              <svg class="seal-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-              <span>WhatsApp Automático</span>
-            </div>
-
-            <div class="seal-chip">
-              <svg class="seal-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-              <span>Assinatura Digital</span>
-            </div>
-
-            <div class="seal-chip seal-star">
-              <svg class="seal-svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <span>Avaliações automáticas no Google</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Transição para o Mockup -->
-      <section class="mockup-transition-section text-center">
-        <div class="container">
-          <span class="section-badge">INTERFASE NA PRÁTICA</span>
-          <h2 class="mobile-section-title">Veja como o Lyra simplifica a rotina da sua clínica</h2>
-          <p class="mobile-section-desc">Tudo acontece em poucos toques.</p>
-
-          <div class="scroll-down-indicator">
-            <div class="mouse-wheel"></div>
-            <span>Role para interagir</span>
-            <div class="arrow-down">↓</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Mockup Protagonista Animado -->
-      <section class="mockup-display-section">
-        <div class="container">
-          <div class="carousel-wrapper">
-            <div class="carousel-display">
-              <button class="carousel-arrow prev" id="carousel-prev" aria-label="Anterior">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
-              </button>
-
-              <div class="phone-mockup-frame">
-                <div class="phone-island"></div>
-                <div class="phone-viewport">
-                  <div class="phone-slider-track" id="phone-slider-track">
-                    <div class="phone-slide">
-                      <img src="/app-screenshots/screen-1-agenda.png" alt="Tela da Agenda" />
-                    </div>
-                    <div class="phone-slide">
-                      <img src="/app-screenshots/screen-2-pacientes.png" alt="Tela de Pacientes" />
-                    </div>
-                    <div class="phone-slide">
-                      <img src="/app-screenshots/screen-3-financeiro.png" alt="Tela Financeiro" />
-                    </div>
-                    <div class="phone-slide">
-                      <img src="/app-screenshots/screen-4-agente-ia.png" alt="Tela Agente IA" />
-                    </div>
-                    <div class="phone-slide clone">
-                      <img src="/app-screenshots/screen-1-agenda.png" alt="Tela da Agenda" />
-                    </div>
-                  </div>
-                </div>
-                <div class="phone-home-indicator"></div>
-              </div>
-
-              <button class="carousel-arrow next" id="carousel-next" aria-label="Próximo">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
-              </button>
-            </div>
-
-            <div class="carousel-dots" id="carousel-dots">
-              <span class="dot-item active" data-slide="0"></span>
-              <span class="dot-item" data-slide="1"></span>
-              <span class="dot-item" data-slide="2"></span>
-              <span class="dot-item" data-slide="3"></span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Benefícios (12 Cards Estilo App) -->
-      <section id="beneficios" class="mobile-screen-section benefits-screen">
-        <div class="container">
-          <div class="text-center margin-bottom-lg">
-            <span class="section-badge">AUTOMAÇÃO COMPLETA</span>
-            <h2 class="mobile-section-title">Muito mais do que um sistema de gestão</h2>
-            <p class="mobile-section-desc">O Lyra automatiza toda a jornada do paciente e reduz tarefas repetitivas da equipe.</p>
+            <h1 class="login-title">Acesse sua conta</h1>
+            <p class="login-subtitle">Entre para gerenciar sua clínica odontológica</p>
           </div>
 
-          <div class="mobile-cards-stack">
-            <!-- Card 1: Agendamento por Voz -->
-            <div class="mobile-benefit-card highlight-voice">
-              <div class="benefit-card-top">
-                <span class="card-icon">🎙️</span>
-                <span class="card-badge-tag badge-purple">INOVAÇÃO EXCLUSIVA</span>
-              </div>
-              <h3 class="card-title">Agendamento por Voz</h3>
-              <p class="card-desc">Agende consultas usando comandos de voz no celular ou assistente.</p>
-              <div class="voice-example-box">
-                <span class="voice-mic-icon">🎤</span>
-                <em>"Ok Google, agende um paciente para terça-feira às 14 horas."</em>
-              </div>
-              <p class="voice-subtext">A integração Lyra + Google Assistente cria o agendamento automaticamente.</p>
-            </div>
-
-            <!-- Card 2: WhatsApp Inteligente -->
-            <div class="mobile-benefit-card highlight-card">
-              <div class="benefit-card-top">
-                <span class="card-icon">📲</span>
-                <span class="card-badge-tag">PRINCIPAL DIFERENCIAL</span>
-              </div>
-              <h3 class="card-title">WhatsApp Inteligente</h3>
-              <p class="card-desc">Enquanto você atende pacientes, o Lyra envia mensagens automaticamente. Sem precisar abrir o WhatsApp.</p>
-            </div>
-
-            <!-- Card 3: Confirmação Automática -->
-            <div class="mobile-benefit-card">
-              <div class="benefit-card-top">
-                <span class="card-icon">⏰</span>
-              </div>
-              <h3 class="card-title">Confirmação Automática</h3>
-              <p class="card-desc">Envio automático de lembrete 1 dia antes da consulta. Reduza esquecimentos e faltas.</p>
-            </div>
-
-            <!-- Card 4: Lembrete no dia -->
-            <div class="mobile-benefit-card">
-              <div class="benefit-card-top">
-                <span class="card-icon">☀️</span>
-              </div>
-              <h3 class="card-title">Lembrete no dia da consulta</h3>
-              <p class="card-desc">O paciente recebe uma nova mensagem lembrando do atendimento no próprio dia.</p>
-            </div>
-
-            <!-- Card 5: Pós-consulta automático -->
-            <div class="mobile-benefit-card">
-              <div class="benefit-card-top">
-                <span class="card-icon">⭐</span>
-              </div>
-              <h3 class="card-title">Pós-consulta Automático</h3>
-              <p class="card-desc">Após finalizar a consulta, o Lyra envia mensagem personalizada solicitando avaliação no Google.</p>
-            </div>
-
-            <!-- Card 6: Mensagem de aniversário -->
-            <div class="mobile-benefit-card">
-              <div class="benefit-card-top">
-                <span class="card-icon">🎂</span>
-              </div>
-              <h3 class="card-title">Mensagem de Aniversário</h3>
-              <p class="card-desc">Felicitação automática no aniversário com presente, benefício ou convite para retorno.</p>
-            </div>
-
-            <!-- Card 7: Relacionamento contínuo -->
-            <div class="mobile-benefit-card">
-              <div class="benefit-card-top">
-                <span class="card-icon">❤️</span>
-              </div>
-              <h3 class="card-title">Relacionamento Contínuo</h3>
-              <p class="card-desc">Mantenha contato durante todo o ano, fortalecendo o vínculo e incentivando recomendações.</p>
-            </div>
-
-            <!-- Card 8: Assinatura Digital -->
-            <div class="mobile-benefit-card highlight-paperless">
-              <div class="benefit-card-top">
-                <span class="card-icon">✍️</span>
-                <span class="card-badge-tag badge-cyan">100% SEM PAPEL</span>
-              </div>
-              <h3 class="card-title">Assinatura Digital</h3>
-              <p class="card-desc">Assinatura de orçamentos e termos na tela do celular ou tablet. Salvo automaticamente no prontuário.</p>
-            </div>
-
-            <!-- Card 9: Anamnese Online -->
-            <div class="mobile-benefit-card">
-              <div class="benefit-card-top">
-                <span class="card-icon">📋</span>
-              </div>
-              <h3 class="card-title">Anamnese Online</h3>
-              <p class="card-desc">O paciente preenche a anamnese antes de sair de casa via link exclusivo ou QR Code.</p>
-            </div>
-
-            <!-- Card 10: Agenda Inteligente -->
-            <div class="mobile-benefit-card">
-              <div class="benefit-card-top">
-                <span class="card-icon">📅</span>
-              </div>
-              <h3 class="card-title">Agenda Inteligente</h3>
-              <p class="card-desc">Visualização por dia, semana e mês. Alteração rápida de status e suporte a múltiplos profissionais.</p>
-            </div>
-
-            <!-- Card 11: Financeiro Inteligente -->
-            <div class="mobile-benefit-card">
-              <div class="benefit-card-top">
-                <span class="card-icon">💰</span>
-              </div>
-              <h3 class="card-title">Financeiro Inteligente</h3>
-              <p class="card-desc">Controle completo das receitas, despesas e fluxo de caixa da sua clínica.</p>
-            </div>
-
-            <!-- Card 12: Inteligência Artificial -->
-            <div class="mobile-benefit-card">
-              <div class="benefit-card-top">
-                <span class="card-icon">🤖</span>
-              </div>
-              <h3 class="card-title">Inteligência Artificial</h3>
-              <p class="card-desc">Um assistente inteligente sempre disponível para auxiliar na rotina e na reativação de pacientes.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Jornada do Paciente (Timeline 9 Passos) -->
-      <section id="jornada" class="mobile-screen-section timeline-screen">
-        <div class="container text-center">
-          <span class="section-badge badge-whatsapp">FLUXO CONTINUO INTEGRADO</span>
-          <h2 class="mobile-section-title">Jornada do Paciente no Lyra</h2>
-          <p class="mobile-section-desc">Toda essa jornada acontece automaticamente dentro do sistema.</p>
-
-          <div class="mobile-timeline-vertical">
-            <div class="m-timeline-item">
-              <div class="m-timeline-node">1</div>
-              <div class="m-timeline-box">
-                <h4>🎙️ Agendamento por voz</h4>
-                <p>Comando enviado pelo assistente.</p>
-              </div>
-            </div>
-
-            <div class="m-timeline-connector">↓</div>
-
-            <div class="m-timeline-item">
-              <div class="m-timeline-node">2</div>
-              <div class="m-timeline-box">
-                <h4>📅 Consulta criada</h4>
-                <p>Horário gravado no sistema.</p>
-              </div>
-            </div>
-
-            <div class="m-timeline-connector">↓</div>
-
-            <div class="m-timeline-item">
-              <div class="m-timeline-node whatsapp-node">3</div>
-              <div class="m-timeline-box highlight-box">
-                <h4>📲 Confirmação automática</h4>
-                <p>WhatsApp disparado 1 dia antes.</p>
-              </div>
-            </div>
-
-            <div class="m-timeline-connector">↓</div>
-
-            <div class="m-timeline-item">
-              <div class="m-timeline-node">4</div>
-              <div class="m-timeline-box">
-                <h4>📋 Anamnese Online</h4>
-                <p>Preenchida pelo paciente em casa.</p>
-              </div>
-            </div>
-
-            <div class="m-timeline-connector">↓</div>
-
-            <div class="m-timeline-item">
-              <div class="m-timeline-node">5</div>
-              <div class="m-timeline-box">
-                <h4>✍️ Assinatura Digital</h4>
-                <p>Termos assinados na tela sem papel.</p>
-              </div>
-            </div>
-
-            <div class="m-timeline-connector">↓</div>
-
-            <div class="m-timeline-item">
-              <div class="m-timeline-node">6</div>
-              <div class="m-timeline-box">
-                <h4>🦷 Atendimento</h4>
-                <p>Consulta realizada com organização.</p>
-              </div>
-            </div>
-
-            <div class="m-timeline-connector">↓</div>
-
-            <div class="m-timeline-item">
-              <div class="m-timeline-node star-node">7</div>
-              <div class="m-timeline-box star-box">
-                <h4>⭐ Solicitação de avaliação</h4>
-                <p>Pedido no Google enviado pós-consulta.</p>
-              </div>
-            </div>
-
-            <div class="m-timeline-connector">↓</div>
-
-            <div class="m-timeline-item">
-              <div class="m-timeline-node">8</div>
-              <div class="m-timeline-box">
-                <h4>🎂 Mensagem de aniversário</h4>
-                <p>Felicitação e presente automático.</p>
-              </div>
-            </div>
-
-            <div class="m-timeline-connector">↓</div>
-
-            <div class="m-timeline-item">
-              <div class="m-timeline-node whatsapp-node">9</div>
-              <div class="m-timeline-box highlight-box">
-                <h4>❤️ Relacionamento contínuo</h4>
-                <p>Paciente engajado e novos retornos.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Diferencial de Longo Prazo -->
-      <section class="mobile-screen-section flow-longterm-screen">
-        <div class="glow-bg glow-whatsapp"></div>
-        <div class="container text-center">
-          <span class="section-badge badge-whatsapp">OPERAÇÃO AUTÔNOMA</span>
-          <h2 class="mobile-section-title">Enquanto você atende, o Lyra continua trabalhando</h2>
-          <p class="mobile-section-desc">Um ciclo contínuo de fidelização e captação.</p>
-
-          <div class="longterm-flow-list">
-            <div class="lt-step">
-              <span class="lt-icon">🩺</span>
-              <span>Consulta Concluída</span>
-            </div>
-            <div class="lt-arrow">↓</div>
-            <div class="lt-step lt-highlight">
-              <span class="lt-icon">⚡</span>
-              <span>Mensagem Enviada</span>
-            </div>
-            <div class="lt-arrow">↓</div>
-            <div class="lt-step">
-              <span class="lt-icon">📲</span>
-              <span>Paciente Recebe</span>
-            </div>
-            <div class="lt-arrow">↓</div>
-            <div class="lt-step">
-              <span class="lt-icon">⭐</span>
-              <span>Avalia no Google</span>
-            </div>
-            <div class="lt-arrow">↓</div>
-            <div class="lt-step">
-              <span class="lt-icon">🚀</span>
-              <span>Clínica Fortalece Reputação</span>
-            </div>
-            <div class="lt-arrow">↓</div>
-            <div class="lt-step lt-highlight">
-              <span class="lt-icon">🎂</span>
-              <span>Recebe Aniversário Meses Depois</span>
-            </div>
-            <div class="lt-arrow">↓</div>
-            <div class="lt-step">
-              <span class="lt-icon">🔄</span>
-              <span>Retorna ao Consultório</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Como Funciona em 3 Passos -->
-      <section id="como-funciona" class="mobile-screen-section steps-screen">
-        <div class="container text-center">
-          <span class="section-badge">COMECE RÁPIDO</span>
-          <h2 class="mobile-section-title">3 passos para a automação</h2>
-
-          <div class="mobile-steps-grid margin-top-md">
-            <div class="m-step-card">
-              <span class="m-step-number">01</span>
-              <h4>Cadastre sua clínica</h4>
-              <p>Crie sua conta em menos de 2 minutos.</p>
-            </div>
-            <div class="m-step-card">
-              <span class="m-step-number">02</span>
-              <h4>Conecte seu WhatsApp</h4>
-              <p>Escaneie o QR Code no seu celular.</p>
-            </div>
-            <div class="m-step-card">
-              <span class="m-step-number">03</span>
-              <h4>Comece a automatizar</h4>
-              <p>Sua rotina simplificada na hora.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ Accordion -->
-      <section id="faq" class="mobile-screen-section faq-screen">
-        <div class="container">
-          <div class="text-center margin-bottom-md">
-            <span class="section-badge">DÚVIDAS FREQUENTES</span>
-            <h2 class="mobile-section-title">Perguntas Frequentes</h2>
-          </div>
-
-          <div class="mobile-faq-accordion">
-            <div class="faq-item">
-              <button class="faq-question">
-                <span>Funciona no celular?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Sim! 100% otimizado para smartphones Android e iOS.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question">
-                <span>Preciso instalar?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Não. Funciona direto no navegador sem downloads.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question">
-                <span>Posso usar no computador?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Sim. Acesse simultaneamente no computador e no celular.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question">
-                <span>Como funciona a integração com o WhatsApp?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Você conecta seu número atual escaneando o QR Code em 1 minuto.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question">
-                <span>Como funciona o teste gratuito?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Você testa grátis por 7 dias sem cadastrar cartão de crédito.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question">
-                <span>Meus dados ficam seguros?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Sim! Criptografia de nível bancário e servidores seguros na nuvem.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question">
-                <span>Existe suporte?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Sim! Nossa equipe oferece suporte rápido via WhatsApp.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA Final -->
-      <section class="mobile-screen-section final-cta-screen">
-        <div class="glow-bg glow-cta"></div>
-        <div class="container text-center">
-          <div class="m-final-card">
-            <h2 class="m-final-title">Sua clínica merece uma gestão mais inteligente.</h2>
-            <p class="m-final-desc">
-              Experimente gratuitamente por 7 dias e descubra como o Lyra pode automatizar a rotina da sua equipe, fortalecer o relacionamento com seus pacientes e simplificar toda a gestão da clínica.
-            </p>
-            <button class="btn btn-primary btn-large btn-pill btn-block trigger-modal">
-              Começar teste gratuito
-            </button>
-            <span class="m-final-sub">🔒 7 dias grátis • Sem compromisso</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Registration Modal -->
-      <div class="modal-overlay" id="register-modal">
-        <div class="modal-wrapper">
-          <button class="modal-close" id="modal-close" aria-label="Fechar">✕</button>
-          
-          <div class="modal-header text-center">
-            <div class="modal-badge">🚀 TESTE GRÁTIS POR 7 DIAS</div>
-            <h3 class="modal-title">Comece a automatizar hoje</h3>
-            <p class="modal-subtitle">Sem compromisso. Configuração em 2 minutos.</p>
-          </div>
-
-          <form id="register-form" class="modal-form">
+          <form id="login-form" class="login-form">
             <div class="form-group">
-              <label for="reg-clinic">Nome da Clínica / Consultório</label>
-              <input type="text" id="reg-clinic" placeholder="Ex: Odonto Premium" required />
-              <span class="error-msg" id="error-clinic">Informe o nome da clínica.</span>
+              <label for="login-email" class="form-label">E-mail</label>
+              <div class="input-with-icon">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                <input type="email" id="login-email" class="form-input" placeholder="seuemail@clinica.com" required autocomplete="email" />
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="reg-name">Seu Nome Completo</label>
-              <input type="text" id="reg-name" placeholder="Ex: Dr. Carlos Silva" required />
-              <span class="error-msg" id="error-name">Informe seu nome.</span>
+              <div class="label-row">
+                <label for="login-password" class="form-label">Senha</label>
+                <a href="https://app.getlyra.com.br/forgot-password" class="forgot-link">Esqueceu a senha?</a>
+              </div>
+              <div class="input-with-icon">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <input type="password" id="login-password" class="form-input" placeholder="••••••••" required autocomplete="current-password" />
+                <button type="button" id="toggle-password" class="password-toggle-btn" aria-label="Mostrar ou ocultar senha">
+                  <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                  <svg class="eye-off-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                    <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+                    <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+                    <line x1="2" x2="22" y1="2" y2="22"/>
+                  </svg>
+                </button>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label for="reg-email">E-mail Profissional</label>
-              <input type="email" id="reg-email" placeholder="seuemail@clinica.com.br" required />
-              <span class="error-msg" id="error-email">Informe um e-mail válido.</span>
-            </div>
-
-            <div class="form-group">
-              <label for="reg-phone">WhatsApp para Contato</label>
-              <input type="tel" id="reg-phone" placeholder="(00) 00000-0000" required />
-              <span class="error-msg" id="error-phone">Informe seu WhatsApp.</span>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-block btn-large btn-pill">
-              Começar teste gratuito
+            <button type="submit" id="btn-submit-login" class="btn btn-primary btn-block btn-login-submit">
+              <span>Entrar no Sistema</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-arrow-icon">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
             </button>
           </form>
+
+          <div class="login-footer-links">
+            <p>Ainda não possui uma conta?</p>
+            <a href="https://app.getlyra.com.br/register" class="btn-register-link">Criar conta no Lyra</a>
+          </div>
         </div>
-      </div>
+
+        <div class="login-security-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <span>Conexão criptografada e segura</span>
+        </div>
+      </main>
     </div>
 
     <script type="module" src="/src/main.js"></script>
