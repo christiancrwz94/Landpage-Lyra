@@ -1193,8 +1193,9 @@ body.dark-theme {
 .form-options-row {
   display: flex;
   align-items: center;
-  margin-top: -0.25rem;
-  margin-bottom: 0.25rem;
+  justify-content: space-between;
+  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
 }
 
 .remember-me-checkbox {
