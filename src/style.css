@@ -11,9 +11,9 @@
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
 
-  --primary-color: #3b82f6;
-  --primary-hover: #2563eb;
-  --primary-glow: rgba(59, 130, 246, 0.3);
+  --primary-color: #1B98E0;
+  --primary-hover: #1583C4;
+  --primary-glow: rgba(27, 152, 224, 0.35);
 
   --whatsapp-color: #25D366;
   --whatsapp-glow: rgba(37, 211, 102, 0.3);
@@ -1080,8 +1080,8 @@ body.light-theme .moon-icon { display: none; }
   --oneui-bg: #F2F2F7;
   --oneui-card-bg: #FFFFFF;
   --oneui-card-secondary-bg: #F8F9FA;
-  --oneui-primary: #0381FE;
-  --oneui-primary-hover: #026CD8;
+  --oneui-primary: #1B98E0;
+  --oneui-primary-hover: #1583C4;
   --oneui-text-primary: #000000;
   --oneui-text-secondary: #8E8E93;
   --oneui-text-muted: #AEAED2;
@@ -1103,8 +1103,8 @@ body.dark-theme {
   --oneui-bg: #000000;
   --oneui-card-bg: #1C1C1E;
   --oneui-card-secondary-bg: #2C2C2E;
-  --oneui-primary: #3685FF;
-  --oneui-primary-hover: #5496FF;
+  --oneui-primary: #1B98E0;
+  --oneui-primary-hover: #1583C4;
   --oneui-text-primary: #FFFFFF;
   --oneui-text-secondary: #8E8E93;
   --oneui-text-muted: #636366;
