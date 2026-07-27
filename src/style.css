@@ -1190,13 +1190,60 @@ body.dark-theme {
   line-height: 1.1;
 }
 
-.login-tagline {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--oneui-text-secondary);
-  opacity: 0.85;
+.form-options-row {
+  display: flex;
+  align-items: center;
+  margin-top: -0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.remember-me-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember-me-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background-color: var(--oneui-card-secondary-bg);
+  border: 1px solid var(--oneui-divider);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--oneui-transition);
+}
+
+.remember-me-checkbox input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: var(--oneui-primary);
+  border-color: var(--oneui-primary);
+}
+
+.custom-checkbox svg {
+  width: 13px;
+  height: 13px;
+  color: #FFFFFF;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.remember-me-checkbox input[type="checkbox"]:checked + .custom-checkbox svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.remember-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--oneui-text-primary);
 }
 
 .login-form {
