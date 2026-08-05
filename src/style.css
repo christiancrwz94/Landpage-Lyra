@@ -1,7 +1,7 @@
 /* --- LYRA ONBOARDING SLIDES DESIGN SYSTEM (MOBILE & DESKTOP) --- */
 :root {
   --bg-color: #000000;
-  --bg-card: rgba(23, 23, 28, 0.85);
+  --bg-card: #14161F;
   --border-color: rgba(255, 255, 255, 0.08);
 
   --text-primary: #ffffff;
@@ -13,6 +13,7 @@
   --primary-glow: rgba(52, 120, 246, 0.35);
 
   --accent-blue: #4D6FFF;
+  --accent-green: #00BA63;
   --font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
 }
 
@@ -37,7 +38,7 @@ html, body {
   display: none !important;
 }
 
-/* Wrapper principal */
+/* Wrapper principal OLED Preto */
 .onboarding-wrapper {
   position: relative;
   width: 100%;
@@ -52,38 +53,12 @@ html, body {
   background-color: #000000;
 }
 
-/* Ambient Radial Glows */
-.glow-bg {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.glow-primary {
-  top: -80px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(52, 120, 246, 0.18) 0%, rgba(77, 111, 255, 0.06) 60%, transparent 100%);
-}
-
-.glow-secondary {
-  bottom: -120px;
-  right: -80px;
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(77, 111, 255, 0.12) 0%, transparent 100%);
-}
-
 /* --- HEADER --- */
 .onboarding-header {
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   display: flex;
   justify-content: center;
   padding-bottom: 0.25rem;
@@ -139,7 +114,6 @@ html, body {
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.25s ease;
-  backdrop-filter: blur(10px);
 }
 
 .btn-header-login:hover {
@@ -152,7 +126,7 @@ html, body {
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 850px;
+  max-width: 680px;
   flex: 1;
   display: flex;
   align-items: center;
@@ -191,12 +165,12 @@ html, body {
 }
 
 .slide-text-group {
-  max-width: 600px;
-  margin-bottom: 1.25rem;
+  max-width: 580px;
+  margin-bottom: 1.5rem;
 }
 
 .slide-title {
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   font-weight: 800;
   line-height: 1.25;
   color: #ffffff;
@@ -213,129 +187,102 @@ html, body {
   margin: 0 auto;
 }
 
-.gradient-text {
+.accent-text {
   color: var(--accent-blue);
-  background: linear-gradient(135deg, #60a5fa 0%, #3478F6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
-/* Visual Container (Phone Mockup + Floating Badges) */
+/* Visual Card Centered (Idêntico ao App Flutter) */
 .slide-visual-container {
   position: relative;
   width: 100%;
-  max-width: 450px;
-  height: 350px;
+  max-width: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
 }
 
-.phone-mockup-wrapper {
-  position: relative;
-  z-index: 2;
-  width: 190px;
-  height: 340px;
-}
-
-.phone-frame {
+.visual-card {
   width: 100%;
-  height: 100%;
-  border-radius: 32px;
-  background: #000000;
-  padding: 6px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(52, 120, 246, 0.25);
-  border: 2px solid rgba(255, 255, 255, 0.14);
-  overflow: hidden;
+  background: #14161F;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(52, 120, 246, 0.12);
 }
 
-.phone-screen {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 24px;
-}
-
-/* Floating Badges */
-.floating-badge {
-  position: absolute;
-  z-index: 3;
+.card-icons-row {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  background: rgba(15, 17, 26, 0.92);
-  border: 1px solid rgba(52, 120, 246, 0.35);
-  padding: 0.45rem 0.8rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(52, 120, 246, 0.18);
-  backdrop-filter: blur(14px);
-  white-space: nowrap;
+  gap: 1rem;
 }
 
-.badge-icon {
-  font-size: 0.95rem;
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.badge-text {
-  font-size: 0.75rem;
+.icon-circle svg {
+  width: 32px;
+  height: 32px;
+}
+
+.blue-glow {
+  background: rgba(52, 120, 246, 0.12);
+  border: 1px solid rgba(52, 120, 246, 0.3);
+}
+
+.green-glow {
+  background: rgba(0, 186, 99, 0.12);
+  border: 1px solid rgba(0, 186, 99, 0.3);
+}
+
+.card-info-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 1rem;
+  border-radius: 18px;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
-.badge-top-left {
-  top: 10%;
-  left: -2%;
+.card-info-pill svg {
+  width: 16px;
+  height: 16px;
 }
 
-.badge-top-right {
-  top: 14%;
-  right: -2%;
+.chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.badge-bottom-left {
-  bottom: 14%;
-  left: -2%;
+.feature-chip {
+  background: rgba(52, 120, 246, 0.15);
+  color: var(--primary-color);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 16px;
+  border: 1px solid rgba(52, 120, 246, 0.3);
 }
 
-.badge-bottom-right {
-  bottom: 10%;
-  right: -2%;
-}
-
-/* Floating Animations */
-.float-phone {
-  animation: floatPhone 7s ease-in-out infinite;
-}
-
-.float-anim-1 { animation: floatBadge1 6s ease-in-out infinite; }
-.float-anim-2 { animation: floatBadge2 7s ease-in-out infinite; }
-.float-anim-3 { animation: floatBadge3 6.5s ease-in-out infinite; }
-.float-anim-4 { animation: floatBadge4 8s ease-in-out infinite; }
-
-@keyframes floatPhone {
-  0%, 100% { transform: translateY(-4px) rotate(-0.3deg); }
-  50% { transform: translateY(4px) rotate(0.3deg); }
-}
-
-@keyframes floatBadge1 {
-  0%, 100% { transform: translateY(-4px); }
-  50% { transform: translateY(4px); }
-}
-@keyframes floatBadge2 {
-  0%, 100% { transform: translateY(5px); }
-  50% { transform: translateY(-5px); }
-}
-@keyframes floatBadge3 {
-  0%, 100% { transform: translateY(-3px); }
-  50% { transform: translateY(5px); }
-}
-@keyframes floatBadge4 {
-  0%, 100% { transform: translateY(4px); }
-  50% { transform: translateY(-4px); }
-}
-
-/* Nav Arrows (Desktop Only) */
+/* Nav Arrows (Desktop) */
 .nav-arrow-btn {
   position: absolute;
   top: 50%;
@@ -352,7 +299,6 @@ html, body {
   justify-content: center;
   cursor: pointer;
   transition: all 0.25s ease;
-  backdrop-filter: blur(10px);
 }
 
 .nav-arrow-btn svg {
@@ -366,15 +312,15 @@ html, body {
   transform: translateY(-50%) scale(1.06);
 }
 
-.prev-arrow { left: -24px; }
-.next-arrow { right: -24px; }
+.prev-arrow { left: -32px; }
+.next-arrow { right: -32px; }
 
 /* --- FOOTER & CONTROLS --- */
 .onboarding-footer {
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -466,6 +412,26 @@ html, body {
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Policy Link (Centralizado e Sem Linha Sublinhada Branca) */
+.policy-footer-link {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.policy-text {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none !important;
+  border-bottom: none !important;
+  transition: color 0.2s ease;
+}
+
+.policy-text:hover {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none !important;
 }
 
 /* --- SAMSUNG ONE UI AUTH MODAL --- */
@@ -750,27 +716,11 @@ html, body {
   height: 12px;
 }
 
-/* --- RESPONSIVE MOBILE OPTIMIZATIONS (Fiel ao App Celular) --- */
+/* --- RESPONSIVE MOBILE OPTIMIZATIONS --- */
 @media (max-width: 768px) {
   .onboarding-wrapper {
     padding: 0.85rem 1rem 1.15rem;
     justify-content: space-between;
-  }
-  .onboarding-header {
-    padding-bottom: 0;
-  }
-  .header-logo {
-    height: 28px;
-  }
-  .brand-title {
-    font-size: 0.95rem;
-  }
-  .brand-subtitle {
-    font-size: 0.62rem;
-  }
-  .btn-header-login {
-    font-size: 0.8rem;
-    padding: 0.35rem 0.85rem;
   }
   .slide-title {
     font-size: 1.45rem;
@@ -782,38 +732,12 @@ html, body {
     padding: 0 0.5rem;
   }
   .slide-text-group {
-    margin-bottom: 0.85rem;
+    margin-bottom: 1rem;
   }
-  .slide-visual-container {
-    height: 290px;
-    max-width: 320px;
+  .visual-card {
+    padding: 1.5rem 1.25rem;
+    gap: 1rem;
   }
-  .phone-mockup-wrapper {
-    width: 155px;
-    height: 275px;
-  }
-  .phone-frame {
-    border-radius: 26px;
-    padding: 5px;
-  }
-  .phone-screen {
-    border-radius: 20px;
-  }
-  .floating-badge {
-    padding: 0.35rem 0.65rem;
-    border-radius: 12px;
-  }
-  .badge-icon {
-    font-size: 0.85rem;
-  }
-  .badge-text {
-    font-size: 0.68rem;
-  }
-  .badge-top-left { top: 4%; left: -8%; }
-  .badge-top-right { top: 8%; right: -8%; }
-  .badge-bottom-left { bottom: 8%; left: -8%; }
-  .badge-bottom-right { bottom: 4%; right: -8%; }
-
   .nav-arrow-btn {
     display: none;
   }
