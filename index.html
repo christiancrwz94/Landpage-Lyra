@@ -4,99 +4,284 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/assets/logo_lyra.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Lyra — Login</title>
-    <meta name="description" content="Acesse o Lyra — O sistema inteligente de gestão odontológica." />
+    <title>Lyra — Gestão Inteligente para Clínicas Odontológicas</title>
+    <meta name="description" content="Sua clínica trabalha por você. IA, agenda, financeiro e WhatsApp em um só lugar." />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="dark-theme login-page-body">
-    <div id="app" class="login-wrapper">
-      <!-- Glow Backgrounds -->
+  <body class="dark-theme onboarding-body">
+    <div id="app" class="onboarding-wrapper">
+      <!-- Glow Radial Ambient Backgrounds -->
       <div class="glow-bg glow-primary"></div>
       <div class="glow-bg glow-secondary"></div>
 
-      <!-- Center Login Card (Samsung One UI Style) -->
-      <main class="login-main-content">
-        <div class="login-card-container oneui-card">
-          <div class="login-header text-center">
-            <img src="/src/assets/logo_lyra.svg" alt="Lyra" class="login-logo-large" />
-            <h1 class="login-brand-name">LYRA</h1>
-            <p class="login-tagline">Gestão Inteligente</p>
+      <!-- Top Header Navigation -->
+      <header class="onboarding-header">
+        <div class="header-content">
+          <div class="brand-logo-group">
+            <img src="/src/assets/logo_lyra.svg" alt="Lyra Logo" class="header-logo" />
+            <div class="brand-text">
+              <span class="brand-title">LYRA</span>
+              <span class="brand-subtitle">Gestão Inteligente</span>
+            </div>
+          </div>
+          <button id="btn-header-login" class="btn-header-login">
+            <span>Já tenho conta</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Onboarding Main Carousel Container -->
+      <main class="onboarding-main">
+        <div class="slides-container" id="slides-container">
+          <!-- Slide 1: Sua clínica trabalha por você -->
+          <div class="slide-item active" data-index="0">
+            <div class="slide-text-group">
+              <h1 class="slide-title">Sua clínica trabalha por você</h1>
+              <p class="slide-subtitle">IA, agenda, financeiro e WhatsApp em um só lugar.</p>
+            </div>
+
+            <div class="slide-visual-container">
+              <div class="floating-badge badge-top-left float-anim-1">
+                <span class="badge-icon">🤖</span>
+                <span class="badge-text">Recepção 24h</span>
+              </div>
+              <div class="floating-badge badge-top-right float-anim-2">
+                <span class="badge-icon">💬</span>
+                <span class="badge-text">WhatsApp Inteligente</span>
+              </div>
+              
+              <div class="phone-mockup-wrapper float-phone">
+                <div class="phone-frame">
+                  <img src="/app-screenshots/screen-1-agenda.png" alt="Agenda e Atendimento Lyra" class="phone-screen" />
+                </div>
+              </div>
+
+              <div class="floating-badge badge-bottom-left float-anim-3">
+                <span class="badge-icon">⭐</span>
+                <span class="badge-text">Mais Avaliações</span>
+              </div>
+              <div class="floating-badge badge-bottom-right float-anim-4">
+                <span class="badge-icon">⚡</span>
+                <span class="badge-text">Mais Tempo</span>
+              </div>
+            </div>
           </div>
 
-          <form id="login-form" class="login-form">
-            <div class="form-group">
-              <label for="login-email" class="form-label">E-mail</label>
-              <div class="input-with-icon">
-                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="20" height="16" x="2" y="4" rx="2"/>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                </svg>
-                <input type="email" id="login-email" class="form-input oneui-input" placeholder="seuemail@clinica.com" required autocomplete="email" />
+          <!-- Slide 2: WhatsApp Integrado -->
+          <div class="slide-item" data-index="1">
+            <div class="slide-text-group">
+              <h1 class="slide-title">WhatsApp Integrado à Ficha do Paciente</h1>
+              <p class="slide-subtitle">Envie orientações, prontuários, orçamentos e mensagens diretamente da ficha do paciente de forma 100% organizada.</p>
+            </div>
+
+            <div class="slide-visual-container">
+              <div class="floating-badge badge-top-left float-anim-2">
+                <span class="badge-icon">📋</span>
+                <span class="badge-text">Orientações Pós</span>
+              </div>
+              <div class="floating-badge badge-top-right float-anim-4">
+                <span class="badge-icon">💬</span>
+                <span class="badge-text">Histórico no Whats</span>
+              </div>
+              
+              <div class="phone-mockup-wrapper float-phone">
+                <div class="phone-frame">
+                  <img src="/app-screenshots/screen-2-pacientes.png" alt="Pacientes e Prontuário Lyra" class="phone-screen" />
+                </div>
+              </div>
+
+              <div class="floating-badge badge-bottom-left float-anim-1">
+                <span class="badge-icon">💰</span>
+                <span class="badge-text">Orçamento em 1 Clique</span>
+              </div>
+              <div class="floating-badge badge-bottom-right float-anim-3">
+                <span class="badge-icon">📄</span>
+                <span class="badge-text">Atestado & Receita</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Assinatura Digital -->
+          <div class="slide-item" data-index="2">
+            <div class="slide-text-group">
+              <h1 class="slide-title">Assinatura Digital & Documentos em 1 Clique</h1>
+              <p class="slide-subtitle">Atestados, anamneses, contratos e orçamentos assinados digitalmente pelo celular do paciente e sem papelada.</p>
+            </div>
+
+            <div class="slide-visual-container">
+              <div class="floating-badge badge-top-left float-anim-3">
+                <span class="badge-icon">🔒</span>
+                <span class="badge-text">Validade Jurídica</span>
+              </div>
+              <div class="floating-badge badge-top-right float-anim-1">
+                <span class="badge-icon">🌱</span>
+                <span class="badge-text">Zero Papel</span>
+              </div>
+              
+              <div class="phone-mockup-wrapper float-phone">
+                <div class="phone-frame">
+                  <img src="/app-screenshots/screen-3-financeiro.png" alt="Assinatura Digital Lyra" class="phone-screen" />
+                </div>
+              </div>
+
+              <div class="floating-badge badge-bottom-left float-anim-4">
+                <span class="badge-icon">✍️</span>
+                <span class="badge-text">Assinatura no Celular</span>
+              </div>
+              <div class="floating-badge badge-bottom-right float-anim-2">
+                <span class="badge-icon">📑</span>
+                <span class="badge-text">Termos & Contratos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Financeiro Sob Controle -->
+          <div class="slide-item" data-index="3">
+            <div class="slide-text-group">
+              <h1 class="slide-title">Financeiro Sob Controle, Sem Planilha</h1>
+              <p class="slide-subtitle">Fluxo de caixa, contas a pagar/receber e cobrança de inadimplência em 1 clique pelo WhatsApp.</p>
+            </div>
+
+            <div class="slide-visual-container">
+              <div class="floating-badge badge-top-left float-anim-4">
+                <span class="badge-icon">📊</span>
+                <span class="badge-text">Fluxo Automatizado</span>
+              </div>
+              <div class="floating-badge badge-top-right float-anim-3">
+                <span class="badge-icon">📲</span>
+                <span class="badge-text">Cobrança WhatsApp</span>
+              </div>
+              
+              <div class="phone-mockup-wrapper float-phone">
+                <div class="phone-frame">
+                  <img src="/app-screenshots/screen-4-agente-ia.png" alt="Financeiro Lyra" class="phone-screen" />
+                </div>
+              </div>
+
+              <div class="floating-badge badge-bottom-left float-anim-2">
+                <span class="badge-icon">✅</span>
+                <span class="badge-text">Contas em Dia</span>
+              </div>
+              <div class="floating-badge badge-bottom-right float-anim-1">
+                <span class="badge-icon">📈</span>
+                <span class="badge-text">Relatórios Claros</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Navigation Arrow Buttons -->
+        <button id="prev-slide-btn" class="nav-arrow-btn prev-arrow" aria-label="Slide Anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button id="next-slide-btn" class="nav-arrow-btn next-arrow" aria-label="Próximo Slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </main>
+
+      <!-- Bottom Controls & Action Section -->
+      <footer class="onboarding-footer">
+        <!-- Pagination Dots -->
+        <div class="dots-container" id="dots-container">
+          <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+          <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+          <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+          <button class="dot" data-slide="3" aria-label="Slide 4"></button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons-group">
+          <button id="btn-create-account" class="btn-primary-action">
+            <span>Criar Conta Gratuita</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <button id="btn-login-account" class="btn-secondary-action">
+            <span>Já tenho uma conta / Entrar</span>
+          </button>
+        </div>
+      </footer>
+
+      <!-- Auth Modal (Samsung One UI Style) -->
+      <div id="auth-modal" class="modal-overlay hidden">
+        <div class="modal-card-container">
+          <button id="modal-close-btn" class="modal-close-icon" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+
+          <div class="modal-header">
+            <img src="/src/assets/logo_lyra.svg" alt="Lyra Logo" class="modal-logo" />
+            <h2 id="modal-title" class="modal-title-text">Acesse sua conta</h2>
+            <p id="modal-subtitle" class="modal-subtitle-text">Entre para gerenciar sua clínica odontológica.</p>
+          </div>
+
+          <form id="auth-form" class="modal-form">
+            <div id="signup-fields" class="signup-extra-fields hidden">
+              <div class="form-group">
+                <label for="input-nome">Nome Completo</label>
+                <div class="input-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <input type="text" id="input-nome" placeholder="Dr. Carlos Silva" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="input-phone">Celular / WhatsApp</label>
+                <div class="input-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>
+                  <input type="tel" id="input-phone" placeholder="(11) 99999-9999" />
+                </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="login-password" class="form-label">Senha</label>
-              <div class="input-with-icon">
-                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                </svg>
-                <input type="password" id="login-password" class="form-input oneui-input" placeholder="••••••••" required autocomplete="current-password" />
-                <button type="button" id="toggle-password" class="password-toggle-btn oneui-clickable" aria-label="Mostrar ou ocultar senha">
-                  <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                    <circle cx="12" cy="12" r="3"/>
-                  </svg>
-                  <svg class="eye-off-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
-                    <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
-                    <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
-                    <line x1="2" x2="22" y1="2" y2="22"/>
-                  </svg>
+              <label for="input-email">E-mail</label>
+              <div class="input-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <input type="email" id="input-email" placeholder="seuemail@clinica.com" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="input-password">Senha</label>
+              <div class="input-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <input type="password" id="input-password" placeholder="••••••••" required autocomplete="current-password" />
+                <button type="button" id="btn-toggle-pass" class="pass-toggle" aria-label="Mostrar ou ocultar senha">
+                  <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <svg class="eye-closed hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
                 </button>
               </div>
             </div>
 
-            <div class="form-options-row">
-              <label class="remember-me-checkbox oneui-clickable">
-                <input type="checkbox" id="remember-me" checked />
-                <span class="custom-checkbox">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                <span class="remember-text">Manter conectado</span>
+            <div class="form-options">
+              <label class="checkbox-label">
+                <input type="checkbox" id="check-remember" checked />
+                <span class="custom-chk"></span>
+                <span>Manter conectado</span>
               </label>
-              <a href="https://app.getlyra.com.br/forgot-password" class="forgot-link oneui-clickable">Esqueceu a senha?</a>
+              <a href="https://app.getlyra.com.br/forgot-password" class="forgot-link" target="_blank">Esqueceu a senha?</a>
             </div>
 
-            <button type="submit" id="btn-submit-login" class="btn btn-primary btn-block btn-login-submit oneui-button oneui-clickable">
-              <span>Entrar no Sistema</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-arrow-icon">
-                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-              </svg>
+            <button type="submit" id="btn-submit-auth" class="btn-submit-auth">
+              <span id="submit-btn-text">Entrar no Sistema</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </button>
           </form>
 
-          <div class="login-footer-links">
-            <p>Ainda não possui uma conta?</p>
-            <a href="https://app.getlyra.com.br/?signup=true" class="btn-register-link oneui-clickable">Criar conta no Lyra</a>
+          <div class="modal-footer-toggle">
+            <span id="toggle-prompt-text">Ainda não possui uma conta?</span>
+            <button id="btn-toggle-mode" class="toggle-mode-btn">Criar conta no Lyra</button>
+          </div>
+
+          <div class="security-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Conexão criptografada e segura</span>
           </div>
         </div>
-
-        <div class="login-security-badge oneui-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-          </svg>
-          <span>Conexão criptografada e segura</span>
-        </div>
-      </main>
+      </div>
     </div>
 
     <script type="module" src="/src/main.js"></script>
