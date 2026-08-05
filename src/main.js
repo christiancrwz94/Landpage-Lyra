@@ -6,6 +6,8 @@ const dots = document.querySelectorAll('.dot');
 const prevBtn = document.getElementById('prev-slide-btn');
 const nextBtn = document.getElementById('next-slide-btn');
 
+const btnCtaText = document.getElementById('btn-cta-text');
+
 let currentSlide = 0;
 const totalSlides = slides.length;
 let autoSlideTimer = null;
@@ -34,6 +36,16 @@ function goToSlide(index) {
   });
 
   currentSlide = index;
+
+  // Atualiza o texto do botão CTA conforme o slide ativo (fiel ao app Flutter)
+  if (btnCtaText) {
+    if (currentSlide < totalSlides - 1) {
+      btnCtaText.textContent = 'Próximo';
+    } else {
+      btnCtaText.textContent = 'Criar Conta Gratuita';
+    }
+  }
+
   resetAutoSlide();
 }
 
@@ -49,10 +61,10 @@ function resetAutoSlide() {
   if (autoSlideTimer) clearInterval(autoSlideTimer);
   autoSlideTimer = setInterval(() => {
     nextSlide();
-  }, 6000);
+  }, 7000);
 }
 
-// Event Listeners for Carousel
+// Event Listeners for Carousel Arrows
 if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
@@ -69,7 +81,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') prevSlide();
 });
 
-// Touch Swipe Support
+// Touch Swipe Support para Celulares
 let touchStartX = 0;
 let touchEndX = 0;
 const slidesContainer = document.getElementById('slides-container');
@@ -141,10 +153,20 @@ function updateModalUI() {
   }
 }
 
+// Botão Ação Principal (Avança slide ou Abre Cadastro no último slide)
+if (btnCreateAccount) {
+  btnCreateAccount.addEventListener('click', () => {
+    if (currentSlide < totalSlides - 1) {
+      nextSlide();
+    } else {
+      openModal(true);
+    }
+  });
+}
+
 // Modal Listeners
 if (btnHeaderLogin) btnHeaderLogin.addEventListener('click', () => openModal(false));
 if (btnLoginAccount) btnLoginAccount.addEventListener('click', () => openModal(false));
-if (btnCreateAccount) btnCreateAccount.addEventListener('click', () => openModal(true));
 if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
 
 if (btnToggleMode) {
