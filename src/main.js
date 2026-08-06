@@ -30,22 +30,6 @@ if ('IntersectionObserver' in window) {
   revealItems.forEach((item) => item.classList.add('is-visible'));
 }
 
-const faceButtons = document.querySelectorAll('.tooth-grid button');
-const toothStatus = document.querySelector('#toothStatus');
-const statusCycle = ['Planejado', 'Aprovado', 'Concluído'];
-
-faceButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const current = Number(button.dataset.state || 0);
-    const next = (current + 1) % statusCycle.length;
-    button.dataset.state = String(next);
-    button.className = ['planned', 'approved', 'done'][next];
-    faceButtons.forEach((item) => item.classList.remove('active'));
-    button.classList.add('active');
-    if (toothStatus) toothStatus.textContent = `${button.dataset.face}: ${statusCycle[next]}`;
-  });
-});
-
 document.querySelectorAll('.billing-toggle button').forEach((button) => {
   button.addEventListener('click', () => {
     document.querySelectorAll('.billing-toggle button').forEach((item) => item.classList.remove('active'));
