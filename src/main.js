@@ -40,18 +40,67 @@ document.querySelectorAll('.billing-toggle button').forEach((button) => {
   });
 });
 
-document.querySelectorAll('.faq-item button').forEach((button) => {
-  button.addEventListener('click', () => {
-    const item = button.closest('.faq-item');
-    item?.classList.toggle('open');
-    const marker = button.querySelector('span');
-    if (marker) marker.textContent = item?.classList.contains('open') ? '-' : '+';
-  });
-});
-
 const stickyCta = document.querySelector('#stickyCta');
 
 window.addEventListener('scroll', () => {
   if (!stickyCta) return;
   stickyCta.classList.toggle('visible', window.scrollY > 560);
 });
+
+const suiteCarousel = document.querySelector('[data-suite-carousel]');
+
+if (suiteCarousel) {
+  const track = suiteCarousel.querySelector('.suite-grid');
+  const cards = Array.from(suiteCarousel.querySelectorAll('.suite-card'));
+  const prevButton = suiteCarousel.querySelector('.suite-carousel-prev');
+  const nextButton = suiteCarousel.querySelector('.suite-carousel-next');
+  const dots = suiteCarousel.querySelector('.suite-carousel-dots');
+  let scrollTicking = false;
+
+  cards.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `Ir para o card ${index + 1}`);
+    dot.addEventListener('click', () => scrollToCard(index));
+    dots?.appendChild(dot);
+  });
+
+  const dotButtons = Array.from(dots?.querySelectorAll('button') ?? []);
+
+  const getStep = () => {
+    const firstCard = cards[0];
+    if (!firstCard || !track) return 1;
+    const gap = Number.parseFloat(window.getComputedStyle(track).gap) || 0;
+    return firstCard.getBoundingClientRect().width + gap;
+  };
+
+  const getIndex = () => {
+    if (!track) return 0;
+    return Math.max(0, Math.min(cards.length - 1, Math.round(track.scrollLeft / getStep())));
+  };
+
+  function updateCarouselState() {
+    const activeIndex = getIndex();
+    dotButtons.forEach((dot, index) => dot.classList.toggle('active', index === activeIndex));
+  }
+
+  function scrollToCard(index) {
+    if (!track) return;
+    track.scrollTo({ left: getStep() * index, behavior: 'smooth' });
+  }
+
+  prevButton?.addEventListener('click', () => scrollToCard(getIndex() - 1));
+  nextButton?.addEventListener('click', () => scrollToCard(getIndex() + 1));
+
+  track?.addEventListener('scroll', () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(() => {
+      updateCarouselState();
+      scrollTicking = false;
+    });
+  });
+
+  window.addEventListener('resize', updateCarouselState);
+  updateCarouselState();
+}
