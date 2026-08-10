@@ -30,7 +30,7 @@
         </nav>
         <div class="header-actions">
           <a class="btn btn-ghost" href="https://app.getlyra.com.br/login">Entrar</a>
-          <a class="btn btn-primary" href="https://app.getlyra.com.br/signup">Testar grátis</a>
+          <a class="btn btn-primary" href="https://app.getlyra.com.br/?signup=1">Testar grátis</a>
           <button class="menu-button" id="menuButton" aria-label="Abrir menu" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
@@ -45,11 +45,11 @@
       </nav>
     </header>
 
-    <main id="top">
+    <main id="top" class="site-shell">
       <section class="hero">
         <div class="hero-product-scene" aria-hidden="true">
           <span class="scene-ground ground-main"></span>
-          <img class="scene-phone scene-phone-main mockup-hero" src="./assets/mockup-whatsapp-hero.png" alt="" />
+          <img class="scene-phone scene-phone-main mockup-hero" src="./assets/mockup-whatsapp-hero.png" alt="" decoding="async" fetchpriority="high" />
         </div>
 
         <div class="container hero-content">
@@ -180,7 +180,7 @@
             </div>
           </div>
           <div class="voice-demo mockup-stage mockup-entrance mockup-from-right">
-            <img src="./assets/mockup-evolucao-ia.png" alt="Mockup do recurso Evolução com IA no Lyra" />
+            <img src="./assets/mockup-evolucao-ia.png" alt="Mockup do recurso Evolução com IA no Lyra" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
@@ -193,7 +193,7 @@
                 <span class="eyebrow gradient-pill">Financeiro descomplicado</span>
               </div>
               <figure class="finance-showcase-figure reveal">
-                <img src="./assets/financeiro-descomplicado.png" alt="Dentista usando o financeiro do Lyra para controlar faturamento, recebimentos, despesas e relatórios" />
+                <img src="./assets/financeiro-descomplicado.png" alt="Dentista usando o financeiro do Lyra para controlar faturamento, recebimentos, despesas e relatórios" loading="lazy" decoding="async" />
               </figure>
             </div>
             <div class="finance-showcase-copy reveal">
@@ -255,7 +255,7 @@
               </div>
             </div>
             <div class="agenda-mockup-stage mockup-entrance mockup-from-right">
-              <img src="./assets/mockup-agenda.png" alt="Agenda inteligente do Lyra" />
+              <img src="./assets/mockup-agenda.png" alt="Agenda inteligente do Lyra" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -287,25 +287,41 @@
             </div>
           </div>
           <div class="phone-frame mockup-stage mockup-entrance mockup-from-left">
-            <img src="./assets/mockup-whatsapp.png" alt="Mockup de automação no WhatsApp do Lyra" />
+            <img src="./assets/mockup-whatsapp.png" alt="Mockup de automação no WhatsApp do Lyra" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
 
       <section class="section documents-section" id="prontuario">
-        <div class="container split-feature">
-          <div class="feature-copy reveal">
-            <h2>Atestados, anamnese, termos e assinatura digital em apenas um clique.</h2>
-            <div class="timeline">
+        <div class="container documents-panel">
+          <div class="documents-copy reveal">
+            <span class="eyebrow documents-eyebrow">Gestão digital, organizada e protegida</span>
+            <h2>Documentos prontos, assinados e salvos sem papelada.</h2>
+            <p>O Lyra transforma anamnese, termos, atestados e receituários em um fluxo simples para a equipe e moderno para o paciente.</p>
+            <div class="document-steps">
               <div><b>1</b><span>Paciente recebe formulários, termos ou atestado direto no celular.</span></div>
               <div><b>2</b><span>Assinatura direto no app.</span></div>
               <div><b>3</b><span>Documentos salvos no prontuário com organização e segurança.</span></div>
             </div>
           </div>
-          <div class="document-stack reveal">
-            <article><small>Anamnese</small><strong>Preenchida direto no sistema</strong><span>Sem ficha impressa na recepção.</span></article>
-            <article><small>Termo de Consentimento Livre e Esclarecido</small><strong>Assinado digitalmente</strong><span>Termos padronizados e acessíveis.</span></article>
-            <article><small>Receituário</small><strong>Gerado em segundos</strong><span>Modelo pronto com dados da clínica.</span></article>
+          <div class="document-stack document-stack-premium reveal">
+            <article>
+              <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></i>
+              <div><small>Anamnese</small><strong>Preenchida direto no sistema</strong><span>Sem ficha impressa na recepção.</span></div>
+            </article>
+            <article>
+              <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/><path d="M14 6h6v6"/></svg></i>
+              <div><small>Termo de Consentimento Livre e Esclarecido</small><strong>Assinado digitalmente</strong><span>Termos padronizados e acessíveis.</span></div>
+            </article>
+            <article>
+              <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></i>
+              <div><small>Receituário</small><strong>Gerado em segundos</strong><span>Modelo pronto com dados da clínica.</span></div>
+            </article>
+            <div class="documents-assurance">
+              <span>Sem impressão</span>
+              <span>Assinatura digital</span>
+              <span>Prontuário organizado</span>
+            </div>
           </div>
         </div>
       </section>
@@ -324,7 +340,7 @@
           </div>
           <div class="odontogram-card mockup-entrance mockup-from-left">
             <div class="inline-mockup-stage">
-              <img src="./assets/mockup-odontograma.png" alt="Tela do odontograma do Lyra" />
+              <img src="./assets/mockup-odontograma.png" alt="Tela do odontograma do Lyra" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -512,7 +528,7 @@
                   Agenda, Google Calendar e financeiro completo
                 </li>
               </ul>
-              <a class="btn btn-primary btn-large plan-cta" href="https://app.getlyra.com.br/signup">Começar gratuitamente <span>→</span></a>
+              <a class="btn btn-primary btn-large plan-cta" href="https://app.getlyra.com.br/?signup=1">Começar gratuitamente <span>→</span></a>
               <p class="plan-security">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M6 10V8a6 6 0 1 1 12 0v2" />
@@ -536,7 +552,7 @@
 
     <div class="sticky-cta" id="stickyCta">
       <span>Teste grátis por 7 dias</span>
-      <a class="btn btn-primary" href="https://app.getlyra.com.br/signup">Começar</a>
+      <a class="btn btn-primary" href="https://app.getlyra.com.br/?signup=1">Começar</a>
     </div>
 
     <div class="chat-widget" data-chat-widget>
@@ -599,7 +615,7 @@
             <img class="footer-logo-wordmark" src="./assets/logo-wordmark-white.png" alt="Lyra Odonto" />
           </a>
           <p>Gestão inteligente para cirurgiões-dentistas e clínicas odontológicas.</p>
-          <a class="btn btn-secondary footer-cta" href="https://app.getlyra.com.br/signup">Começar gratuitamente</a>
+          <a class="btn btn-secondary footer-cta" href="https://app.getlyra.com.br/?signup=1">Começar gratuitamente</a>
           <span class="footer-note">Teste grátis por 7 dias. Sem cartão de crédito.</span>
         </div>
         <div class="footer-column">
@@ -715,15 +731,34 @@
       }
 
       if (siteHeader && pricingSection) {
+        let pricingTop = 0;
+        let headerScrollTicking = false;
+
+        const updatePricingTop = () => {
+          pricingTop = pricingSection.getBoundingClientRect().top + window.scrollY;
+        };
+
         const syncHeaderVisibility = () => {
-          const pricingTop = pricingSection.getBoundingClientRect().top + window.scrollY;
           const headerOffset = siteHeader.offsetHeight + 8;
           siteHeader.classList.toggle('header-hidden', window.scrollY >= pricingTop - headerOffset);
         };
 
+        const requestHeaderSync = () => {
+          if (headerScrollTicking) return;
+          headerScrollTicking = true;
+          window.requestAnimationFrame(() => {
+            syncHeaderVisibility();
+            headerScrollTicking = false;
+          });
+        };
+
+        updatePricingTop();
         syncHeaderVisibility();
-        window.addEventListener('scroll', syncHeaderVisibility, { passive: true });
-        window.addEventListener('resize', syncHeaderVisibility);
+        window.addEventListener('scroll', requestHeaderSync, { passive: true });
+        window.addEventListener('resize', () => {
+          updatePricingTop();
+          syncHeaderVisibility();
+        });
       }
 
       const mockupItems = document.querySelectorAll('.mockup-entrance');
@@ -812,7 +847,15 @@
 
         prevButton.addEventListener('click', () => scrollToPage(getCurrentPage() - 1));
         nextButton.addEventListener('click', () => scrollToPage(getCurrentPage() + 1));
-        track.addEventListener('scroll', updateCarouselState, { passive: true });
+        let carouselScrollTicking = false;
+        track.addEventListener('scroll', () => {
+          if (carouselScrollTicking) return;
+          carouselScrollTicking = true;
+          window.requestAnimationFrame(() => {
+            updateCarouselState();
+            carouselScrollTicking = false;
+          });
+        }, { passive: true });
         window.addEventListener('resize', buildPages);
 
         buildPages();
@@ -839,10 +882,20 @@
 
       const stickyCta = document.querySelector('#stickyCta');
 
-      window.addEventListener('scroll', () => {
+      let stickyScrollTicking = false;
+      const syncStickyCta = () => {
         if (!stickyCta) return;
         stickyCta.classList.toggle('visible', window.scrollY > 560);
-      });
+      };
+
+      window.addEventListener('scroll', () => {
+        if (stickyScrollTicking) return;
+        stickyScrollTicking = true;
+        window.requestAnimationFrame(() => {
+          syncStickyCta();
+          stickyScrollTicking = false;
+        });
+      }, { passive: true });
 
       const chatWidget = document.querySelector('[data-chat-widget]');
       const chatClose = document.querySelector('[data-chat-close]');
