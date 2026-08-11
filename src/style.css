@@ -3723,17 +3723,29 @@ td:last-child {
 
   .chat-invite {
     bottom: 68px;
+    gap: 0;
   }
 
   .chat-invite span {
     min-height: 44px;
-    padding: 0 15px;
+    padding: 0 38px 0 15px;
     font-size: 14px;
   }
 
   .chat-invite-close {
-    width: 44px;
-    height: 44px;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    z-index: 2;
+    width: 22px;
+    height: 22px;
+    border-color: rgba(226, 232, 240, .95);
+    box-shadow: 0 8px 18px -12px rgba(15, 23, 42, .45);
+  }
+
+  .chat-invite-close svg {
+    width: 12px;
+    height: 12px;
   }
 
   .chat-fab {
@@ -3784,5 +3796,1283 @@ td:last-child {
   .footer-trust {
     justify-content: center;
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100%;
+    overscroll-behavior-y: auto;
+  }
+
+  body {
+    padding-top: 56px;
+  }
+
+  .container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .site-shell {
+    overflow-x: hidden;
+    overflow-y: visible;
+    contain: none;
+  }
+
+  .section {
+    padding: 58px 0;
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
+  }
+
+  .site-header {
+    background: rgba(255, 255, 255, .92);
+  }
+
+  .header-inner {
+    height: 56px;
+    gap: 12px;
+  }
+
+  .brand-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand-wordmark {
+    width: 74px;
+    transform: translate(-5px, 1px);
+  }
+
+  .menu-button {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .menu-button span {
+    width: 15px;
+  }
+
+  .mobile-menu.open {
+    gap: 10px;
+    padding: 10px 20px 16px;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .hero {
+    display: flex;
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 22px 0 0;
+    background: #fff;
+  }
+
+  .hero::before {
+    height: 110px;
+  }
+
+  .hero-content {
+    order: 1;
+    width: min(100% - 32px, 420px);
+    margin: 0 auto;
+    padding: 0 0 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero .badge {
+    max-width: 100%;
+    justify-content: center;
+    padding: 7px 11px;
+    font-size: 10px;
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  .hero h1 {
+    max-width: 360px;
+    margin: 14px auto 0;
+    font-size: clamp(31px, 9.4vw, 38px);
+    line-height: 1.04;
+  }
+
+  .hero-lead {
+    max-width: 360px;
+    margin: 14px auto 0;
+    font-size: 13.5px;
+    line-height: 1.48;
+  }
+
+  .hero-product-scene {
+    order: 2;
+    position: relative;
+    min-height: 330px;
+    overflow: hidden;
+  }
+
+  .scene-phone-main {
+    left: 50%;
+    right: auto;
+    bottom: 2px;
+    width: min(320px, 78vw);
+    transform: translateX(-50%);
+    --mockup-hero-from: translateX(calc(-50% + 24px)) scale(.992);
+    --mockup-hero-to: translateX(-50%) scale(1);
+  }
+
+  .proof {
+    padding: 22px 0;
+  }
+
+  .proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 12px;
+    min-height: auto;
+  }
+
+  .proof-item {
+    grid-template-rows: 24px auto auto;
+    min-height: 112px;
+    padding: 4px 2px;
+  }
+
+  .proof-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .proof strong {
+    max-width: 150px;
+    font-size: 14px;
+    line-height: 1.13;
+  }
+
+  .proof span {
+    max-width: 148px;
+    margin-top: 4px;
+    font-size: 10.5px;
+    line-height: 1.22;
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .section-heading h2,
+  .feature-copy h2,
+  .final-cta h2 {
+    font-size: clamp(29px, 8.3vw, 36px);
+    line-height: 1.08;
+  }
+
+  .section-heading p,
+  .feature-copy p,
+  .pricing-copy p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .eyebrow,
+  .badge {
+    padding: 7px 11px;
+    font-size: 11px;
+    line-height: 1.15;
+  }
+
+  .comparison-cards,
+  .before-after-grid,
+  .split-feature,
+  .agenda-showcase,
+  .finance-showcase-layout,
+  .documents-panel,
+  .pricing-hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-cards {
+    gap: 16px;
+  }
+
+  .comparison-card {
+    min-height: auto;
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+
+  .comparison-card-head {
+    margin-bottom: 22px;
+  }
+
+  .before-after-card.comparison-card h3 {
+    margin-top: 14px;
+    font-size: 21px;
+  }
+
+  .before-after-card.comparison-card ul {
+    gap: 13px;
+  }
+
+  .before-after-card.comparison-card li {
+    font-size: 13px;
+    line-height: 1.42;
+  }
+
+  .split-feature {
+    gap: 30px;
+  }
+
+  .split-feature:not(.reverse) > .feature-copy,
+  .split-feature.reverse > .feature-copy,
+  .agenda-copy {
+    width: 100%;
+    max-width: 420px;
+    justify-self: center;
+    transform: none;
+  }
+
+  .split-feature.reverse {
+    direction: ltr;
+  }
+
+  .feature-copy {
+    text-align: center;
+  }
+
+  .feature-copy .eyebrow {
+    margin-inline: auto;
+  }
+
+  .value-list {
+    margin-top: 22px;
+  }
+
+  .value-list div {
+    min-height: 84px;
+    padding: 15px 16px 15px 56px;
+    text-align: left;
+  }
+
+  .value-list b,
+  .feature-grid b {
+    font-size: 13.5px;
+  }
+
+  .value-list span,
+  .feature-grid span {
+    font-size: 12px;
+  }
+
+  .voice-demo,
+  .phone-frame {
+    width: min(250px, 72vw);
+  }
+
+  .phone-frame {
+    order: 2;
+  }
+
+  .dark .feature-copy {
+    order: 1;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .feature-grid article {
+    padding: 15px;
+    text-align: left;
+  }
+
+  .dark .feature-grid b {
+    white-space: normal;
+  }
+
+  .finance-showcase-section {
+    padding-top: 58px;
+  }
+
+  .finance-showcase-layout {
+    gap: 30px;
+  }
+
+  .finance-showcase-media,
+  .finance-showcase-copy {
+    order: initial;
+  }
+
+  .finance-showcase-badge {
+    margin-bottom: 14px;
+  }
+
+  .finance-showcase-figure {
+    min-height: auto;
+    aspect-ratio: 1 / 1.08;
+    border-radius: 20px;
+  }
+
+  .finance-showcase-figure img {
+    object-position: 62% center;
+    border-radius: 20px;
+  }
+
+  .finance-showcase-copy {
+    width: min(100%, 420px);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .finance-showcase-copy h2 {
+    font-size: clamp(24px, 6.6vw, 31px);
+    line-height: 1.07;
+  }
+
+  .finance-showcase-copy p {
+    max-width: 360px;
+    margin: 16px auto 0;
+    font-size: 12.5px;
+    line-height: 1.42;
+  }
+
+  .finance-mini-cards {
+    width: fit-content;
+    max-width: 100%;
+    margin: 22px auto 0;
+  }
+
+  .finance-mini-cards span {
+    width: fit-content;
+    max-width: 100%;
+    font-size: 12px;
+  }
+
+  #financeiro {
+    padding-top: 58px;
+  }
+
+  .agenda-showcase {
+    gap: 22px;
+  }
+
+  .agenda-copy {
+    text-align: center;
+  }
+
+  .agenda-copy .eyebrow {
+    margin-inline: auto;
+  }
+
+  .agenda-copy h2 {
+    font-size: clamp(24px, 6.6vw, 31px);
+    line-height: 1.07;
+  }
+
+  .agenda-copy > p,
+  .agenda-copy-detail p {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+
+  .agenda-copy-detail {
+    margin-top: 22px;
+    padding: 16px 16px 16px 18px;
+    border-left-width: 3px;
+    border-radius: 14px;
+    background: rgba(239, 246, 255, .72);
+    text-align: left;
+  }
+
+  .agenda-copy-detail h3 {
+    font-size: 18px;
+  }
+
+  .agenda-mockup-stage {
+    min-height: 390px;
+  }
+
+  .agenda-mockup-stage img {
+    width: min(230px, 62vw);
+  }
+
+  .agenda-mockup-stage::after {
+    width: 220px;
+    bottom: 26px;
+  }
+
+  .documents-section {
+    padding: 58px 0;
+  }
+
+  .documents-panel {
+    gap: 24px;
+  }
+
+  .documents-copy {
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .documents-copy h2 {
+    margin-top: 16px;
+    font-size: clamp(24px, 6.8vw, 31px);
+    line-height: 1.06;
+  }
+
+  .documents-copy p {
+    font-size: 12.5px;
+  }
+
+  .document-steps {
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .document-steps div {
+    grid-template-columns: 34px 1fr;
+    gap: 11px;
+    padding: 12px;
+    border-radius: 14px;
+    text-align: left;
+  }
+
+  .document-steps b {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+  }
+
+  .document-steps span {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .document-stack-premium {
+    gap: 11px;
+    padding: 0;
+  }
+
+  .document-stack-premium article {
+    grid-template-columns: 42px 1fr;
+    gap: 12px;
+    min-height: auto;
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .document-stack-premium i {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+  }
+
+  .documents-section .document-stack small {
+    font-size: 10.5px;
+    line-height: 1.2;
+  }
+
+  .documents-section .document-stack strong {
+    font-size: 16px;
+  }
+
+  .documents-assurance {
+    display: none;
+  }
+
+  .check-list {
+    max-width: 420px;
+    margin: 22px auto 0;
+    text-align: left;
+  }
+
+  .odontogram-card {
+    width: 100%;
+  }
+
+  .inline-mockup-stage {
+    width: min(230px, 68vw);
+  }
+
+  .platform-section {
+    padding: 58px 0;
+  }
+
+  .platform-container {
+    width: min(100% - 28px, 1400px);
+    padding: 26px 16px;
+    border-radius: 20px;
+  }
+
+  .platform-copy h2 {
+    font-size: clamp(25px, 7vw, 32px);
+  }
+
+  .platform-copy > p {
+    font-size: 12.8px;
+    line-height: 1.48;
+  }
+
+  .platform-divider {
+    margin: 22px auto 18px;
+  }
+
+  .platform-benefits {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    text-align: left;
+  }
+
+  .platform-benefits article,
+  .platform-benefits article + article {
+    min-height: auto;
+    padding: 0 0 0 48px;
+    border-left: 0;
+  }
+
+  .platform-benefits svg {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .platform-ecosystem {
+    height: 280px;
+    max-width: 340px;
+  }
+
+  .ecosystem-lines {
+    transform: scale(.74);
+    transform-origin: center;
+  }
+
+  .ecosystem-core {
+    width: 98px;
+    height: 98px;
+    border-radius: 26px;
+  }
+
+  .ecosystem-core img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .ecosystem-node {
+    min-height: 34px;
+    padding: 0 9px;
+    gap: 6px;
+    font-size: 10.5px;
+  }
+
+  .ecosystem-node svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .node-pacientes,
+  .node-financeiro {
+    right: 0;
+  }
+
+  .node-avaliacoes,
+  .node-prontuario {
+    left: 0;
+  }
+
+  .suite-card {
+    flex-basis: 86%;
+    min-height: 315px;
+    padding: 20px;
+  }
+
+  .suite-card h3 {
+    font-size: 19px;
+  }
+
+  .suite-card p {
+    font-size: 12.5px;
+  }
+
+  .suite-cta {
+    padding: 22px;
+  }
+
+  .suite-cta h3 {
+    font-size: 20px;
+  }
+
+  .suite-cta p {
+    font-size: 12.5px;
+  }
+
+  .pricing-hero-section {
+    padding: 60px 0 68px;
+  }
+
+  .pricing-hero-layout {
+    gap: 30px;
+  }
+
+  .pricing-hero-copy h2 {
+    font-size: clamp(25px, 7vw, 32px);
+  }
+
+  .pricing-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card-shell {
+    width: min(100%, 430px);
+  }
+
+  .final-cta {
+    padding: 58px 0;
+  }
+
+  .final-cta h2 {
+    max-width: 360px;
+    margin-inline: auto;
+  }
+
+  .final-cta p {
+    max-width: 330px;
+    margin-inline: auto;
+    font-size: 15px;
+  }
+
+  .sticky-cta {
+    left: 12px;
+    right: 12px;
+    bottom: 10px;
+    width: auto;
+    max-width: calc(100vw - 24px);
+    min-height: 50px;
+    padding: 8px;
+    border-radius: 18px;
+    transform: translateY(110px);
+    overflow: hidden;
+  }
+
+  .sticky-cta.visible {
+    transform: translateY(0);
+  }
+
+  .sticky-cta span {
+    min-width: 0;
+    white-space: normal;
+    font-size: 12px;
+  }
+
+  .sticky-cta .btn {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding-inline: 13px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 430px) {
+  .container {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .hero-content {
+    width: min(100% - 24px, 390px);
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 8.7vw, 36px);
+  }
+
+  .hero-lead {
+    font-size: 12.8px;
+  }
+
+  .hero-product-scene {
+    min-height: 300px;
+  }
+
+  .scene-phone-main {
+    width: min(290px, 78vw);
+  }
+
+  .proof-grid {
+    gap: 16px 10px;
+  }
+
+  .proof strong {
+    font-size: 13px;
+  }
+
+  .proof span {
+    font-size: 10px;
+  }
+
+  .chat-widget {
+    right: 9px;
+    bottom: 68px;
+  }
+
+  .chat-invite {
+    right: 58px;
+    bottom: 10px;
+    gap: 0;
+  }
+
+  .chat-invite span {
+    min-height: 34px;
+    padding: 0 29px 0 11px;
+    font-size: 11px;
+  }
+
+  .chat-invite-close {
+    top: -6px;
+    right: -6px;
+    width: 19px;
+    height: 19px;
+  }
+
+  .chat-invite-close svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .chat-fab {
+    width: 48px;
+    height: 48px;
+  }
+
+  .chat-fab svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Mobile mockup rhythm: preserve the desktop-like split composition. */
+@media (max-width: 768px) {
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(136px, 36vw);
+    align-items: center;
+    gap: 8px;
+    padding: 34px 14px 32px;
+  }
+
+  .hero-content {
+    grid-column: 1;
+    width: 100%;
+    max-width: 390px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero .badge {
+    justify-content: flex-start;
+    font-size: 9.5px;
+  }
+
+  .hero h1 {
+    max-width: 310px;
+    margin-top: 12px;
+    font-size: clamp(25px, 6.6vw, 33px);
+    line-height: 1.03;
+  }
+
+  .hero-lead {
+    max-width: 315px;
+    margin-top: 12px;
+    font-size: clamp(10.8px, 2.65vw, 12.5px);
+    line-height: 1.48;
+  }
+
+  .hero-product-scene {
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    min-height: 360px;
+    overflow: visible;
+  }
+
+  .scene-phone-main {
+    left: 50%;
+    right: auto;
+    bottom: 50%;
+    width: min(260px, 56vw);
+    max-width: none;
+    transform: translate(-50%, 50%);
+    --mockup-hero-from: translate(calc(-50% + 24px), 50%) scale(.992);
+    --mockup-hero-to: translate(-50%, 50%) scale(1);
+  }
+
+  .proof {
+    padding: 24px 0;
+  }
+
+  .proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 6px;
+    width: min(100%, 380px);
+    margin-inline: auto;
+  }
+
+  .proof-item {
+    min-height: 104px;
+  }
+
+  .proof strong {
+    max-width: 126px;
+    display: block;
+    font-size: clamp(11.5px, 2.95vw, 13px);
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .proof span {
+    max-width: 130px;
+    display: block;
+    font-size: clamp(9px, 2.25vw, 10px);
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  #ia .split-feature,
+  #whatsapp .split-feature,
+  #odontograma .split-feature,
+  .agenda-showcase {
+    display: grid;
+    align-items: center;
+    gap: 18px;
+  }
+
+  #ia .split-feature {
+    grid-template-columns: minmax(116px, .42fr) minmax(0, .58fr);
+  }
+
+  #ia .voice-demo {
+    order: 1;
+    justify-self: center;
+    width: min(190px, 42vw);
+  }
+
+  #ia .feature-copy {
+    order: 2;
+    max-width: none;
+    text-align: left;
+  }
+
+  #ia .feature-copy .eyebrow {
+    margin-inline: 0;
+  }
+
+  #ia .feature-copy h2,
+  #ia .feature-copy p {
+    max-width: 100%;
+  }
+
+  #ia .value-list div {
+    min-height: auto;
+    padding: 12px 12px 12px 46px;
+  }
+
+  #ia .value-list {
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  #ia .value-list div {
+    min-height: 74px;
+    padding: 10px 10px 10px 38px;
+    border-radius: 9px;
+  }
+
+  #ia .value-list div svg {
+    left: 12px;
+    width: 17px;
+    height: 17px;
+  }
+
+  #ia .value-list b {
+    font-size: 12.5px;
+    line-height: 1.08;
+  }
+
+  #ia .value-list span {
+    margin-top: 3px;
+    font-size: 10.8px;
+    line-height: 1.28;
+  }
+
+  #financeiro .agenda-showcase {
+    grid-template-columns: minmax(0, .58fr) minmax(118px, .42fr);
+  }
+
+  #financeiro .agenda-copy {
+    max-width: none;
+    text-align: left;
+  }
+
+  #financeiro .agenda-copy .eyebrow {
+    margin-inline: 0;
+  }
+
+  #financeiro .agenda-copy h2 {
+    font-size: clamp(24px, 6.2vw, 31px);
+  }
+
+  #financeiro .agenda-copy-detail {
+    margin-top: 16px;
+  }
+
+  #financeiro .agenda-mockup-stage {
+    min-height: 350px;
+  }
+
+  #financeiro .agenda-mockup-stage img {
+    width: min(190px, 43vw);
+  }
+
+  #whatsapp .split-feature {
+    grid-template-columns: minmax(118px, .4fr) minmax(0, .6fr);
+    direction: ltr;
+  }
+
+  #whatsapp .phone-frame {
+    order: 1;
+    justify-self: center;
+    width: min(190px, 43vw);
+  }
+
+  #whatsapp .feature-copy {
+    order: 2;
+    max-width: none;
+    text-align: left;
+  }
+
+  #whatsapp .feature-copy .eyebrow {
+    margin-inline: 0;
+  }
+
+  #whatsapp .feature-copy h2 {
+    font-size: clamp(24px, 6.2vw, 31px);
+  }
+
+  #whatsapp .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    margin-top: 14px;
+  }
+
+  #whatsapp .feature-grid article {
+    min-height: auto;
+    padding: 9px 10px;
+    border-radius: 8px;
+  }
+
+  #whatsapp .feature-grid svg {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 4px;
+  }
+
+  #whatsapp .feature-grid b {
+    font-size: 12.4px;
+    line-height: 1.12;
+  }
+
+  #whatsapp .feature-grid span {
+    margin-top: 5px;
+    font-size: 10.8px;
+    line-height: 1.3;
+  }
+
+  #odontograma .split-feature {
+    grid-template-columns: minmax(0, .58fr) minmax(118px, .42fr);
+    direction: ltr;
+  }
+
+  #odontograma .feature-copy {
+    max-width: none;
+    text-align: left;
+  }
+
+  #odontograma .feature-copy .eyebrow {
+    margin-inline: 0;
+  }
+
+  #odontograma .odontogram-card {
+    justify-self: center;
+  }
+
+  #odontograma .inline-mockup-stage {
+    width: min(190px, 43vw);
+  }
+
+  .mockup-stage::before,
+  .mockup-stage::after,
+  .inline-mockup-stage::after,
+  .agenda-mockup-stage::after {
+    opacity: .72;
+    filter: blur(12px);
+  }
+}
+
+@media (max-width: 430px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(130px, 38vw);
+    gap: 4px;
+    padding: 28px 8px 28px;
+  }
+
+  .hero-content {
+    max-width: 250px;
+  }
+
+  .hero .badge {
+    max-width: 218px;
+    padding: 6px 9px;
+    font-size: 7.4px;
+  }
+
+  .hero h1 {
+    max-width: 248px;
+    font-size: clamp(24px, 6.8vw, 29px);
+  }
+
+  .hero-lead {
+    max-width: 245px;
+    font-size: 9.8px;
+  }
+
+  .hero-product-scene {
+    min-height: 300px;
+  }
+
+  .scene-phone-main {
+    width: min(166px, 39vw);
+  }
+
+  .proof-grid {
+    width: min(100%, 360px);
+    gap: 14px 4px;
+  }
+
+  .proof-item {
+    min-height: 116px;
+  }
+
+  .proof-icon {
+    width: 19px;
+    height: 19px;
+  }
+
+  #ia .split-feature,
+  #financeiro .agenda-showcase,
+  #whatsapp .split-feature,
+  #odontograma .split-feature {
+    gap: 12px;
+  }
+
+  #ia .voice-demo,
+  #whatsapp .phone-frame,
+  #financeiro .agenda-mockup-stage img,
+  #odontograma .inline-mockup-stage {
+    width: min(158px, 38vw);
+  }
+
+  #financeiro .agenda-mockup-stage {
+    min-height: 300px;
+  }
+
+  #whatsapp .feature-grid {
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  #whatsapp .feature-grid article {
+    padding: 8px 9px;
+  }
+
+  #whatsapp .feature-grid svg {
+    width: 14px;
+    height: 14px;
+    margin-bottom: 3px;
+  }
+
+  #whatsapp .feature-grid b {
+    font-size: 11.5px;
+  }
+
+  #whatsapp .feature-grid span {
+    font-size: 9.8px;
+    line-height: 1.24;
+  }
+
+  #ia .value-list {
+    gap: 7px;
+    margin-top: 12px;
+  }
+
+  #ia .value-list div {
+    min-height: 64px;
+    padding: 8px 8px 8px 34px;
+    border-radius: 8px;
+  }
+
+  #ia .value-list div svg {
+    left: 10px;
+    width: 15px;
+    height: 15px;
+  }
+
+  #ia .value-list b {
+    font-size: 11.6px;
+  }
+
+  #ia .value-list span {
+    font-size: 9.8px;
+    line-height: 1.24;
+  }
+
+  .section-heading h2,
+  .feature-copy h2,
+  #whatsapp .feature-copy h2,
+  #financeiro .agenda-copy h2,
+  .documents-copy h2,
+  .finance-showcase-copy h2 {
+    font-size: clamp(22px, 6.2vw, 27px);
+  }
+
+  .section-heading p,
+  .feature-copy p,
+  .agenda-copy > p,
+  .agenda-copy-detail p {
+    font-size: 11.8px;
+  }
+
+  .value-list b,
+  .feature-grid b,
+  .agenda-copy-detail h3 {
+    font-size: 12.8px;
+  }
+
+  .value-list span,
+  .feature-grid span {
+    font-size: 11px;
+  }
+}
+
+/* Final mobile type pass: keep the premium hierarchy without oversized copy. */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: clamp(24px, 6.1vw, 31px);
+    line-height: 1.04;
+  }
+
+  .hero-lead {
+    font-size: clamp(10px, 2.45vw, 12px);
+    line-height: 1.46;
+  }
+
+  .section-heading h2,
+  .feature-copy h2,
+  #whatsapp .feature-copy h2,
+  #financeiro .agenda-copy h2,
+  .agenda-copy h2,
+  .documents-copy h2,
+  .finance-showcase-copy h2,
+  .platform-copy h2,
+  .pricing-hero-copy h2,
+  .final-cta h2 {
+    font-size: clamp(23px, 6.1vw, 31px);
+    line-height: 1.08;
+  }
+
+  .section-heading p,
+  .feature-copy p,
+  .agenda-copy > p,
+  .agenda-copy-detail p,
+  .documents-copy p,
+  .finance-showcase-copy p,
+  .platform-copy p,
+  .pricing-hero-copy > p,
+  .final-cta p {
+    font-size: clamp(12px, 3vw, 14px);
+    line-height: 1.5;
+  }
+
+  .eyebrow,
+  .badge {
+    font-size: clamp(8.5px, 2.15vw, 10.5px);
+  }
+
+  .value-list b,
+  .feature-grid b,
+  .agenda-copy-detail h3,
+  .documents-stack strong,
+  .finance-mini-card span,
+  .suite-card h3,
+  .pricing-benefit-grid strong {
+    font-size: clamp(12.5px, 3.2vw, 15px);
+    line-height: 1.22;
+  }
+
+  .value-list span,
+  .feature-grid span,
+  .documents-stack p,
+  .suite-card p,
+  .pricing-benefit-grid span {
+    font-size: clamp(10.8px, 2.8vw, 12.8px);
+    line-height: 1.42;
+  }
+
+  .proof strong {
+    font-size: clamp(11px, 2.9vw, 12.5px);
+  }
+
+  .proof span {
+    font-size: clamp(8.6px, 2.2vw, 9.8px);
+  }
+}
+
+@media (max-width: 430px) {
+  .hero h1 {
+    font-size: clamp(23px, 6.25vw, 28px);
+  }
+
+  .section-heading h2,
+  .feature-copy h2,
+  #whatsapp .feature-copy h2,
+  #financeiro .agenda-copy h2,
+  .agenda-copy h2,
+  .documents-copy h2,
+  .finance-showcase-copy h2,
+  .platform-copy h2,
+  .pricing-hero-copy h2,
+  .final-cta h2 {
+    font-size: clamp(22px, 6vw, 26px);
+  }
+
+  .section-heading p,
+  .feature-copy p,
+  .agenda-copy > p,
+  .agenda-copy-detail p,
+  .documents-copy p,
+  .finance-showcase-copy p,
+  .platform-copy p,
+  .pricing-hero-copy > p,
+  .final-cta p {
+    font-size: 11.4px;
   }
 }
