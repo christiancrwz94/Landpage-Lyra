@@ -3091,7 +3091,7 @@ td:last-child {
 .privacy-trust-card {
   position: relative;
   overflow: hidden;
-  padding: 32px;
+  padding: 42px;
   border: 1px solid rgba(37, 99, 235, .16);
   border-radius: 24px;
   background: rgba(255, 255, 255, .82);
@@ -3113,9 +3113,9 @@ td:last-child {
 .privacy-trust-card img {
   position: relative;
   z-index: 1;
-  width: 68px;
-  height: 68px;
-  margin-bottom: 24px;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 30px;
 }
 
 .privacy-trust-card strong {
@@ -3349,7 +3349,7 @@ td:last-child {
   }
 
   .privacy-trust-card {
-    padding: 22px;
+    padding: 30px 24px;
     border-radius: 20px;
   }
 
