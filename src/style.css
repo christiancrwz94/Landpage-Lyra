@@ -1964,8 +1964,8 @@ button { font: inherit; }
     0 18px 34px -28px rgba(0, 0, 0, .8);
 }
 
-.node-agenda:hover,
-.node-whatsapp:hover {
+.node-whatsapp:hover,
+.node-financeiro:hover {
   transform: translateX(-50%);
 }
 
@@ -1988,13 +1988,13 @@ button { font: inherit; }
   animation-delay: -.8s;
 }
 
-.node-financeiro {
+.node-avaliacoes {
   right: 0;
   bottom: 70px;
   animation-delay: -1.6s;
 }
 
-.node-agenda {
+.node-financeiro {
   left: 50%;
   bottom: 16px;
   transform: translateX(-50%);
@@ -2007,8 +2007,7 @@ button { font: inherit; }
   animation-delay: -3.2s;
 }
 
-.node-automacao,
-.node-avaliacoes {
+.node-automacao {
   top: 62px;
   left: 12px;
   animation-delay: -4s;
@@ -3986,12 +3985,11 @@ td:last-child {
   }
 
   .node-pacientes,
-  .node-financeiro {
+  .node-avaliacoes {
     right: 4px;
   }
 
   .node-automacao,
-  .node-avaliacoes,
   .node-prontuario {
     left: 4px;
   }
@@ -4786,12 +4784,11 @@ td:last-child {
   }
 
   .node-pacientes,
-  .node-financeiro {
+  .node-avaliacoes {
     right: 0;
   }
 
   .node-automacao,
-  .node-avaliacoes,
   .node-prontuario {
     left: 0;
   }
