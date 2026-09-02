@@ -868,6 +868,62 @@ button { font: inherit; }
   flex: 0 0 auto;
 }
 
+#ia {
+  padding: 54px 0 64px;
+}
+
+#ia .feature-copy h2 {
+  font-size: clamp(28px, 2.6vw, 38px);
+  line-height: 1.15;
+  margin: 10px 0 12px;
+  letter-spacing: -0.015em;
+}
+
+#ia .feature-copy p {
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+#ia .value-list {
+  gap: 10px;
+  margin-top: 18px;
+}
+
+#ia .value-list div {
+  padding: 12px 18px 12px 52px;
+  border-radius: 12px;
+  gap: 3px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, .05);
+}
+
+#ia .value-list div b {
+  font-size: 14.5px;
+  line-height: 1.25;
+}
+
+#ia .value-list div span {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #64748b;
+}
+
+#ia .value-icon {
+  width: 20px;
+  height: 20px;
+  left: 17px;
+}
+
+#ia .voice-demo {
+  width: min(250px, 100%);
+}
+
+#ia .voice-demo img {
+  max-height: 500px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
 .feature-grid {
   grid-template-columns: 1fr 1fr;
   margin-top: 28px;
