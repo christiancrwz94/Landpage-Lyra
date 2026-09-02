@@ -507,6 +507,17 @@ button { font: inherit; }
   line-height: 1.65;
 }
 
+.pain-section .section-heading {
+  max-width: 960px;
+}
+
+.pain-section .section-heading h2 {
+  font-size: clamp(28px, 2.9vw, 38px);
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
 .dark .feature-copy p { color: #cbd5e1; }
 .mint { color: var(--mint); border-color: rgba(16, 185, 129, .3); }
 
