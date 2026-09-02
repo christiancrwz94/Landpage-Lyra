@@ -8,6 +8,9 @@
   --blue: #1d4ed8;
   --blue-deep: #0f52ba;
   --cyan: #06b6d4;
+  --btn-blue-deep: #1672ec;
+  --btn-blue-light: #3ca5f6;
+  --animated-gradient: linear-gradient(90deg, #1672ec 0%, #3ca5f6 25%, #1672ec 50%, #3ca5f6 75%, #1672ec 100%);
   --mint: #10b981;
   --amber: #f59e0b;
   --rose: #f43f5e;
@@ -162,10 +165,10 @@ button { font: inherit; }
 .btn:hover { transform: translateY(-1px); }
 .btn-primary {
   color: #fff;
-  background: linear-gradient(90deg, var(--blue) 0%, var(--cyan) 25%, var(--blue) 50%, var(--cyan) 75%, var(--blue) 100%);
+  background: var(--animated-gradient);
   background-size: 200% 100%;
   background-position: 0% 50%;
-  box-shadow: 0 18px 30px -18px rgba(29, 78, 216, .9);
+  box-shadow: 0 18px 30px -18px rgba(22, 114, 236, .9);
   animation: gradient-pill-flow 32s linear infinite;
 }
 .btn-secondary { background: rgba(255, 255, 255, .86); border-color: var(--line); }
@@ -480,12 +483,12 @@ button { font: inherit; }
 }
 
 .gradient-pill {
-  border-color: rgba(14, 165, 233, .62);
-  background: linear-gradient(90deg, var(--blue) 0%, var(--cyan) 25%, var(--blue) 50%, var(--cyan) 75%, var(--blue) 100%);
+  border-color: rgba(60, 165, 246, .62);
+  background: var(--animated-gradient);
   background-size: 200% 100%;
   background-position: 0% 50%;
   color: #fff;
-  box-shadow: 0 14px 30px -18px rgba(29, 78, 216, .95);
+  box-shadow: 0 14px 30px -18px rgba(22, 114, 236, .95);
   animation: gradient-pill-flow 32s linear infinite;
 }
 
@@ -1473,12 +1476,12 @@ button { font: inherit; }
   font-size: 16px;
   font-weight: 850;
   line-height: 1.18;
-  background: linear-gradient(90deg, var(--blue) 0%, var(--cyan) 25%, var(--blue) 50%, var(--cyan) 75%, var(--blue) 100%);
+  background: var(--animated-gradient);
   background-size: 200% 100%;
   background-position: 0% 50%;
   border: 1px solid rgba(191, 219, 254, .46);
   border-radius: 999px;
-  box-shadow: 0 16px 30px -20px rgba(29, 78, 216, .9);
+  box-shadow: 0 16px 30px -20px rgba(22, 114, 236, .9);
   animation: gradient-pill-flow 32s linear infinite;
 }
 
@@ -2452,15 +2455,15 @@ td:last-child {
   border-radius: 18px;
   font-size: 16px;
   box-shadow:
-    0 24px 42px -24px rgba(29, 78, 216, .95),
-    0 0 34px rgba(45, 127, 249, .16);
+    0 24px 42px -24px rgba(22, 114, 236, .95),
+    0 0 34px rgba(60, 165, 246, .16);
 }
 
 .pricing-hero-section .plan-cta:hover {
   transform: translateY(-2px) scale(1.01);
   box-shadow:
-    0 28px 50px -24px rgba(29, 78, 216, 1),
-    0 0 42px rgba(45, 127, 249, .24);
+    0 28px 50px -24px rgba(22, 114, 236, 1),
+    0 0 42px rgba(60, 165, 246, .24);
 }
 
 .plan-security {
@@ -2827,14 +2830,14 @@ td:last-child {
   padding: 0;
   border: 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--blue) 0%, var(--cyan) 25%, var(--blue) 50%, var(--cyan) 75%, var(--blue) 100%);
+  background: var(--animated-gradient);
   background-size: 200% 100%;
   background-position: 0% 50%;
   color: #fff;
   font: inherit;
   letter-spacing: 0;
   box-shadow:
-    0 24px 44px -22px rgba(29, 78, 216, .95),
+    0 24px 44px -22px rgba(22, 114, 236, .95),
     0 10px 20px -16px rgba(15, 23, 42, .8);
   animation: gradient-pill-flow 32s linear infinite;
   cursor: pointer;
@@ -2844,12 +2847,12 @@ td:last-child {
 .chat-fab:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 28px 54px -22px rgba(29, 78, 216, .98),
+    0 28px 54px -22px rgba(22, 114, 236, .98),
     0 12px 24px -16px rgba(15, 23, 42, .85);
 }
 
 .chat-fab:focus-visible {
-  outline: 3px solid rgba(14, 165, 233, .28);
+  outline: 3px solid rgba(60, 165, 246, .28);
   outline-offset: 4px;
 }
 
