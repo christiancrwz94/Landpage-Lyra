@@ -1957,12 +1957,16 @@ button { font: inherit; }
 }
 
 .ecosystem-node:hover {
-  transform: scale(1.03);
   border-color: rgba(89, 183, 255, .5);
   background: rgba(45, 127, 249, .18);
   box-shadow:
     0 0 30px rgba(45, 127, 249, .28),
     0 18px 34px -28px rgba(0, 0, 0, .8);
+}
+
+.node-agenda:hover,
+.node-whatsapp:hover {
+  transform: translateX(-50%);
 }
 
 .ecosystem-node svg {
