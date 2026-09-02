@@ -1976,7 +1976,7 @@ button { font: inherit; }
   stroke-width: 1.9;
 }
 
-.node-agenda {
+.node-whatsapp {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
@@ -1994,7 +1994,7 @@ button { font: inherit; }
   animation-delay: -1.6s;
 }
 
-.node-whatsapp {
+.node-agenda {
   left: 50%;
   bottom: 16px;
   transform: translateX(-50%);
@@ -2007,6 +2007,7 @@ button { font: inherit; }
   animation-delay: -3.2s;
 }
 
+.node-automacao,
 .node-avaliacoes {
   top: 62px;
   left: 12px;
@@ -3989,6 +3990,7 @@ td:last-child {
     right: 4px;
   }
 
+  .node-automacao,
   .node-avaliacoes,
   .node-prontuario {
     left: 4px;
@@ -4788,6 +4790,7 @@ td:last-child {
     right: 0;
   }
 
+  .node-automacao,
   .node-avaliacoes,
   .node-prontuario {
     left: 0;
