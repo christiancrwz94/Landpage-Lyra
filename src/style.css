@@ -2915,12 +2915,13 @@ td:last-child {
   align-items: center;
   padding: 0 18px;
   white-space: nowrap;
-  border: 1px solid rgba(226, 232, 240, .92);
+  border: 1.5px solid #cbd5e1;
   border-radius: 999px;
   background: #fff;
   color: var(--ink);
   font-size: 15px;
   font-weight: 600;
+  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, .14);
 }
 
 .chat-invite-close {
@@ -2934,13 +2935,13 @@ td:last-child {
   height: 28px;
   place-items: center;
   padding: 0;
-  border: 1px solid rgba(226, 232, 240, .95);
+  border: 1.5px solid #cbd5e1;
   border-radius: 999px;
   background: #fff;
   color: var(--muted);
   box-shadow: 0 4px 12px rgba(15, 23, 42, .15);
   cursor: pointer;
-  transition: transform .15s ease, color .15s ease, background-color .15s ease;
+  transition: transform .15s ease, color .15s ease, background-color .15s ease, border-color .15s ease;
 }
 
 .chat-invite-close:hover {
@@ -4259,7 +4260,7 @@ td:last-child {
     z-index: 2;
     width: 24px;
     height: 24px;
-    border-color: rgba(226, 232, 240, .95);
+    border-color: #cbd5e1;
     box-shadow: 0 4px 10px rgba(15, 23, 42, .15);
   }
 
