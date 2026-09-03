@@ -148,7 +148,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
               </svg>
-              <span>Automação</span>
+              <span>Inteligência Artificial</span>
             </div>
           </div>
         </div>
@@ -1074,6 +1074,20 @@
         }
       } catch (error) {
         // Some browsers can block storage; the widget still works without persistence.
+      }
+
+      // Só mostra o bubble "Posso ajudar?" após o usuário rolar 300px
+      if (chatWidget && !chatWidget.classList.contains('invite-hidden')) {
+        chatWidget.classList.add('invite-hidden');
+        let inviteShown = false;
+        const showInviteOnScroll = () => {
+          if (!inviteShown && window.scrollY > 300) {
+            inviteShown = true;
+            chatWidget.classList.remove('invite-hidden');
+            window.removeEventListener('scroll', showInviteOnScroll);
+          }
+        };
+        window.addEventListener('scroll', showInviteOnScroll, { passive: true });
       }
 
       chatClose?.addEventListener('click', () => {
