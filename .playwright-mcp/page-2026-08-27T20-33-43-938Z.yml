@@ -1,0 +1,293 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - generic [ref=f2e3]:
+      - link "Lyra Odonto" [ref=f2e4] [cursor=pointer]:
+        - /url: "#top"
+        - img "Lyra Odonto" [ref=f2e5]
+      - button "Abrir menu" [ref=f2e7]
+  - main [ref=f2e11]:
+    - generic [ref=f2e14]:
+      - generic [ref=f2e15]: Novo padrão de gestão para clínicas odontológicas
+      - heading "Liberte-se da burocracia e faça sua clínica faturar mais." [level=1] [ref=f2e16]
+      - paragraph [ref=f2e17]: "O Lyra conecta IA por voz, automações no WhatsApp, agenda inteligente, prontuário digital, odontograma e financeiro para reduzir tarefas operacionais e permitir que o dentista foque no que realmente importa: seus pacientes."
+      - generic [ref=f2e18]:
+        - link "Testar Grátis por 7 Dias" [ref=f2e19] [cursor=pointer]:
+          - /url: https://app.getlyra.com.br/?signup=1
+        - link "Entrar" [ref=f2e20] [cursor=pointer]:
+          - /url: https://app.getlyra.com.br/login
+    - generic [ref=f2e24]:
+      - generic [ref=f2e25]:
+        - strong [ref=f2e29]: Fale, a IA escreve.
+        - generic [ref=f2e30]: Prontuário completo em segundos.
+      - generic [ref=f2e31]:
+        - strong [ref=f2e35]: WhatsApp Inteligente
+        - generic [ref=f2e36]: Confirma consultas, envia lembretes e atende automaticamente.
+      - generic [ref=f2e37]:
+        - strong [ref=f2e42]: Assinatura Digital
+        - generic [ref=f2e43]: Documentos e contratos assinados com validade jurídica.
+      - generic [ref=f2e44]:
+        - strong [ref=f2e50]: Sincronização em tempo real
+        - generic [ref=f2e51]: Todos os dados sempre atualizados em qualquer dispositivo.
+    - generic [ref=f2e53]:
+      - generic [ref=f2e54]:
+        - generic [ref=f2e55]: Chega de perder tempo
+        - heading "Transforme sua recepção em um motor de crescimento." [level=2] [ref=f2e56]
+        - paragraph [ref=f2e57]: O Lyra automatiza confirmações, lembretes, mensagens pós-consulta e pedidos de avaliação para reduzir faltas, fortalecer sua reputação no Google Maps e gerar mais oportunidades para a sua clínica.
+      - generic [ref=f2e58]:
+        - article [ref=f2e59]:
+          - generic [ref=f2e60]:
+            - generic [ref=f2e61]: Método tradicional
+            - heading "Mais trabalho. Menos tempo para o paciente." [level=3] [ref=f2e62]
+          - list [ref=f2e63]:
+            - listitem [ref=f2e64]: Prontuários acumulam no fim do dia.
+            - listitem [ref=f2e65]: Confirmações dependem da recepção.
+            - listitem [ref=f2e66]: Avaliações no Google são esquecidas.
+            - listitem [ref=f2e67]: Pacientes não recebem felicitações.
+            - listitem [ref=f2e68]: A clínica perde oportunidades diariamente.
+            - listitem [ref=f2e69]: Financeiro espalhado e sem controle.
+        - article [ref=f2e70]:
+          - generic [ref=f2e71]:
+            - generic [ref=f2e72]: Com Lyra
+            - heading "Mais automação. Mais tempo para cuidar." [level=3] [ref=f2e73]
+          - list [ref=f2e74]:
+            - listitem [ref=f2e75]: Evolução clínica por voz com IA.
+            - listitem [ref=f2e76]: WhatsApp confirma consultas automaticamente.
+            - listitem [ref=f2e77]: Agenda inteligente com status em tempo real.
+            - listitem [ref=f2e78]: Odontograma interativo integrado ao orçamento.
+            - listitem [ref=f2e79]: Financeiro completo em um só lugar.
+            - listitem [ref=f2e80]: Documentos com assinatura digital integrada.
+    - generic [ref=f2e82]:
+      - generic [ref=f2e83]:
+        - generic [ref=f2e84]: Menos digitação, mais atendimento
+        - heading "Evolução do paciente por voz com IA" [level=2] [ref=f2e85]
+        - paragraph [ref=f2e86]: Entre uma consulta e outra, o dentista só fala o procedimento realizado. A IA transforma a fala em evolução clínica formatada, organizada e pronta para revisão.
+        - generic [ref=f2e87]:
+          - generic [ref=f2e88]:
+            - generic [ref=f2e92]: Zero digitação entre consultas
+            - generic [ref=f2e93]: Menos tela, menos cansaço mental e menos prontuário acumulado.
+          - generic [ref=f2e94]:
+            - generic [ref=f2e98]: Foco 100% no paciente
+            - generic [ref=f2e99]: O registro clínico acontece sem roubar atenção do atendimento.
+          - generic [ref=f2e100]:
+            - generic [ref=f2e104]: Agenda mais fluida
+            - generic [ref=f2e105]: Reduz atrasos operacionais e mantém o ritmo da clínica.
+      - img "Mockup do recurso Evolução com IA no Lyra" [ref=f2e107]
+    - generic [ref=f2e110]:
+      - generic [ref=f2e111]:
+        - generic [ref=f2e112]: Financeiro descomplicado
+        - figure [ref=f2e114]:
+          - img "Dentista usando o financeiro do Lyra para controlar faturamento, recebimentos, despesas e relatórios" [ref=f2e115]
+      - generic [ref=f2e116]:
+        - heading "Controle todo o financeiro da sua clínica com rapidez e clareza." [level=2] [ref=f2e117]
+        - paragraph [ref=f2e118]: Gerencie faturamento, recebimentos, contas a receber, despesas e acompanhe relatórios completos em tempo real.
+        - generic [ref=f2e119]:
+          - generic [ref=f2e120]: Faturamento em tempo real
+          - generic [ref=f2e124]: Recebimentos organizados
+          - generic [ref=f2e128]: Despesas sob controle
+          - generic [ref=f2e132]: Relatórios inteligentes
+    - generic [ref=f2e136]:
+      - generic [ref=f2e137]:
+        - generic [ref=f2e138]: Sincronização automática
+        - heading "Sua clínica inteira, em um só lugar." [level=2] [ref=f2e139]
+        - paragraph [ref=f2e140]: Agenda, múltiplos profissionais, financeiro e Google Calendar sincronizados em tempo real.
+        - generic [ref=f2e141]:
+          - text: Agenda inteligente
+          - heading "Uma agenda que acompanha o ritmo da sua clínica." [level=3] [ref=f2e142]
+          - paragraph [ref=f2e143]: Visualize compromissos por dia, semana ou mês e sincronize tudo com o Google Calendar.
+      - img "Agenda inteligente do Lyra" [ref=f2e145]
+    - generic [ref=f2e147]:
+      - generic [ref=f2e148]:
+        - generic [ref=f2e149]: Envio automático de mensagens
+        - heading "Transforme seu WhatsApp em uma recepção inteligente" [level=2] [ref=f2e150]
+        - paragraph [ref=f2e151]: Reduza faltas, conquiste muito mais avaliações no Google Maps e mantenha sua clínica crescendo automaticamente, mesmo fora do horário de atendimento.
+        - generic [ref=f2e152]:
+          - article [ref=f2e153]:
+            - generic [ref=f2e158]: Confirmações e lembretes
+            - generic [ref=f2e159]: Mensagens automáticas para reduzir faltas e manter a agenda organizada.
+          - article [ref=f2e160]:
+            - generic [ref=f2e164]: Recepção 24h
+            - generic [ref=f2e165]: Atendimento inicial e dúvidas recorrentes sem sobrecarregar a equipe.
+          - article [ref=f2e166]:
+            - generic [ref=f2e170]: Cobrança sem constrangimento
+            - generic [ref=f2e171]: Lembretes de parcelas pendentes com linguagem profissional.
+          - article [ref=f2e172]:
+            - generic [ref=f2e176]: Mais avaliações no Google
+            - generic [ref=f2e177]: Solicite avaliações automaticamente após cada atendimento.
+      - img "Mockup de automação no WhatsApp do Lyra" [ref=f2e179]
+    - generic [ref=f2e181]:
+      - generic [ref=f2e182]:
+        - generic [ref=f2e183]: Gestão digital, organizada e protegida
+        - heading "Documentos prontos, assinados e salvos sem papelada." [level=2] [ref=f2e184]
+        - paragraph [ref=f2e185]: O Lyra transforma anamnese, termos, atestados e receituários em um fluxo simples para a equipe e moderno para o paciente.
+        - generic [ref=f2e186]:
+          - generic [ref=f2e187]:
+            - generic [ref=f2e188]: "1"
+            - generic [ref=f2e189]: Paciente recebe formulários, termos ou atestado direto no celular.
+          - generic [ref=f2e190]:
+            - generic [ref=f2e191]: "2"
+            - generic [ref=f2e192]: Assinatura direto no app.
+          - generic [ref=f2e193]:
+            - generic [ref=f2e194]: "3"
+            - generic [ref=f2e195]: Documentos salvos no prontuário com organização e segurança.
+      - generic [ref=f2e196]:
+        - article [ref=f2e197]:
+          - generic [ref=f2e202]:
+            - generic [ref=f2e203]: Anamnese
+            - strong [ref=f2e204]: Preenchida direto no sistema
+            - text: Sem ficha impressa na recepção.
+        - article [ref=f2e205]:
+          - generic [ref=f2e210]:
+            - generic [ref=f2e211]: Termo de Consentimento Livre e Esclarecido
+            - strong [ref=f2e212]: Assinado digitalmente
+            - text: Termos padronizados e acessíveis.
+        - article [ref=f2e213]:
+          - generic [ref=f2e217]:
+            - generic [ref=f2e218]: Receituário
+            - strong [ref=f2e219]: Gerado em segundos
+            - text: Modelo pronto com dados da clínica.
+    - generic [ref=f2e221]:
+      - generic [ref=f2e222]:
+        - generic [ref=f2e223]: Odontograma inteligente
+        - heading "Tratamentos, diagnósticos e orçamento visual no mesmo fluxo." [level=2] [ref=f2e224]
+        - paragraph [ref=f2e225]: Marque faces, acompanhe histórico clínico, visualize anexos e apresente planos de tratamento com clareza para aumentar aprovação.
+        - list [ref=f2e226]:
+          - listitem [ref=f2e227]: Odontograma moderno com seleção por face anatômica.
+          - listitem [ref=f2e228]: Histórico completo com evoluções de IA, fotos e exames.
+          - listitem [ref=f2e229]: Orçamentos profissionais que deixam o valor percebido mais claro.
+      - img "Tela do odontograma do Lyra" [ref=f2e232]
+    - generic [ref=f2e234]:
+      - generic [ref=f2e235]:
+        - generic [ref=f2e236]: Tudo em um só lugar
+        - heading "Tudo o que sua clínica precisa. Em um só lugar." [level=2] [ref=f2e237]: Tudo o que sua clínica precisa.Em um só lugar.
+        - paragraph [ref=f2e238]: Chega de alternar entre vários sistemas. Com o Lyra, você centraliza toda a operação da sua clínica em uma única plataforma.
+        - generic [ref=f2e240]:
+          - article [ref=f2e241]:
+            - strong [ref=f2e246]: Mais controle
+            - generic [ref=f2e247]: Tudo organizado em um só lugar.
+          - article [ref=f2e248]:
+            - strong [ref=f2e252]: Mais tempo
+            - generic [ref=f2e253]: Automação que libera você para o que importa.
+          - article [ref=f2e254]:
+            - strong [ref=f2e258]: Mais resultados
+            - generic [ref=f2e259]: Gestão inteligente para fazer sua clínica crescer.
+      - generic "Ecossistema integrado do Lyra" [ref=f2e260]:
+        - img "Lyra" [ref=f2e273]
+        - generic [ref=f2e274]: Agenda
+        - generic [ref=f2e278]: Pacientes
+        - generic [ref=f2e283]: Financeiro
+        - generic [ref=f2e288]: WhatsApp
+        - generic [ref=f2e293]: Prontuário
+        - generic [ref=f2e298]: Avaliações
+    - generic [ref=f2e306]:
+      - generic [ref=f2e307]:
+        - generic [ref=f2e308]: Gestão completa. Menos trabalho. Mais resultados.
+        - heading "A plataforma que faz sua clínica trabalhar por você." [level=2] [ref=f2e312]
+        - paragraph [ref=f2e313]: Agendamentos, WhatsApp, prontuário, financeiro, assinatura digital e IA trabalhando juntos para economizar horas da sua rotina e aumentar os resultados do seu consultório.
+        - generic [ref=f2e314]:
+          - article [ref=f2e315]:
+            - strong [ref=f2e318]: 7 dias grátis
+            - generic [ref=f2e319]: Acesso completo
+          - article [ref=f2e320]:
+            - strong [ref=f2e323]: Configuração rápida
+            - generic [ref=f2e324]: Em poucos minutos
+          - article [ref=f2e325]:
+            - strong [ref=f2e329]: Sem fidelidade
+            - generic [ref=f2e330]: Cancele quando quiser
+      - generic [ref=f2e332]:
+        - group "Alternar período" [ref=f2e333]:
+          - button "Mensal" [ref=f2e334] [cursor=pointer]
+          - button "Anual -20%" [ref=f2e335] [cursor=pointer]
+        - generic [ref=f2e336]:
+          - text: Lyra Profissional
+          - heading [level=3] [ref=f2e337]:
+            - text: Experimente
+            - emphasis [ref=f2e338]: gratuitamente
+          - paragraph [ref=f2e339]: 7 diasde acesso completo
+        - list [ref=f2e340]:
+          - listitem [ref=f2e341]: Evolução por voz com IA
+          - listitem [ref=f2e344]: WhatsApp automático e recepção 24h
+          - listitem [ref=f2e347]: Prontuário, documentos e assinatura digital
+          - listitem [ref=f2e350]: Odontograma interativo e orçamento profissional
+          - listitem [ref=f2e353]: Agenda, Google Calendar e financeiro completo
+        - link "Começar gratuitamente →" [ref=f2e356] [cursor=pointer]:
+          - /url: https://app.getlyra.com.br/?signup=1
+          - text: Começar gratuitamente
+          - generic [ref=f2e357]: →
+        - paragraph [ref=f2e358]: Sem cartão de crédito
+    - generic [ref=f2e363]:
+      - generic [ref=f2e364]: Pronto para uma clínica mais leve?
+      - heading "Menos burocracia, mais tempo para o que realmente importa." [level=2] [ref=f2e365]
+      - paragraph [ref=f2e366]: Comece o teste grátis e descubra quanto tempo sua clínica pode economizar todos os dias.
+  - generic [ref=f2e367]:
+    - generic [ref=f2e368]: Teste grátis por 7 dias
+    - link "Começar" [ref=f2e369] [cursor=pointer]:
+      - /url: https://app.getlyra.com.br/?signup=1
+  - generic [ref=f2e370]:
+    - generic:
+      - generic:
+        - generic:
+          - strong: Entre em contato conosco
+        - button
+      - generic:
+        - time: Agora mesmo
+        - generic:
+          - generic:
+            - generic: Lyra
+            - paragraph: Olá! Bem-vindo ao atendimento do Lyra. Como posso ajudar sua clínica hoje?
+      - generic:
+        - button
+        - textbox:
+          - /placeholder: Digite uma mensagem
+    - generic [ref=f2e371]:
+      - button "Fechar convite de atendimento" [ref=f2e372] [cursor=pointer]
+      - generic [ref=f2e376]: Posso ajudar?
+    - button "Abrir atendimento" [ref=f2e377] [cursor=pointer]
+  - contentinfo [ref=f2e380]:
+    - generic [ref=f2e381]:
+      - generic [ref=f2e382]:
+        - link "Lyra Odonto" [ref=f2e383] [cursor=pointer]:
+          - /url: "#top"
+          - img "Lyra Odonto" [ref=f2e384]
+        - paragraph [ref=f2e385]: Gestão inteligente para cirurgiões-dentistas e clínicas odontológicas.
+        - link "Começar gratuitamente" [ref=f2e386] [cursor=pointer]:
+          - /url: https://app.getlyra.com.br/?signup=1
+        - generic [ref=f2e387]: Teste grátis por 7 dias. Sem cartão de crédito.
+      - generic [ref=f2e388]:
+        - strong [ref=f2e389]: Produto
+        - link "Agenda Inteligente" [ref=f2e390] [cursor=pointer]:
+          - /url: "#agenda"
+        - link "IA por Voz" [ref=f2e394] [cursor=pointer]:
+          - /url: "#ia"
+        - link "WhatsApp" [ref=f2e401] [cursor=pointer]:
+          - /url: "#whatsapp"
+        - link "Odontograma" [ref=f2e405] [cursor=pointer]:
+          - /url: "#odontograma"
+        - link "Financeiro" [ref=f2e409] [cursor=pointer]:
+          - /url: "#financeiro"
+      - generic [ref=f2e413]:
+        - strong [ref=f2e414]: Empresa
+        - link "Sobre" [ref=f2e415] [cursor=pointer]:
+          - /url: "#top"
+        - link "Contato" [ref=f2e419] [cursor=pointer]:
+          - /url: https://app.getlyra.com.br/login
+        - link "Blog" [ref=f2e424] [cursor=pointer]:
+          - /url: "#top"
+        - link "Novidades" [ref=f2e428] [cursor=pointer]:
+          - /url: "#top"
+      - generic [ref=f2e435]:
+        - strong [ref=f2e436]: Segurança
+        - link "Política de Privacidade" [ref=f2e437] [cursor=pointer]:
+          - /url: ./privacidade.html
+        - link "Termos de Uso" [ref=f2e441] [cursor=pointer]:
+          - /url: ./privacidade.html#termos
+        - link "LGPD" [ref=f2e446] [cursor=pointer]:
+          - /url: ./privacidade.html#lgpd
+        - generic [ref=f2e451]: SSL Seguro
+    - generic [ref=f2e456]:
+      - generic [ref=f2e457]: © 2026 Lyra. Todos os direitos reservados.
+      - generic [ref=f2e458]:
+        - generic [ref=f2e459]: SSL Seguro
+        - generic [ref=f2e463]: •
+        - generic [ref=f2e464]: LGPD
+        - generic [ref=f2e465]: •
+        - generic [ref=f2e466]: 99,9% de disponibilidade

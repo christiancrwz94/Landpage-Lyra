@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lyra App Icon White</title>
+    <style>
+      html,
+      body {
+        width: 512px;
+        height: 512px;
+        margin: 0;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      .icon {
+        position: relative;
+        width: 512px;
+        height: 512px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 72% 18%, rgba(6, 182, 212, .18), transparent 30%),
+          radial-gradient(circle at 18% 84%, rgba(29, 78, 216, .12), transparent 36%),
+          linear-gradient(145deg, #ffffff 0%, #f8fbff 48%, #eef6ff 100%);
+      }
+
+      .icon::before {
+        content: "";
+        position: absolute;
+        inset: 34px;
+        border-radius: 112px;
+        border: 1px solid rgba(29, 78, 216, .13);
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, .96), rgba(241, 248, 255, .86)),
+          radial-gradient(circle at 50% 0%, rgba(89, 183, 255, .24), transparent 56%);
+        box-shadow:
+          0 34px 88px rgba(15, 23, 42, .14),
+          inset 0 1px 0 rgba(255, 255, 255, .95);
+      }
+
+      .icon::after {
+        content: "";
+        position: absolute;
+        width: 620px;
+        height: 180px;
+        top: -54px;
+        left: -80px;
+        transform: rotate(-18deg);
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .78), transparent);
+      }
+
+      img {
+        position: relative;
+        z-index: 2;
+        width: 276px;
+        height: 276px;
+        object-fit: contain;
+        filter:
+          drop-shadow(0 0 16px rgba(6, 182, 212, .28))
+          drop-shadow(0 22px 32px rgba(29, 78, 216, .22));
+      }
+    </style>
+  </head>
+  <body>
+    <main class="icon">
+      <img src="./lyra-logo-icon-official.png" alt="Lyra" />
+    </main>
+  </body>
+</html>

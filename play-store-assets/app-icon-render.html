@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lyra App Icon</title>
+    <style>
+      html,
+      body {
+        width: 512px;
+        height: 512px;
+        margin: 0;
+        overflow: hidden;
+        background: #0f172a;
+      }
+
+      .icon {
+        position: relative;
+        width: 512px;
+        height: 512px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 70% 18%, rgba(6, 182, 212, .42), transparent 30%),
+          radial-gradient(circle at 20% 80%, rgba(29, 78, 216, .62), transparent 35%),
+          linear-gradient(145deg, #07111f 0%, #0f172a 48%, #11284d 100%);
+      }
+
+      .icon::before {
+        content: "";
+        position: absolute;
+        inset: 34px;
+        border-radius: 112px;
+        border: 1px solid rgba(255, 255, 255, .13);
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .02)),
+          radial-gradient(circle at 50% 0%, rgba(89, 183, 255, .28), transparent 52%);
+        box-shadow:
+          0 34px 90px rgba(0, 0, 0, .36),
+          inset 0 1px 0 rgba(255, 255, 255, .18);
+      }
+
+      .icon::after {
+        content: "";
+        position: absolute;
+        width: 620px;
+        height: 180px;
+        top: -54px;
+        left: -80px;
+        transform: rotate(-18deg);
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .13), transparent);
+      }
+
+      img {
+        position: relative;
+        z-index: 2;
+        width: 268px;
+        height: 268px;
+        object-fit: contain;
+        filter:
+          drop-shadow(0 0 18px rgba(6, 182, 212, .45))
+          drop-shadow(0 24px 34px rgba(0, 0, 0, .34));
+      }
+    </style>
+  </head>
+  <body>
+    <main class="icon">
+      <img src="./lyra-logo-icon-official.png" alt="Lyra" />
+    </main>
+  </body>
+</html>
