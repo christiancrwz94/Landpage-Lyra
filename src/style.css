@@ -122,11 +122,11 @@ button { font: inherit; }
 }
 
 .brand-wordmark {
-  width: 108px;
+  width: 78px;
   height: auto;
   object-fit: contain;
   filter: brightness(0) saturate(100%);
-  transform: translate(-8px, 1px);
+  transform: translate(-6px, 1px);
 }
 
 .nav-links {
@@ -2100,7 +2100,7 @@ button { font: inherit; }
 }
 
 .node-whatsapp {
-  top: 20px;
+  top: 10px;
   left: 50%;
   animation: float-whatsapp 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
@@ -2130,8 +2130,8 @@ button { font: inherit; }
 }
 
 .node-automacao {
-  top: 62px;
-  left: 12px;
+  top: 72px;
+  left: -14px;
   animation: float-automacao 6.3s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite -5.2s;
 }
 
@@ -2201,7 +2201,7 @@ button { font: inherit; }
 
 @keyframes float-automacao {
   0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(-3px, -5px, 0); }
+  50% { transform: translate3d(-4px, 4px, 0); }
 }
 
 @keyframes light-travel {
@@ -4005,7 +4005,7 @@ td:last-child {
   }
 
   .brand-wordmark {
-    width: 86px;
+    width: 66px;
   }
 
   .hero h1 {
@@ -4138,7 +4138,15 @@ td:last-child {
     right: 4px;
   }
 
-  .node-automacao,
+  .node-whatsapp {
+    top: 10px;
+  }
+
+  .node-automacao {
+    left: -4px;
+    top: 70px;
+  }
+
   .node-prontuario {
     left: 4px;
   }
@@ -4396,7 +4404,7 @@ td:last-child {
   }
 
   .brand-wordmark {
-    width: 74px;
+    width: 58px;
     transform: translate(-5px, 1px);
   }
 
