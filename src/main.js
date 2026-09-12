@@ -1,106 +1,117 @@
-const menuButton = document.querySelector('#menuButton');
-const mobileMenu = document.querySelector('#mobileMenu');
+// Lyra Odonto - Script Principal de Alta Conversão
 
-menuButton?.addEventListener('click', () => {
-  const isOpen = mobileMenu?.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(Boolean(isOpen)));
-});
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Menu Mobile
+  const menuButton = document.querySelector('#menuButton');
+  const mobileMenu = document.querySelector('#mobileMenu');
 
-mobileMenu?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    menuButton?.setAttribute('aria-expanded', 'false');
+  menuButton?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(Boolean(isOpen)));
   });
-});
 
-const revealItems = document.querySelectorAll('.reveal');
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuButton?.setAttribute('aria-expanded', 'false');
+    });
+  });
 
-if ('IntersectionObserver' in window) {
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
+  // 2. Animações de Revelação no Scroll
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('is-visible'));
+  }
+
+  // 3. Toggle de Faturamento (Mensal / Anual)
+  const billingButtons = document.querySelectorAll('.billing-toggle button');
+  const priceConsultorio = document.querySelector('#priceConsultorio');
+  const priceClinica = document.querySelector('#priceClinica');
+  const periodConsultorio = document.querySelector('#periodConsultorio');
+  const periodClinica = document.querySelector('#periodClinica');
+  const discountBadges = document.querySelectorAll('.yearly-badge');
+
+  billingButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      billingButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const isYearly = btn.dataset.billing === 'yearly';
+
+      if (priceConsultorio) {
+        priceConsultorio.textContent = isYearly ? '89' : '109';
+      }
+      if (priceClinica) {
+        priceClinica.textContent = isYearly ? '169' : '199';
+      }
+      if (periodConsultorio) {
+        periodConsultorio.textContent = isYearly ? '/mês no plano anual' : '/mês no plano mensal';
+      }
+      if (periodClinica) {
+        periodClinica.textContent = isYearly ? '/mês no plano anual' : '/mês no plano mensal';
+      }
+
+      discountBadges.forEach((badge) => {
+        badge.style.opacity = isYearly ? '1' : '0.4';
+      });
+    });
+  });
+
+  // 4. FAQ Accordion Cirúrgico
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach((item) => {
+    const question = item.querySelector('.faq-question');
+    question?.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      faqItems.forEach((other) => other.classList.remove('active'));
+      if (!isActive) {
+        item.classList.add('active');
       }
     });
-  }, { threshold: 0.14 });
-
-  revealItems.forEach((item) => revealObserver.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add('is-visible'));
-}
-
-document.querySelectorAll('.billing-toggle button').forEach((button) => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('.billing-toggle button').forEach((item) => item.classList.remove('active'));
-    button.classList.add('active');
-    const isYearly = button.dataset.billing === 'year';
-    document.querySelector('#priceValue').textContent = isYearly ? 'Teste grátis' : 'Teste grátis';
-    document.querySelector('#pricePeriod').textContent = isYearly ? 'com desconto no anual' : 'por 7 dias';
-  });
-});
-
-const stickyCta = document.querySelector('#stickyCta');
-
-window.addEventListener('scroll', () => {
-  if (!stickyCta) return;
-  stickyCta.classList.toggle('visible', window.scrollY > 560);
-});
-
-const suiteCarousel = document.querySelector('[data-suite-carousel]');
-
-if (suiteCarousel) {
-  const track = suiteCarousel.querySelector('.suite-grid');
-  const cards = Array.from(suiteCarousel.querySelectorAll('.suite-card'));
-  const prevButton = suiteCarousel.querySelector('.suite-carousel-prev');
-  const nextButton = suiteCarousel.querySelector('.suite-carousel-next');
-  const dots = suiteCarousel.querySelector('.suite-carousel-dots');
-  let scrollTicking = false;
-
-  cards.forEach((_, index) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.setAttribute('aria-label', `Ir para o card ${index + 1}`);
-    dot.addEventListener('click', () => scrollToCard(index));
-    dots?.appendChild(dot);
   });
 
-  const dotButtons = Array.from(dots?.querySelectorAll('button') ?? []);
+  // 5. Sticky CTA no Scroll
+  const stickyCta = document.querySelector('#stickyCta');
+  const heroSection = document.querySelector('.hero-section');
 
-  const getStep = () => {
-    const firstCard = cards[0];
-    if (!firstCard || !track) return 1;
-    const gap = Number.parseFloat(window.getComputedStyle(track).gap) || 0;
-    return firstCard.getBoundingClientRect().width + gap;
-  };
+  window.addEventListener('scroll', () => {
+    if (!stickyCta) return;
+    const heroHeight = heroSection ? heroSection.offsetHeight : 600;
+    if (window.scrollY > heroHeight * 0.7) {
+      stickyCta.classList.add('visible');
+    } else {
+      stickyCta.classList.remove('visible');
+    }
+  }, { passive: true });
 
-  const getIndex = () => {
-    if (!track) return 0;
-    return Math.max(0, Math.min(cards.length - 1, Math.round(track.scrollLeft / getStep())));
-  };
-
-  function updateCarouselState() {
-    const activeIndex = getIndex();
-    dotButtons.forEach((dot, index) => dot.classList.toggle('active', index === activeIndex));
-  }
-
-  function scrollToCard(index) {
-    if (!track) return;
-    track.scrollTo({ left: getStep() * index, behavior: 'smooth' });
-  }
-
-  prevButton?.addEventListener('click', () => scrollToCard(getIndex() - 1));
-  nextButton?.addEventListener('click', () => scrollToCard(getIndex() + 1));
-
-  track?.addEventListener('scroll', () => {
-    if (scrollTicking) return;
-    scrollTicking = true;
-    window.requestAnimationFrame(() => {
-      updateCarouselState();
-      scrollTicking = false;
+  // 6. Demonstração Interativa do Modo Privacidade (Financeiro)
+  const privacyDemos = document.querySelectorAll('[data-toggle-privacy]');
+  privacyDemos.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const card = toggle.closest('.privacy-card-demo');
+      if (!card) return;
+      card.classList.toggle('is-private');
+      const isPrivate = card.classList.contains('is-private');
+      const textValues = card.querySelectorAll('.sensitive-value');
+      textValues.forEach((el) => {
+        if (isPrivate) {
+          el.dataset.original = el.textContent || '';
+          el.textContent = 'R$ •••••••';
+        } else {
+          el.textContent = el.dataset.original || 'R$ 48.950,00';
+        }
+      });
     });
   });
-
-  window.addEventListener('resize', updateCarouselState);
-  updateCarouselState();
-}
+});

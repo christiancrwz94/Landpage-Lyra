@@ -4,1168 +4,970 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="./assets/logo-icon.png" />
-    <title>Lyra Odonto | Gestão Inteligente, IA por Voz e WhatsApp para Clínicas Odontológicas</title>
-    <meta name="description" content="Software odontológico completo com IA por voz para evolução clínica, WhatsApp inteligente para reduzir faltas, odontograma integrado e prontuário digital." />
-    <meta property="og:title" content="Lyra Odonto | Gestão Inteligente, IA por Voz e WhatsApp para Clínicas Odontológicas" />
-    <meta property="og:description" content="Software odontológico completo com IA por voz para evolução clínica, WhatsApp inteligente para reduzir faltas, odontograma integrado e prontuário digital." />
+    <title>Lyra Odonto | O Software Odontológico que Trabalha por Você</title>
+    <meta name="description" content="IA por voz que preenche o odontograma sem tirar as luvas. WhatsApp automático ilimitado sem taxa por disparo. Gestão completa da clínica em um só lugar. Teste 7 dias grátis." />
+    <meta property="og:title" content="Lyra Odonto | O Software que Trabalha por Você" />
+    <meta property="og:description" content="Evolução clínica por voz, WhatsApp ilimitado sem pedágio e agenda inteligente. O padrão mais avançado de gestão odontológica do Brasil." />
     <meta property="og:image" content="./assets/logo-full.png" />
-    <link rel="preload" as="image" href="./assets/logo-icon.png" />
-    <link rel="preload" as="image" href="./assets/logo-wordmark-white.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <header class="site-header">
+
+    <!-- ═══════════════════════════════════════════════════════
+         HEADER FIXO
+    ══════════════════════════════════════════════════════════ -->
+    <header class="site-header" id="siteHeader">
       <div class="container header-inner">
         <a class="brand" href="#top" aria-label="Lyra Odonto">
-          <img class="brand-icon" src="./assets/logo-icon.png" alt="" />
+          <img class="brand-icon" src="./assets/logo-icon.png" alt="Lyra" />
           <img class="brand-wordmark" src="./assets/logo-wordmark-white.png" alt="Lyra Odonto" />
         </a>
+
         <nav class="nav-links" aria-label="Navegação principal">
-          <a href="#ia">IA por voz</a>
-          <a href="#whatsapp">WhatsApp</a>
+          <a href="#ia">IA por Voz</a>
+          <a href="#whatsapp">WhatsApp Ilimitado</a>
           <a href="#agenda">Agenda</a>
           <a href="#financeiro">Financeiro</a>
-          <a href="#prontuario">Prontuário</a>
-          <a href="#odontograma">Odontograma</a>
-          <a href="#precos">Planos</a>
-          <a href="#faq">FAQ</a>
+          <a href="#comparativo">Comparativo</a>
+          <a href="#planos">Planos</a>
+          <a href="#faq">Dúvidas</a>
         </nav>
+
         <div class="header-actions">
           <a class="btn btn-ghost" href="https://app.getlyra.com.br/?login=1">Entrar</a>
           <a class="btn btn-primary" href="https://app.getlyra.com.br/?signup=1">Testar grátis</a>
-          <button class="menu-button" id="menuButton" aria-label="Abrir menu" aria-expanded="false">
+          <button class="menu-button" id="menuBtn" aria-label="Abrir menu">
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
-      <nav class="mobile-menu" id="mobileMenu" aria-label="Navegação mobile">
-        <a href="#ia">IA por voz</a>
-        <a href="#whatsapp">WhatsApp</a>
+
+      <nav class="mobile-menu" id="mobileMenu">
+        <a href="#ia">IA por Voz</a>
+        <a href="#whatsapp">WhatsApp Ilimitado</a>
         <a href="#agenda">Agenda</a>
         <a href="#financeiro">Financeiro</a>
-        <a href="#prontuario">Prontuário</a>
-        <a href="#odontograma">Odontograma</a>
-        <a href="#precos">Planos</a>
-        <a href="#faq">FAQ</a>
+        <a href="#comparativo">Comparativo</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="https://app.getlyra.com.br/?signup=1" style="color:var(--green-dark);font-weight:800;">Criar conta grátis →</a>
       </nav>
     </header>
 
-    <main id="top" class="site-shell">
-      <section class="platform-section hero-platform">
-        <div class="platform-container">
-          <div class="platform-copy">
-            <span class="platform-badge">Novo padrão de gestão para clínicas odontológicas</span>
-            <h1>Liberte-se da burocracia do consultório e<br><span>faça sua clínica faturar mais.</span></h1>
-            <p>O Lyra conecta IA por voz para evolução clínica, automações no WhatsApp, agenda inteligente, prontuário digital, odontograma e financeiro para que o dentista foque no que realmente importa: seus pacientes.</p>
-            <div class="hero-actions" style="margin-top: 26px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
-              <a class="btn btn-primary btn-large" href="https://app.getlyra.com.br/?signup=1">Começar teste grátis de 7 dias</a>
-              <span style="font-size: 13px; color: rgba(255, 255, 255, 0.72); font-weight: 500;">Sem cartão de crédito • Configuração rápida em minutos</span>
-            </div>
-            <div class="platform-divider"></div>
-            <div class="platform-benefits">
-              <article>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m12 2 9 5-9 5-9-5Z" />
-                  <path d="m3 12 9 5 9-5" />
-                  <path d="m3 17 9 5 9-5" />
-                </svg>
-                <strong>Mais controle</strong>
-                <span>Tudo organizado em um só lugar.</span>
-              </article>
-              <article>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 6v6l4 2" />
-                  <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" />
-                </svg>
-                <strong>Mais tempo</strong>
-                <span>Automação que libera você para o que importa.</span>
-              </article>
-              <article>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M3 17 9 11l4 4 8-8" />
-                  <path d="M14 7h7v7" />
-                </svg>
-                <strong>Mais resultados</strong>
-                <span>Gestão inteligente para fazer sua clínica crescer.</span>
-              </article>
-            </div>
-          </div>
-          <div class="platform-ecosystem" aria-label="Ecossistema integrado do Lyra Odonto">
-            <svg class="ecosystem-lines" viewBox="0 0 460 360" aria-hidden="true">
-              <path d="M230 180 L230 44" />
-              <path d="M230 180 L360 86" />
-              <path d="M230 180 L370 252" />
-              <path d="M230 180 L230 316" />
-              <path d="M230 180 L92 252" />
-              <path d="M230 180 L92 86" />
-            </svg>
-            <span class="light-orb orb-1"></span>
-            <span class="light-orb orb-2"></span>
-            <span class="light-orb orb-3"></span>
-            <span class="light-orb orb-4"></span>
-            <span class="light-orb orb-5"></span>
-            <span class="light-orb orb-6"></span>
-            <div class="ecosystem-core">
-              <img src="./assets/logo-icon.png" alt="Lyra Odonto" />
-            </div>
-            <div class="ecosystem-node node-whatsapp">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.101-.475-.15-.675.15-.199.3-.774.978-.949 1.179-.175.2-.35.225-.65.075-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.675-2.084-.175-.3-.019-.462.132-.612.136-.135.301-.35.451-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.63-.925-2.23-.243-.585-.49-.506-.675-.515-.174-.01-.374-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.026-1.05 2.503s1.075 2.903 1.225 3.104c.15.2 2.115 3.23 5.124 4.53 2.502 1.082 3.037.867 3.587.817.55-.05 1.78-.726 2.03-1.427.25-.7.25-1.301.175-1.427-.075-.125-.275-.2-.575-.35z" />
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.408A9.954 9.954 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167a8.134 8.134 0 0 1-4.294-1.218l-.308-.183-3.19.902.9-3.109-.2-.319A8.136 8.136 0 1 1 12 20.167z" />
-              </svg>
-              <span>WhatsApp</span>
-            </div>
-            <div class="ecosystem-node node-pacientes">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M19 21a7 7 0 0 0-14 0" />
-                <path d="M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
-              </svg>
-              <span>Pacientes</span>
-            </div>
-            <div class="ecosystem-node node-avaliacoes">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 5.5C10 3.6 6.7 3.3 5.1 5.2c-1.8 2.1-.8 5.6.2 8.7.8 2.6 1.3 5.1 3 5.1 1.4 0 1.3-3.7 3.7-3.7s2.3 3.7 3.7 3.7c1.7 0 2.2-2.5 3-5.1 1-3.1 2-6.6.2-8.7C17.3 3.3 14 3.6 12 5.5Z" />
-              </svg>
-              <span>Odontograma</span>
-            </div>
-            <div class="ecosystem-node node-financeiro">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 17 9 11l4 4 8-8" />
-                <path d="M14 7h7v7" />
-                <path d="M3 21h18" />
-              </svg>
-              <span>Financeiro</span>
-            </div>
-            <div class="ecosystem-node node-prontuario">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                <line x1="12" y1="19" x2="12" y2="22" />
-              </svg>
-              <span>Prontuário</span>
-            </div>
-            <div class="ecosystem-node node-automacao">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8 2v4" />
-                <path d="M16 2v4" />
-                <path d="M4 9h16" />
-                <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
-              </svg>
-              <span>Agenda</span>
-            </div>
-          </div>
-        </div>
-      </section>
+    <main id="top">
 
-      <section class="section pain-section">
+      <!-- ═══════════════════════════════════════════════════════
+           1. HERO
+      ══════════════════════════════════════════════════════════ -->
+      <section class="hero">
         <div class="container">
-          <div class="section-heading reveal">
-            <span class="eyebrow gradient-pill">Fim do trabalho manual e da cadeira ociosa</span>
-            <h2>O Lyra automatiza confirmações, lembretes e rotinas clínicas para reduzir faltas, fortalecer sua reputação e fazer seu consultório render mais.</h2>
-          </div>
-          <div class="before-after-grid comparison-cards">
-            <article class="before-after-card comparison-card comparison-card-muted reveal">
-              <div class="comparison-card-head">
-                <span class="comparison-kicker">Método tradicional</span>
-                <h3>Mais burocracia. Menos tempo para o paciente.</h3>
-              </div>
-              <ul>
-                <li>Cadeira ociosa por faltas de última hora.</li>
-                <li>Prontuários e evoluções acumulam no fim do dia.</li>
-                <li>Confirmações manuais que sobrecarregam a recepção.</li>
-                <li>Avaliações no Google Maps esquecidas.</li>
-                <li>Financeiro espalhado e sem controle de tratamentos.</li>
-              </ul>
-            </article>
-            <article class="before-after-card comparison-card comparison-card-highlight reveal">
-              <div class="comparison-card-head">
-                <span class="comparison-kicker">Com Lyra</span>
-                <h3>Mais automação. Foco total no paciente.</h3>
-              </div>
-              <ul>
-                <li>WhatsApp confirma consultas e reduz faltas no automático.</li>
-                <li>Evolução clínica por voz entre atendimentos com IA.</li>
-                <li>Odontograma integrado ao orçamento em tempo real.</li>
-                <li>Mais avaliações 5 estrelas no Google Maps.</li>
-                <li>Prontuário digital seguro e financeiro descomplicado.</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
 
-      <section class="proof">
-        <div class="container proof-grid">
-          <div class="proof-item">
-            <div class="proof-icon-wrap">
-              <svg class="proof-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z" />
-                <path d="M19 11a7 7 0 0 1-14 0" />
-                <path d="M12 18v3" />
-              </svg>
-            </div>
-            <strong>Fale, a IA escreve</strong>
-            <span>Prontuário e evolução clínica completos em segundos.</span>
-          </div>
-          <div class="proof-item">
-            <div class="proof-icon-wrap proof-icon-whatsapp-wrap">
-              <svg class="proof-icon proof-icon-whatsapp" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.101-.475-.15-.675.15-.199.3-.774.978-.949 1.179-.175.2-.35.225-.65.075-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.675-2.084-.175-.3-.019-.462.132-.612.136-.135.301-.35.451-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.63-.925-2.23-.243-.585-.49-.506-.675-.515-.174-.01-.374-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.026-1.05 2.503s1.075 2.903 1.225 3.104c.15.2 2.115 3.23 5.124 4.53 2.502 1.082 3.037.867 3.587.817.55-.05 1.78-.726 2.03-1.427.25-.7.25-1.301.175-1.427-.075-.125-.275-.2-.575-.35z" />
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.408A9.954 9.954 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167a8.134 8.134 0 0 1-4.294-1.218l-.308-.183-3.19.902.9-3.109-.2-.319A8.136 8.136 0 1 1 12 20.167z" />
-              </svg>
-            </div>
-            <strong>WhatsApp Inteligente</strong>
-            <span>Confirma consultas, envia lembretes e atende 24h.</span>
-          </div>
-          <div class="proof-item">
-            <div class="proof-icon-wrap">
-              <svg class="proof-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M14 3H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
-                <path d="M14 3v5h5" />
-                <path d="m9 15 2 2 4-5" />
-              </svg>
-            </div>
-            <strong>Assinatura Digital</strong>
-            <span>Anamnese e termos (TCLE) assinados direto no celular.</span>
-          </div>
-          <div class="proof-item">
-            <div class="proof-icon-wrap">
-              <svg class="proof-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M20 11a8 8 0 0 0-14.74-4.28L3 9" />
-                <path d="M3 4v5h5" />
-                <path d="M4 13a8 8 0 0 0 14.74 4.28L21 15" />
-                <path d="M16 15h5v5" />
-              </svg>
-            </div>
-            <strong>Sincronização em tempo real</strong>
-            <span>Seus dados clínicos e agenda em qualquer dispositivo.</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section spotlight" id="ia">
-        <div class="container split-feature">
-          <div class="feature-copy reveal">
-            <span class="eyebrow gradient-pill">Evolução clínica por voz</span>
-            <h2>Evolução do paciente por voz com IA</h2>
-            <p>Entre uma consulta e outra, o dentista só fala o procedimento realizado. A IA transforma a fala em evolução clínica formatada, organizada e pronta no prontuário.</p>
-            <div class="value-list">
-              <div>
-                <svg class="value-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z" />
-                  <path d="M19 11a7 7 0 0 1-14 0" />
-                  <path d="M12 18v3" />
-                </svg>
-                <b>Zero digitação entre consultas</b>
-                <span>Menos tela, menos cansaço mental e menos prontuário acumulado.</span>
-              </div>
-              <div>
-                <svg class="value-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 13c0 5-3.5 8-8 8s-8-3-8-8c0-4.5 3.5-9 8-9s8 4.5 8 9Z" />
-                  <path d="M9 12h.01" />
-                  <path d="M15 12h.01" />
-                  <path d="M9.5 16c1.4 1 3.6 1 5 0" />
-                </svg>
-                <b>Foco 100% no paciente</b>
-                <span>O registro clínico acontece sem roubar atenção do atendimento.</span>
-              </div>
-              <div>
-                <svg class="value-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8 2v4" />
-                  <path d="M16 2v4" />
-                  <path d="M4 9h16" />
-                  <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
-                  <path d="m9 15 2 2 4-5" />
-                </svg>
-                <b>Agenda mais pontual e fluida</b>
-                <span>Reduz atrasos operacionais e mantém o ritmo do consultório.</span>
-              </div>
-            </div>
-          </div>
-          <div class="voice-demo mockup-stage mockup-entrance mockup-from-right">
-            <img src="./assets/mockup-evolucao-ia.png" alt="Mockup do recurso Evolução com IA no Lyra" loading="lazy" decoding="async" />
-          </div>
-        </div>
-      </section>
-
-      <section class="section finance-showcase-section" id="financeiro">
-        <div class="container">
-          <div class="finance-showcase-layout">
-            <div class="finance-showcase-media">
-              <div class="finance-showcase-badge reveal">
-                <span class="eyebrow gradient-pill">Financeiro descomplicado</span>
-              </div>
-              <figure class="finance-showcase-figure reveal">
-                <img src="./assets/financeiro-descomplicado.png" alt="Dentista usando o financeiro do Lyra para controlar faturamento, recebimentos, despesas e relatórios" loading="lazy" decoding="async" />
-              </figure>
-            </div>
-            <div class="finance-showcase-copy reveal">
-              <h2>Controle todo o financeiro da sua clínica com rapidez e clareza.</h2>
-              <p>Gerencie faturamento, recebimentos, contas a receber, despesas e acompanhe relatórios completos em tempo real.</p>
-              <div class="finance-mini-cards">
-                <span>
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 19V5" />
-                    <path d="M4 19h16" />
-                    <path d="m7 15 3-3 3 2 5-7" />
-                    <path d="M17 7h2v2" />
-                  </svg>
-                  Faturamento em tempo real
-                </span>
-                <span>
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 7h16v10H4z" />
-                    <path d="M4 10h16" />
-                    <path d="m15 15 1.5 1.5L20 13" />
-                  </svg>
-                  Recebimentos organizados
-                </span>
-                <span>
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 18h16" />
-                    <path d="m7 9 4 4 3-3 4 4" />
-                    <path d="M18 10v4h-4" />
-                  </svg>
-                  Despesas sob controle
-                </span>
-                <span>
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 19V5" />
-                    <path d="M8 17V9" />
-                    <path d="M12 17V7" />
-                    <path d="M16 17v-5" />
-                    <path d="M20 19H4" />
-                  </svg>
-                  Relatórios inteligentes
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section agenda-section" id="agenda">
-        <div class="container">
-          <div class="agenda-showcase">
-            <div class="agenda-copy reveal">
-              <span class="eyebrow gradient-pill">Sincronização automática</span>
-              <h2>Agenda inteligente para múltiplos dentistas e consultórios.</h2>
-              <p>Controle completo de horários, status dinâmico em tempo real e sincronização automática com o Google Calendar.</p>
-              <div class="agenda-copy-detail">
-                <small>Agenda inteligente</small>
-                <h3>Uma agenda que acompanha o ritmo da sua clínica.</h3>
-                <p>Visualize compromissos por dia, semana ou mês e sincronize tudo com o Google Calendar.</p>
-              </div>
-            </div>
-            <div class="agenda-mockup-stage mockup-entrance mockup-from-right">
-              <img src="./assets/mockup-agenda.png" alt="Agenda inteligente do Lyra" loading="lazy" decoding="async" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section dark" id="whatsapp">
-        <div class="container split-feature reverse">
-          <div class="feature-copy reveal">
-            <span class="eyebrow whatsapp-pill">Comunicação e captação ativa</span>
-            <h2>Transforme seu WhatsApp em uma recepção inteligente 24 horas</h2>
-            <p>Reduza faltas, aumente suas avaliações no Google Maps e garanta que nenhum paciente fique sem resposta — mesmo à noite ou aos finais de semana.</p>
-            <div class="feature-grid">
-              <article>
-                <i class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></i>
-                <b>Confirmações e lembretes automáticos</b><span>Notificações inteligentes que garantem presença e liberam o tempo da sua equipe.</span>
-              </article>
-              <article>
-                <i class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg></i>
-                <b>Recepção e triagem 24h</b><span>Responda dúvidas frequentes e direcione agendamentos mesmo fora do expediente.</span>
-              </article>
-              <article>
-                <i class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><path d="M2 11h20"/><path d="M7 15h4"/></svg></i>
-                <b>Cobrança profissional e amigável</b><span>Lembretes elegantes de pendências e parcelas, sem atrito ou constrangimento.</span>
-              </article>
-              <article>
-                <i class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1-4.4-4.3 6.1-.9z"/></svg></i>
-                <b>Reputação no Google Maps</b><span>Disparo automático de pedidos de avaliação pós-atendimento para atrair novos pacientes organicamente.</span>
-              </article>
-            </div>
-          </div>
-          <div class="phone-frame mockup-stage mockup-entrance mockup-from-left">
-            <img src="./assets/mockup-whatsapp.png" alt="Mockup de automação no WhatsApp do Lyra" loading="lazy" decoding="async" />
-          </div>
-        </div>
-      </section>
-
-      <section class="section documents-section" id="prontuario">
-        <div class="container documents-panel">
-          <div class="documents-copy reveal">
-            <span class="eyebrow documents-eyebrow">Gestão digital sem papelada</span>
-            <h2>Prontuário digital, anamnese e termos assinados sem papelada</h2>
-            <p>O Lyra transforma anamnese, termos, atestados e receituários em um fluxo simples para a equipe e moderno para o paciente.</p>
-            <div class="document-steps">
-              <div><b>1</b><span>Paciente recebe formulários, termos ou atestado direto no celular.</span></div>
-              <div><b>2</b><span>Assinatura rápida e prática direto na tela do aparelho.</span></div>
-              <div><b>3</b><span>Documentos salvos no prontuário com organização e segurança.</span></div>
-            </div>
-          </div>
-          <div class="document-stack document-stack-premium reveal">
-            <article>
-              <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></i>
-              <div><small>Anamnese Digital</small><strong>Preenchida pelo paciente no celular</strong><span>Antes mesmo de entrar no consultório.</span></div>
-            </article>
-            <article>
-              <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/><path d="M14 6h6v6"/></svg></i>
-              <div><small>TCLE e Termos de Consentimento</small><strong>Assinados digitalmente</strong><span>Com validade jurídica e segurança para a clínica.</span></div>
-            </article>
-            <article>
-              <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></i>
-              <div><small>Receituários e Atestados</small><strong>Gerados em segundos</strong><span>Padronizados com os dados da clínica e CRO.</span></div>
-            </article>
-            <div class="documents-assurance">
-              <span>Sem impressão</span>
-              <span>Assinatura digital</span>
-              <span>Prontuário organizado</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section soft" id="odontograma">
-        <div class="container split-feature reverse">
-          <div class="feature-copy reveal">
-            <span class="eyebrow gradient-pill">Odontograma Integrado</span>
-            <h2>Odontograma interativo e orçamentos visuais no mesmo fluxo</h2>
-            <p>Marque faces, planeje tratamentos e apresente planos claros para elevar o valor percebido e a aprovação de orçamentos.</p>
-            <ul class="check-list">
-              <li><span><strong>Planejamento visual em segundos:</strong> Marque dentes, faces e procedimentos com agilidade clínica.</span></li>
-              <li><span><strong>Orçamento conectado em tempo real:</strong> Procedimentos planejados já calculam valores e formas de pagamento.</span></li>
-              <li><span><strong>Maior aprovação de tratamentos:</strong> O paciente visualiza claramente o plano e aprova com muito mais segurança.</span></li>
-            </ul>
-          </div>
-          <div class="odontogram-card mockup-entrance mockup-from-left">
-            <div class="inline-mockup-stage">
-              <img src="./assets/mockup-odontograma.png" alt="Tela do odontograma do Lyra" loading="lazy" decoding="async" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <section class="section testimonials-section" id="depoimentos">
-        <div class="container">
-          <div class="section-heading reveal">
-            <span class="eyebrow gradient-pill">Aprovado por dentistas</span>
-            <h2>Quem usa o Lyra, recomenda todos os dias.</h2>
-            <p>Veja como cirurgiões-dentistas e gestores estão transformando a produtividade e o faturamento de suas clínicas.</p>
-          </div>
-          <div class="testimonials-grid reveal">
-            <article class="testimonial-card">
-              <div class="testimonial-stars" aria-label="5 estrelas">
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-              </div>
-              <p>"A evolução por voz mudou nossa rotina. Antes eu levava 40 minutos preenchendo prontuários no fim do dia. Agora finalizo tudo em 15 segundos entre uma consulta e outra."</p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">CN</div>
-                <div class="testimonial-meta">
-                  <strong>Dra. Camila Nogueira</strong>
-                  <span>Clínica OdontoPrime • São Paulo, SP</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-stars" aria-label="5 estrelas">
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-              </div>
-              <p>"O envio de confirmações e lembretes automáticos pelo WhatsApp reduziu as faltas de pacientes na clínica em mais de 35% logo no primeiro mês de uso."</p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">RM</div>
-                <div class="testimonial-meta">
-                  <strong>Dr. Rodrigo Meirelles</strong>
-                  <span>Implantodontista • Rio de Janeiro, RJ</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-stars" aria-label="5 estrelas">
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1Z"/></svg>
-              </div>
-              <p>"O odontograma visual integrado ao orçamento aumentou muito a aprovação de tratamentos. Os pacientes entendem o que precisa ser feito com total clareza."</p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">JV</div>
-                <div class="testimonial-meta">
-                  <strong>Dra. Juliana Vasconcelos</strong>
-                  <span>Ortodontia & Estética • Belo Horizonte, MG</span>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="proof-metrics-strip reveal">
-            <div class="proof-metric-item">
-              <strong>-35%</strong>
-              <span>Faltas com WhatsApp automático</span>
-            </div>
-            <div class="proof-metric-item">
-              <strong>40 min</strong>
-              <span>Economizados por dia em prontuários</span>
-            </div>
-            <div class="proof-metric-item">
-              <strong>4.9 ★★★★★</strong>
-              <span>Avaliação média dos profissionais</span>
-            </div>
-            <div class="proof-metric-item">
-              <strong>100%</strong>
-              <span>Nuvem em conformidade com LGPD</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="pricing-hero-section" id="precos">
-        <div class="pricing-particle particle-one"></div>
-        <div class="pricing-particle particle-two"></div>
-        <div class="pricing-particle particle-three"></div>
-        <div class="container pricing-hero-layout">
-          <div class="pricing-hero-copy reveal">
-            <span class="pricing-eyebrow">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m12 3 1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7Z" />
-                <path d="m19 15 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8Z" />
-              </svg>
-              Gestão completa. Menos trabalho. Mais resultados.
-            </span>
-            <h2>A plataforma que faz sua clínica trabalhar <span>por você.</span></h2>
-            <p>Agendamentos, WhatsApp, prontuário, financeiro, assinatura digital e IA trabalhando juntos para economizar horas da sua rotina e aumentar os resultados do seu consultório.</p>
-
-            <div class="pricing-benefit-grid">
-              <article>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8 2v4" />
-                  <path d="M16 2v4" />
-                  <path d="M4 9h16" />
-                  <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
-                </svg>
-                <strong>7 dias grátis</strong>
-                <span>Acesso completo</span>
-              </article>
-              <article>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M13 2 4 14h7l-1 8 9-12h-7Z" />
-                </svg>
-                <strong>Configuração rápida</strong>
-                <span>Em poucos minutos</span>
-              </article>
-              <article>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
-                  <path d="m9 12 2 2 4-5" />
-                </svg>
-                <strong>Sem fidelidade</strong>
-                <span>Cancele quando quiser</span>
-              </article>
+          <div class="hero-copy reveal">
+            <div class="badge">
+              <span class="badge-dot"></span>
+              A nova era da gestão odontológica no Brasil
             </div>
 
-          </div>
+            <h1 class="hero-title">
+              Você se formou para<br>
+              <span class="accent">transformar sorrisos,</span><br>
+              não para passar a noite digitando.
+            </h1>
 
-          <div class="pricing-card-shell reveal">
-            <div class="pricing-card premium-plan-card">
-              <div class="billing-toggle" role="group" aria-label="Alternar período">
-                <button class="active" data-billing="month">Mensal</button>
-                <button data-billing="year">Anual <span>-20%</span></button>
-              </div>
-              <div class="plan-heading">
-                <span>Lyra Odonto Profissional</span>
-                <h3>Experimente <em>gratuitamente</em></h3>
-                <p class="plan-price-line">
-                  <span id="priceValue">7 dias grátis</span>
-                  <small id="pricePeriod">depois R$ 149/mês</small>
-                </p>
-                <span class="plan-savings-pill" id="priceSavings" style="display: none;">Economize 20% no plano anual</span>
-              </div>
-              <ul class="plan-checklist">
-                <li>
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11-5-5" /></svg>
-                  Evolução por voz com IA
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11-5-5" /></svg>
-                  WhatsApp automático e recepção 24h
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11-5-5" /></svg>
-                  Prontuário digital, documentos e assinatura no celular
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11-5-5" /></svg>
-                  Odontograma interativo e orçamentos visuais
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11-5-5" /></svg>
-                  Agenda inteligente com Google Calendar e financeiro completo
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11-5-5" /></svg>
-                  Disparo automático para avaliações no Google Maps
-                </li>
-              </ul>
-              <a class="btn btn-primary btn-large plan-cta" href="https://app.getlyra.com.br/?signup=1">Começar gratuitamente <span>→</span></a>
-              <p class="plan-security">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M6 10V8a6 6 0 1 1 12 0v2" />
-                  <path d="M5 10h14v10H5Z" />
-                </svg>
+            <p class="hero-sub">
+              O Lyra une IA por voz para preencher o odontograma sem tirar as luvas,
+              WhatsApp automático ilimitado sem taxa por disparo e gestão financeira
+              completa — tudo em uma única plataforma.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-lg" href="https://app.getlyra.com.br/?signup=1">
+                Testar 7 dias grátis
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+              <a class="btn btn-secondary btn-lg" href="#ia">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Ver demonstração
+              </a>
+            </div>
+
+            <div class="hero-trust">
+              <span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 Sem cartão de crédito
-              </p>
+              </span>
+              <span>·</span>
+              <span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Configuração em 2 minutos
+              </span>
+              <span>·</span>
+              <span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Cancele quando quiser
+              </span>
+            </div>
+          </div>
+
+          <!-- Laptop Mockup Hero -->
+          <div class="hero-mockup reveal delay-2" style="position:relative;margin-top:8px;">
+            <!-- chip top-left -->
+            <div class="chip tl">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+              <span>🎤 "Restauração MOD no 16" → Odontograma atualizado</span>
+            </div>
+            <!-- chip bottom-right -->
+            <div class="chip br">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span>⚡ WhatsApp ilimitado — faltas -82%</span>
+            </div>
+
+            <img
+              src="./assets/mockup-laptop-hero.jpg"
+              alt="Interface da Agenda Inteligente do Lyra Odonto em notebook"
+              style="width:100%;border-radius:16px;box-shadow:0 32px 80px -16px rgba(15,23,42,.16);display:block;"
+              width="1392" height="783" loading="eager"
+            />
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           2. TICKER ESCURO
+      ══════════════════════════════════════════════════════════ -->
+      <div class="ticker-band" aria-hidden="true">
+        <div class="ticker-inner">
+          <div class="ticker-track">
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+              <strong>Fale, a IA escreve.</strong> Prontuário completo em segundos
+            </div>
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <strong>WhatsApp Inteligente</strong> — confirma, lembra, recupera
+            </div>
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <strong>Agenda inteligente</strong> com painel lateral do paciente
+            </div>
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <strong>R$ 0,00</strong> de taxa por disparo — ilimitado de verdade
+            </div>
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              <strong>Recall de 6 meses</strong> automático para pacientes inativos
+            </div>
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
+              <strong>Assinatura Digital</strong> de anamnese e TCLE
+            </div>
+          </div>
+          <!-- Duplicado para loop contínuo -->
+          <div class="ticker-track" aria-hidden="true">
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+              <strong>Fale, a IA escreve.</strong> Prontuário completo em segundos
+            </div>
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <strong>WhatsApp Inteligente</strong> — confirma, lembra, recupera
+            </div>
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <strong>Agenda inteligente</strong> com painel lateral do paciente
+            </div>
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <strong>R$ 0,00</strong> de taxa por disparo — ilimitado de verdade
+            </div>
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              <strong>Recall de 6 meses</strong> automático para pacientes inativos
+            </div>
+            <div class="ticker-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
+              <strong>Assinatura Digital</strong> de anamnese e TCLE
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════
+           3. STATS BAR
+      ══════════════════════════════════════════════════════════ -->
+      <div class="stats-bar">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item reveal">
+              <div class="stat-num green">+1.8M</div>
+              <div class="stat-label">Agendamentos gerenciados</div>
+            </div>
+            <div class="stat-item reveal delay-1">
+              <div class="stat-num">-82%</div>
+              <div class="stat-label">Redução em faltas e no-shows</div>
+            </div>
+            <div class="stat-item reveal delay-2">
+              <div class="stat-num green">40 min</div>
+              <div class="stat-label">Economizados por dia sem digitação</div>
+            </div>
+            <div class="stat-item reveal delay-3">
+              <div class="stat-num">R$ 0,00</div>
+              <div class="stat-label">Taxa por disparo de WhatsApp</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════
+           4. DOR: MÉTODO TRADICIONAL vs COM LYRA
+      ══════════════════════════════════════════════════════════ -->
+      <section class="section bg-white">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="badge"><span class="badge-dot"></span>A Realidade do Consultório</div>
+            <h2 class="section-title">O que está drenando o seu tempo e faturamento todo dia?</h2>
+            <p class="section-sub">A maioria dos dentistas convive com essas perdas porque os softwares tradicionais pararam no tempo.</p>
+          </div>
+
+          <div class="pain-grid">
+            <div class="pain-card bad reveal-left">
+              <div class="pain-tag">Método Tradicional</div>
+              <div class="pain-title">Mais trabalho. Menos tempo para o paciente.</div>
+              <ul class="pain-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  Prontuários acumulam após o expediente, você fica até as 20h digitando.
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  Pacientes faltam sem avisar — cadeira vazia, material preparado, prejuízo certo.
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  R$ 0,25 por WhatsApp enviado — o concorrente cobra pedágio por cada lembrete.
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  Financeiro espalhado em planilhas — sem visão clara de quanto entra e sai.
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  Pacientes de 6 meses inativos nunca são contatados — oportunidade desperdiçada.
+                </li>
+              </ul>
+            </div>
+
+            <div class="pain-card good reveal-right">
+              <div class="pain-tag">Com o Lyra</div>
+              <div class="pain-title">Mais automação. Mais tempo para cuidar.</div>
+              <ul class="pain-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Evolução clínica por voz com IA — prontuário fechado antes do próximo paciente.
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  WhatsApp confirma consultas automaticamente — faltas caem até 82%.
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Disparos ilimitados inclusos — sem custo por mensagem, para sempre.
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Financeiro completo com modo privacidade — oculta saldos com 1 clique.
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Recall de 6 meses automático — paciente inativo recebe convite sem você agir.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section faq-section" id="faq">
+      <!-- ═══════════════════════════════════════════════════════
+           5. PILAR 1 — IA POR VOZ (DentalVoiceParser)
+      ══════════════════════════════════════════════════════════ -->
+      <section id="ia" class="section bg-soft">
         <div class="container">
-          <div class="section-heading reveal">
-            <span class="eyebrow gradient-pill">Tire suas dúvidas</span>
-            <h2>Perguntas frequentes sobre o Lyra</h2>
-            <p>Tudo o que você precisa saber para começar a transformar a rotina da sua clínica hoje mesmo.</p>
-          </div>
-          <div class="faq-list reveal">
-            <article class="faq-item open">
-              <button type="button" aria-expanded="true">
-                <strong>Preciso cadastrar cartão de crédito para testar?</strong>
-                <span>−</span>
-              </button>
-              <div class="faq-answer">
-                <p>Não. Você cria sua conta em menos de 1 minuto e tem 7 dias de acesso completo a todas as funcionalidades sem precisar cadastrar cartão de crédito.</p>
+          <div class="split">
+            <div class="text-col reveal-left">
+              <div class="badge"><span class="badge-dot"></span>Tecnologia exclusiva no Brasil</div>
+              <h2 class="block-title">
+                Fale livremente sem tirar as luvas: a IA preenche o odontograma em tempo real.
+              </h2>
+              <p class="block-desc">
+                Com o <strong>DentalVoiceParser</strong> exclusivo do Lyra, você relata o procedimento em notação FDI e o sistema reconhece a fala clínica brasileira, colore as faces dos dentes e gera o orçamento instantaneamente. Zero contaminação cruzada.
+              </p>
+
+              <!-- Simulação de voz ao vivo -->
+              <div class="voice-card">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                <div class="voice-text">"Restauração oclusal no 16 e coroa total no 17..."</div>
+                <div class="voice-bars">
+                  <span class="voice-bar"></span><span class="voice-bar"></span>
+                  <span class="voice-bar"></span><span class="voice-bar"></span>
+                  <span class="voice-bar"></span>
+                </div>
               </div>
-            </article>
-            <article class="faq-item">
-              <button type="button" aria-expanded="false">
-                <strong>Como funciona a evolução por voz com Inteligência Artificial?</strong>
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Basta falar o procedimento realizado diretamente no celular ou computador. A IA da Lyra reconhece termos odontológicos e preenche a evolução clínica no prontuário de forma estruturada em poucos segundos.</p>
+
+              <div class="bullets">
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Reconhecimento FDI e faces anatômicas</div>
+                    <div class="bullet-text">Entende O, MOD, V, L e terminologias odontológicas brasileiras naturalmente.</div>
+                  </div>
+                </div>
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Evolução em conformidade com o CFO</div>
+                    <div class="bullet-text">Prontuário estruturado com rigor jurídico, data, hora e identificação profissional.</div>
+                  </div>
+                </div>
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Biossegurança absoluta</div>
+                    <div class="bullet-text">Zero contato com teclado de luvas sujas. O atendimento flui, o paciente percebe a sofisticação.</div>
+                  </div>
+                </div>
               </div>
-            </article>
-            <article class="faq-item">
-              <button type="button" aria-expanded="false">
-                <strong>O WhatsApp precisa ficar com o celular ligado o tempo todo?</strong>
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Não. O Lyra conecta diretamente e executa os envios em nuvem. As confirmações de consulta, lembretes de retorno e pedidos de avaliação no Google funcionam 24h automaticamente.</p>
+            </div>
+
+            <!-- Laptop mockup IA por Voz — Odontograma real -->
+            <div class="visual-col reveal-right" style="position:relative;">
+              <img
+                src="./assets/mockup-laptop-odontograma.jpg"
+                alt="Odontograma Anatômico Interativo com IA por Voz — Lyra Odonto"
+                style="width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 24px 56px -12px rgba(15,23,42,.12);"
+                width="1400" height="900" loading="lazy"
+              />
+              <!-- Chip voz flutuante -->
+              <div class="chip" style="position:absolute;bottom:24px;right:0px;animation:float-chip 5s ease-in-out infinite;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                <span style="font-size:12px;">🎤 Gravar com IA — sem tocar no teclado</span>
               </div>
-            </article>
-            <article class="faq-item">
-              <button type="button" aria-expanded="false">
-                <strong>Funciona no celular e no computador?</strong>
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Sim! O Lyra funciona perfeitamente pelo navegador em computadores (Windows/Mac) e também possui aplicativo para celulares e tablets. Todos os dados são sincronizados em tempo real.</p>
-              </div>
-            </article>
-            <article class="faq-item">
-              <button type="button" aria-expanded="false">
-                <strong>Os dados dos meus pacientes e da clínica estão seguros?</strong>
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Totalmente. Seguimos rigorosamente a LGPD (Lei Geral de Proteção de Dados) com criptografia de ponta a ponta, servidores seguros e backups automáticos diários em nuvem.</p>
-              </div>
-            </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="final-cta">
-        <div class="container reveal">
-          <span class="question-sticker">Pronto para uma clínica mais leve?</span>
-          <h2>Menos burocracia, mais tempo para o que realmente importa.</h2>
-          <p>Comece o teste grátis e descubra quanto tempo sua clínica pode economizar todos os dias.</p>
-          <div class="final-cta-actions">
-            <a class="btn btn-primary btn-large" href="https://app.getlyra.com.br/?signup=1">Começar teste grátis de 7 dias <span>→</span></a>
-            <p class="final-cta-sub">Sem cartão de crédito • Acesso imediato • Cancele quando quiser</p>
+      <!-- ═══════════════════════════════════════════════════════
+           6. PILAR 2 — WHATSAPP ILIMITADO
+      ══════════════════════════════════════════════════════════ -->
+      <section id="whatsapp" class="section bg-white">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="badge"><span class="badge-dot"></span>Sem cobrança por disparo</div>
+            <h2 class="section-title">WhatsApp integrado sem pagar pedágio por mensagem.</h2>
+            <p class="section-sub">
+              No Lyra, todos os disparos automáticos são <strong>100% ilimitados e sem taxas extras</strong>. Para sempre.
+            </p>
+          </div>
+
+          <div class="split flip">
+            <div class="text-col reveal-right">
+              <h3 class="block-title">A automação que resgata sua pontualidade e receita.</h3>
+              <p class="block-desc">
+                O paciente recebe lembretes com o nome da sua clínica, confirma a presença e o status muda na agenda em tempo real. Se precisar remarcar, você sabe com horas de antecedência para preencher o horário com a lista de espera.
+              </p>
+              <div class="bullets">
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Zero pacotes de créditos</div>
+                    <div class="bullet-text">Não pague R$ 0,15 ou R$ 0,25 por mensagem como em outros sistemas. No Lyra é ilimitado.</div>
+                  </div>
+                </div>
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Redução de até 82% nas faltas</div>
+                    <div class="bullet-text">Menos cadeira vazia significa R$ 2.500 a R$ 5.000 a mais no faturamento mensal.</div>
+                  </div>
+                </div>
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Anamnese prévia no celular do paciente</div>
+                    <div class="bullet-text">Link enviado antes da consulta — paciente chega com a ficha preenchida, zero papel.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone mockup WhatsApp Automação -->
+            <div class="visual-col reveal-left" style="display:flex;align-items:center;justify-content:center;">
+              <div style="position:relative;max-width:320px;width:100%;">
+                <img
+                  src="./assets/phone-whatsapp.jpg"
+                  alt="WhatsApp automático no celular — Lyra Odonto"
+                  style="width:100%;height:auto;display:block;border-radius:16px;"
+                  width="750" height="1000" loading="lazy"
+                />
+                <div class="chip" style="position:absolute;top:20px;right:-20px;animation:float-chip 6s ease-in-out infinite;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  <span style="font-size:12px;">R$ 0,00 de taxa — ilimitado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5 Gatilhos Automáticos -->
+          <div class="triggers-bento">
+            <div class="trigger-card reveal delay-1">
+              <div class="trigger-tag">Gatilho 1</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <div class="trigger-title">Confirmação Imediata</div>
+              <div class="trigger-desc">Data, hora, profissional e orientações chegam ao paciente na hora do agendamento.</div>
+            </div>
+            <div class="trigger-card reveal delay-2">
+              <div class="trigger-tag">Gatilho 2</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div class="trigger-title">Lembretes 24h e 2h</div>
+              <div class="trigger-desc">Disparos pré-consulta com botão interativo para confirmar ou solicitar encaixe.</div>
+            </div>
+            <div class="trigger-card reveal delay-3">
+              <div class="trigger-tag">Gatilho 3</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              <div class="trigger-title">Recall de 6 Meses</div>
+              <div class="trigger-desc">Resgate automático de pacientes inativos para profilaxia, enchendo a agenda.</div>
+            </div>
+            <div class="trigger-card reveal delay-4">
+              <div class="trigger-tag">Gatilho 4</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <div class="trigger-title">Pós-Consulta e Cuidados</div>
+              <div class="trigger-desc">Orientações específicas após cirurgias, canais e clareamentos com link educativo.</div>
+            </div>
+            <div class="trigger-card reveal delay-5">
+              <div class="trigger-tag">Gatilho 5</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <div class="trigger-title">Google Maps 5 Estrelas</div>
+              <div class="trigger-desc">Convite automático para avaliar no Google Meu Negócio e atrair novos pacientes.</div>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           7. PILAR 3 — AGENDA & RECALL
+      ══════════════════════════════════════════════════════════ -->
+      <section id="agenda" class="section bg-soft">
+        <div class="container">
+          <div class="split">
+            <div class="text-col reveal-left">
+              <div class="badge"><span class="badge-dot"></span>Agenda inteligente</div>
+              <h2 class="block-title">
+                Painel lateral do paciente sem trocar de aba.
+              </h2>
+              <p class="block-desc">
+                Clique no agendamento e veja o histórico clínico completo, alertas de saúde, orçamentos em aberto e dados de contato — tudo ao lado sem recarregar a página.
+              </p>
+              <div class="bullets">
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Recall de 6 meses automático</div>
+                    <div class="bullet-text">O Lyra monitora o último atendimento e resgate pacientes inativos sem você precisar agir.</div>
+                  </div>
+                </div>
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Sincronização com Google Calendar</div>
+                    <div class="bullet-text">Bidirecional em tempo real — veja seus compromissos no celular pessoal.</div>
+                  </div>
+                </div>
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Múltiplos dentistas e cadeiras</div>
+                    <div class="bullet-text">Gerencie toda a equipe, encaixes e horários vagos em uma visão unificada.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Laptop mockup Agenda -->
+            <div class="visual-col reveal-right">
+              <img
+                src="./assets/mockup-laptop-agenda.jpg"
+                alt="Agenda com painel lateral do paciente — Lyra Odonto"
+                style="width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 24px 56px -12px rgba(15,23,42,.12);"
+                width="1400" height="900" loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           8. PILAR 4 — FINANCEIRO COM MODO PRIVACIDADE
+      ══════════════════════════════════════════════════════════ -->
+      <section id="financeiro" class="section bg-white">
+        <div class="container">
+          <div class="split flip">
+            <div class="text-col reveal-right">
+              <div class="badge"><span class="badge-dot"></span>Gestão financeira completa</div>
+              <h2 class="block-title">
+                Controle cada centavo sem expor seus números para o paciente.
+              </h2>
+              <p class="block-desc">
+                Quantas vezes você fechou a tela quando o paciente se aproximou do balcão? Com o <strong>Modo Privacidade</strong> do Lyra, 1 clique oculta saldos e faturamentos (<code>••••••</code>), mantendo discrição total.
+              </p>
+              <div class="bullets">
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Fluxo de caixa em tempo real</div>
+                    <div class="bullet-text">Entradas, saídas, cartão, boletos e PIX com conciliação simplificada.</div>
+                  </div>
+                </div>
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Comissões de dentistas em 1 clique</div>
+                    <div class="bullet-text">Cálculo de repasse automático por procedimento — chega de planilhas paralelas.</div>
+                  </div>
+                </div>
+                <div class="bullet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="bullet-head">Relatórios inteligentes</div>
+                    <div class="bullet-text">Faturamento por período, por dentista e por procedimento, exportável em segundos.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone mockup Financeiro -->
+            <div class="visual-col reveal-left" style="display:flex;align-items:center;justify-content:center;">
+              <div style="position:relative;max-width:310px;width:100%;">
+                <img
+                  src="./assets/phone-financeiro.jpg"
+                  alt="Financeiro com saldo líquido no celular — Lyra Odonto"
+                  style="width:100%;height:auto;display:block;border-radius:16px;"
+                  width="750" height="1000" loading="lazy"
+                />
+                <div class="chip" style="position:absolute;top:18px;left:-22px;animation:float-chip 7s ease-in-out infinite;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <span style="font-size:12px;">Modo Privacidade: ••••••</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           9. COMPARATIVO
+      ══════════════════════════════════════════════════════════ -->
+      <section id="comparativo" class="comparison-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="badge"><span class="badge-dot"></span>Confronto direto</div>
+            <h2 class="section-title">Lyra contra os sistemas tradicionais.</h2>
+            <p class="section-sub">Por que dentistas de todo o Brasil estão migrando para o Lyra.</p>
+          </div>
+
+          <div class="table-wrap reveal">
+            <table class="comp-table">
+              <thead>
+                <tr>
+                  <th style="width:44%">Recurso Clínico e Operacional</th>
+                  <th class="col-lyra" style="width:28%">Lyra Odonto</th>
+                  <th style="width:28%">Simples Dental & Legados</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>IA por Voz Nativa (Odontograma sem luvas)</strong></td>
+                  <td class="col-lyra"><span class="badge-check"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sim — DentalVoiceParser</span></td>
+                  <td><span class="badge-cross"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Não têm</span></td>
+                </tr>
+                <tr>
+                  <td><strong>WhatsApp Automático Sem Taxa por Disparo</strong></td>
+                  <td class="col-lyra"><span class="badge-check"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>100% Ilimitado</span></td>
+                  <td><span class="badge-cross"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Cobram créditos</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Recall de 6 Meses para Inativos</strong></td>
+                  <td class="col-lyra"><span class="badge-check"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Automático</span></td>
+                  <td><span class="badge-cross"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Manual ou ausente</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Agenda com Painel Lateral de Prontuário</strong></td>
+                  <td class="col-lyra"><span class="badge-check"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Instantâneo</span></td>
+                  <td><span class="badge-cross"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Recarrega a página</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Link de Anamnese Prévia no Celular</strong></td>
+                  <td class="col-lyra"><span class="badge-check"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Incluso no plano</span></td>
+                  <td><span class="badge-cross"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Papel ou cobrado à parte</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Modo Privacidade no Financeiro</strong></td>
+                  <td class="col-lyra"><span class="badge-check"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 clique</span></td>
+                  <td><span class="badge-cross"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Valores expostos</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Preço Justo e Sem Surpresas</strong></td>
+                  <td class="col-lyra"><span class="badge-check"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>A partir de R$ 89/mês</span></td>
+                  <td><span class="badge-cross"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>R$ 149–R$ 349 + taxas</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           10. PLANOS E PREÇOS
+      ══════════════════════════════════════════════════════════ -->
+      <section id="planos" class="pricing-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="badge"><span class="badge-dot"></span>Planos sem surpresas</div>
+            <h2 class="section-title">Comece a economizar. Pare de pagar taxas por WhatsApp.</h2>
+            <p class="section-sub">Cancele a qualquer momento. Teste 7 dias grátis sem precisar de cartão.</p>
+          </div>
+
+          <div class="billing-toggle-wrap reveal">
+            <div class="billing-toggle" id="billingToggle">
+              <button type="button" data-billing="monthly">Mensal</button>
+              <button type="button" class="active" data-billing="yearly">
+                Anual <span class="yearly-badge">20% OFF</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pricing-grid reveal">
+            <!-- Consultório -->
+            <div class="pricing-card">
+              <div>
+                <div class="plan-name">Consultório</div>
+                <div class="plan-desc">Para cirurgiões-dentistas autônomos que querem agilidade clínica e fim das faltas.</div>
+                <div class="plan-price">
+                  <span class="price-currency">R$</span>
+                  <span class="price-amount" id="priceConsultorio">89</span>
+                  <span class="price-period" id="periodConsultorio">/mês no plano anual</span>
+                </div>
+              </div>
+              <ul class="plan-features">
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>1 Profissional</strong> titular</span></li>
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>IA por Voz</strong> para odontograma e evolução</span></li>
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>WhatsApp ilimitado</strong> sem taxa</span></li>
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Anamnese prévia e TCLE digital</span></li>
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Financeiro com <strong>Modo Privacidade</strong></span></li>
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Suporte prioritário via WhatsApp</span></li>
+              </ul>
+              <a class="btn btn-secondary btn-lg" href="https://app.getlyra.com.br/?signup=1">Começar 7 dias grátis</a>
+            </div>
+
+            <!-- Clínica & Equipe — Destaque -->
+            <div class="pricing-card featured">
+              <div class="featured-ribbon">Mais Escolhido</div>
+              <div>
+                <div class="plan-name">Clínica &amp; Equipe</div>
+                <div class="plan-desc">Para clínicas com múltiplos dentistas e cadeiras que exigem controle e comissões automáticas.</div>
+                <div class="plan-price">
+                  <span class="price-currency">R$</span>
+                  <span class="price-amount" id="priceClinica">169</span>
+                  <span class="price-period" id="periodClinica">/mês no plano anual</span>
+                </div>
+              </div>
+              <ul class="plan-features">
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Tudo do plano Consultório</strong></span></li>
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Dentistas ilimitados</strong> e múltiplas cadeiras</span></li>
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Comissões e <strong>repasses automáticos</strong></span></li>
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Recall em massa de 6 meses</span></li>
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Níveis de permissão (Recepção / Dentista / Gestor)</span></li>
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Migração assistida de prontuários</span></li>
+              </ul>
+              <a class="btn btn-primary btn-lg" href="https://app.getlyra.com.br/?signup=1">Começar 7 dias grátis</a>
+            </div>
+          </div>
+
+          <div class="pricing-guarantee reveal">
+            🛡️ Teste por 7 dias com todas as funções liberadas. Sem cobranças surpresas. Cancele com 1 clique.
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           11. FAQ
+      ══════════════════════════════════════════════════════════ -->
+      <section id="faq" class="faq-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="badge"><span class="badge-dot"></span>Perguntas frequentes</div>
+            <h2 class="section-title">Tire suas dúvidas antes de começar.</h2>
+            <p class="section-sub">Tudo sobre segurança, migração de dados e facilidade de uso.</p>
+          </div>
+
+          <div class="faq-list reveal">
+            <div class="faq-item open">
+              <button class="faq-q" type="button">
+                <span>Como funciona a IA por voz durante o atendimento clínico?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">Você ativa o microfone e dita os dentes e procedimentos em notação FDI — ex: "restauração MOD no 16 e 17". O <em>DentalVoiceParser</em> exclusivo do Lyra reconhece a fala clínica brasileira, colore o odontograma e preenche a evolução formal do prontuário. Sem luvas sujas no teclado.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" type="button">
+                <span>O WhatsApp realmente não cobra taxa adicional por mensagem?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">Exatamente. Diferente de outros sistemas que cobram pacotes de créditos ou centavos por envio, no Lyra os disparos automáticos de confirmação, lembretes 24h, recall e pós-consulta são ilimitados e sem cobrança por mensagem.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" type="button">
+                <span>Meus dados e prontuários estão protegidos perante o CFO e a LGPD?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">Sim, 100%. O Lyra obedece rigorosamente às exigências de prontuário eletrônico do Conselho Federal de Odontologia (CFO) e aos critérios da LGPD Médica, com criptografia AES-256 e backups automáticos na nuvem.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" type="button">
+                <span>Consigo migrar os dados do meu sistema atual?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">Sim! Você pode importar sua lista de pacientes a partir de planilhas Excel ou exportações de sistemas anteriores. No plano Clínica, nossa equipe auxilia na migração completa sem custo adicional.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" type="button">
+                <span>Preciso instalar programas? Funciona em qualquer dispositivo?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">O Lyra funciona direto no navegador (Windows, Mac, Linux), além de aplicativo otimizado para Android e iOS com sincronização em nuvem em tempo real.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           12. PLATAFORMA INTEGRADA (ESCURA / ECOSISTEMA)
+      ══════════════════════════════════════════════════════════ -->
+      <section class="ecosystem-section">
+        <div class="container">
+          <div class="ecosystem-box reveal">
+            <!-- Coluna texto -->
+            <div>
+              <div class="badge" style="background:rgba(16,185,129,.15);color:#34d399;border-color:rgba(52,211,153,.25);">
+                <span class="badge-dot" style="background:var(--green-light);"></span>
+                Plataforma integrada
+              </div>
+              <h2 class="eco-title">
+                Tudo o que sua clínica precisa.<br>
+                <span class="g">Em um só lugar.</span>
+              </h2>
+              <p class="eco-desc">Chega de alternar entre vários sistemas. Com o Lyra, você centraliza toda a operação da clínica em uma única plataforma.</p>
+              <div class="eco-divider"></div>
+              <div class="eco-benefits">
+                <div class="eco-benefit">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="eco-benefit-title">Mais controle</div>
+                    <div class="eco-benefit-desc">Agenda, finanças, prontuários e comunicação em uma visão unificada.</div>
+                  </div>
+                </div>
+                <div class="eco-benefit">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="eco-benefit-title">Mais tempo</div>
+                    <div class="eco-benefit-desc">Automação que libera você para o que realmente importa: seus pacientes.</div>
+                  </div>
+                </div>
+                <div class="eco-benefit">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <div class="eco-benefit-title">Mais resultados</div>
+                    <div class="eco-benefit-desc">Gestão inteligente para sua clínica crescer de forma consistente.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Coluna visual — orbe de módulos -->
+            <div style="display:flex;align-items:center;justify-content:center;">
+              <div class="eco-orb-wrap">
+                <!-- Rings -->
+                <div class="eco-orbit-ring r1"></div>
+                <div class="eco-orbit-ring r2"></div>
+
+                <!-- Core -->
+                <div class="eco-orb">
+                  <img src="./assets/logo-icon.png" alt="Lyra" />
+                </div>
+
+                <!-- Módulos posicionados manualmente (ring 1 - 4 módulos) -->
+                <div class="eco-module" style="transform:translate(-50%,-50%) translate(0,-80px);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Agenda
+                </div>
+                <div class="eco-module" style="transform:translate(-50%,-50%) translate(80px,0);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  Pacientes
+                </div>
+                <div class="eco-module" style="transform:translate(-50%,-50%) translate(0,80px);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  Financeiro
+                </div>
+                <div class="eco-module" style="transform:translate(-50%,-50%) translate(-80px,0);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  WhatsApp
+                </div>
+
+                <!-- Ring 2 - 2 módulos -->
+                <div class="eco-module" style="transform:translate(-50%,-50%) translate(-100px,-90px);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Prontuário
+                </div>
+                <div class="eco-module" style="transform:translate(-50%,-50%) translate(100px,-90px);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  Avaliações
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           13. CTA FINAL
+      ══════════════════════════════════════════════════════════ -->
+      <section class="final-cta">
+        <div class="container">
+          <div class="cta-box reveal">
+            <h2 class="cta-title">
+              Saia do consultório com os prontuários em dia e a agenda cheia.
+            </h2>
+            <p class="cta-desc">
+              Comece seu teste grátis de 7 dias agora e experimente o padrão mais avançado de gestão odontológica do Brasil.
+            </p>
+            <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+              <a class="btn btn-primary btn-lg" href="https://app.getlyra.com.br/?signup=1">
+                Testar 7 dias grátis agora
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+            <div class="hero-trust" style="margin-top:20px;">
+              <span>Sem cartão de crédito · Liberação imediata · Cancele quando quiser</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <div class="sticky-cta" id="stickyCta">
-      <span>Teste grátis por 7 dias</span>
-      <a class="btn btn-primary" href="https://app.getlyra.com.br/?signup=1">Começar</a>
-    </div>
-
-    <div class="chat-widget" data-chat-widget>
-      <div class="chat-panel" data-chat-panel aria-hidden="true">
-        <div class="chat-panel-header">
-          <div class="chat-panel-brand">
-            <img src="./assets/logo-icon.png" alt="" />
-            <strong>Entre em contato conosco</strong>
-          </div>
-          <button class="chat-panel-close" type="button" aria-label="Fechar conversa" data-chat-panel-close>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 6l12 12" />
-              <path d="M18 6 6 18" />
-            </svg>
-          </button>
-        </div>
-        <div class="chat-panel-body">
-          <time>Agora mesmo</time>
-          <div class="chat-message-row">
-            <img src="./assets/logo-icon.png" alt="" />
-            <div>
-              <span>Lyra Odonto</span>
-              <p>Olá! Como posso ajudar sua clínica odontológica hoje?</p>
-            </div>
+    <!-- ═══════════════════════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════════════════════════ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <a class="brand footer-brand" href="#top">
+            <img class="brand-icon" src="./assets/logo-icon.png" alt="Lyra" />
+            <img class="brand-wordmark" src="./assets/logo-wordmark-white.png" alt="Lyra Odonto" />
+          </a>
+          <div class="footer-links">
+            <a href="#ia">IA por Voz</a>
+            <a href="#whatsapp">WhatsApp</a>
+            <a href="#agenda">Agenda</a>
+            <a href="#financeiro">Financeiro</a>
+            <a href="#planos">Planos</a>
+            <a href="./privacidade.html">Privacidade &amp; Termos</a>
           </div>
         </div>
-        <form class="chat-panel-form" data-chat-panel-form>
-          <label class="sr-only" for="chatMessage">Digite sua mensagem</label>
-          <input id="chatMessage" type="text" placeholder="Digite sua dúvida..." autocomplete="off" />
-          <button type="submit" aria-label="Enviar mensagem">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" />
-            </svg>
-          </button>
-        </form>
-      </div>
-      <button class="chat-fab" type="button" aria-label="Abrir atendimento" data-chat-trigger>
-        <span class="chat-fab-pulse" aria-hidden="true"></span>
-        <span class="chat-fab-invite" data-chat-invite>
-          <span class="chat-fab-invite-text">Dúvidas? Fale com a gente</span>
-          <button class="chat-fab-invite-close" type="button" aria-label="Fechar convite de atendimento" data-chat-invite-close>×</button>
-        </span>
-        <svg class="chat-fab-icon chat-fab-icon-default" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-          <path d="M8 9h8" />
-          <path d="M8 13h5" />
-        </svg>
-        <svg class="chat-fab-icon chat-fab-icon-close" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M18 6 6 18" />
-          <path d="M6 6l12 12" />
-        </svg>
-        <svg class="chat-fab-dots" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M9.2 10.8h.1" />
-          <path d="M12 10.8h.1" />
-          <path d="M14.8 10.8h.1" />
-        </svg>
-      </button>
-    </div>
-
-    <footer class="footer reveal">
-      <div class="container footer-grid">
-        <div class="footer-brand footer-column">
-          <a class="footer-logo" href="#top" aria-label="Lyra Odonto">
-            <img class="footer-logo-icon" src="./assets/logo-icon.png" alt="" />
-            <img class="footer-logo-wordmark" src="./assets/logo-wordmark-white.png" alt="Lyra Odonto" />
-          </a>
-          <p>Lyra Odonto - Gestão inteligente para cirurgiões-dentistas e clínicas odontológicas.</p>
-          <a class="btn btn-secondary footer-cta" href="https://app.getlyra.com.br/?signup=1">Começar gratuitamente</a>
-          <span class="footer-note">Teste grátis por 7 dias. Sem cartão de crédito.</span>
-        </div>
-        <div class="footer-column">
-          <strong>Produto</strong>
-          <a class="footer-link" href="#agenda">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4" /><path d="M16 2v4" /><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M3 10h18" /></svg>
-            <span>Agenda Inteligente</span>
-          </a>
-          <a class="footer-link" href="#ia">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.94 14.5 8 21l4.5-5.5" /><path d="M14.06 9.5 16 3l-4.5 5.5" /><path d="M4 13a8 8 0 0 1 15.5-2.7" /><path d="M20 11a8 8 0 0 1-15.5 2.7" /></svg>
-            <span>IA por Voz</span>
-          </a>
-          <a class="footer-link" href="#whatsapp">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.2 7.5L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z" /><path d="M8 10h8" /><path d="M8 14h5" /></svg>
-            <span>WhatsApp</span>
-          </a>
-          <a class="footer-link" href="#odontograma">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5C10 3.6 6.7 3.3 5.1 5.2c-1.8 2.1-.8 5.6.2 8.7.8 2.6 1.3 5.1 3 5.1 1.4 0 1.3-3.7 3.7-3.7s2.3 3.7 3.7 3.7c1.7 0 2.2-2.5 3-5.1 1-3.1 2-6.6.2-8.7C17.3 3.3 14 3.6 12 5.5Z" /></svg>
-            <span>Odontograma</span>
-          </a>
-          <a class="footer-link" href="#prontuario">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" /><path d="M14 2v6h6" /><path d="m9 15 2 2 4-5" /></svg>
-            <span>Prontuário Digital</span>
-          </a>
-          <a class="footer-link" href="#financeiro">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2" /><path d="M16 12h6" /><path d="M18 9v6" /></svg>
-            <span>Financeiro</span>
-          </a>
-        </div>
-        <div class="footer-column">
-          <strong>Empresa</strong>
-          <a class="footer-link" href="#top">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" /></svg>
-            <span>Sobre nós</span>
-          </a>
-          <a class="footer-link" href="mailto:christiancrwz94@gmail.com">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>
-            <span>Fale conosco</span>
-          </a>
-          <a class="footer-link" href="#precos">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            <span>Planos & Preços</span>
-          </a>
-          <a class="footer-link" href="#faq">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-            <span>Perguntas Frequentes</span>
-          </a>
-        </div>
-        <div class="footer-column">
-          <strong>Segurança</strong>
-          <a class="footer-link" href="./privacidade.html">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.6 8.8a1.3 1.3 0 0 1-.8 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1Z" /></svg>
-            <span>Política de Privacidade</span>
-          </a>
-          <a class="footer-link" href="./privacidade.html#termos">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 13h4" /><path d="M10 17h4" /></svg>
-            <span>Termos de Uso</span>
-          </a>
-          <a class="footer-link" href="./privacidade.html#lgpd">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /><path d="m9 12 2 2 4-4" /></svg>
-            <span>LGPD</span>
-          </a>
-          <span class="footer-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>
-            <span>SSL Seguro</span>
-          </span>
-        </div>
-      </div>
-      <div class="container footer-bottom">
-        <span>© 2026 Lyra Odonto. Todos os direitos reservados.</span>
-        <div class="footer-trust">
-          <span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>
-            SSL Seguro
-          </span>
-          <span>•</span>
-          <span>LGPD</span>
-          <span>•</span>
-          <span>99,9% de disponibilidade</span>
+        <div class="footer-bottom">
+          <div>© 2026 Lyra Odonto. Todos os direitos reservados.</div>
+          <div>Em conformidade com CFO e LGPD</div>
         </div>
       </div>
     </footer>
 
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-bar" id="stickyBar">
+      <span class="sticky-bar-text">Lyra Odonto • Teste 7 dias grátis</span>
+      <a class="btn btn-primary" href="https://app.getlyra.com.br/?signup=1">Começar agora</a>
+    </div>
+
+    <!-- Script Principal -->
+    <script type="module" src="./src/main.js"></script>
+
+    <!-- Scripts inline: reveal + faq + billing + header + sticky -->
     <script>
-      const menuButton = document.querySelector('#menuButton');
-      const mobileMenu = document.querySelector('#mobileMenu');
-      const siteHeader = document.querySelector('.site-header');
-      const pricingSection = document.querySelector('#precos');
+      // ── Reveal on scroll ────────────────────────────────────
+      const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => observer.observe(el));
 
-      menuButton?.addEventListener('click', () => {
-        const isOpen = mobileMenu?.classList.toggle('open');
-        menuButton.setAttribute('aria-expanded', String(Boolean(isOpen)));
-      });
-
-      mobileMenu?.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-          menuButton?.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      const revealItems = document.querySelectorAll('.reveal');
-
-      if ('IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.14 });
-
-        revealItems.forEach((item) => revealObserver.observe(item));
-      } else {
-        revealItems.forEach((item) => item.classList.add('is-visible'));
-      }
-
-      if (siteHeader && pricingSection) {
-        let pricingTop = 0;
-        let headerScrollTicking = false;
-
-        const updatePricingTop = () => {
-          pricingTop = pricingSection.getBoundingClientRect().top + window.scrollY;
-        };
-
-        const syncHeaderVisibility = () => {
-          const headerOffset = siteHeader.offsetHeight + 8;
-          siteHeader.classList.toggle('header-hidden', window.scrollY >= pricingTop - headerOffset);
-        };
-
-        const requestHeaderSync = () => {
-          if (headerScrollTicking) return;
-          headerScrollTicking = true;
-          window.requestAnimationFrame(() => {
-            syncHeaderVisibility();
-            headerScrollTicking = false;
-          });
-        };
-
-        updatePricingTop();
-        syncHeaderVisibility();
-        window.addEventListener('scroll', requestHeaderSync, { passive: true });
-        window.addEventListener('resize', () => {
-          updatePricingTop();
-          syncHeaderVisibility();
-        });
-      }
-
-      const mockupItems = document.querySelectorAll('.mockup-entrance');
-
-      if ('IntersectionObserver' in window) {
-        const mockupObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.intersectionRatio >= 0.5) {
-              entry.target.classList.add('mockup-visible');
-              mockupObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.5 });
-
-        mockupItems.forEach((item) => mockupObserver.observe(item));
-      } else {
-        mockupItems.forEach((item) => item.classList.add('mockup-visible'));
-      }
-
-      document.querySelectorAll('[data-suite-carousel]').forEach((carousel) => {
-        const track = carousel.querySelector('.suite-grid');
-        const cards = Array.from(carousel.querySelectorAll('.suite-card'));
-        const prevButton = carousel.querySelector('.suite-carousel-prev');
-        const nextButton = carousel.querySelector('.suite-carousel-next');
-        const dotsWrap = carousel.querySelector('.suite-carousel-dots');
-
-        if (!track || cards.length === 0 || !prevButton || !nextButton || !dotsWrap) return;
-
-        let pages = [];
-
-        const getCardsPerView = () => {
-          const firstCard = cards[0];
-          if (!firstCard) return 1;
-          return Math.max(1, Math.round(track.clientWidth / firstCard.getBoundingClientRect().width));
-        };
-
-        const buildPages = () => {
-          const cardsPerView = getCardsPerView();
-          pages = [];
-          for (let index = 0; index < cards.length; index += cardsPerView) {
-            pages.push(cards[index]);
-          }
-
-          dotsWrap.innerHTML = '';
-          pages.forEach((_, index) => {
-            const dot = document.createElement('button');
-            dot.type = 'button';
-            dot.setAttribute('aria-label', `Ir para grupo ${index + 1}`);
-            dot.addEventListener('click', () => scrollToPage(index));
-            dotsWrap.appendChild(dot);
-          });
-
-          updateCarouselState();
-        };
-
-        const getCurrentPage = () => {
-          const currentLeft = track.scrollLeft;
-          let currentPage = 0;
-
-          pages.forEach((page, index) => {
-            if (page.offsetLeft <= currentLeft + 12) {
-              currentPage = index;
-            }
-          });
-
-          return currentPage;
-        };
-
-        const scrollToPage = (index) => {
-          const page = pages[Math.max(0, Math.min(index, pages.length - 1))];
-          if (!page) return;
-          track.scrollTo({ left: page.offsetLeft, behavior: 'smooth' });
-        };
-
-        const updateCarouselState = () => {
-          const currentPage = getCurrentPage();
-          const dots = Array.from(dotsWrap.querySelectorAll('button'));
-
-          dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentPage);
-          });
-
-          prevButton.disabled = currentPage === 0;
-          nextButton.disabled = currentPage >= pages.length - 1;
-        };
-
-        prevButton.addEventListener('click', () => scrollToPage(getCurrentPage() - 1));
-        nextButton.addEventListener('click', () => scrollToPage(getCurrentPage() + 1));
-        let carouselScrollTicking = false;
-        track.addEventListener('scroll', () => {
-          if (carouselScrollTicking) return;
-          carouselScrollTicking = true;
-          window.requestAnimationFrame(() => {
-            updateCarouselState();
-            carouselScrollTicking = false;
-          });
-        }, { passive: true });
-        window.addEventListener('resize', buildPages);
-
-        buildPages();
-      });
-
-      document.querySelectorAll('.billing-toggle button').forEach((button) => {
-        button.addEventListener('click', () => {
-          document.querySelectorAll('.billing-toggle button').forEach((item) => item.classList.remove('active'));
-          button.classList.add('active');
-          const isYearly = button.dataset.billing === 'year';
-          const priceValue = document.querySelector('#priceValue');
-          const pricePeriod = document.querySelector('#pricePeriod');
-          const priceSavings = document.querySelector('#priceSavings');
-          if (priceValue && pricePeriod) {
-            priceValue.textContent = '7 dias grátis';
-            pricePeriod.textContent = isYearly ? 'depois R$ 119/mês (faturado anualmente)' : 'depois R$ 149/mês';
-          }
-          if (priceSavings) {
-            priceSavings.style.display = isYearly ? 'inline-block' : 'none';
-          }
-        });
-      });
-
-      document.querySelectorAll('.faq-item button').forEach((button) => {
-        button.addEventListener('click', () => {
-          const item = button.closest('.faq-item');
-          item?.classList.toggle('open');
-          const marker = button.querySelector('span');
-          if (marker) marker.textContent = item?.classList.contains('open') ? '−' : '+';
-        });
-      });
-
-      const stickyCta = document.querySelector('#stickyCta');
-
-      let stickyScrollTicking = false;
-      const syncStickyCta = () => {
-        if (!stickyCta) return;
-        stickyCta.classList.toggle('visible', window.scrollY > 560);
-      };
-
+      // ── Header scroll ────────────────────────────────────────
+      const header = document.getElementById('siteHeader');
       window.addEventListener('scroll', () => {
-        if (stickyScrollTicking) return;
-        stickyScrollTicking = true;
-        window.requestAnimationFrame(() => {
-          syncStickyCta();
-          stickyScrollTicking = false;
-        });
+        header.classList.toggle('scrolled', window.scrollY > 40);
       }, { passive: true });
 
-      const chatWidget = document.querySelector('[data-chat-widget]');
-      const chatClose = document.querySelector('[data-chat-close]');
-      const chatTrigger = document.querySelector('[data-chat-trigger]');
-      const chatPanel = document.querySelector('[data-chat-panel]');
-      const chatPanelClose = document.querySelector('[data-chat-panel-close]');
-      const chatPanelForm = document.querySelector('.chat-panel-input');
-      const chatInviteKey = 'lyraChatInviteClosed';
+      // ── Mobile menu ──────────────────────────────────────────
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', open);
+      });
+      mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+      });
 
-      const setChatOpen = (isOpen) => {
-        chatWidget?.classList.toggle('chat-open', isOpen);
-        chatTrigger?.setAttribute('aria-expanded', String(isOpen));
-        chatPanel?.setAttribute('aria-hidden', String(!isOpen));
+      // ── FAQ accordion ─────────────────────────────────────────
+      document.querySelectorAll('.faq-q').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const isOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+
+      // ── Billing toggle ───────────────────────────────────────
+      const prices = {
+        monthly:   { consultorio: '119', clinica: '219', periodC: '/mês no plano mensal', periodCl: '/mês no plano mensal' },
+        yearly:    { consultorio: '89',  clinica: '169', periodC: '/mês no plano anual',  periodCl: '/mês no plano anual'  },
       };
-
-      try {
-        if (window.sessionStorage.getItem(chatInviteKey) === 'true') {
-          chatWidget?.classList.add('invite-hidden');
-        }
-      } catch (error) {
-        // Some browsers can block storage; the widget still works without persistence.
-      }
-
-      // Só mostra o bubble "Posso ajudar?" após o usuário rolar 300px
-      if (chatWidget && !chatWidget.classList.contains('invite-hidden')) {
-        chatWidget.classList.add('invite-hidden');
-        let inviteShown = false;
-        const showInviteOnScroll = () => {
-          if (!inviteShown && window.scrollY > 300) {
-            inviteShown = true;
-            chatWidget.classList.remove('invite-hidden');
-            window.removeEventListener('scroll', showInviteOnScroll);
-          }
-        };
-        window.addEventListener('scroll', showInviteOnScroll, { passive: true });
-      }
-
-      chatClose?.addEventListener('click', () => {
-        chatWidget?.classList.add('invite-hidden');
-        try {
-          window.sessionStorage.setItem(chatInviteKey, 'true');
-        } catch (error) {
-          // Ignore storage failures and keep the visual close behavior.
-        }
+      document.querySelectorAll('[data-billing]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-billing]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const mode = btn.dataset.billing;
+          document.getElementById('priceConsultorio').textContent = prices[mode].consultorio;
+          document.getElementById('priceClinica').textContent     = prices[mode].clinica;
+          document.getElementById('periodConsultorio').textContent = prices[mode].periodC;
+          document.getElementById('periodClinica').textContent     = prices[mode].periodCl;
+        });
       });
 
-      chatTrigger?.setAttribute('aria-expanded', 'false');
-      chatTrigger?.addEventListener('click', () => {
-        const willOpen = !chatWidget?.classList.contains('chat-open');
-        setChatOpen(Boolean(willOpen));
-      });
-
-      chatPanelClose?.addEventListener('click', () => {
-        setChatOpen(false);
-      });
-
-      chatPanelForm?.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const input = chatPanelForm.querySelector('input');
-        const text = input?.value?.trim();
-        if (!text) return;
-        const body = document.querySelector('.chat-panel-body');
-        if (!body) return;
-
-        const userRow = document.createElement('div');
-        userRow.className = 'chat-message-row chat-user';
-        userRow.innerHTML = `<div><span>Você</span><p>${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p></div>`;
-        body.appendChild(userRow);
-        input.value = '';
-
-        setTimeout(() => {
-          const lyraRow = document.createElement('div');
-          lyraRow.className = 'chat-message-row';
-          const encoded = encodeURIComponent('Olá! Gostaria de tirar dúvidas sobre o Lyra Odonto: ' + text);
-          lyraRow.innerHTML = `
-            <img src="./assets/logo-icon.png" alt="" />
-            <div>
-              <span>Lyra Odonto</span>
-              <p>Obrigado pela mensagem! Para atendimento imediato com nossa equipe, continue pelo WhatsApp ou e-mail:</p>
-              <div class="chat-actions-container">
-                <a class="chat-action-link" href="https://api.whatsapp.com/send?text=${encoded}" target="_blank" rel="noopener">
-                  💬 Continuar no WhatsApp
-                </a>
-                <a class="chat-action-link chat-action-email" href="mailto:christiancrwz94@gmail.com?subject=Dúvida%20Lyra%20Odonto&body=${encodeURIComponent(text)}">
-                  ✉️ Enviar por E-mail
-                </a>
-              </div>
-            </div>
-          `;
-          body.appendChild(lyraRow);
-          body.scrollTop = body.scrollHeight;
-        }, 400);
-
-        body.scrollTop = body.scrollHeight;
-      });
+      // ── Sticky CTA bar ────────────────────────────────────────
+      const stickyBar = document.getElementById('stickyBar');
+      const hero = document.querySelector('.hero');
+      const heroObs = new IntersectionObserver(([e]) => {
+        stickyBar.classList.toggle('show', !e.isIntersecting);
+      }, { threshold: 0 });
+      heroObs.observe(hero);
     </script>
   </body>
 </html>
-
