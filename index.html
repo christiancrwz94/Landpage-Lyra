@@ -60,51 +60,42 @@
     <main id="top">
 
       <!-- ═══════════════════════════════════════════════════════
-           1. HERO
+           1. HERO (DESIGN REFERÊNCIA: SIMPLES DENTAL REFINADO LYRA)
       ══════════════════════════════════════════════════════════ -->
       <section class="hero">
-        <div class="container">
+        <div class="container hero-container">
 
-          <div class="hero-copy reveal">
-            <div class="badge">
-              <span class="badge-dot"></span>
-              A nova era da gestão odontológica no Brasil
-            </div>
-
+          <!-- Coluna Esquerda: Copy & CTAs -->
+          <div class="hero-left reveal">
             <h1 class="hero-title">
-              Você se formou para<br>
-              <span class="accent">transformar sorrisos,</span><br>
-              não para passar a noite digitando.
+              O melhor software<br>
+              odontológico do Brasil
             </h1>
 
             <p class="hero-sub">
-              O Lyra une IA por voz para preencher o odontograma sem tirar as luvas,
-              WhatsApp automático ilimitado sem taxa por disparo e gestão financeira
-              completa — tudo em uma única plataforma.
+              Agora, com Secretária IA faça agendamentos 24/7 via WhatsApp. Reduza faltas com agenda online e confirmação de consulta. Organize tudo com odontograma por voz sem tirar as luvas e financeiro robusto.
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-primary btn-lg" href="https://app.getlyra.com.br/?signup=1">
-                Testar 7 dias grátis
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <a class="btn-hero-yellow" href="https://app.getlyra.com.br/?signup=1">
+                Teste grátis por 7 dias
               </a>
-              <a class="btn btn-secondary btn-lg" href="#ia">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                Ver demonstração
+              <a class="btn-hero-outline" href="https://wa.me/5511999999999?text=Ol%C3%A1,%20gostaria%20de%20falar%20com%20um%20especialista%20do%20Lyra" target="_blank" rel="noopener">
+                Fale com um especialista
               </a>
             </div>
 
-            <div class="hero-trust">
+            <div class="hero-trust-row">
               <span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 Sem cartão de crédito
               </span>
-              <span>·</span>
+              <span class="trust-sep">·</span>
               <span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Configuração em 2 minutos
+                Configuração em 2 min
               </span>
-              <span>·</span>
+              <span class="trust-sep">·</span>
               <span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 Cancele quando quiser
@@ -112,25 +103,57 @@
             </div>
           </div>
 
-          <!-- Laptop Mockup Hero -->
-          <div class="hero-mockup reveal delay-2" style="position:relative;margin-top:8px;">
-            <!-- chip top-left -->
-            <div class="chip tl">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
-              <span>🎤 "Restauração MOD no 16" → Odontograma atualizado</span>
-            </div>
-            <!-- chip bottom-right -->
-            <div class="chip br">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              <span>⚡ WhatsApp ilimitado — faltas -82%</span>
-            </div>
+          <!-- Coluna Direita: Notebook + Smartphone + Tag IA -->
+          <div class="hero-right reveal delay-2">
+            <div class="hero-stage">
 
-            <img
-              src="./assets/mockup-laptop-hero.jpg"
-              alt="Interface da Agenda Inteligente do Lyra Odonto em notebook"
-              style="width:100%;border-radius:16px;box-shadow:0 32px 80px -16px rgba(15,23,42,.16);display:block;"
-              width="1392" height="783" loading="eager"
-            />
+              <!-- Badge Flutuante IA -->
+              <div class="hero-ia-badge" aria-hidden="true">
+                <span>IA</span>
+              </div>
+
+              <!-- Notebook Lyra com a Nova Página Inicial -->
+              <div class="hero-laptop-wrap">
+                <img
+                  src="./assets/mockup-laptop-hero-cutout.png?v=new-home"
+                  alt="Sistema Odontológico Lyra no computador"
+                  class="hero-laptop-img"
+                  width="1023" height="727"
+                  loading="eager"
+                />
+              </div>
+
+              <!-- Smartphone Lyra com a Nova Tela Mobile em Escala Realista -->
+              <div class="hero-phone-wrap">
+                <img
+                  src="./assets/mockup-phone-hero-cutout.png?v=new-mobile"
+                  alt="App Lyra no smartphone em escala realista"
+                  class="hero-phone-img"
+                  width="754" height="1859"
+                  loading="eager"
+                />
+              </div>
+
+              <!-- Card Flutuante de Confirmação -->
+              <div class="hero-float-card">
+                <div class="hfc-header">
+                  <div class="hfc-avatar">BF</div>
+                  <div class="hfc-meta">
+                    <strong>Bruno Farias</strong>
+                    <span>Hoje · 16:00 · Limpeza</span>
+                  </div>
+                </div>
+                <div class="hfc-status">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Confirmado via WhatsApp
+                </div>
+                <div class="hfc-footer">
+                  <span class="hfc-dot"></span>
+                  IA para agendamentos ativa
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>
@@ -497,14 +520,27 @@
               </div>
             </div>
 
-            <!-- Laptop mockup Agenda -->
+            <!-- Interface da Agenda em Janela do App (Sem notebook) -->
             <div class="visual-col reveal-right">
-              <img
-                src="./assets/mockup-laptop-agenda.jpg"
-                alt="Agenda com painel lateral do paciente — Lyra Odonto"
-                style="width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 24px 56px -12px rgba(15,23,42,.12);"
-                width="1400" height="900" loading="lazy"
-              />
+              <div class="mockup-browser">
+                <div class="browser-bar">
+                  <span class="browser-dot r"></span>
+                  <span class="browser-dot y"></span>
+                  <span class="browser-dot g"></span>
+                  <span class="browser-url">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    app.getlyra.com.br/agenda
+                  </span>
+                </div>
+                <div class="browser-content">
+                  <img
+                    src="./assets/hero-agenda-desktop.png"
+                    alt="Agenda com painel lateral do paciente — Lyra Odonto"
+                    width="1440" height="900"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
