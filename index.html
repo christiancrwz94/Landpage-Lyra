@@ -24,12 +24,22 @@
           <img class="brand-wordmark" src="./assets/logo-wordmark-white.png" alt="Lyra Odonto" />
         </a>
         <nav class="nav-links" aria-label="Navegação principal">
-          <a href="#ia">IA por voz</a>
-          <a href="#whatsapp">WhatsApp</a>
-          <a href="#agenda">Agenda</a>
-          <a href="#financeiro">Financeiro</a>
-          <a href="#prontuario">Prontuário</a>
-          <a href="#odontograma">Odontograma</a>
+          <div class="nav-dropdown" id="navDropdown">
+            <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-label="Menu Funcionalidades">
+              <span>Funcionalidades</span>
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="#ia" class="nav-dropdown-item" role="menuitem">IA por voz</a>
+              <a href="#whatsapp" class="nav-dropdown-item" role="menuitem">WhatsApp</a>
+              <a href="#agenda" class="nav-dropdown-item" role="menuitem">Agenda</a>
+              <a href="#financeiro" class="nav-dropdown-item" role="menuitem">Financeiro</a>
+              <a href="#prontuario" class="nav-dropdown-item" role="menuitem">Prontuário</a>
+              <a href="#odontograma" class="nav-dropdown-item" role="menuitem">Odontograma</a>
+            </div>
+          </div>
           <a href="#precos">Planos</a>
           <a href="#faq">FAQ</a>
         </nav>
@@ -60,9 +70,9 @@
             <span class="platform-badge">Novo padrão de gestão para clínicas odontológicas</span>
             <h1>Liberte-se da burocracia do consultório e<br><span>faça sua clínica faturar mais.</span></h1>
             <p>O Lyra conecta IA por voz para evolução clínica, automações no WhatsApp, agenda inteligente, prontuário digital, odontograma e financeiro para que o dentista foque no que realmente importa: seus pacientes.</p>
-            <div class="hero-actions" style="margin-top: 26px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
-              <a class="btn btn-primary btn-large" href="https://app.getlyra.com.br/?signup=1">Começar teste grátis de 7 dias</a>
-              <span style="font-size: 13px; color: rgba(255, 255, 255, 0.72); font-weight: 500;">Sem cartão de crédito • Configuração rápida em minutos</span>
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-large" href="https://app.getlyra.com.br/?signup=1">Começar teste grátis de 30 dias</a>
+              <span class="hero-subnote">Configuração rápida em minutos</span>
             </div>
             <div class="platform-divider"></div>
             <div class="platform-benefits">
@@ -73,7 +83,7 @@
                   <path d="m3 17 9 5 9-5" />
                 </svg>
                 <strong>Mais controle</strong>
-                <span>Tudo organizado em um só lugar.</span>
+                <span>Tudo organizado<br>em um só<br>lugar.</span>
               </article>
               <article>
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -94,67 +104,19 @@
             </div>
           </div>
           <div class="platform-ecosystem" aria-label="Ecossistema integrado do Lyra Odonto">
-            <svg class="ecosystem-lines" viewBox="0 0 460 360" aria-hidden="true">
-              <path d="M230 180 L230 44" />
-              <path d="M230 180 L360 86" />
-              <path d="M230 180 L370 252" />
-              <path d="M230 180 L230 316" />
-              <path d="M230 180 L92 252" />
-              <path d="M230 180 L92 86" />
-            </svg>
-            <span class="light-orb orb-1"></span>
-            <span class="light-orb orb-2"></span>
-            <span class="light-orb orb-3"></span>
-            <span class="light-orb orb-4"></span>
-            <span class="light-orb orb-5"></span>
-            <span class="light-orb orb-6"></span>
-            <div class="ecosystem-core">
-              <img src="./assets/logo-icon.png" alt="Lyra Odonto" />
-            </div>
-            <div class="ecosystem-node node-whatsapp">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.101-.475-.15-.675.15-.199.3-.774.978-.949 1.179-.175.2-.35.225-.65.075-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.675-2.084-.175-.3-.019-.462.132-.612.136-.135.301-.35.451-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.63-.925-2.23-.243-.585-.49-.506-.675-.515-.174-.01-.374-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.026-1.05 2.503s1.075 2.903 1.225 3.104c.15.2 2.115 3.23 5.124 4.53 2.502 1.082 3.037.867 3.587.817.55-.05 1.78-.726 2.03-1.427.25-.7.25-1.301.175-1.427-.075-.125-.275-.2-.575-.35z" />
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.408A9.954 9.954 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167a8.134 8.134 0 0 1-4.294-1.218l-.308-.183-3.19.902.9-3.109-.2-.319A8.136 8.136 0 1 1 12 20.167z" />
-              </svg>
-              <span>WhatsApp</span>
-            </div>
-            <div class="ecosystem-node node-pacientes">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M19 21a7 7 0 0 0-14 0" />
-                <path d="M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
-              </svg>
-              <span>Pacientes</span>
-            </div>
-            <div class="ecosystem-node node-avaliacoes">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 5.5C10 3.6 6.7 3.3 5.1 5.2c-1.8 2.1-.8 5.6.2 8.7.8 2.6 1.3 5.1 3 5.1 1.4 0 1.3-3.7 3.7-3.7s2.3 3.7 3.7 3.7c1.7 0 2.2-2.5 3-5.1 1-3.1 2-6.6.2-8.7C17.3 3.3 14 3.6 12 5.5Z" />
-              </svg>
-              <span>Odontograma</span>
-            </div>
-            <div class="ecosystem-node node-financeiro">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 17 9 11l4 4 8-8" />
-                <path d="M14 7h7v7" />
-                <path d="M3 21h18" />
-              </svg>
-              <span>Financeiro</span>
-            </div>
-            <div class="ecosystem-node node-prontuario">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                <line x1="12" y1="19" x2="12" y2="22" />
-              </svg>
-              <span>Prontuário</span>
-            </div>
-            <div class="ecosystem-node node-automacao">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8 2v4" />
-                <path d="M16 2v4" />
-                <path d="M4 9h16" />
-                <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
-              </svg>
-              <span>Agenda</span>
+            <div class="ecosystem-core" aria-label="Odontograma no Notebook e Celular">
+              <div class="ecosystem-devices-stage">
+                <img
+                  src="./assets/mockup-laptop-odontograma.png"
+                  alt="Odontograma no computador"
+                  class="eco-device-laptop"
+                />
+                <img
+                  src="./assets/mockup-phone-odontograma.png"
+                  alt="Odontograma no celular"
+                  class="eco-device-phone"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -561,7 +523,7 @@
                   <path d="M4 9h16" />
                   <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
                 </svg>
-                <strong>7 dias grátis</strong>
+                <strong>30 dias grátis</strong>
                 <span>Acesso completo</span>
               </article>
               <article>
@@ -593,7 +555,7 @@
                 <span>Lyra Odonto Profissional</span>
                 <h3>Experimente <em>gratuitamente</em></h3>
                 <p class="plan-price-line">
-                  <span id="priceValue">7 dias grátis</span>
+                  <span id="priceValue">30 dias grátis</span>
                   <small id="pricePeriod">depois R$ 149/mês</small>
                 </p>
                 <span class="plan-savings-pill" id="priceSavings" style="display: none;">Economize 20% no plano anual</span>
@@ -651,7 +613,7 @@
                 <span>−</span>
               </button>
               <div class="faq-answer">
-                <p>Não. Você cria sua conta em menos de 1 minuto e tem 7 dias de acesso completo a todas as funcionalidades sem precisar cadastrar cartão de crédito.</p>
+                <p>Não. Você cria sua conta em menos de 1 minuto e tem 30 dias de acesso completo a todas as funcionalidades sem precisar cadastrar cartão de crédito.</p>
               </div>
             </article>
             <article class="faq-item">
@@ -700,15 +662,15 @@
           <h2>Menos burocracia, mais tempo para o que realmente importa.</h2>
           <p>Comece o teste grátis e descubra quanto tempo sua clínica pode economizar todos os dias.</p>
           <div class="final-cta-actions">
-            <a class="btn btn-primary btn-large" href="https://app.getlyra.com.br/?signup=1">Começar teste grátis de 7 dias <span>→</span></a>
-            <p class="final-cta-sub">Sem cartão de crédito • Acesso imediato • Cancele quando quiser</p>
+            <a class="btn btn-primary btn-large" href="https://app.getlyra.com.br/?signup=1">Começar teste grátis de 30 dias <span>→</span></a>
+            <p class="final-cta-sub">Acesso imediato • Cancele quando quiser</p>
           </div>
         </div>
       </section>
     </main>
 
     <div class="sticky-cta" id="stickyCta">
-      <span>Teste grátis por 7 dias</span>
+      <span>Teste grátis por 30 dias</span>
       <a class="btn btn-primary" href="https://app.getlyra.com.br/?signup=1">Começar</a>
     </div>
 
@@ -736,7 +698,7 @@
             </div>
           </div>
         </div>
-        <form class="chat-panel-form" data-chat-panel-form>
+        <form class="chat-panel-input" data-chat-panel-form>
           <label class="sr-only" for="chatMessage">Digite sua mensagem</label>
           <input id="chatMessage" type="text" placeholder="Digite sua dúvida..." autocomplete="off" />
           <button type="submit" aria-label="Enviar mensagem">
@@ -746,22 +708,18 @@
           </button>
         </form>
       </div>
+      <div class="chat-invite" data-chat-invite>
+        <button class="chat-invite-close" type="button" aria-label="Fechar convite de atendimento" data-chat-close>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12" />
+            <path d="M18 6 6 18" />
+          </svg>
+        </button>
+        <span>Posso ajudar?</span>
+      </div>
       <button class="chat-fab" type="button" aria-label="Abrir atendimento" data-chat-trigger>
-        <span class="chat-fab-pulse" aria-hidden="true"></span>
-        <span class="chat-fab-invite" data-chat-invite>
-          <span class="chat-fab-invite-text">Dúvidas? Fale com a gente</span>
-          <button class="chat-fab-invite-close" type="button" aria-label="Fechar convite de atendimento" data-chat-invite-close>×</button>
-        </span>
-        <svg class="chat-fab-icon chat-fab-icon-default" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-          <path d="M8 9h8" />
-          <path d="M8 13h5" />
-        </svg>
-        <svg class="chat-fab-icon chat-fab-icon-close" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M18 6 6 18" />
-          <path d="M6 6l12 12" />
-        </svg>
-        <svg class="chat-fab-dots" viewBox="0 0 24 24" aria-hidden="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 10.4a5.4 5.4 0 0 1 5.4-5.4h3.2A5.4 5.4 0 0 1 19 10.4v.7a5.4 5.4 0 0 1-5.4 5.4H12l-4 3v-3.6A5.4 5.4 0 0 1 5 11.1Z" />
           <path d="M9.2 10.8h.1" />
           <path d="M12 10.8h.1" />
           <path d="M14.8 10.8h.1" />
@@ -778,7 +736,7 @@
           </a>
           <p>Lyra Odonto - Gestão inteligente para cirurgiões-dentistas e clínicas odontológicas.</p>
           <a class="btn btn-secondary footer-cta" href="https://app.getlyra.com.br/?signup=1">Começar gratuitamente</a>
-          <span class="footer-note">Teste grátis por 7 dias. Sem cartão de crédito.</span>
+          <span class="footer-note">Teste grátis por 30 dias. Sem cartão de crédito.</span>
         </div>
         <div class="footer-column">
           <strong>Produto</strong>
@@ -1036,7 +994,7 @@
           const pricePeriod = document.querySelector('#pricePeriod');
           const priceSavings = document.querySelector('#priceSavings');
           if (priceValue && pricePeriod) {
-            priceValue.textContent = '7 dias grátis';
+            priceValue.textContent = '30 dias grátis';
             pricePeriod.textContent = isYearly ? 'depois R$ 119/mês (faturado anualmente)' : 'depois R$ 149/mês';
           }
           if (priceSavings) {

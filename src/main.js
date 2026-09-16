@@ -13,6 +13,29 @@ mobileMenu?.querySelectorAll('a').forEach((link) => {
   });
 });
 
+const navDropdown = document.querySelector('#navDropdown');
+const navDropdownTrigger = navDropdown?.querySelector('.nav-dropdown-trigger');
+
+navDropdownTrigger?.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const isOpen = navDropdown.classList.toggle('open');
+  navDropdownTrigger.setAttribute('aria-expanded', String(isOpen));
+});
+
+navDropdown?.querySelectorAll('.nav-dropdown-item').forEach((item) => {
+  item.addEventListener('click', () => {
+    navDropdown.classList.remove('open');
+    navDropdownTrigger?.setAttribute('aria-expanded', 'false');
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (navDropdown && !navDropdown.contains(e.target)) {
+    navDropdown.classList.remove('open');
+    navDropdownTrigger?.setAttribute('aria-expanded', 'false');
+  }
+});
+
 const revealItems = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
@@ -36,7 +59,7 @@ document.querySelectorAll('.billing-toggle button').forEach((button) => {
     button.classList.add('active');
     const isYearly = button.dataset.billing === 'year';
     document.querySelector('#priceValue').textContent = isYearly ? 'Teste grátis' : 'Teste grátis';
-    document.querySelector('#pricePeriod').textContent = isYearly ? 'com desconto no anual' : 'por 7 dias';
+    document.querySelector('#pricePeriod').textContent = isYearly ? 'com desconto no anual' : 'por 30 dias';
   });
 });
 
