@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="./assets/logo-icon.png" />
+    <link rel="icon" type="image/png" href="./assets/logo-nova-icon.png" />
     <title>Lyra Odonto | Gestão Inteligente, IA por Voz e WhatsApp para Clínicas Odontológicas</title>
     <meta name="description" content="Software odontológico completo com IA por voz para evolução clínica, WhatsApp inteligente para reduzir faltas, odontograma integrado e prontuário digital." />
     <meta property="og:title" content="Lyra Odonto | Gestão Inteligente, IA por Voz e WhatsApp para Clínicas Odontológicas" />
     <meta property="og:description" content="Software odontológico completo com IA por voz para evolução clínica, WhatsApp inteligente para reduzir faltas, odontograma integrado e prontuário digital." />
-    <meta property="og:image" content="./assets/logo-full.png" />
-    <link rel="preload" as="image" href="./assets/logo-icon.png" />
-    <link rel="preload" as="image" href="./assets/logo-wordmark-white.png" />
+    <meta property="og:image" content="./assets/logo-nova-dark.png" />
+    <link rel="preload" as="image" href="./assets/logo-nova-dark.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -19,9 +18,9 @@
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="Lyra Odonto">
-          <img class="brand-icon" src="./assets/logo-icon.png" alt="" />
-          <img class="brand-wordmark" src="./assets/logo-wordmark-white.png" alt="Lyra Odonto" />
+        <a class="brand" href="#top" aria-label="Lyra Dental">
+          <img class="brand-logo" src="./assets/logo-nova-dark.png" alt="Lyra" />
+          <span class="brand-suffix">Dental</span>
         </a>
         <nav class="nav-links" aria-label="Navegação principal">
           <div class="nav-dropdown" id="navDropdown">
@@ -67,9 +66,14 @@
       <section class="platform-section hero-platform">
         <div class="platform-container">
           <div class="platform-copy">
-            <span class="platform-badge">Novo padrão de gestão para clínicas odontológicas</span>
-            <h1>Liberte-se da burocracia do consultório e<br><span>faça sua clínica faturar mais.</span></h1>
-            <p>O Lyra conecta IA por voz para evolução clínica, automações no WhatsApp, agenda inteligente, prontuário digital, odontograma e financeiro para que o dentista foque no que realmente importa: seus pacientes.</p>
+            <span class="platform-badge">
+              <svg class="badge-sparkle" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z" />
+              </svg>
+              <span>Gestão odontológica com <strong>Inteligência Artificial</strong></span>
+            </span>
+            <h1>O primeiro software com IA que elimina a burocracia e<br><span>acelera seu faturamento.</span></h1>
+            <p>Fale e a IA preenche a evolução e o prontuário. O WhatsApp confirma consultas no piloto automático e sua clínica fatura mais sem você passar horas digitando.</p>
             <div class="hero-actions">
               <a class="btn btn-primary btn-large" href="https://app.getlyra.com.br/?signup=1">Começar teste grátis de 30 dias</a>
               <span class="hero-subnote">Configuração rápida em minutos</span>
@@ -78,28 +82,34 @@
             <div class="platform-benefits">
               <article>
                 <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m12 2 9 5-9 5-9-5Z" />
-                  <path d="m3 12 9 5 9-5" />
-                  <path d="m3 17 9 5 9-5" />
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="22" />
                 </svg>
-                <strong>Mais controle</strong>
-                <span>Tudo organizado<br>em um só<br>lugar.</span>
+                <strong>IA por Voz</strong>
+                <span>Evolução clínica sem digitação.</span>
+              </article>
+              <article>
+                <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.888 9.885m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413Z"/>
+                </svg>
+                <strong>WhatsApp</strong>
+                <span>Confirmações que zeram faltas.</span>
               </article>
               <article>
                 <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 6v6l4 2" />
-                  <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" />
+                  <path d="M4.5 10.5C3.5 6.5 6 3 9.5 3c2 0 2.5 1 2.5 1s.5-1 2.5-1c3.5 0 6 3.5 5 7.5-.8 3-2.5 7.5-3.5 9.5-1 2-2.5 1-4-1-1.5 2-3 3-4 1-1-2-2.7-6.5-3.5-9.5z" />
                 </svg>
-                <strong>Mais tempo</strong>
-                <span>Automação que libera você para o que importa.</span>
+                <strong>Odontograma</strong>
+                <span>Anatômico e ágil no PC e celular.</span>
               </article>
               <article>
                 <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M3 17 9 11l4 4 8-8" />
-                  <path d="M14 7h7v7" />
+                  <path d="M3 3v18h18" />
+                  <path d="m19 9-5 5-4-4-3 3" />
                 </svg>
-                <strong>Mais resultados</strong>
-                <span>Gestão inteligente para fazer sua clínica crescer.</span>
+                <strong>Financeiro</strong>
+                <span>Orçamentos e caixa em 1 clique.</span>
               </article>
             </div>
           </div>
@@ -115,6 +125,88 @@
                   src="./assets/mockup-phone-odontograma.png"
                   alt="Odontograma no celular"
                   class="eco-device-phone"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="migration-section" id="migracao">
+        <div class="container">
+          <h3 class="migration-heading-question">Como você gerencia a sua clínica hoje?</h3>
+          <nav class="migration-tabs-nav" aria-label="Opções de migração">
+            <button class="migration-tab-btn active" type="button" data-migration-tab="software">
+              Já uso outro software
+            </button>
+            <button class="migration-tab-btn" type="button" data-migration-tab="papel">
+              Uso papel / planilhas
+            </button>
+          </nav>
+
+          <div class="migration-grid">
+            <div class="migration-copy">
+              <!-- Painel 1: Já uso outro software -->
+              <div class="migration-panel active" data-migration-panel="software">
+                <h2>Migramos todos os seus dados para o Lyra sem custo e sem dor de cabeça</h2>
+                <p>Nosso motor de migração transfere sua base completa: pacientes, anamneses detalhadas, histórico de consultas e orçamentos do seu sistema atual para o Lyra. Nossa equipe cuida da extração técnica e valida cada dado com você, com backup preventivo e sem paralisar o seu consultório.</p>
+                <div class="migration-checklist">
+                  <div class="migration-check-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span>Pacientes com cadastro completo e telefones prontos para o WhatsApp</span>
+                  </div>
+                  <div class="migration-check-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span>Histórico clínico, anamneses e procedimentos anteriores preservados</span>
+                  </div>
+                  <div class="migration-check-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span>Orçamentos, tratamentos e agenda futura importados</span>
+                  </div>
+                  <div class="migration-check-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span>Backup preventivo e conformidade total com a LGPD</span>
+                  </div>
+                </div>
+                <a class="migration-cta-link" href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20a%20migra%C3%A7%C3%A3o%20para%20o%20Lyra." target="_blank" rel="noopener">
+                  <span>Falar com um especialista</span>
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <!-- Painel 2: Uso papel / planilhas -->
+              <div class="migration-panel" data-migration-panel="papel">
+                <h2>Da ficha de papel para o digital com suporte da nossa equipe</h2>
+                <p>Se a sua clínica ainda opera com prontuários de papel ou planilhas de Excel, nós ajudamos a importar suas listas de pacientes e a estruturar sua tabela de procedimentos para você começar no digital sem perder dias de digitação.</p>
+                <div class="migration-checklist">
+                  <div class="migration-check-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span>Importação das suas planilhas de pacientes e contatos</span>
+                  </div>
+                  <div class="migration-check-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span>Configuração personalizada da agenda e procedimentos</span>
+                  </div>
+                  <div class="migration-check-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span>Treinamento simples para você e sua equipe</span>
+                  </div>
+                </div>
+                <a class="migration-cta-link" href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20a%20digitaliza%C3%A7%C3%A3o%20do%20meu%20consult%C3%B3rio%20com%20o%20Lyra." target="_blank" rel="noopener">
+                  <span>Falar com um especialista</span>
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Lado Direito: Container reservado para a arte que o Christian vai gerar -->
+            <div class="migration-media">
+              <div class="migration-image-slot" id="migrationImageSlot">
+                <img
+                  src="./assets/arte-migracao-panoramica.png"
+                  alt="Migração de dados para o Lyra Odonto"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -678,7 +770,7 @@
       <div class="chat-panel" data-chat-panel aria-hidden="true">
         <div class="chat-panel-header">
           <div class="chat-panel-brand">
-            <img src="./assets/logo-icon.png" alt="" />
+            <img src="./assets/logo-nova-icon.png" alt="" />
             <strong>Entre em contato conosco</strong>
           </div>
           <button class="chat-panel-close" type="button" aria-label="Fechar conversa" data-chat-panel-close>
@@ -691,7 +783,7 @@
         <div class="chat-panel-body">
           <time>Agora mesmo</time>
           <div class="chat-message-row">
-            <img src="./assets/logo-icon.png" alt="" />
+            <img src="./assets/logo-nova-icon.png" alt="" />
             <div>
               <span>Lyra Odonto</span>
               <p>Olá! Como posso ajudar sua clínica odontológica hoje?</p>
@@ -730,9 +822,9 @@
     <footer class="footer reveal">
       <div class="container footer-grid">
         <div class="footer-brand footer-column">
-          <a class="footer-logo" href="#top" aria-label="Lyra Odonto">
-            <img class="footer-logo-icon" src="./assets/logo-icon.png" alt="" />
-            <img class="footer-logo-wordmark" src="./assets/logo-wordmark-white.png" alt="Lyra Odonto" />
+          <a class="footer-logo" href="#top" aria-label="Lyra Dental">
+            <img class="footer-logo-img" src="./assets/logo-nova-white.png" alt="Lyra" />
+            <span class="footer-suffix">Dental</span>
           </a>
           <p>Lyra Odonto - Gestão inteligente para cirurgiões-dentistas e clínicas odontológicas.</p>
           <a class="btn btn-secondary footer-cta" href="https://app.getlyra.com.br/?signup=1">Começar gratuitamente</a>
@@ -1103,7 +1195,7 @@
           lyraRow.className = 'chat-message-row';
           const encoded = encodeURIComponent('Olá! Gostaria de tirar dúvidas sobre o Lyra Odonto: ' + text);
           lyraRow.innerHTML = `
-            <img src="./assets/logo-icon.png" alt="" />
+            <img src="./assets/logo-nova-icon.png" alt="" />
             <div>
               <span>Lyra Odonto</span>
               <p>Obrigado pela mensagem! Para atendimento imediato com nossa equipe, continue pelo WhatsApp ou e-mail:</p>
@@ -1122,6 +1214,20 @@
         }, 400);
 
         body.scrollTop = body.scrollHeight;
+      });
+
+      // Abas de Migração de Dados
+      const migrationTabs = document.querySelectorAll('.migration-tab-btn');
+      const migrationPanels = document.querySelectorAll('.migration-panel');
+      migrationTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-migration-tab');
+          migrationTabs.forEach((t) => t.classList.remove('active'));
+          migrationPanels.forEach((p) => p.classList.remove('active'));
+          tab.classList.add('active');
+          const activePanel = document.querySelector(`.migration-panel[data-migration-panel="${target}"]`);
+          if (activePanel) activePanel.classList.add('active');
+        });
       });
     </script>
   </body>
