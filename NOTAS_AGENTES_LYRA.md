@@ -478,9 +478,7 @@ O tom da landing deve sempre apontar para:
 
 
 
-## Cuidado com Restauração de Arquivos (git checkout)
-É ESTRITAMENTE PROIBIDO utilizar git checkout HEAD <arquivo> (ou similares) de forma leviana para desfazer pequenos erros de edição durante uma sessão. O uso desse comando apaga silenciosamente todas as modificações não commitadas (tanto as feitas pelo próprio usuário quanto por outros agentes na mesma sessão), o que resulta em perda irreparável de código (como mockups injetados, scripts gerados dinamicamente e atualizações de CSS). Se precisar reverter uma alteração pontual, recupere o histórico via transcript ou use ferramentas de replace focadas. NUNCA sobrescreva a árvore de trabalho inteira do arquivo se não tiver 100% de certeza absoluta de que não há trabalho não commitado nele.
+## Protocolo de Prevenção de Regressões
 
-
-## Manipulação Segura de Uploads de Imagens
-Ao copiar arquivos enviados pelo usuário da pasta .user_uploaded, é ESTRITAMENTE PROIBIDO filtrar por extensões específicas (como *.png) ao buscar o arquivo mais recente. O usuário pode enviar JPGs, WebPs ou PNGs. O filtro restritivo causa bugs ao pular o arquivo real e selecionar acidentalmente capturas de tela antigas. Sempre liste TODOS os arquivos do diretório, ordene pelo LastWriteTime mais recente e apenas depois valide a extensão do arquivo retornado.
+> [!IMPORTANT]
+> A partir de agora, todas as regras estritas de segurança (como proibição de \git checkout\, manipulação segura de uploads, bloqueio de mascaramento de erros, etc.) estão consolidadas no arquivo mestre **\../applyra/.agents/AGENTS.md\** (Regra 31). Consulte sempre aquele arquivo como a fonte única da verdade sobre protocolos de segurança de IA.
