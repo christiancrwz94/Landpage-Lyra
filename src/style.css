@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --ink: #0f172a;
   --muted: #475569;
   --soft: #f8fafc;
@@ -82,7 +82,7 @@ button { font: inherit; }
 }
 
 .site-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
