@@ -92,13 +92,13 @@ button { font: inherit; }
   backdrop-filter: blur(14px);
   transform: translateY(0);
   opacity: 1;
-  transition: transform .55s cubic-bezier(0.22, 1, 0.36, 1), opacity .45s ease, box-shadow .35s ease;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, background-color 0.4s ease;
   will-change: transform, opacity;
 }
 
 .site-header.header-hidden {
   pointer-events: none;
-  transform: translateY(-110%);
+  transform: translateY(-100%);
   opacity: 0;
 }
 
@@ -114,6 +114,7 @@ button { font: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  margin-left: -55px;
 }
 
 .brand-icon {
@@ -131,7 +132,7 @@ button { font: inherit; }
 }
 
 .brand-logo {
-  height: 38px;
+  height: 64px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -1031,16 +1032,9 @@ button { font: inherit; }
   left: 17px;
 }
 
-#ia .voice-demo {
-  width: min(250px, 100%);
-}
+#ia .voice-demo { width: min(350px, 100%); border: none !important; background: transparent !important; box-shadow: none !important; } #ia .voice-demo::before, #ia .voice-demo::after { display: none !important; }
 
-#ia .voice-demo img {
-  max-height: 500px;
-  width: auto;
-  object-fit: contain;
-  margin: 0 auto;
-}
+#ia .voice-demo img { max-height: 750px; width: auto; object-fit: contain; margin: 0 auto; filter: none; }
 
 .feature-grid {
   grid-template-columns: 1fr 1fr;
@@ -1643,7 +1637,7 @@ button { font: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 74% center;
+  object-position: center;
   border-radius: 24px;
 }
 
@@ -2212,9 +2206,9 @@ button { font: inherit; }
 
 .eco-device-phone {
   position: absolute;
-  left: -10px;
-  bottom: -10px;
-  width: 180px;
+  left: -30px;
+  bottom: -120px;
+  width: 280px;
   max-width: none;
   height: auto;
   display: block;
@@ -3137,6 +3131,7 @@ td:last-child {
   stroke: currentColor;
   stroke-width: 2.2;
   stroke-linecap: round;
+  pointer-events: none;
 }
 
 .chat-widget.invite-hidden .chat-invite {
@@ -3241,7 +3236,7 @@ td:last-child {
 }
 
 .footer-logo-img {
-  height: 42px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -5389,11 +5384,7 @@ td:last-child {
     grid-template-columns: minmax(116px, .42fr) minmax(0, .58fr);
   }
 
-  #ia .voice-demo {
-    order: 1;
-    justify-self: center;
-    width: min(190px, 42vw);
-  }
+  #ia .voice-demo { order: 1; justify-self: center; width: min(240px, 50vw); }
 
   #ia .feature-copy {
     order: 2;
@@ -5613,12 +5604,7 @@ td:last-child {
     gap: 12px;
   }
 
-  #ia .voice-demo,
-  #whatsapp .phone-frame,
-  #financeiro .agenda-mockup-stage img,
-  #odontograma .inline-mockup-stage {
-    width: min(158px, 38vw);
-  }
+  #whatsapp .phone-frame, #financeiro .agenda-mockup-stage img, #odontograma .inline-mockup-stage { width: min(158px, 38vw); } #ia .voice-demo { width: min(200px, 46vw); }
 
   #financeiro .agenda-mockup-stage {
     min-height: 300px;
@@ -6251,18 +6237,12 @@ td:last-child {
 
 .migration-image-slot {
   width: 100%;
-  max-width: 640px;
+  max-width: 1024px;
   margin: 0 auto;
-  border-radius: 20px;
-  background: #f8fafc;
-  border: 1px solid rgba(226, 232, 240, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  overflow: hidden;
-  box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(226, 232, 240, 0.8);
-  aspect-ratio: 2 / 1;
 }
 
 .migration-image-slot img {
@@ -6310,5 +6290,160 @@ td:last-child {
   max-width: 280px;
   line-height: 1.5;
 }
+
+
+/* Animação Migração SVG */
+.migration-image-wrapper {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.migration-base-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: inherit;
+}
+.migration-animation-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+.migration-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.shield-pulse {
+  animation: shieldPulse 5s ease-in-out infinite;
+  transform-origin: 512px 298px;
+}
+@keyframes shieldPulse {
+  0%, 100% { opacity: 0; transform: scale(0.98); }
+  50% { opacity: 0.35; transform: scale(1.02); }
+}
+.line-pulse {
+  stroke-dasharray: 4 8;
+  animation: lineDash 20s linear infinite;
+}
+@keyframes lineDash {
+  to { stroke-dashoffset: -400; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shield-pulse, .line-pulse, .migration-svg animate, .migration-svg animateMotion {
+    animation: none !important;
+    display: none !important;
+  }
+  .shield-pulse {
+    display: block !important;
+    opacity: 0.1 !important;
+  }
+}
+
+
+
+
+
+
+
+/* Lyra Premium Badge */
+.lyra-premium-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.lyra-premium-badge-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: skewX(-20deg);
+  animation: badge-shine 4s infinite;
+}
+
+@keyframes badge-shine {
+  0% { left: -100%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
+}
+
+.lyra-badge-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+.lyra-badge-text {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.lyra-badge-stars {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.lyra-badge-stars svg {
+  width: 13px;
+  height: 13px;
+  color: #FFD700;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+/* Agenda Theme Switcher Animation */
+.agenda-theme-switcher { position: relative; width: min(380px, 80vw); height: auto; margin: 0 auto; }
+
+.agenda-theme-switcher img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.agenda-theme-switcher .agenda-light {
+  position: relative;
+  display: block;
+}
+
+.agenda-theme-switcher .agenda-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: agenda-theme-fade 6s ease-in-out infinite alternate;
+}
+
+@keyframes agenda-theme-fade {
+  0%, 35% { opacity: 0; }
+  65%, 100% { opacity: 1; }
+}
+
+
+
+/* Nova sombra premium para a Agenda */
+.agenda-mockup-stage img { filter: drop-shadow(0 32px 48px rgba(15, 23, 42, 0.14)) drop-shadow(0 8px 16px rgba(15, 23, 42, 0.06)) !important; }
+.agenda-mockup-stage::after { display: none !important; }
+
 
 

@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/style.css?v=16" />
   </head>
   <body>
     <header class="site-header">
@@ -117,13 +117,13 @@
             <div class="ecosystem-core" aria-label="Odontograma no Notebook e Celular">
               <div class="ecosystem-devices-stage">
                 <img
-                  src="./assets/mockup-laptop-odontograma.png"
-                  alt="Odontograma no computador"
+                  src="./assets/mockup-notebook-novo.png?v=12"
+                  alt="Agenda do Lyra no computador"
                   class="eco-device-laptop"
                 />
                 <img
-                  src="./assets/mockup-phone-odontograma.png"
-                  alt="Odontograma no celular"
+                  src="./assets/mockup-phone-automacao.png?v=12"
+                  alt="WhatsApp inteligente no celular"
                   class="eco-device-phone"
                 />
               </div>
@@ -202,12 +202,260 @@
             <!-- Lado Direito: Container reservado para a arte que o Christian vai gerar -->
             <div class="migration-media">
               <div class="migration-image-slot" id="migrationImageSlot">
-                <img
-                  src="./assets/arte-migracao-panoramica.png"
-                  alt="Migração de dados para o Lyra Odonto"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <div class="migration-image-wrapper">
+                  <img
+                    src="./assets/arte-migracao-panoramica.png?v=3"
+                    alt="Migração de dados para o Lyra Odonto"
+                    loading="lazy"
+                    decoding="async"
+                    class="migration-base-img"
+                  />
+                  
+  <div class="migration-animation-overlay" aria-hidden="true">
+    <svg viewBox="0 0 1024 576" preserveAspectRatio="xMidYMid slice" class="migration-svg">
+      <defs>
+        <filter id="mig-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+        <path id="p0" d="M 290 190 Q 512 110 720 210" />
+        <path id="p1" d="M 300 240 Q 512 200 710 240" />
+        <path id="p2" d="M 310 295 Q 512 295 700 295" />
+        <path id="p3" d="M 300 350 Q 512 390 710 350" />
+        <path id="p4" d="M 290 400 Q 512 480 720 380" />
+      </defs>
+      
+      <!-- Escudo Respirando -->
+      <ellipse cx="512" cy="298" rx="55" ry="65" fill="#3b82f6" filter="url(#mig-glow)" class="shield-pulse" />
+
+      <!-- Conexoes (Efeito discreto nas linhas) -->
+      <path d="M 290 190 Q 512 110 720 210" fill="none" stroke="rgba(59, 130, 246, 0.25)" stroke-width="2" class="line-pulse" />
+      <path d="M 300 240 Q 512 200 710 240" fill="none" stroke="rgba(59, 130, 246, 0.25)" stroke-width="2" class="line-pulse" />
+      <path d="M 310 295 Q 512 295 700 295" fill="none" stroke="rgba(59, 130, 246, 0.25)" stroke-width="2" class="line-pulse" />
+      <path d="M 300 350 Q 512 390 710 350" fill="none" stroke="rgba(59, 130, 246, 0.25)" stroke-width="2" class="line-pulse" />
+      <path d="M 290 400 Q 512 480 720 380" fill="none" stroke="rgba(59, 130, 246, 0.25)" stroke-width="2" class="line-pulse" />
+
+      <!-- Particulas -->
+      <g class="particles-group">
+        
+      <!-- Particula 0 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="5.30s" repeatCount="indefinite" begin="3.19s" />
+        </circle>
+        <animateMotion dur="5.30s" repeatCount="indefinite" begin="3.19s">
+          <mpath href="#p0" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="5.30s" repeatCount="indefinite" begin="3.19s" />
+      </g>
+
+      <!-- Particula 1 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="5.18s" repeatCount="indefinite" begin="1.62s" />
+        </circle>
+        <animateMotion dur="5.18s" repeatCount="indefinite" begin="1.62s">
+          <mpath href="#p1" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="5.18s" repeatCount="indefinite" begin="1.62s" />
+      </g>
+
+      <!-- Particula 2 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.53s" repeatCount="indefinite" begin="3.69s" />
+        </circle>
+        <animateMotion dur="4.53s" repeatCount="indefinite" begin="3.69s">
+          <mpath href="#p2" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.53s" repeatCount="indefinite" begin="3.69s" />
+      </g>
+
+      <!-- Particula 3 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M17.5 7.5c0-2.5-2.2-4.5-5-4.5s-5 2-5 4.5c0 1.3.6 2.4 1.5 3.2.7.6 1.1 1.4 1 2.3l-.2 1.5c-.1.7.5 1.3 1.2 1.1L12 15l1.1.4c.7.3 1.4-.4 1.2-1.1l-.2-1.5c-.1-.9.3-1.7 1-2.3.9-.8 1.5-1.9 1.5-3z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.40s" repeatCount="indefinite" begin="1.51s" />
+        </circle>
+        <animateMotion dur="4.40s" repeatCount="indefinite" begin="1.51s">
+          <mpath href="#p3" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.40s" repeatCount="indefinite" begin="1.51s" />
+      </g>
+
+      <!-- Particula 4 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.6)">
+          <circle cx="12" cy="12" r="6" fill="#fff" />
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="5.47s" repeatCount="indefinite" begin="2.39s" />
+        </circle>
+        <animateMotion dur="5.47s" repeatCount="indefinite" begin="2.39s">
+          <mpath href="#p4" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="5.47s" repeatCount="indefinite" begin="2.39s" />
+      </g>
+
+      <!-- Particula 5 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.58s" repeatCount="indefinite" begin="0.03s" />
+        </circle>
+        <animateMotion dur="4.58s" repeatCount="indefinite" begin="0.03s">
+          <mpath href="#p0" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.58s" repeatCount="indefinite" begin="0.03s" />
+      </g>
+
+      <!-- Particula 6 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.32s" repeatCount="indefinite" begin="3.87s" />
+        </circle>
+        <animateMotion dur="4.32s" repeatCount="indefinite" begin="3.87s">
+          <mpath href="#p1" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.32s" repeatCount="indefinite" begin="3.87s" />
+      </g>
+
+      <!-- Particula 7 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.27s" repeatCount="indefinite" begin="2.11s" />
+        </circle>
+        <animateMotion dur="4.27s" repeatCount="indefinite" begin="2.11s">
+          <mpath href="#p2" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.27s" repeatCount="indefinite" begin="2.11s" />
+      </g>
+
+      <!-- Particula 8 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M17.5 7.5c0-2.5-2.2-4.5-5-4.5s-5 2-5 4.5c0 1.3.6 2.4 1.5 3.2.7.6 1.1 1.4 1 2.3l-.2 1.5c-.1.7.5 1.3 1.2 1.1L12 15l1.1.4c.7.3 1.4-.4 1.2-1.1l-.2-1.5c-.1-.9.3-1.7 1-2.3.9-.8 1.5-1.9 1.5-3z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.83s" repeatCount="indefinite" begin="1.46s" />
+        </circle>
+        <animateMotion dur="4.83s" repeatCount="indefinite" begin="1.46s">
+          <mpath href="#p3" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.83s" repeatCount="indefinite" begin="1.46s" />
+      </g>
+
+      <!-- Particula 9 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.6)">
+          <circle cx="12" cy="12" r="6" fill="#fff" />
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.90s" repeatCount="indefinite" begin="0.00s" />
+        </circle>
+        <animateMotion dur="4.90s" repeatCount="indefinite" begin="0.00s">
+          <mpath href="#p4" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.90s" repeatCount="indefinite" begin="0.00s" />
+      </g>
+
+      <!-- Particula 10 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.86s" repeatCount="indefinite" begin="1.32s" />
+        </circle>
+        <animateMotion dur="4.86s" repeatCount="indefinite" begin="1.32s">
+          <mpath href="#p0" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.86s" repeatCount="indefinite" begin="1.32s" />
+      </g>
+
+      <!-- Particula 11 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.58s" repeatCount="indefinite" begin="2.87s" />
+        </circle>
+        <animateMotion dur="4.58s" repeatCount="indefinite" begin="2.87s">
+          <mpath href="#p1" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.58s" repeatCount="indefinite" begin="2.87s" />
+      </g>
+
+      <!-- Particula 12 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.06s" repeatCount="indefinite" begin="3.01s" />
+        </circle>
+        <animateMotion dur="4.06s" repeatCount="indefinite" begin="3.01s">
+          <mpath href="#p2" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.06s" repeatCount="indefinite" begin="3.01s" />
+      </g>
+
+      <!-- Particula 13 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.7)">
+          <path d="M17.5 7.5c0-2.5-2.2-4.5-5-4.5s-5 2-5 4.5c0 1.3.6 2.4 1.5 3.2.7.6 1.1 1.4 1 2.3l-.2 1.5c-.1.7.5 1.3 1.2 1.1L12 15l1.1.4c.7.3 1.4-.4 1.2-1.1l-.2-1.5c-.1-.9.3-1.7 1-2.3.9-.8 1.5-1.9 1.5-3z" fill="#fff"/>
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.86s" repeatCount="indefinite" begin="0.89s" />
+        </circle>
+        <animateMotion dur="4.86s" repeatCount="indefinite" begin="0.89s">
+          <mpath href="#p3" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.86s" repeatCount="indefinite" begin="0.89s" />
+      </g>
+
+      <!-- Particula 14 -->
+      <g>
+        <g transform="translate(-12, -12) scale(0.6)">
+          <circle cx="12" cy="12" r="6" fill="#fff" />
+        </g>
+        <circle r="14" fill="#3b82f6" filter="url(#mig-glow)" opacity="0">
+          <animate attributeName="opacity" values="0; 0; 0.6; 0; 0" keyTimes="0; 0.35; 0.5; 0.65; 1" dur="4.11s" repeatCount="indefinite" begin="1.42s" />
+        </circle>
+        <animateMotion dur="4.11s" repeatCount="indefinite" begin="1.42s">
+          <mpath href="#p4" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.85; 1" dur="4.11s" repeatCount="indefinite" begin="1.42s" />
+      </g>
+
+      </g>
+    </svg>
+  </div>
+
+                </div>
               </div>
             </div>
           </div>
@@ -236,7 +484,18 @@
             </article>
             <article class="before-after-card comparison-card comparison-card-highlight reveal">
               <div class="comparison-card-head">
-                <span class="comparison-kicker">Com Lyra</span>
+                <div class="lyra-premium-badge">
+                  <div class="lyra-premium-badge-glow"></div>
+                  <img src="./assets/logo-icon.png" alt="Lyra" class="lyra-badge-icon" />
+                  <span class="lyra-badge-text">COM LYRA</span>
+                  <div class="lyra-badge-stars">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  </div>
+                </div>
                 <h3>Mais automação. Foco total no paciente.</h3>
               </div>
               <ul>
@@ -353,7 +612,7 @@
                 <span class="eyebrow gradient-pill">Financeiro descomplicado</span>
               </div>
               <figure class="finance-showcase-figure reveal">
-                <img src="./assets/financeiro-descomplicado.png" alt="Dentista usando o financeiro do Lyra para controlar faturamento, recebimentos, despesas e relatórios" loading="lazy" decoding="async" />
+                <img src="./assets/financeiro-notebook.jpg" alt="Dentista usando o financeiro do Lyra em um notebook para controlar faturamento e recebimentos" loading="lazy" decoding="async" />
               </figure>
             </div>
             <div class="finance-showcase-copy reveal">
@@ -415,7 +674,10 @@
               </div>
             </div>
             <div class="agenda-mockup-stage mockup-entrance mockup-from-right">
-              <img src="./assets/mockup-agenda.png" alt="Agenda inteligente do Lyra" loading="lazy" decoding="async" />
+              <div class="agenda-theme-switcher">
+                <img src="./assets/mockup-agenda-light.png?v=11" alt="Agenda inteligente do Lyra Claro" class="agenda-light" loading="lazy" decoding="async" />
+                <img src="./assets/mockup-agenda-dark.png?v=11" alt="Agenda inteligente do Lyra Escuro" class="agenda-dark" loading="lazy" decoding="async" />
+              </div>
             </div>
           </div>
         </div>
@@ -946,35 +1208,29 @@
         revealItems.forEach((item) => item.classList.add('is-visible'));
       }
 
-      if (siteHeader && pricingSection) {
-        let pricingTop = 0;
+      if (siteHeader) {
+        let lastScrollY = 0;
+        
+        const syncHeaderScroll = () => {
+          const currentScrollY = window.scrollY || document.documentElement.scrollTop;
+          if (currentScrollY > lastScrollY && currentScrollY > 80) {
+            siteHeader.classList.add('header-hidden');
+          } else if (currentScrollY < lastScrollY || currentScrollY <= 80) {
+            siteHeader.classList.remove('header-hidden');
+          }
+          lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+        };
+
         let headerScrollTicking = false;
-
-        const updatePricingTop = () => {
-          pricingTop = pricingSection.getBoundingClientRect().top + window.scrollY;
-        };
-
-        const syncHeaderVisibility = () => {
-          const headerOffset = siteHeader.offsetHeight + 8;
-          siteHeader.classList.toggle('header-hidden', window.scrollY >= pricingTop - headerOffset);
-        };
-
-        const requestHeaderSync = () => {
-          if (headerScrollTicking) return;
-          headerScrollTicking = true;
-          window.requestAnimationFrame(() => {
-            syncHeaderVisibility();
-            headerScrollTicking = false;
-          });
-        };
-
-        updatePricingTop();
-        syncHeaderVisibility();
-        window.addEventListener('scroll', requestHeaderSync, { passive: true });
-        window.addEventListener('resize', () => {
-          updatePricingTop();
-          syncHeaderVisibility();
-        });
+        window.addEventListener('scroll', () => {
+          if (!headerScrollTicking) {
+            window.requestAnimationFrame(() => {
+              syncHeaderScroll();
+              headerScrollTicking = false;
+            });
+            headerScrollTicking = true;
+          }
+        }, { passive: true });
       }
 
       const mockupItems = document.querySelectorAll('.mockup-entrance');
@@ -1157,7 +1413,9 @@
         window.addEventListener('scroll', showInviteOnScroll, { passive: true });
       }
 
-      chatClose?.addEventListener('click', () => {
+      chatClose?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         chatWidget?.classList.add('invite-hidden');
         try {
           window.sessionStorage.setItem(chatInviteKey, 'true');
