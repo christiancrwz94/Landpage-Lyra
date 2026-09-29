@@ -23,3 +23,16 @@ dist-ssr
 *.sln
 *.sw?
 .playwright-mcp/
+
+# Backups e temporários
+*.bak
+*.backup
+
+# Screenshots de testes locais
+real-device-screen*.png
+mobile-check*.png
+mobile-ia-check*.png
+
+# QA e notas locais (não vão para produção)
+QA_REPORT.md
+NOTAS_AGENTES_LYRA.md
