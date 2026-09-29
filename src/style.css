@@ -37,7 +37,6 @@
 html {
   width: 100%;
   max-width: 100%;
-  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
@@ -46,11 +45,10 @@ body {
   padding-top: 64px;
   width: 100%;
   max-width: 100%;
-  overflow-x: clip;
+  overflow-x: hidden;
   background: var(--soft);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
-  overscroll-behavior-y: none;
 }
 
 html::-webkit-scrollbar,
@@ -75,8 +73,7 @@ body::-webkit-scrollbar {
 .site-shell {
   width: 100%;
   max-width: 100%;
-  overflow-x: clip;
-  contain: paint;
+  overflow-x: hidden;
 }
 
 a { color: inherit; text-decoration: none; }

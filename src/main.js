@@ -53,15 +53,7 @@ if ('IntersectionObserver' in window) {
   revealItems.forEach((item) => item.classList.add('is-visible'));
 }
 
-document.querySelectorAll('.billing-toggle button').forEach((button) => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('.billing-toggle button').forEach((item) => item.classList.remove('active'));
-    button.classList.add('active');
-    const isYearly = button.dataset.billing === 'year';
-    document.querySelector('#priceValue').textContent = isYearly ? 'Teste grátis' : 'Teste grátis';
-    document.querySelector('#pricePeriod').textContent = isYearly ? 'com desconto no anual' : 'por 30 dias';
-  });
-});
+
 
 const stickyCta = document.querySelector('#stickyCta');
 
