@@ -35,8 +35,8 @@ p{margin:0 0 1rem}
 .site-header.rolou{background:rgba(6,16,29,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.07)}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
 .brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;color:#fff}
-.brand-name{font-size:1.18rem;font-weight:500;letter-spacing:.2px}
-.brand-name strong{font-weight:800}
+.brand-name{font-family:'Outfit','Montserrat',system-ui,sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:-.02em}
+.brand-name strong{font-weight:700}
 .main-nav{display:flex;align-items:center;gap:1.5rem}
 .main-nav a:not(.btn){color:rgba(255,255,255,.82);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
 .main-nav a:not(.btn):hover{color:#fff}
@@ -242,3 +242,66 @@ p{margin:0 0 1rem}
 .tema-toggle button[aria-pressed="true"]{background:#fff;color:var(--ink,#122033);box-shadow:0 2px 8px rgba(18,32,51,.12)}
 .tema-toggle button:focus-visible{outline:2px solid var(--blue,#0072de);outline-offset:2px}
 .telas{margin-top:48px}
+
+
+/* ===== Topo no padrão da primeira tela do app (cena com a dentista, cartões e benefícios) ===== */
+.cena{position:relative;border-radius:36px;background:linear-gradient(#f7fbfe,#f1f7fd);overflow:hidden;aspect-ratio:480/500;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.cena-foto{position:absolute;right:-4%;top:-3%;width:104%;height:auto;max-width:none}
+.cena-chip{position:absolute;width:clamp(44px,9%,62px);aspect-ratio:1;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 10px 22px rgba(59,111,182,.22)}
+.cena-chip svg{width:48%;height:48%}
+.cena-chip.c1{left:34%;top:16%}
+.cena-chip.c2{left:30%;top:34%}
+.cena-chip.c3{left:37%;top:52%}
+.cena-audio{position:absolute;right:5%;bottom:9%;display:flex;align-items:center;gap:7px;background:#fff;border-radius:999px;padding:6px 12px 6px 6px;box-shadow:0 10px 22px rgba(59,111,182,.22)}
+.cena-audio b{width:34px;height:34px;border-radius:50%;background:#1f6bf2;display:grid;place-items:center}
+.cena-audio b svg{width:15px;height:15px}
+.cena-audio .barras{display:flex;align-items:center;gap:2px}
+.cena-audio .barras i{display:block;width:2.4px;border-radius:2px;background:#1f6bf2}
+.cena-audio small{color:#64748b;font-size:.72rem;font-weight:600}
+.destaques{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.dest{display:flex;gap:14px;align-items:center;background:#fff;color:var(--ink);border-radius:26px;padding:16px 18px;box-shadow:0 18px 40px -22px rgba(0,0,0,.5)}
+.dest h3{margin:0 0 3px;font-size:1rem;font-weight:800}
+.dest p{margin:0;font-size:.82rem;line-height:1.4;color:var(--muted)}
+.dest-ico{flex:none;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#1f86f0,#0072de)}
+.dest-ico.verde{background:linear-gradient(135deg,#2edb72,#0e9f4a)}
+.dest-ico svg{width:46%;height:46%}
+.dest-ico img{width:66%;height:auto}
+.beneficios{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:22px;padding:14px 20px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);font-size:.86rem;font-weight:700;color:rgba(255,255,255,.88)}
+.beneficios span::before{content:"✓";color:var(--mint);margin-right:.5rem;font-weight:800}
+@media (max-width:980px){
+  .destaques{grid-template-columns:repeat(2,1fr)}
+  .cena{max-width:520px;margin-inline:auto;width:100%}
+}
+@media (max-width:620px){
+  .destaques{grid-template-columns:1fr;margin-top:40px}
+  .beneficios{border-radius:26px;flex-direction:column;align-items:flex-start}
+}
+
+
+/* ===== Carrossel das telas do app ===== */
+.carrossel{position:relative;margin-top:56px}
+.telas{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:26px;margin:0;padding:26px calc(50% - 107px) 64px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;outline-offset:-4px}
+.telas::-webkit-scrollbar{display:none}
+.phone.mini{flex:none;width:214px;scroll-snap-align:center;transform:scale(.86);opacity:.55;transition:transform .45s var(--ease),opacity .45s}
+.phone.mini:nth-child(odd){transform:scale(.86)}
+.phone.mini.ativa{transform:scale(1);opacity:1}
+.phone.mini:hover{transform:scale(.9)}
+.phone.mini.ativa:hover{transform:scale(1.02)}
+.phone.mini figcaption{bottom:-36px;font-size:.9rem;color:var(--ink)}
+.car-btn{position:absolute;top:44%;z-index:3;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:var(--blue);display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 26px rgba(18,32,51,.22);transition:transform .2s,background .2s}
+.car-btn:hover{transform:scale(1.08);background:#f0f7ff}
+.car-btn svg{width:22px;height:22px}
+.car-btn.prev{left:max(8px,calc(50% - 330px))}
+.car-btn.next{right:max(8px,calc(50% - 330px))}
+.car-dots{display:flex;justify-content:center;gap:9px;margin-top:6px}
+.car-dots button{width:9px;height:9px;padding:0;border:0;border-radius:99px;background:#c5d3e2;cursor:pointer;transition:width .3s,background .3s}
+.car-dots button[aria-selected="true"]{width:26px;background:var(--blue)}
+@media (max-width:720px){
+  .telas{padding-inline:calc(50% - 38vw);gap:16px}
+  .phone.mini{width:76vw;max-width:260px}
+  .car-btn{width:40px;height:40px}
+  .car-btn.prev{left:4px}.car-btn.next{right:4px}
+}
+@media (prefers-reduced-motion:reduce){.telas{scroll-behavior:auto}.phone.mini{transition:none}}
+.telas{-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.phone.mini{filter:drop-shadow(0 18px 18px rgba(18,32,51,.18))}

@@ -182,3 +182,79 @@ if (!reduzMovimento) {
   };
   botoes.forEach((b) => b.addEventListener('click', () => trocar(b.dataset.tema)));
 })();
+
+
+// Carrossel das telas do app: setas, pontos, arrastar e passar sozinho (pausa ao tocar ou passar o mouse)
+(function carrosselDasTelas() {
+  const pista = document.getElementById('telas');
+  if (!pista) return;
+  const slides = [...pista.querySelectorAll('figure')];
+  const raiz = pista.closest('.carrossel');
+  const pontos = raiz.querySelector('.car-dots');
+  const reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let atual = 0, pausado = false, visivel = false, timer = null;
+
+  slides.forEach((fig, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', 'Ir para: ' + (fig.querySelector('figcaption')?.textContent || 'tela ' + (i + 1)));
+    b.addEventListener('click', () => ir(i));
+    pontos.appendChild(b);
+  });
+
+  const marcar = (i) => {
+    atual = i;
+    slides.forEach((s, k) => s.classList.toggle('ativa', k === i));
+    [...pontos.children].forEach((b, k) => b.setAttribute('aria-selected', String(k === i)));
+  };
+  const ir = (i) => {
+    const alvo = slides[(i + slides.length) % slides.length];
+    pista.scrollTo({ left: alvo.offsetLeft - (pista.clientWidth - alvo.offsetWidth) / 2, behavior: reduz ? 'auto' : 'smooth' });
+  };
+  const maisProximo = () => {
+    const centro = pista.scrollLeft + pista.clientWidth / 2;
+    let melhor = 0, dist = Infinity;
+    slides.forEach((s, k) => {
+      const d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - centro);
+      if (d < dist) { dist = d; melhor = k; }
+    });
+    return melhor;
+  };
+  let raf = 0;
+  pista.addEventListener('scroll', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => { const i = maisProximo(); if (i !== atual) marcar(i); });
+  }, { passive: true });
+
+  raiz.querySelector('.prev').addEventListener('click', () => ir(atual - 1));
+  raiz.querySelector('.next').addEventListener('click', () => ir(atual + 1));
+  pista.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); ir(atual - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); ir(atual + 1); }
+  });
+
+  const parar = () => { clearInterval(timer); timer = null; };
+  const tocar = () => {
+    if (reduz || pausado || !visivel || timer) return;
+    timer = setInterval(() => ir(atual + 1), 4500);
+  };
+  const pausa = () => { pausado = true; parar(); };
+  const retoma = () => { pausado = false; tocar(); };
+  ['mouseenter', 'focusin', 'touchstart', 'pointerdown'].forEach((ev) => raiz.addEventListener(ev, pausa, { passive: true }));
+  ['mouseleave', 'focusout'].forEach((ev) => raiz.addEventListener(ev, retoma));
+  raiz.addEventListener('touchend', () => setTimeout(retoma, 6000), { passive: true });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => { visivel = e.isIntersecting; visivel ? tocar() : parar(); }, { threshold: 0.4 }).observe(raiz);
+  }
+
+  // começa pela tela do meio (Odontograma), sem animar
+  requestAnimationFrame(() => {
+    const meio = Math.floor(slides.length / 2);
+    const alvo = slides[meio];
+    pista.style.scrollBehavior = 'auto';
+    pista.scrollLeft = alvo.offsetLeft - (pista.clientWidth - alvo.offsetWidth) / 2;
+    pista.style.scrollBehavior = '';
+    marcar(meio);
+  });
+})();
