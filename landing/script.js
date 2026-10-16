@@ -40,7 +40,7 @@ if (toggle && menu) {
   const guardado = () => { try { return localStorage.getItem('lyra-tema'); } catch (e) { return null; } };
   const aplica = (t) => {
     raiz.setAttribute('data-tema', t);
-    meta.content = t === 'escuro' ? '#06101d' : '#ffffff';
+    meta.content = t === 'escuro' ? '#111715' : '#f8f6ef';
     if (btn) btn.setAttribute('aria-label', t === 'escuro' ? 'Trocar para o tema claro' : 'Trocar para o tema escuro');
     document.dispatchEvent(new CustomEvent('lyra:tema', { detail: t }));
   };
