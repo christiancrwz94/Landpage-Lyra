@@ -34,11 +34,11 @@ p{margin:0 0 1rem}
 .site-header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
 .site-header.rolou{background:rgba(5,5,6,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.07)}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
-.brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;color:#fff}
+.brand{white-space:nowrap;display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;color:#fff}
 .brand-name{font-family:'Outfit','Montserrat',system-ui,sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:-.02em}
 .brand-name strong{font-weight:700}
-.main-nav{display:flex;align-items:center;gap:1.5rem}
-.main-nav a:not(.btn){color:rgba(255,255,255,.82);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+.main-nav{display:flex;align-items:center;gap:1.15rem}
+.main-nav a:not(.btn){white-space:nowrap;color:rgba(255,255,255,.82);text-decoration:none;font-size:.86rem;font-weight:500;transition:color .2s}
 .main-nav a:not(.btn):hover{color:#fff}
 .menu-toggle{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative}
 .menu-toggle span:not(.sr-only){position:absolute;left:10px;right:10px;height:2px;background:#fff;border-radius:2px;transition:.3s}
@@ -188,12 +188,15 @@ p{margin:0 0 1rem}
   .cards,.cards.tres{grid-template-columns:1fr 1fr}
   .secao{padding:76px 0}
 }
-@media (max-width:720px){
+/* Menu em lista (celular e janelas estreitas): com 5 itens o menu horizontal não cabe abaixo de ~1020px. */
+@media (max-width:1020px){
   .menu-toggle{display:block}
   .main-nav{position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(5,5,6,.97);padding:10px 20px 20px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:.3s var(--ease)}
   .main-nav.open{transform:none;opacity:1;pointer-events:auto}
   .main-nav a:not(.btn){padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.07);font-size:1rem}
   .main-nav .btn{margin-top:14px}
+}
+@media (max-width:720px){
   .cards,.cards.tres{grid-template-columns:1fr}
   .phone-back{width:210px}.phone-front{width:224px;left:2%}
   .hero-devices{height:500px}
@@ -900,8 +903,9 @@ html:not(.js) .dest-seta{display:none}
 .dest-ico svg .pf{fill:currentColor;stroke:none}
 .card .ico{width:50px;height:50px;padding:13px;border-radius:50%;background:var(--ico-bg);color:var(--blue);fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .card .ico .pf{fill:currentColor;stroke:none}
-.lc-botao{background:var(--blue);color:var(--on-acc);box-shadow:0 14px 32px -8px rgba(var(--acc-rgb),.55),inset 0 0 0 1px rgba(255,255,255,.18)}
-.lc-botao::before{border-color:rgba(var(--acc-rgb),.7)}
+/* Botão do WhatsApp: sempre no verde oficial (#25D366), em qualquer tema. */
+.lc-botao{background:#25D366;color:#fff;box-shadow:0 14px 32px -8px rgba(37,211,102,.55),inset 0 0 0 1px rgba(255,255,255,.18)}
+.lc-botao::before{border-color:rgba(37,211,102,.7)}
 .lc-ico-wa svg{fill:currentColor}
 @media (max-width:620px){.dest-ico,.dest-ico.verde{width:54px;height:54px}.dest-ico svg{width:27px;height:27px}.card .ico{width:46px;height:46px;padding:12px}}
 
@@ -924,3 +928,81 @@ h1,h2,.t-painel{text-wrap:balance}
 .od-mic{color:var(--on-acc)}
 .od-app.ouvindo .od-mic{color:#fff}
 .ag-pill .t{display:inline;color:inherit;transition:none;transform:none;filter:none}
+
+/* Ícones dos 4 cards do topo: iguais aos da primeira tela do app (sem círculo; WhatsApp verde, voz azul, calendário Samsung). */
+.dest-ico.sem-fundo,.dest-ico.sem-fundo.verde{background:none;box-shadow:none;border-radius:0;width:60px;height:60px;color:var(--ink,currentColor)}
+.dest-ico.sem-fundo svg{width:52px;height:52px;stroke-width:1.5}
+.dest-ico.wa svg{fill:#25D366;stroke:none;width:46px;height:46px}
+.dest-ico.voz-azul svg{stroke:url(#gv);width:50px;height:50px}
+.cal31{position:relative;display:block;width:46px;height:46px;border-radius:36%;background:#fff;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.12),0 6px 14px -6px rgba(0,0,0,.35)}
+.cal31::before{content:"";position:absolute;left:0;right:0;top:0;height:23.5%;background:#EF4444}
+.cal31 i{position:absolute;top:19%;width:14%;height:14%;border-radius:50%;background:#EF4444}
+.cal31 i:nth-child(1){left:21%}.cal31 i:nth-child(2){right:21%}
+.cal31 b{position:absolute;left:0;right:0;top:23.5%;bottom:0;display:grid;place-items:center;font:600 24px/1 'Outfit',system-ui,sans-serif;color:#0b0b0b}
+@media (max-width:620px){.dest-ico.sem-fundo{width:54px;height:54px}.dest-ico.sem-fundo svg,.cal31{width:40px;height:40px}.cal31 b{font-size:21px}}
+
+/* ── Demonstração da agenda: mesmo desenho da agenda atual do app (blocos sem horário, status sólido à direita, régua só com a hora cheia) ── */
+.ag-app .ag-icos{align-items:center;gap:12px}
+.ag-cal{position:relative;display:block;width:24px;height:24px;border-radius:36%;background:#fff;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.14)}
+.ag-cal::before{content:"";position:absolute;left:0;right:0;top:0;height:24%;background:#EF4444}
+.ag-cal i{position:absolute;top:19%;width:14%;height:14%;border-radius:50%;background:#EF4444}
+.ag-cal i:nth-child(1){left:22%}.ag-cal i:nth-child(2){right:22%}
+.ag-cal b{position:absolute;left:0;right:0;top:24%;bottom:0;display:grid;place-items:center;font:600 12px/1 'Outfit',system-ui,sans-serif;color:#0b0b0b}
+.ag-slot{align-items:center;min-height:60px;gap:8px}
+.ag-slot time{width:22px;text-align:left;font-size:.78rem;font-weight:700;color:var(--o-muted);align-self:flex-start;padding-top:6px}
+.ag-slot::after{left:30px;border-bottom:1px dotted var(--ag-line)}
+.ag-card{--bar:#8e8e93;min-height:46px;border-radius:8px;padding:6px 8px 6px 11px;box-shadow:inset 3px 0 0 var(--bar)}
+.ag-card:has(.st-conc){--bar:#1f9a4b}.ag-card:has(.st-aten){--bar:#d97706}.ag-card:has(.st-conf){--bar:#2563eb}.ag-card:has(.st-ag){--bar:#8e8e93}
+.ag-info b{font-size:.88rem;font-weight:700}
+.ag-tag{display:block;margin-top:1px;padding:0;background:none;border-radius:0;font-size:.74rem;color:var(--o-muted)}
+.ag-pill{color:#fff;font-size:.72rem;padding:5px 9px}
+.ag-slot .ag-pill.st-ag{background:#8e8e93;color:#fff}
+.ag-slot .ag-pill.st-conf{background:#2563eb;color:#fff}
+.ag-slot .ag-pill.st-aten{background:#d97706;color:#fff}
+.ag-slot .ag-pill.st-conc{background:#1f9a4b;color:#fff}
+.ag-novo .ag-card{left:30px;top:3px;bottom:3px}
+.ag-novo .ag-mais{display:none}
+
+/* ── Emendas suaves entre as seções: sem bordas arredondadas e sem linha de divisão; as cores se misturam num degradê ── */
+:root{--fim-hero:#f6f7f9;--fim-escura:#ececef}
+@media (prefers-color-scheme:dark){:root:not([data-tema]){--fim-hero:#000000;--fim-escura:#050506}}
+:root[data-tema="escuro"]{--fim-hero:#000000;--fim-escura:#050506}
+:root[data-tema="claro"]{--fim-hero:#f6f7f9;--fim-escura:#ececef}
+.hero,.secao.escura,.cta-final,.site-footer{border-radius:0;margin-top:0;margin-bottom:0}
+.secao.escura{margin:0}
+.secao{position:relative}
+.secao::before{content:"";position:absolute;left:0;right:0;top:0;height:200px;pointer-events:none;z-index:0;opacity:0}
+.hero + .secao::before{opacity:1;background:linear-gradient(180deg,var(--fim-hero),transparent)}
+.secao.escura + .secao::before{opacity:1;background:linear-gradient(180deg,var(--fim-escura),transparent)}
+.secao.clara + .secao.escura::before{opacity:1;background:linear-gradient(180deg,var(--soft),transparent)}
+.secao:not(.clara):not(.escura) + .secao::before{opacity:1;background:linear-gradient(180deg,var(--page,#fff),transparent)}
+.secao > .container{position:relative;z-index:1}
+.cta-final{position:relative}
+.cta-final::after{content:"";position:absolute;left:0;right:0;top:0;height:220px;pointer-events:none;z-index:0;background:linear-gradient(180deg,var(--soft),transparent)}
+.cta-final > .container{position:relative;z-index:1}
+
+/* Carrossel: a rolagem lateral cortava a sombra dos celulares e deixava uma linha nítida embaixo. Espaço extra (compensado com margem negativa) para a sombra terminar sozinha. */
+.telas{padding-top:90px;padding-bottom:170px;margin-top:-64px;margin-bottom:-106px}
+@media (max-width:620px){.telas{padding-top:60px;padding-bottom:140px;margin-top:-34px;margin-bottom:-76px}}
+
+/* Sem a barrinha preta no topo dos celulares (ela cobria o título das telas) */
+.phone::before{display:none}
+
+/* Espaço entre as seções menor (antes ~290px entre uma e outra) */
+.secao,.secao.escura{padding:68px 0}
+.hero + .secao,.secao.escura + .secao{padding-top:68px}
+.secao:has(+ .secao.escura),.secao:has(+ .cta-final){padding-bottom:68px}
+.hero{padding-bottom:80px}
+.cta-final{padding:72px 0}
+.secao::before{height:120px}
+.cta-final::after{height:140px}
+@media (max-width:980px){
+  .secao,.secao.escura{padding:48px 0}
+  .hero + .secao,.secao.escura + .secao{padding-top:48px}
+  .secao:has(+ .secao.escura),.secao:has(+ .cta-final){padding-bottom:48px}
+  .hero{padding-bottom:56px}
+  .cta-final{padding:56px 0}
+}
+
+.faq-list .faq-acao{margin:14px 0 4px}
+.faq-list .faq-acao .btn{display:inline-flex}
