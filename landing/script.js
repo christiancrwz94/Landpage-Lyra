@@ -542,42 +542,20 @@ iniciarDemos(document);
   window.addEventListener('resize', () => { if (ativo && !celular.matches) { const b = botoes.find((x) => x.dataset.alvo === ativo); if (b) apontaSeta(b); } });
 })();
 
-// ── Atendimento: botão flutuante do WhatsApp (aviso de boas-vindas, painel com atalhos) ──
+// ── Atendimento: botão flutuante do WhatsApp (painel com atalhos; sem aviso automático) ──
 (function atendimento() {
   const raiz = document.getElementById('lyra-chat');
   if (!raiz) return;
   const botao = document.getElementById('lc-botao');
   const painel = document.getElementById('lc-painel');
-  const dica = document.getElementById('lc-dica');
   const selo = document.getElementById('lc-selo');
   const fechaPainel = raiz.querySelector('.lc-x');
-  const fechaDica = raiz.querySelector('.lc-dica-x');
-  const guarda = (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) { /* ok */ } };
-  const le = (k) => { try { return sessionStorage.getItem(k); } catch (e) { return null; } };
-  let tDica = null;
-
-  function escondeDica(pronto) {
-    clearTimeout(tDica);
-    if (dica.hidden) return;
-    if (reduzMovimento) { dica.hidden = true; return; }
-    dica.classList.add('some');
-    setTimeout(() => { dica.hidden = true; dica.classList.remove('some'); }, 380);
-  }
-  function mostraDica() {
-    if (le('lyra-aviso-visto') || raiz.classList.contains('aberto')) return;
-    dica.hidden = false;
-    selo.hidden = false;
-    guarda('lyra-aviso-visto', '1');
-    tDica = setTimeout(() => escondeDica(), 11000);   // some sozinho depois de uns segundos
-  }
-
   function abre() {
     raiz.classList.add('aberto');
     painel.removeAttribute('inert');
     botao.setAttribute('aria-expanded', 'true');
     botao.setAttribute('aria-label', 'Fechar atendimento');
     selo.hidden = true;
-    escondeDica();
   }
   function fecha(devolveFoco) {
     raiz.classList.remove('aberto');
@@ -589,15 +567,11 @@ iniciarDemos(document);
 
   botao.addEventListener('click', () => (raiz.classList.contains('aberto') ? fecha(false) : abre()));
   fechaPainel.addEventListener('click', () => fecha(true));
-  fechaDica.addEventListener('click', () => escondeDica());
-  dica.addEventListener('click', (e) => { if (!e.target.closest('.lc-dica-x')) abre(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && raiz.classList.contains('aberto')) fecha(true); });
   // Toque fora do painel fecha (os links do painel continuam abrindo o WhatsApp)
   document.addEventListener('pointerdown', (e) => {
     if (raiz.classList.contains('aberto') && !raiz.contains(e.target)) fecha(false);
   });
-  // O aviso de boas-vindas chega depois que a pessoa deu uma olhada na página
-  setTimeout(mostraDica, reduzMovimento ? 3500 : 4500);
 })();
 
 // Alternador Escuro/Claro dos prints do app (só troca a imagem; as claras carregam quando pedidas)

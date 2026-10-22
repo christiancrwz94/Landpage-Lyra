@@ -105,7 +105,7 @@ p{margin:0 0 1rem}
 .demo-texto{min-height:128px;background:#1e1f22;border-radius:20px;padding:16px 18px;font-size:1rem;line-height:1.55;color:#fafafa}
 .demo-texto b{color:var(--acc-lite2);font-weight:700}
 .cursor{display:inline-block;width:2px;height:1.1em;background:var(--acc-lite);vertical-align:-3px;margin-left:2px;animation:piscar 1s steps(1) infinite}
-.demo-barra{display:flex;align-items:center;gap:12px;background:#1e1f22;border-radius:999px;padding:10px 14px;margin:14px 0}
+.demo-barra{display:flex;align-items:center;gap:12px;background:#1e1f22;border-radius:999px;padding:10px 14px;margin:14px 0 12px}
 .rec{width:22px;height:22px;display:grid;place-items:center}
 .rec i{width:10px;height:10px;border-radius:50%;background:#ff4d5e;animation:pulso-r 1.2s infinite}
 .tempo{font-weight:700;font-variant-numeric:tabular-nums;min-width:38px}

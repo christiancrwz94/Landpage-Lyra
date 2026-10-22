@@ -1,0 +1,716 @@
+[
+ {
+  "chave": "hero_l1",
+  "grupo": "Topo da página",
+  "label": "Título, linha 1",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "hero_l2",
+  "grupo": "Topo da página",
+  "label": "Título, linha 2 (destacada)",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "hero_lead",
+  "grupo": "Topo da página",
+  "label": "Texto de apresentação",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "d_wa_t",
+  "grupo": "Quatro cartões do topo",
+  "label": "WhatsApp, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "d_wa_x",
+  "grupo": "Quatro cartões do topo",
+  "label": "WhatsApp, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "d_ag_t",
+  "grupo": "Quatro cartões do topo",
+  "label": "Agenda, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "d_ag_x",
+  "grupo": "Quatro cartões do topo",
+  "label": "Agenda, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "d_od_t",
+  "grupo": "Quatro cartões do topo",
+  "label": "Odontograma, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "d_od_x",
+  "grupo": "Quatro cartões do topo",
+  "label": "Odontograma, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "d_voz_t",
+  "grupo": "Quatro cartões do topo",
+  "label": "Evolução por voz, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "d_voz_x",
+  "grupo": "Quatro cartões do topo",
+  "label": "Evolução por voz, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "ag_eyebrow",
+  "grupo": "Seção Agenda",
+  "label": "Etiqueta acima do título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "ag_l1",
+  "grupo": "Seção Agenda",
+  "label": "Título, linha 1",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "ag_l2",
+  "grupo": "Seção Agenda",
+  "label": "Título, linha 2 (destacada)",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "ag_lead",
+  "grupo": "Seção Agenda",
+  "label": "Texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "ag_c1",
+  "grupo": "Seção Agenda",
+  "label": "Item 1 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "ag_c2",
+  "grupo": "Seção Agenda",
+  "label": "Item 2 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "ag_c3",
+  "grupo": "Seção Agenda",
+  "label": "Item 3 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "voz_eyebrow",
+  "grupo": "Seção Evolução por voz",
+  "label": "Etiqueta acima do título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "voz_l1",
+  "grupo": "Seção Evolução por voz",
+  "label": "Título, linha 1",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "voz_l2",
+  "grupo": "Seção Evolução por voz",
+  "label": "Título, linha 2 (destacada)",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "voz_lead",
+  "grupo": "Seção Evolução por voz",
+  "label": "Texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "voz_c1",
+  "grupo": "Seção Evolução por voz",
+  "label": "Item 1 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "voz_c2",
+  "grupo": "Seção Evolução por voz",
+  "label": "Item 2 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "voz_c3",
+  "grupo": "Seção Evolução por voz",
+  "label": "Item 3 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "od_eyebrow",
+  "grupo": "Seção Odontograma por voz",
+  "label": "Etiqueta acima do título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "od_l1",
+  "grupo": "Seção Odontograma por voz",
+  "label": "Título, parte 1",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "od_l2",
+  "grupo": "Seção Odontograma por voz",
+  "label": "Título, parte 2 (destacada)",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "od_lead",
+  "grupo": "Seção Odontograma por voz",
+  "label": "Texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "od_c1",
+  "grupo": "Seção Odontograma por voz",
+  "label": "Item 1 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "od_c2",
+  "grupo": "Seção Odontograma por voz",
+  "label": "Item 2 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "od_c3",
+  "grupo": "Seção Odontograma por voz",
+  "label": "Item 3 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "wa_eyebrow",
+  "grupo": "Seção WhatsApp",
+  "label": "Etiqueta acima do título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "wa_l1",
+  "grupo": "Seção WhatsApp",
+  "label": "Título, linha 1",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "wa_l2",
+  "grupo": "Seção WhatsApp",
+  "label": "Título, linha 2",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "wa_lead",
+  "grupo": "Seção WhatsApp",
+  "label": "Texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "wa_c1",
+  "grupo": "Seção WhatsApp",
+  "label": "Item 1 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "wa_c2",
+  "grupo": "Seção WhatsApp",
+  "label": "Item 2 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "wa_c3",
+  "grupo": "Seção WhatsApp",
+  "label": "Item 3 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "wa_aviso",
+  "grupo": "Seção WhatsApp",
+  "label": "Aviso abaixo da lista",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "rec_eyebrow",
+  "grupo": "Seção Recursos",
+  "label": "Etiqueta acima do título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "rec_titulo",
+  "grupo": "Seção Recursos",
+  "label": "Título",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "rec_lead",
+  "grupo": "Seção Recursos",
+  "label": "Texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "rec_c1_t",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 1, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "rec_c1_x",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 1, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "rec_c2_t",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 2, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "rec_c2_x",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 2, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "rec_c3_t",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 3, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "rec_c3_x",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 3, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "rec_c4_t",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 4, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "rec_c4_x",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 4, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "rec_c5_t",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 5, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "rec_c5_x",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 5, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "rec_c6_t",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 6, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "rec_c6_x",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 6, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "seg_eyebrow",
+  "grupo": "Seção Segurança",
+  "label": "Etiqueta acima do título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "seg_titulo",
+  "grupo": "Seção Segurança",
+  "label": "Título",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "seg_lead",
+  "grupo": "Seção Segurança",
+  "label": "Texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "seg_c1_t",
+  "grupo": "Seção Segurança",
+  "label": "Cartão 1, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "seg_c1_x",
+  "grupo": "Seção Segurança",
+  "label": "Cartão 1, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "seg_c2_t",
+  "grupo": "Seção Segurança",
+  "label": "Cartão 2, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "seg_c2_x",
+  "grupo": "Seção Segurança",
+  "label": "Cartão 2, texto (use **assim** para negrito)",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "faq_eyebrow",
+  "grupo": "Perguntas frequentes",
+  "label": "Etiqueta acima do título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq_l1",
+  "grupo": "Perguntas frequentes",
+  "label": "Título, linha 1",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "faq_l2",
+  "grupo": "Perguntas frequentes",
+  "label": "Título, linha 2",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "faq1_q",
+  "grupo": "Perguntas frequentes",
+  "label": "Pergunta 1",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq1_a",
+  "grupo": "Perguntas frequentes",
+  "label": "Resposta 1",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "faq2_q",
+  "grupo": "Perguntas frequentes",
+  "label": "Pergunta 2",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq2_a",
+  "grupo": "Perguntas frequentes",
+  "label": "Resposta 2",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "faq3_q",
+  "grupo": "Perguntas frequentes",
+  "label": "Pergunta 3",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq3_a",
+  "grupo": "Perguntas frequentes",
+  "label": "Resposta 3",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "faq4_q",
+  "grupo": "Perguntas frequentes",
+  "label": "Pergunta 4",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq4_a",
+  "grupo": "Perguntas frequentes",
+  "label": "Resposta 4",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "faq5_q",
+  "grupo": "Perguntas frequentes",
+  "label": "Pergunta 5",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq5_a",
+  "grupo": "Perguntas frequentes",
+  "label": "Resposta 5",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "faq6_q",
+  "grupo": "Perguntas frequentes",
+  "label": "Pergunta 6",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq6_a",
+  "grupo": "Perguntas frequentes",
+  "label": "Resposta 6",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "faq7_q",
+  "grupo": "Perguntas frequentes",
+  "label": "Pergunta 7",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq7_a",
+  "grupo": "Perguntas frequentes",
+  "label": "Resposta 7",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "faq8_q",
+  "grupo": "Perguntas frequentes",
+  "label": "Pergunta 8",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq8_a",
+  "grupo": "Perguntas frequentes",
+  "label": "Resposta 8",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "faq9_q",
+  "grupo": "Perguntas frequentes",
+  "label": "Pergunta 9",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq9_a",
+  "grupo": "Perguntas frequentes",
+  "label": "Resposta 9",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "faq10_q",
+  "grupo": "Perguntas frequentes",
+  "label": "Pergunta 10",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq10_a",
+  "grupo": "Perguntas frequentes",
+  "label": "Resposta 10",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "faq11_q",
+  "grupo": "Perguntas frequentes",
+  "label": "Pergunta 11",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "faq11_a",
+  "grupo": "Perguntas frequentes",
+  "label": "Resposta 11",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "cta_titulo",
+  "grupo": "Chamada final",
+  "label": "Título",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "cta_texto",
+  "grupo": "Chamada final",
+  "label": "Texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "cta_botao",
+  "grupo": "Chamada final",
+  "label": "Texto do botão",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "lc_msg1",
+  "grupo": "Botão flutuante do WhatsApp",
+  "label": "Primeira mensagem",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "lc_msg2",
+  "grupo": "Botão flutuante do WhatsApp",
+  "label": "Segunda mensagem",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "lc_op1",
+  "grupo": "Botão flutuante do WhatsApp",
+  "label": "Opção 1",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "lc_op2",
+  "grupo": "Botão flutuante do WhatsApp",
+  "label": "Opção 2",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "lc_op3",
+  "grupo": "Botão flutuante do WhatsApp",
+  "label": "Opção 3",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "lc_op4",
+  "grupo": "Botão flutuante do WhatsApp",
+  "label": "Opção 4",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "rod_tagline",
+  "grupo": "Rodapé",
+  "label": "Frase do rodapé",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "wa_numero",
+  "grupo": "Contato e links",
+  "label": "Número de WhatsApp dos botões (só números, com 55)",
+  "tipo": "telefone",
+  "max": 15
+ },
+ {
+  "chave": "rod_email",
+  "grupo": "Contato e links",
+  "label": "E-mail de contato",
+  "tipo": "email",
+  "max": 80
+ },
+ {
+  "chave": "link_cadastro",
+  "grupo": "Contato e links",
+  "label": "Link do botão \"Quero começar agora\"",
+  "tipo": "link",
+  "max": 200
+ },
+ {
+  "chave": "seo_titulo",
+  "grupo": "Google e compartilhamento",
+  "label": "Título que aparece no Google",
+  "tipo": "titulo",
+  "max": 90
+ },
+ {
+  "chave": "seo_descricao",
+  "grupo": "Google e compartilhamento",
+  "label": "Descrição que aparece no Google",
+  "tipo": "longo",
+  "max": 200
+ }
+]
