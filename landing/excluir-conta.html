@@ -7,10 +7,10 @@
     <meta name="color-scheme" content="light dark">
     <script>(function(){var t;try{t=localStorage.getItem("lyra-tema")}catch(e){}if(t!=="claro"&&t!=="escuro"){t=matchMedia("(prefers-color-scheme: dark)").matches?"escuro":"claro"}document.documentElement.setAttribute("data-tema",t)})()</script>
     <style>
-        :root { color-scheme:light; --pg:#f2f3f5;--cd:#ffffff;--tx:#0b0b0c;--tx2:#3a3b3f;--az:#111111;--h2:#1c1c1e;--ln:#e4e5e7;--th:#f0f1f3;--nb:#ececef;--mt:#6b6c70;--mc:#0b0b0c;--bt:rgba(0,0,0,.07); }
-        @media (prefers-color-scheme:dark) { :root:not([data-tema]) { color-scheme:dark; --pg:#050506;--cd:#161719;--tx:#fafafa;--tx2:#cfd0d4;--az:#ffffff;--h2:#ffffff;--ln:rgba(255,255,255,.12);--th:#1e1f22;--nb:#232427;--mt:#a8a9ad;--mc:#ffffff;--bt:rgba(255,255,255,.1); } }
-        :root[data-tema="claro"] { color-scheme:light; --pg:#f2f3f5;--cd:#ffffff;--tx:#0b0b0c;--tx2:#3a3b3f;--az:#111111;--h2:#1c1c1e;--ln:#e4e5e7;--th:#f0f1f3;--nb:#ececef;--mt:#6b6c70;--mc:#0b0b0c;--bt:rgba(0,0,0,.07); }
-        :root[data-tema="escuro"] { color-scheme:dark; --pg:#050506;--cd:#161719;--tx:#fafafa;--tx2:#cfd0d4;--az:#ffffff;--h2:#ffffff;--ln:rgba(255,255,255,.12);--th:#1e1f22;--nb:#232427;--mt:#a8a9ad;--mc:#ffffff;--bt:rgba(255,255,255,.1); }
+        :root { color-scheme:light; --pg:#f8f6ef;--cd:#ffffff;--tx:#29342e;--tx2:#3e4a43;--az:#435e52;--h2:#2c4238;--ln:#e3dacb;--th:#eef2ea;--nb:#e8eee8;--mt:#5b675f;--mc:#29342e;--bt:rgba(41,52,46,.07); }
+        @media (prefers-color-scheme:dark) { :root:not([data-tema]) { color-scheme:dark; --pg:#111715;--cd:#18211d;--tx:#f2f4ef;--tx2:#c9d4cc;--az:#a7c3ae;--h2:#a7c3ae;--ln:rgba(255,255,255,.12);--th:#1f2a25;--nb:#24302a;--mt:#c7cec7;--mc:#ffffff;--bt:rgba(255,255,255,.1); } }
+        :root[data-tema="claro"] { color-scheme:light; --pg:#f8f6ef;--cd:#ffffff;--tx:#29342e;--tx2:#3e4a43;--az:#435e52;--h2:#2c4238;--ln:#e3dacb;--th:#eef2ea;--nb:#e8eee8;--mt:#5b675f;--mc:#29342e;--bt:rgba(41,52,46,.07); }
+        :root[data-tema="escuro"] { color-scheme:dark; --pg:#111715;--cd:#18211d;--tx:#f2f4ef;--tx2:#c9d4cc;--az:#a7c3ae;--h2:#a7c3ae;--ln:rgba(255,255,255,.12);--th:#1f2a25;--nb:#24302a;--mt:#c7cec7;--mc:#ffffff;--bt:rgba(255,255,255,.1); }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background:var(--pg); color:var(--tx); line-height:1.65; margin:0; padding:24px; }
         .container { max-width:760px; margin:0 auto; background:var(--cd); padding:36px; border-radius:16px; border:1px solid var(--ln); position:relative; }
         h1 { font-family:'Fraunces',Georgia,serif; font-weight:500; color:var(--az); margin-top:0; font-size:1.7rem; }

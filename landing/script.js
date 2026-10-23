@@ -22,14 +22,17 @@ if (ano) ano.textContent = new Date().getFullYear();
 const toggle = document.querySelector('.menu-toggle');
 const menu = document.getElementById('menu');
 if (toggle && menu) {
-  toggle.addEventListener('click', () => {
-    const aberto = menu.classList.toggle('open');
+  // Fundo levemente escurecido enquanto o menu está aberto (toque nele fecha o menu)
+  const fundo = document.body.appendChild(Object.assign(document.createElement('div'), { className: 'menu-fundo' }));
+  const definir = (aberto) => {
+    menu.classList.toggle('open', aberto);
+    fundo.style.top = document.querySelector('.site-header').offsetHeight + 'px'; // o topo (logo) não escurece
+    fundo.classList.toggle('on', aberto);
     toggle.setAttribute('aria-expanded', String(aberto));
-  });
-  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
-    menu.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }));
+  };
+  toggle.addEventListener('click', () => definir(!menu.classList.contains('open')));
+  fundo.addEventListener('click', () => definir(false));
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => definir(false)));
 }
 
 // ── Tema claro/escuro: segue o celular, lembra a escolha e troca com onda circular ──
@@ -40,7 +43,7 @@ if (toggle && menu) {
   const guardado = () => { try { return localStorage.getItem('lyra-tema'); } catch (e) { return null; } };
   const aplica = (t) => {
     raiz.setAttribute('data-tema', t);
-    meta.content = t === 'escuro' ? '#050506' : '#f2f3f5';
+    meta.content = t === 'escuro' ? '#111715' : '#f8f6ef';
     if (btn) btn.setAttribute('aria-label', t === 'escuro' ? 'Trocar para o tema claro' : 'Trocar para o tema escuro');
     document.dispatchEvent(new CustomEvent('lyra:tema', { detail: t }));
   };
@@ -273,7 +276,6 @@ function demoOdontograma(raiz) {
   const app = por(raiz, 'demo-odonto');
   if (!app) return;
   const fala = por(app, 'od-fala');
-  const salvar = por(app, 'od-salvar');
   const dente = (n) => app.querySelector(`.od-t[data-n="${n}"]`);
   const item = (n) => app.querySelector(`.od-lista li[data-n="${n}"]`);
   const DICA = fala.textContent;
@@ -308,7 +310,6 @@ function demoOdontograma(raiz) {
     app.classList.remove('ouvindo', 'orc');
     app.querySelectorAll('.od-t').forEach((d) => d.classList.remove('on', 'canal'));
     app.querySelectorAll('.od-lista li').forEach((l) => l.classList.remove('on'));
-    salvar.classList.remove('press');
     fala.classList.remove('ativa');
     fala.textContent = DICA;
   }
@@ -326,7 +327,6 @@ function demoOdontograma(raiz) {
     marca(15, true);
     app.classList.remove('ouvindo');
     await dorme(1900);
-    salvar.classList.add('press');                      // 5) salvar abre o orçamento
     await dorme(450);
     app.classList.add('orc');
     await dorme(6000);                                  // 6) resultado fica visível
@@ -574,96 +574,40 @@ iniciarDemos(document);
   });
 })();
 
-// Alternador Escuro/Claro dos prints do app (só troca a imagem; as claras carregam quando pedidas)
-(function temaDosPrints() {
-  const botoes = [...document.querySelectorAll('.tema-toggle button')];
-  const imgs = [...document.querySelectorAll('#telas img')];
-  if (!botoes.length || !imgs.length) return;
-  const trocar = (tema) => {
-    imgs.forEach((img) => {
-      const base = img.getAttribute('src').replace('-claro.webp', '.webp');
-      img.setAttribute('src', tema === 'claro' ? base.replace('.webp', '-claro.webp') : base);
-    });
-    botoes.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.tema === tema)));
-  };
-  botoes.forEach((b) => b.addEventListener('click', () => trocar(b.dataset.tema)));
-  // Acompanha o tema da página (botão do topo ou tema do celular)
-  document.addEventListener('lyra:tema', (e) => trocar(e.detail));
-  trocar(document.documentElement.dataset.tema === 'claro' ? 'claro' : 'escuro');
-})();
-
-
-// Carrossel das telas do app: setas, pontos, arrastar e passar sozinho (pausa ao tocar ou passar o mouse)
-(function carrosselDasTelas() {
-  const pista = document.getElementById('telas');
-  if (!pista) return;
-  const slides = [...pista.querySelectorAll('figure')];
-  const raiz = pista.closest('.carrossel');
-  const pontos = raiz.querySelector('.car-dots');
-  const reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let atual = 0, pausado = false, visivel = false, timer = null;
-
-  slides.forEach((fig, i) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('role', 'tab');
-    b.setAttribute('aria-label', 'Ir para: ' + (fig.querySelector('figcaption')?.textContent || 'tela ' + (i + 1)));
-    b.addEventListener('click', () => ir(i));
-    pontos.appendChild(b);
-  });
-
-  const marcar = (i) => {
-    atual = i;
-    slides.forEach((s, k) => s.classList.toggle('ativa', k === i));
-    [...pontos.children].forEach((b, k) => b.setAttribute('aria-selected', String(k === i)));
-  };
-  const ir = (i) => {
-    const alvo = slides[(i + slides.length) % slides.length];
-    pista.scrollTo({ left: alvo.offsetLeft - (pista.clientWidth - alvo.offsetWidth) / 2, behavior: reduz ? 'auto' : 'smooth' });
-  };
-  const maisProximo = () => {
-    const centro = pista.scrollLeft + pista.clientWidth / 2;
-    let melhor = 0, dist = Infinity;
-    slides.forEach((s, k) => {
-      const d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - centro);
-      if (d < dist) { dist = d; melhor = k; }
-    });
-    return melhor;
-  };
-  let raf = 0;
-  pista.addEventListener('scroll', () => {
-    cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(() => { const i = maisProximo(); if (i !== atual) marcar(i); });
-  }, { passive: true });
-
-  raiz.querySelector('.prev').addEventListener('click', () => ir(atual - 1));
-  raiz.querySelector('.next').addEventListener('click', () => ir(atual + 1));
-  pista.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') { e.preventDefault(); ir(atual - 1); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); ir(atual + 1); }
-  });
-
-  const parar = () => { clearInterval(timer); timer = null; };
-  const tocar = () => {
-    if (reduz || pausado || !visivel || timer) return;
-    timer = setInterval(() => ir(atual + 1), 4500);
-  };
-  const pausa = () => { pausado = true; parar(); };
-  const retoma = () => { pausado = false; tocar(); };
-  ['mouseenter', 'focusin', 'touchstart', 'pointerdown'].forEach((ev) => raiz.addEventListener(ev, pausa, { passive: true }));
-  ['mouseleave', 'focusout'].forEach((ev) => raiz.addEventListener(ev, retoma));
-  raiz.addEventListener('touchend', () => setTimeout(retoma, 6000), { passive: true });
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(([e]) => { visivel = e.isIntersecting; visivel ? tocar() : parar(); }, { threshold: 0.4 }).observe(raiz);
+// Barra de rolagem flutuante: a nativa some (não ocupa espaço) e uma barrinha fina aparece por cima, só enquanto rola.
+(function () {
+  var raiz = document.documentElement, t, arrasto = null;
+  var barra = document.createElement('div');
+  barra.className = 'rolagem-flutuante';
+  barra.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(barra);
+  function atualizar() {
+    var alto = raiz.clientHeight, total = raiz.scrollHeight;
+    if (total <= alto + 1) { barra.style.display = 'none'; return; }
+    var h = Math.max(36, alto * alto / total);
+    barra.style.display = 'block';
+    barra.style.height = h + 'px';
+    barra.style.transform = 'translateY(' + (raiz.scrollTop / (total - alto)) * (alto - h - 8) + 'px)';
   }
-
-  // começa pela tela do meio (Odontograma), sem animar
-  requestAnimationFrame(() => {
-    const meio = Math.floor(slides.length / 2);
-    const alvo = slides[meio];
-    pista.style.scrollBehavior = 'auto';
-    pista.scrollLeft = alvo.offsetLeft - (pista.clientWidth - alvo.offsetWidth) / 2;
-    pista.style.scrollBehavior = '';
-    marcar(meio);
+  function mostrar() {
+    atualizar();
+    barra.classList.add('visivel');
+    clearTimeout(t);
+    t = setTimeout(function () { if (!arrasto) barra.classList.remove('visivel'); }, 900);
+  }
+  window.addEventListener('scroll', mostrar, { passive: true });
+  window.addEventListener('resize', atualizar);
+  barra.addEventListener('pointerdown', function (e) {
+    arrasto = { y: e.clientY, topo: raiz.scrollTop };
+    barra.setPointerCapture(e.pointerId);
+    e.preventDefault();
   });
+  barra.addEventListener('pointermove', function (e) {
+    if (!arrasto) return;
+    var alto = raiz.clientHeight, total = raiz.scrollHeight, h = barra.offsetHeight;
+    raiz.scrollTop = arrasto.topo + (e.clientY - arrasto.y) * (total - alto) / (alto - h - 8);
+  });
+  function soltar() { arrasto = null; mostrar(); }
+  barra.addEventListener('pointerup', soltar);
+  barra.addEventListener('pointercancel', soltar);
 })();

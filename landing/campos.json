@@ -126,13 +126,6 @@
   "max": 120
  },
  {
-  "chave": "voz_eyebrow",
-  "grupo": "Seção Evolução por voz",
-  "label": "Etiqueta acima do título",
-  "tipo": "curto",
-  "max": 120
- },
- {
   "chave": "voz_l1",
   "grupo": "Seção Evolução por voz",
   "label": "Título, linha 1",
@@ -171,13 +164,6 @@
   "chave": "voz_c3",
   "grupo": "Seção Evolução por voz",
   "label": "Item 3 da lista",
-  "tipo": "curto",
-  "max": 120
- },
- {
-  "chave": "od_eyebrow",
-  "grupo": "Seção Odontograma por voz",
-  "label": "Etiqueta acima do título",
   "tipo": "curto",
   "max": 120
  },
@@ -245,13 +231,6 @@
   "max": 140
  },
  {
-  "chave": "wa_lead",
-  "grupo": "Seção WhatsApp",
-  "label": "Texto",
-  "tipo": "longo",
-  "max": 600
- },
- {
   "chave": "wa_c1",
   "grupo": "Seção WhatsApp",
   "label": "Item 1 da lista",
@@ -273,16 +252,16 @@
   "max": 120
  },
  {
-  "chave": "wa_aviso",
+  "chave": "wa_c4",
   "grupo": "Seção WhatsApp",
-  "label": "Aviso abaixo da lista",
-  "tipo": "longo",
-  "max": 600
+  "label": "Item 4 da lista",
+  "tipo": "curto",
+  "max": 120
  },
  {
-  "chave": "rec_eyebrow",
-  "grupo": "Seção Recursos",
-  "label": "Etiqueta acima do título",
+  "chave": "wa_c5",
+  "grupo": "Seção WhatsApp",
+  "label": "Item 5 da lista",
   "tipo": "curto",
   "max": 120
  },
@@ -292,13 +271,6 @@
   "label": "Título",
   "tipo": "titulo",
   "max": 140
- },
- {
-  "chave": "rec_lead",
-  "grupo": "Seção Recursos",
-  "label": "Texto",
-  "tipo": "longo",
-  "max": 600
  },
  {
   "chave": "rec_c1_t",
@@ -385,6 +357,34 @@
   "max": 600
  },
  {
+  "chave": "rec_c8_t",
+  "grupo": "Seção Recursos",
+  "label": "Cartão da anamnese, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "rec_c8_x",
+  "grupo": "Seção Recursos",
+  "label": "Cartão da anamnese, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "rec_c7_t",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 7, título",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "rec_c7_x",
+  "grupo": "Seção Recursos",
+  "label": "Cartão 7, texto",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
   "chave": "seg_eyebrow",
   "grupo": "Seção Segurança",
   "label": "Etiqueta acima do título",
@@ -432,13 +432,6 @@
   "label": "Cartão 2, texto (use **assim** para negrito)",
   "tipo": "longo",
   "max": 600
- },
- {
-  "chave": "faq_eyebrow",
-  "grupo": "Perguntas frequentes",
-  "label": "Etiqueta acima do título",
-  "tipo": "curto",
-  "max": 120
  },
  {
   "chave": "faq_l1",
@@ -628,6 +621,20 @@
   "label": "Texto do botão",
   "tipo": "curto",
   "max": 120
+ },
+ {
+  "chave": "cta_ou",
+  "grupo": "Chamada final",
+  "label": "Frase antes do link de conversa",
+  "tipo": "curto",
+  "max": 60
+ },
+ {
+  "chave": "cta_link",
+  "grupo": "Chamada final",
+  "label": "Link de conversa com especialista",
+  "tipo": "curto",
+  "max": 60
  },
  {
   "chave": "lc_msg1",
