@@ -1101,3 +1101,16 @@ html::-webkit-scrollbar{display:none}
 /* chamada final: botão principal leva ao cadastro; conversa com especialista fica como link secundário */
 .cta-final p.cta-ou{margin:18px auto 0;font-size:.95rem;opacity:.95}
 .cta-final p.cta-ou a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* evolução clínica no tema escuro: mesmo fundo (cinza escuro) da tela da agenda e do odontograma */
+:root[data-tema="escuro"] .demo-card{background:var(--o-bg)}
+@media (prefers-color-scheme:dark){:root:not([data-tema]) .demo-card{background:var(--o-bg)}}
+/* evolução clínica, só no tema escuro: borda mais destacada (sálvia clara) */
+:root[data-tema="escuro"] .demo-card{box-shadow:var(--d-sh),inset 0 0 0 1.5px rgba(167,195,174,.5)}
+@media (prefers-color-scheme:dark){:root:not([data-tema]) .demo-card{box-shadow:var(--d-sh),inset 0 0 0 1.5px rgba(167,195,174,.5)}}
+/* chat de WhatsApp, só no tema escuro: mesma borda sálvia clara da evolução clínica */
+:root[data-tema="escuro"] .wa-demo{box-shadow:var(--w-sh),0 0 0 1.5px rgba(167,195,174,.5)}
+@media (prefers-color-scheme:dark){:root:not([data-tema]) .wa-demo{box-shadow:var(--w-sh),0 0 0 1.5px rgba(167,195,174,.5)}}
+/* tema escuro: mesma borda sálvia clara em todos os cartões (destaques, recursos, segurança e perguntas) */
+:root[data-tema="escuro"] .card,:root[data-tema="escuro"] .dest,:root[data-tema="escuro"] .faq-list details{outline:1.5px solid rgba(167,195,174,.5);outline-offset:-1.5px}
+@media (prefers-color-scheme:dark){:root:not([data-tema]) .card,:root:not([data-tema]) .dest,:root:not([data-tema]) .faq-list details{outline:1.5px solid rgba(167,195,174,.5);outline-offset:-1.5px}}
