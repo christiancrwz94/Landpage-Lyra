@@ -611,3 +611,29 @@ iniciarDemos(document);
   barra.addEventListener('pointerup', soltar);
   barra.addEventListener('pointercancel', soltar);
 })();
+
+/* Planos: alterna entre mensal, anual e a promoção dos 10 primeiros.
+   Enquanto a seção #planos tiver data-promo="on", a promoção abre primeiro; ao encerrar as vagas, troque para "off". */
+(function () {
+  var secao = document.getElementById('planos');
+  var botoes = document.querySelectorAll('.planos-troca button');
+  if (!secao || !botoes.length) return;
+  var promoOn = secao.getAttribute('data-promo') === 'on';
+  var abas = Array.prototype.slice.call(botoes);
+  if (!promoOn) {
+    var ab = secao.querySelector('[data-promo-so]');
+    if (ab) { ab.hidden = true; abas = abas.filter(function (x) { return x !== ab; }); }
+  }
+  function mostrar(modo) {
+    abas.forEach(function (o) {
+      var on = o.getAttribute('data-plano') === modo;
+      o.classList.toggle('on', on);
+      o.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    secao.querySelectorAll('[data-modo]').forEach(function (el) {
+      el.hidden = el.getAttribute('data-modo').split(' ').indexOf(modo) === -1;
+    });
+  }
+  abas.forEach(function (b) { b.addEventListener('click', function () { mostrar(b.getAttribute('data-plano')); }); });
+  mostrar(promoOn ? 'promo' : 'mensal');
+})();

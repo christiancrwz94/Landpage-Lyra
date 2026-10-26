@@ -466,7 +466,7 @@ p{margin:0 0 1rem}
   --toggle-bg:#ece8dc; --dots:#d6c9b4; --tema-btn-bg:transparent; --tema-btn-ink:#29342e;
   --d-card:#ffffff; --d-ring:rgba(41,52,46,.08); --d-sh:0 24px 50px rgba(41,52,46,.16); --d-in:#eef2ea; --d-ink:#29342e; --d-muted:#5b675f; --d-b:var(--blue); --d-wave:var(--blue);
   --o-bg:#f8f6ef; --o-card:#ffffff; --o-ink:#29342e; --o-muted:#5b675f; --o-dente:#f1e6bf; --o-linha:drop-shadow(0 0 .7px #8c7a45) drop-shadow(0 0 .7px #8c7a45); --o-face:#97a097; --o-pill:#e8eee8; --o-sheet:#ffffff; --o-list:#e8eee8; --o-act:#ffffff; --o-act-sh:0 10px 24px rgba(41,52,46,.18); --o-mic-sh:0 8px 20px rgba(67,94,82,.35);
-  --w-bg:#efe7dd; --w-top:#f0f2f5; --w-ink:#111b21; --w-in:#ffffff; --w-out:#d9fdd3; --w-muted:#667781; --w-tag:#0b7a5a; --w-tag-bg:rgba(16,185,129,.16); --w-sh:0 24px 50px rgba(41,52,46,.18);
+  --w-bg:#efe7dd; --w-top:#e8eee8; --w-ink:#111b21; --w-in:#ffffff; --w-out:#d9fdd3; --w-muted:#667781; --w-tag:#0b7a5a; --w-tag-bg:rgba(16,185,129,.16); --w-sh:0 24px 50px rgba(41,52,46,.18);
 }
 @media (prefers-color-scheme:dark){:root:not([data-tema]){
   color-scheme:dark;
@@ -502,7 +502,7 @@ p{margin:0 0 1rem}
   --toggle-bg:#ece8dc; --dots:#d6c9b4; --tema-btn-bg:transparent; --tema-btn-ink:#29342e;
   --d-card:#ffffff; --d-ring:rgba(41,52,46,.08); --d-sh:0 24px 50px rgba(41,52,46,.16); --d-in:#eef2ea; --d-ink:#29342e; --d-muted:#5b675f; --d-b:var(--blue); --d-wave:var(--blue);
   --o-bg:#f8f6ef; --o-card:#ffffff; --o-ink:#29342e; --o-muted:#5b675f; --o-dente:#f1e6bf; --o-linha:drop-shadow(0 0 .7px #8c7a45) drop-shadow(0 0 .7px #8c7a45); --o-face:#97a097; --o-pill:#e8eee8; --o-sheet:#ffffff; --o-list:#e8eee8; --o-act:#ffffff; --o-act-sh:0 10px 24px rgba(41,52,46,.18); --o-mic-sh:0 8px 20px rgba(67,94,82,.35);
-  --w-bg:#efe7dd; --w-top:#f0f2f5; --w-ink:#111b21; --w-in:#ffffff; --w-out:#d9fdd3; --w-muted:#667781; --w-tag:#0b7a5a; --w-tag-bg:rgba(16,185,129,.16); --w-sh:0 24px 50px rgba(41,52,46,.18);
+  --w-bg:#efe7dd; --w-top:#e8eee8; --w-ink:#111b21; --w-in:#ffffff; --w-out:#d9fdd3; --w-muted:#667781; --w-tag:#0b7a5a; --w-tag-bg:rgba(16,185,129,.16); --w-sh:0 24px 50px rgba(41,52,46,.18);
 }
 :root[data-tema="escuro"]{
   color-scheme:dark;
@@ -634,7 +634,7 @@ html[data-vt="fecha"]::view-transition-new(root){z-index:1}
 @media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
 
 /* ===== Conversa do WhatsApp com cara de WhatsApp (papel de parede, vistos, hora, barra de mensagem) ===== */
-:root{--w-line:#dcd2c4;--w-hora:#667781;--w-hora-out:#667781;--w-tick:#53bdeb;--w-barra:#f0f2f5;--w-campo:#ffffff;--w-ico:#54656f}
+:root{--w-line:#dcd2c4;--w-hora:#667781;--w-hora-out:#667781;--w-tick:#53bdeb;--w-barra:#e8eee8;--w-campo:#ffffff;--w-ico:#54656f}
 @media (prefers-color-scheme:dark){:root:not([data-tema]){--w-line:#1a2830;--w-hora:#8696a0;--w-hora-out:#99beb6;--w-barra:#1f2c34;--w-campo:#2a3942;--w-ico:#8696a0}}
 :root[data-tema="escuro"]{--w-line:#1a2830;--w-hora:#8696a0;--w-hora-out:#99beb6;--w-barra:#1f2c34;--w-campo:#2a3942;--w-ico:#8696a0}
 .wa-demo{position:relative}
@@ -1114,3 +1114,51 @@ html::-webkit-scrollbar{display:none}
 /* tema escuro: mesma borda sálvia clara em todos os cartões (destaques, recursos, segurança e perguntas) */
 :root[data-tema="escuro"] .card,:root[data-tema="escuro"] .dest,:root[data-tema="escuro"] .faq-list details{outline:1.5px solid rgba(167,195,174,.5);outline-offset:-1.5px}
 @media (prefers-color-scheme:dark){:root:not([data-tema]) .card,:root:not([data-tema]) .dest,:root:not([data-tema]) .faq-list details{outline:1.5px solid rgba(167,195,174,.5);outline-offset:-1.5px}}
+
+/* ===== Planos ===== */
+.planos-wrap{max-width:560px;margin:0 auto;text-align:center}
+.planos-troca{display:inline-flex;gap:4px;padding:5px;border-radius:999px;background:var(--card,#fff);box-shadow:0 6px 20px rgba(41,52,46,.08);margin-bottom:22px}
+.planos-troca button{border:0;background:transparent;font:inherit;font-weight:700;color:var(--muted);padding:.6rem 1.3rem;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.planos-troca button.on{background:var(--blue);color:var(--on-acc)}
+.planos-eco{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-left:.3rem;color:var(--mint)}
+.planos-troca button.on .planos-eco{color:#fff;opacity:.85}
+.plano-card{color:var(--ink);position:relative;background:var(--card,#fff);border-radius:var(--r);padding:34px 30px 30px;box-shadow:0 18px 48px rgba(41,52,46,.12);border:2px solid rgba(var(--acc-rgb),.35)}
+.plano-selo{display:inline-block;background:rgba(var(--acc-rgb),.12);color:var(--blue);font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .9rem;border-radius:999px}
+.plano-card h3{font-family:'Big Shoulders Display','Montserrat',sans-serif;font-size:1.9rem;text-transform:uppercase;margin:1rem 0 .2rem}
+.plano-preco[hidden]{display:none}
+.plano-preco s{color:var(--muted);font-weight:600}
+.plano-valor{font-size:4rem;font-weight:800;line-height:1;margin:.2rem 0 .4rem;color:var(--ink)}
+.plano-valor span{font-size:1.3rem;vertical-align:top;margin-right:.2rem;font-weight:700}
+.plano-valor small{font-size:1rem;font-weight:600;color:var(--muted);margin-left:.2rem}
+.plano-nota{font-size:.9rem;color:var(--muted);margin-bottom:1.2rem}
+.plano-botao{width:100%}
+.plano-garantia{font-size:.85rem;color:var(--muted);margin:.8rem 0 1.2rem}
+.plano-lista{list-style:none;margin:0;padding:1.2rem 0 0;border-top:1px solid var(--line);text-align:left;display:grid;gap:.65rem}
+.plano-lista li{position:relative;padding-left:1.7rem;font-size:.95rem}
+.plano-lista li::before{content:"";position:absolute;left:0;top:.35rem;width:.9rem;height:.5rem;border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(-45deg)}
+.planos-extras{margin-top:26px;background:rgba(var(--acc-rgb),.08);border-radius:var(--r);padding:20px 24px;text-align:left}
+.planos-extras h3{margin:0 0 .6rem;font-size:1rem}
+.planos-extras ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem .8rem;font-size:.92rem}
+.planos-extras li::before{content:"✓ ";color:var(--blue);font-weight:800}
+.planos-selos{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.planos-selos li{background:var(--card,#fff);border-radius:18px;padding:14px 10px;box-shadow:0 6px 18px rgba(41,52,46,.06)}
+.planos-selos b{display:block;font-size:.88rem}
+.planos-selos span{display:block;font-size:.76rem;color:var(--muted);margin-top:.2rem;line-height:1.35}
+.planos-rodape{font-size:.8rem;color:var(--muted);margin:20px 0 0}
+@media(max-width:560px){.planos-selos{grid-template-columns:1fr}.planos-extras ul{grid-template-columns:1fr}.plano-valor{font-size:3.4rem}}
+
+/* Moldura discreta no demo do WhatsApp (tema claro; no escuro já existe a borda verde) */
+:root[data-tema="claro"] .wa-demo{box-shadow:var(--w-sh),0 0 0 1.5px rgba(41,52,46,.16)}
+@media (prefers-color-scheme:light){:root:not([data-tema]) .wa-demo{box-shadow:var(--w-sh),0 0 0 1.5px rgba(41,52,46,.16)}}
+:root[data-tema="claro"] .demo-card{box-shadow:var(--d-sh),inset 0 0 0 1.5px rgba(41,52,46,.16)}
+@media (prefers-color-scheme:light){:root:not([data-tema]) .demo-card{box-shadow:var(--d-sh),inset 0 0 0 1.5px rgba(41,52,46,.16)}}
+
+[data-modo][hidden]{display:none!important}
+.plano-selo-promo{background:var(--blue);color:var(--on-acc)}
+.plano-card .plano-botao{display:flex}
+.plano-card .plano-botao[hidden]{display:none}
+.promo-humano{list-style:none;margin:0 0 1.3rem;padding:0;display:grid;gap:.45rem;text-align:left;font-size:.93rem}
+.promo-humano[hidden]{display:none}
+.promo-humano li{position:relative;padding-left:1.6rem}
+.promo-humano li::before{content:"♥";position:absolute;left:0;color:var(--blue);font-size:.8rem;top:.1rem}
+.plano-card h3[data-modo="promo"]{font-size:1.6rem}

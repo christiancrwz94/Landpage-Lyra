@@ -56,6 +56,7 @@
         <a href="#odontograma">Odontograma por voz</a>
         <a href="#whatsapp">Automação e WhatsApp</a>
         <a href="#agenda">Agenda inteligente</a>
+        <a href="#planos">Planos</a>
         <a href="#faq">Dúvidas</a>
       </nav>
       <button class="tema-btn" id="tema-btn" type="button" aria-label="Trocar para o tema escuro">
@@ -252,6 +253,78 @@
       </div>
     </section>
 
+    <!-- PLANOS -->
+    <section class="secao clara" id="planos" data-promo="on" aria-labelledby="planos-titulo">
+      <div class="container">
+        <div class="titulo-centro reveal">
+          <h2 id="planos-titulo">Um plano. <span class="grad">Tudo incluído.</span></h2>
+          <p class="lead">Sem escolher pacote, sem extras escondidos e sem taxa de implantação.</p>
+        </div>
+        <div class="planos-wrap reveal" style="--d:.05s">
+          <div class="planos-troca" role="group" aria-label="Forma de pagamento">
+            <button type="button" data-plano="mensal" aria-pressed="false">Mensal</button>
+            <button type="button" data-plano="anual" aria-pressed="false">Anual <span class="planos-eco">economize</span></button>
+            <button type="button" class="on" data-plano="promo" data-promo-so aria-pressed="true">Só 10 vagas</button>
+          </div>
+          <article class="plano-card">
+            <span class="plano-selo" data-modo="mensal anual">Preço de lançamento · 50 primeiras vagas</span>
+            <span class="plano-selo plano-selo-promo" data-modo="promo">Só 10 vagas · nosso agradecimento</span>
+            <h3 data-modo="mensal anual">Lyra Dental</h3>
+            <h3 data-modo="promo">Quer entrar com a gente desde o começo?</h3>
+            <div class="plano-preco" data-modo="mensal">
+              <s>R$ 197</s>
+              <p class="plano-valor"><span>R$</span>147<small>/mês</small></p>
+              <p class="plano-nota">Fixo enquanto você for cliente. Cancele quando quiser.</p>
+            </div>
+            <div class="plano-preco" data-modo="anual">
+              <s>R$ 157,50</s>
+              <p class="plano-valor"><span>R$</span>116,66<small>/mês</small></p>
+              <p class="plano-nota">Cobrado uma vez por ano: R$ 1.399,90. Devolução integral em até 7 dias.</p>
+            </div>
+            <div class="plano-preco" data-modo="promo">
+              <s>R$ 147</s>
+              <p class="plano-valor"><span>R$</span>79<small>/mês nos 6 primeiros meses</small></p>
+              <p class="plano-nota"><b>6x de R$ 79 sem juros</b> no cartão (R$ 474 no total). Para os 10 primeiros consultórios: nossa forma de agradecer a quem confia no Lyra antes de todo mundo.</p>
+            </div>
+            <ul class="promo-humano" data-modo="promo">
+              <li>Você fala direto comigo, sem fila nem robô</li>
+              <li>Eu cuido da migração dos seus pacientes, sem custo</li>
+              <li>Devolução integral se mudar de ideia em até 7 dias</li>
+            </ul>
+            <a class="btn btn-lg plano-botao" data-modo="mensal anual" href="https://app.getlyra.com.br/?signup=1">Testar 30 dias grátis</a>
+            <a class="btn btn-lg plano-botao" data-modo="promo" data-wa="Olá! Quero garantir uma das 10 vagas do plano do Lyra Dental." href="#" target="_blank" rel="noopener">Quero uma das 10 vagas</a>
+            <p class="plano-garantia" data-modo="mensal anual">Cancele antes do fim do teste e você não paga nada.</p>
+            <p class="plano-garantia" data-modo="promo">Depois dos 6 meses você escolhe: R$ 147/mês, ou R$ 116,66/mês no plano anual, com 20% de desconto (R$ 1.399,90 por ano). O preço fica fixo enquanto você for cliente, eu te aviso antes e nada é cobrado sem você renovar.</p>
+            <ul class="plano-lista">
+              <li>Agenda inteligente com confirmação pelo WhatsApp</li>
+              <li>Evolução e odontograma por voz</li>
+              <li>Prontuário, anamnese e assinatura digital</li>
+              <li>Orçamentos, financeiro e documentos</li>
+              <li>2 dentistas inclusos (do 3º em diante, R$ 79 por mês cada)</li>
+              <li>App Android e versão web, sem limite de pacientes</li>
+              <li>Migração dos seus pacientes, sem custo</li>
+              <li>Suporte pelo WhatsApp</li>
+            </ul>
+          </article>
+          <div class="planos-extras">
+            <h3>O que costuma custar à parte, aqui já vem no plano</h3>
+            <ul>
+              <li>WhatsApp automático</li>
+              <li>Ditado por voz e IA</li>
+              <li>Assinatura eletrônica</li>
+              <li>Importação dos dados</li>
+            </ul>
+          </div>
+          <ul class="planos-selos" aria-label="Garantias">
+            <li><b>Sem fidelidade</b><span>Cancele pelo próprio app</span></li>
+            <li><b>30 dias grátis</b><span>Para os 50 primeiros clientes</span></li>
+            <li><b>Preço travado</b><span>Quem entra agora não sofre reajuste</span></li>
+          </ul>
+          <p class="planos-rodape">Pagamento no cartão de crédito, de forma segura. Depois das 50 primeiras vagas, o teste é de 7 dias e o valor passa a R$ 197/mês ou R$ 1.890/ano.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- SEGURANÇA -->
     <section class="secao escura" id="seguranca" aria-labelledby="seg-titulo">
       <div class="container">
@@ -284,7 +357,7 @@
           <details><summary data-edit="faq8_q">O que acontece com o áudio da voz?</summary><p data-edit="faq8_a">O áudio é enviado por conexão segura a um serviço de transcrição e não fica salvo no Lyra. A gravação para sozinha após um tempo de silêncio e tem limite de duração.</p></details>
           <details><summary data-edit="faq9_q">Como meus dados são protegidos?</summary><p data-edit="faq9_a">Os dados ficam na nuvem, protegidos por login e separados entre as clínicas. Você também pode fazer backup.</p></details>
           <details><summary data-edit="faq10_q">O Lyra funciona sem internet?</summary><p data-edit="faq10_a">Não. O Lyra funciona na nuvem e precisa de conexão. Em troca, seus dados ficam sempre atualizados no celular e no computador.</p></details>
-          <details><summary data-edit="faq11_q">Quanto custa?</summary><p data-edit="faq11_a">Estamos em fase de lançamento, com condições especiais para os primeiros clientes. Fale com a gente pelo WhatsApp e passamos os valores atualizados.</p></details>
+          <details><summary data-edit="faq11_q">Quanto custa?</summary><p data-edit="faq11_a">Um plano só, com tudo incluído: R$ 147 por mês ou R$ 1.399,90 por ano para os 50 primeiros clientes, que mantêm esse valor. Depois, R$ 197 por mês ou R$ 1.890 por ano. Veja os detalhes na seção Planos.</p></details>
         </div>
       </div>
     </section>
