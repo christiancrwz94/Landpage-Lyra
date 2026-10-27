@@ -160,7 +160,7 @@ function demoAgenda(raiz) {
     app.classList.remove('aviso');
     novo.classList.remove('on', 'toque');
     muda(juliana, 'Agendado', 'st-ag');
-    muda(felipe, 'Atendendo', 'st-aten');
+    muda(felipe, 'Confirmado', 'st-conf');
   }
   async function ciclo() {
     zera();
@@ -613,27 +613,79 @@ iniciarDemos(document);
 })();
 
 /* Planos: alterna entre mensal, anual e a promoção dos 10 primeiros.
-   Enquanto a seção #planos tiver data-promo="on", a promoção abre primeiro; ao encerrar as vagas, troque para "off". */
+   A fase vem do servidor (função pública promo-status): com vagas, a promoção abre primeiro e mostra quantas restam;
+   sem vagas, a aba some e os textos passam para "30 dias grátis para os 50 primeiros". Sem resposta, vale o HTML (data-promo). */
 (function () {
   var secao = document.getElementById('planos');
   var botoes = document.querySelectorAll('.planos-troca button');
   if (!secao || !botoes.length) return;
-  var promoOn = secao.getAttribute('data-promo') === 'on';
-  var abas = Array.prototype.slice.call(botoes);
-  if (!promoOn) {
-    var ab = secao.querySelector('[data-promo-so]');
-    if (ab) { ab.hidden = true; abas = abas.filter(function (x) { return x !== ab; }); }
-  }
+  var todas = Array.prototype.slice.call(botoes);
+  var abaPromo = secao.querySelector('[data-promo-so]');
+  var fase = secao.getAttribute('data-promo') === 'on' ? 'promo' : 'normal';
+  var modoAtual = fase === 'promo' ? 'promo' : 'mensal';
+  function abas() { return todas.filter(function (x) { return !x.hidden; }); }
   function mostrar(modo) {
-    abas.forEach(function (o) {
+    modoAtual = modo;
+    abas().forEach(function (o) {
       var on = o.getAttribute('data-plano') === modo;
       o.classList.toggle('on', on);
       o.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     secao.querySelectorAll('[data-modo]').forEach(function (el) {
-      el.hidden = el.getAttribute('data-modo').split(' ').indexOf(modo) === -1;
+      var modoOk = el.getAttribute('data-modo').split(' ').indexOf(modo) !== -1;
+      var f = el.getAttribute('data-fase');
+      el.hidden = !(modoOk && (!f || f === fase));
     });
   }
-  abas.forEach(function (b) { b.addEventListener('click', function () { mostrar(b.getAttribute('data-plano')); }); });
-  mostrar(promoOn ? 'promo' : 'mensal');
+  function aplicarFase(nova) {
+    fase = nova;
+    if (abaPromo) abaPromo.hidden = fase !== 'promo';
+    if (fase !== 'promo' && modoAtual === 'promo') modoAtual = 'mensal';
+    mostrar(modoAtual);
+  }
+  todas.forEach(function (b) { b.addEventListener('click', function () { mostrar(b.getAttribute('data-plano')); }); });
+  aplicarFase(fase);
+
+  fetch('https://ouxfnnlyneiexumvnkbd.supabase.co/functions/v1/promo-status')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || typeof d.restantes !== 'number') return;
+      if (abaPromo && d.restantes > 0) abaPromo.textContent = d.restantes === 1 ? 'Só 1 vaga' : 'Só ' + d.restantes + ' vagas';
+      if (d.restantes <= 0) aplicarFase('normal');
+    })
+    .catch(function () {});
+})();
+
+/* Recursos (celular): pontinhos do carrossel acompanham o deslize e levam ao cartão ao tocar */
+(function carrosselRecursos() {
+  const trilho = document.querySelector('#recursos .cards');
+  if (!trilho) return;
+  const cartoes = Array.from(trilho.querySelectorAll('.card'));
+  if (cartoes.length < 2) return;
+  const pontos = document.createElement('div');
+  pontos.className = 'carrossel-pontos';
+  const botoes = cartoes.map((c, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Ir para o cartão ' + (i + 1) + ' de ' + cartoes.length);
+    b.addEventListener('click', () => {
+      const alvo = c.offsetLeft - (trilho.clientWidth - c.offsetWidth) / 2;
+      trilho.scrollTo({ left: alvo, behavior: 'smooth' });
+    });
+    pontos.appendChild(b);
+    return b;
+  });
+  trilho.after(pontos);
+  const atualizar = () => {
+    const meio = trilho.scrollLeft + trilho.clientWidth / 2;
+    let melhor = 0, dist = Infinity;
+    cartoes.forEach((c, i) => {
+      const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - meio);
+      if (d < dist) { dist = d; melhor = i; }
+    });
+    botoes.forEach((b, i) => b.classList.toggle('on', i === melhor));
+  };
+  trilho.addEventListener('scroll', () => requestAnimationFrame(atualizar), { passive: true });
+  window.addEventListener('resize', atualizar);
+  atualizar();
 })();

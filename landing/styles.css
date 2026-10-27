@@ -455,8 +455,8 @@ p{margin:0 0 1rem}
  --blue:#435e52; --blue-2:#5e7a68; --blue-deep:#364c42; --blue-deeper:#2c4238; --on-acc:#ffffff; --acc-rgb:67,94,82; --acc-lite:#6f8a76; --acc-lite2:#5e7a68;
   --page:#ffffff; --soft:#f8f6ef; --tint-bg:#e8eee8; --ink:#29342e; --muted:#5b675f; --eyebrow:var(--blue); --ico:var(--blue);
   --card:#ffffff; --card-ring:rgba(41,52,46,.05); --card-sh:0 10px 30px rgba(41,52,46,.08); --card-hover:0 20px 44px rgba(var(--acc-rgb),.16);
-  --hdr-ink:#29342e; --hdr-ink-2:rgba(41,52,46,.78); --hdr-bg:rgba(255,255,255,.88); --hdr-line:rgba(41,52,46,.08); --menu-bg:rgba(255,255,255,.98); --menu-line:rgba(41,52,46,.08);
-  --hero-bg:radial-gradient(1000px 640px at 80% 4%,#dfe8df 0%,transparent 62%),linear-gradient(180deg,#f1efe5,#faf8f2);
+  --hdr-ink:#29342e; --hdr-ink-2:rgba(41,52,46,.78); --hdr-bg:rgba(248,246,239,.96); --hdr-line:rgba(41,52,46,.08); --menu-bg:rgba(255,255,255,.98); --menu-line:rgba(41,52,46,.08);
+  --hero-bg:radial-gradient(1000px 640px at 80% 4%,#dfe8df 0%,transparent 62%),linear-gradient(180deg,#f1efe5,#f8f6ef);
   --hero-ink:#29342e; --hero-lead:#4a574f; --orb-k:.16; --cena-sh:0 30px 60px rgba(41,52,46,.22);
   --ghost-bg:rgba(41,52,46,.04); --ghost-bg-h:rgba(41,52,46,.09); --ghost-ring:rgba(41,52,46,.22);
   --dest-bg:linear-gradient(160deg,#ffffff,#f4f6f1); --dest-ring:rgba(41,52,46,.08); --dest-sh:0 18px 40px -24px rgba(41,52,46,.38); --dest-ink:#29342e; --dest-p:#5b675f; --dest-blur:none;
@@ -491,8 +491,8 @@ p{margin:0 0 1rem}
  --blue:#435e52; --blue-2:#5e7a68; --blue-deep:#364c42; --blue-deeper:#2c4238; --on-acc:#ffffff; --acc-rgb:67,94,82; --acc-lite:#6f8a76; --acc-lite2:#5e7a68;
   --page:#ffffff; --soft:#f8f6ef; --tint-bg:#e8eee8; --ink:#29342e; --muted:#5b675f; --eyebrow:var(--blue); --ico:var(--blue);
   --card:#ffffff; --card-ring:rgba(41,52,46,.05); --card-sh:0 10px 30px rgba(41,52,46,.08); --card-hover:0 20px 44px rgba(var(--acc-rgb),.16);
-  --hdr-ink:#29342e; --hdr-ink-2:rgba(41,52,46,.78); --hdr-bg:rgba(255,255,255,.88); --hdr-line:rgba(41,52,46,.08); --menu-bg:rgba(255,255,255,.98); --menu-line:rgba(41,52,46,.08);
-  --hero-bg:radial-gradient(1000px 640px at 80% 4%,#dfe8df 0%,transparent 62%),linear-gradient(180deg,#f1efe5,#faf8f2);
+  --hdr-ink:#29342e; --hdr-ink-2:rgba(41,52,46,.78); --hdr-bg:rgba(248,246,239,.96); --hdr-line:rgba(41,52,46,.08); --menu-bg:rgba(255,255,255,.98); --menu-line:rgba(41,52,46,.08);
+  --hero-bg:radial-gradient(1000px 640px at 80% 4%,#dfe8df 0%,transparent 62%),linear-gradient(180deg,#f1efe5,#f8f6ef);
   --hero-ink:#29342e; --hero-lead:#4a574f; --orb-k:.16; --cena-sh:0 30px 60px rgba(41,52,46,.22);
   --ghost-bg:rgba(41,52,46,.04); --ghost-bg-h:rgba(41,52,46,.09); --ghost-ring:rgba(41,52,46,.22);
   --dest-bg:linear-gradient(160deg,#ffffff,#f4f6f1); --dest-ring:rgba(41,52,46,.08); --dest-sh:0 18px 40px -24px rgba(41,52,46,.38); --dest-ink:#29342e; --dest-p:#5b675f; --dest-blur:none;
@@ -1162,3 +1162,101 @@ html::-webkit-scrollbar{display:none}
 .promo-humano li{position:relative;padding-left:1.6rem}
 .promo-humano li::before{content:"♥";position:absolute;left:0;color:var(--blue);font-size:.8rem;top:.1rem}
 .plano-card h3[data-modo="promo"]{font-size:1.6rem}
+
+/* Celular: o cartão do recurso aberto e o painel dele viram um bloco só (sem vão, sem a pontinha, cantos arredondados só nas pontas) */
+@media (max-width:620px){
+  .dest.ativo{border-radius:20px 20px 0 0;box-shadow:inset 1.5px 1.5px 0 rgba(111,138,118,.85),inset -1.5px 0 0 rgba(111,138,118,.85)}
+  .destaques>.painel.aberto{margin-top:-10px}
+  .painel.aberto .painel-in{padding-top:0;margin-top:0}
+  .painel.aberto .painel-card{margin-top:0;border-radius:0 0 20px 20px;box-shadow:inset 1.5px 0 0 rgba(111,138,118,.85),inset -1.5px 0 0 rgba(111,138,118,.85),inset 0 -1.5px 0 rgba(111,138,118,.85),0 26px 54px -22px rgba(111,138,118,.5)}
+  .painel.aberto .painel-card::before{display:none}
+}
+
+/* O cartão aberto não "sobe" ao passar o mouse (era isso que abria uma fresta entre ele e o painel) e o X sai: a seta abre e fecha */
+.dest.ativo,.dest.ativo:hover{transform:none}
+.painel-fecha{display:none}
+
+/* Topo: botão de cadastro no lugar dos cartões */
+.hero-acoes{margin-top:2rem;display:flex;flex-direction:column;align-items:center;gap:.8rem}
+.hero-nota{margin:0;font-size:.85rem;font-weight:500;text-align:center;text-wrap:balance;color:var(--hero-lead,rgba(255,255,255,.78))}
+
+/* Tema claro: o topo usa o mesmo verde escuro da chamada final (texto e botão claros; o cabeçalho fica claro até rolar) */
+:root[data-tema="claro"] .hero{--hero-bg:linear-gradient(120deg,#435e52,#364c42 55%,#2c4238);--hero-ink:#fff;--hero-lead:rgba(255,255,255,.9);--orb-k:1}
+:root[data-tema="claro"] .hero h1 .grad{background:linear-gradient(95deg,#c9dccd,#a7c3ae 60%,#8faf98);-webkit-background-clip:text;background-clip:text;color:transparent}
+:root[data-tema="claro"] .hero .btn{background:#fff;color:#364c42;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+:root[data-tema="claro"] .hero .btn:hover{background:#f0f7f2}
+@media (prefers-color-scheme:light){
+:root:not([data-tema]) .hero{--hero-bg:linear-gradient(120deg,#435e52,#364c42 55%,#2c4238);--hero-ink:#fff;--hero-lead:rgba(255,255,255,.9);--orb-k:1}
+:root:not([data-tema]) .hero h1 .grad{background:linear-gradient(95deg,#c9dccd,#a7c3ae 60%,#8faf98);-webkit-background-clip:text;background-clip:text;color:transparent}
+:root:not([data-tema]) .hero .btn{background:#fff;color:#364c42;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+:root:not([data-tema]) .hero .btn:hover{background:#f0f7f2}
+}
+/* Menu aberto no celular (fundo claro): os links voltam à cor escura mesmo antes de rolar */
+
+/* Topo → primeira seção: quem tem o canto arredondado é o VERDE do topo (por cima), e a seção clara de baixo fica reta */
+.hero{position:relative;z-index:2;border-radius:0 0 var(--r) var(--r);margin-bottom:calc(var(--r) * -1);padding-bottom:calc(48px + var(--r) * 0)}
+.hero + .secao{border-radius:0;margin-top:0}
+
+/* Frase que abre o que vem abaixo do topo */
+.intro-titulo{max-width:640px;margin:0 auto 44px;text-align:center;text-transform:none;font-size:clamp(1.45rem,3.4vw,2.05rem);line-height:1.2;color:var(--ink)}
+@media (max-width:620px){.intro-titulo{margin-bottom:30px}}
+
+/* Tema claro: o cabeçalho (logo e menu) tem fundo bege desde o topo, sobre o verde do início da página */
+:root[data-tema="claro"] .site-header{background:var(--hdr-bg);box-shadow:0 1px 0 var(--hdr-line)}
+@media (prefers-color-scheme:light){:root:not([data-tema]) .site-header{background:var(--hdr-bg);box-shadow:0 1px 0 var(--hdr-line)}}
+
+/* Topo: começa logo abaixo do cabeçalho bege, com os quatro cantos arredondados */
+:root{--cab:70px}
+@media (max-width:1020px){:root{--cab:62px}}
+body{background:var(--soft)}
+.hero{margin-top:var(--cab);border-radius:var(--r);padding-top:64px}
+@media (max-width:620px){.hero{padding-top:36px}}
+
+/* Promoção: a lista do plano fica acima do botão e as 3 garantias da oferta abaixo dele */
+.plano-lista.topo{border-top:0;padding-top:0;margin:0 0 1.4rem}
+.promo-humano.abaixo{margin:1.3rem 0 0;padding-top:1.2rem;border-top:1px solid var(--line)}
+
+/* Frase curta colada no botão, para tirar o medo na hora do clique */
+.plano-micro{margin:.7rem 0 0;font-size:.88rem;font-weight:600;color:var(--ink);text-align:center}
+.plano-micro[hidden]{display:none}
+
+/* Preço da promoção: "/mês" fica colado ao número e o prazo desce inteiro para a linha de baixo (sem palavra solta) */
+.plano-valor small{white-space:nowrap}
+.plano-valor .plano-periodo{display:block;margin:.35rem 0 0;font-size:1rem;font-weight:600;color:var(--muted)}
+
+/* Card de planos mais compacto */
+.plano-lista{gap:.5rem}
+.plano-lista li{font-size:.93rem}
+.plano-lista.topo{margin-bottom:1.1rem}
+@media (max-width:620px){.plano-card{padding:26px 20px 22px}.plano-card h3{margin-top:.7rem}}
+
+/* Promoção: o que vem depois do teste e as garantias ficam num cartão à parte, com outra cor */
+.plano-detalhes{margin-top:16px;padding:20px 22px;border-radius:26px;background:rgba(var(--acc-rgb),.12);text-align:left}
+.plano-detalhes[hidden]{display:none}
+.plano-detalhes .plano-depois{margin:0 0 1rem;font-size:.9rem;line-height:1.5;color:var(--ink);text-align:center}
+.plano-detalhes .promo-humano{margin:0;padding:1rem 0 0;border-top:1px solid rgba(var(--acc-rgb),.25)}
+
+/* Recursos: no celular os cartões viram um carrossel (deslizar para o lado, com pontinhos) */
+.carrossel-pontos{display:none}
+@media (max-width:720px){
+  #recursos .cards{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:20px;margin-inline:-20px;padding:6px 20px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  #recursos .cards::-webkit-scrollbar{display:none}
+  #recursos .card{flex:0 0 82%;scroll-snap-align:center;margin:0}
+  #recursos .card.reveal{opacity:1;transform:none}
+  #recursos .carrossel-pontos{display:flex;justify-content:center;gap:8px;margin-top:6px}
+  #recursos .carrossel-pontos button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:rgba(var(--acc-rgb),.28);cursor:pointer;transition:width .25s,background .25s}
+  #recursos .carrossel-pontos button.on{width:22px;border-radius:6px;background:var(--blue)}
+}
+
+/* Emendas em toda a landing: quem tem o canto arredondado é sempre a parte VERDE.
+   Seção verde seguida de seção clara: o verde fica por cima, com os quatro cantos redondos; a clara começa reta. */
+.secao.escura:has(+ .secao:not(.escura)){border-radius:var(--r);margin-bottom:calc(var(--r) * -1);z-index:2}
+.secao.escura + .secao:not(.escura){border-radius:0;margin-top:0}
+
+/* Frase sob o botão do topo (agora com a descrição das quatro seções) */
+.hero-nota{font-size:1rem;line-height:1.4;max-width:420px}
+
+/* Botão de cadastro no cabeçalho, ao lado do botão de tema */
+.btn-topo{order:1;flex:none;margin-left:1rem;padding:.5rem 1.05rem;font-size:.86rem;line-height:1.2;white-space:nowrap;box-shadow:none}
+@media (max-width:1020px){.btn-topo{margin-left:auto}.tema-btn{margin-left:.35rem;margin-right:0}}
+@media (max-width:380px){.btn-topo{padding:.45rem .8rem;font-size:.8rem}}
