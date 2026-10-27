@@ -36,4 +36,13 @@ try {
 } catch (e) {
   console.warn('Painel de textos ignorado (site publicado com os textos originais):', e.message);
 }
+// MODO MANUTENÇÃO: enquanto existir a pasta manutencao/, a página inicial vira um aviso "voltamos em breve" (sem a landing).
+// As páginas de privacidade e de exclusão de conta continuam no ar (exigidas pela Play Store). Para voltar ao normal: apagar manutencao/.
+if (existsSync('manutencao/index.html')) {
+  cpSync('manutencao/index.html', 'dist/index.html');
+  cpSync('manutencao/logo.png', 'dist/logo.png');
+  cpSync('manutencao/robots.txt', 'dist/robots.txt');
+  rmSync('dist/sitemap.xml', { force: true });
+  console.log('MODO MANUTENÇÃO ativo: página inicial substituída.');
+}
 console.log('Site montado em dist/');
