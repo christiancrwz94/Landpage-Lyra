@@ -355,14 +355,14 @@ function demoWhats(raiz) {
   if (!demo) return;
   if (!('IntersectionObserver' in window)) { demo.classList.add('vista'); return; }
   let vis;
+  // Toca a conversa ao entrar na tela e a zera quando sai por completo, para tocar de novo na próxima vez que aparecer.
   const observa = () => {
     vis = new IntersectionObserver((itens) => {
       itens.forEach((i) => {
-        if (!i.isIntersecting) return;
-        demo.classList.add('vista');
-        vis.disconnect();
+        if (i.intersectionRatio >= 0.4) demo.classList.add('vista');
+        else if (!i.isIntersecting) demo.classList.remove('vista');
       });
-    }, { threshold: 0.4 });
+    }, { threshold: [0, 0.4] });
     vis.observe(demo);
   };
   observa();
@@ -612,7 +612,7 @@ iniciarDemos(document);
   barra.addEventListener('pointercancel', soltar);
 })();
 
-/* Planos: alterna entre mensal, anual e a promoção (aberta a todo cadastro, sem limite de vagas). */
+/* Planos: alterna entre mensal e anual. */
 (function () {
   var secao = document.getElementById('planos');
   var botoes = document.querySelectorAll('.planos-troca button');
@@ -629,7 +629,7 @@ iniciarDemos(document);
     });
   }
   todas.forEach(function (b) { b.addEventListener('click', function () { mostrar(b.getAttribute('data-plano')); }); });
-  mostrar('promo');
+  mostrar('mensal');
 })();
 
 /* Recursos (celular): pontinhos do carrossel acompanham o deslize e levam ao cartão ao tocar */
@@ -652,14 +652,38 @@ iniciarDemos(document);
     return b;
   });
   trilho.after(pontos);
+  // Setas (computador): andam um cartão por vez e ficam apagadas nas pontas
+  const moldura = document.createElement('div');
+  moldura.className = 'rec-wrap';
+  trilho.before(moldura);
+  moldura.appendChild(trilho);
+  const seta = (cls, rotulo, d, passo) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'rec-seta ' + cls;
+    b.setAttribute('aria-label', rotulo);
+    b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + d + '"/></svg>';
+    b.addEventListener('click', () => trilho.scrollBy({ left: passo * (cartoes[0].offsetWidth + 20), behavior: 'smooth' }));
+    moldura.appendChild(b);
+    return b;
+  };
+  const ant = seta('rec-ant', 'Recursos anteriores', 'M15 5l-7 7 7 7', -1);
+  const prox = seta('rec-prox', 'Próximos recursos', 'M9 5l7 7-7 7', 1);
+  const pontas = () => {
+    ant.disabled = trilho.scrollLeft < 4;
+    prox.disabled = trilho.scrollLeft + trilho.clientWidth >= trilho.scrollWidth - 4;
+  };
   const atualizar = () => {
-    const meio = trilho.scrollLeft + trilho.clientWidth / 2;
+    // Computador (vários cartões à vista): marca o primeiro visível; celular: o do meio
+    const varios = cartoes[0].offsetWidth < trilho.clientWidth / 2;
+    const ref = varios ? trilho.scrollLeft : trilho.scrollLeft + trilho.clientWidth / 2;
     let melhor = 0, dist = Infinity;
     cartoes.forEach((c, i) => {
-      const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - meio);
+      const d = Math.abs((varios ? c.offsetLeft : c.offsetLeft + c.offsetWidth / 2) - ref);
       if (d < dist) { dist = d; melhor = i; }
     });
     botoes.forEach((b, i) => b.classList.toggle('on', i === melhor));
+    pontas();
   };
   trilho.addEventListener('scroll', () => requestAnimationFrame(atualizar), { passive: true });
   window.addEventListener('resize', atualizar);

@@ -18,7 +18,7 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://www.getlyra.com.br/img/og.png" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Lyra Dental", "applicationCategory": "BusinessApplication", "operatingSystem": "Android, Web", "applicationSubCategory": "Software de gestão para dentistas e clínicas odontológicas", "description": "Software e app para dentista: agenda inteligente, WhatsApp automático, evolução clínica por voz, odontograma por voz e prontuário para clínicas odontológicas.", "url": "https://www.getlyra.com.br/", "inLanguage": "pt-BR"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Lyra Dental", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, Android, iOS", "applicationSubCategory": "Software de gestão para dentistas e clínicas odontológicas", "description": "Software e app para dentista: agenda inteligente, WhatsApp automático, evolução clínica por voz, odontograma por voz e prontuário para clínicas odontológicas.", "url": "https://www.getlyra.com.br/", "inLanguage": "pt-BR"}</script>
   <link rel="icon" type="image/png" href="img/favicon-claro.png" media="(prefers-color-scheme: light)" />
   <link rel="icon" type="image/png" href="img/favicon-escuro.png" media="(prefers-color-scheme: dark)" />
   <script>(function(){var t;try{t=localStorage.getItem("lyra-tema")}catch(e){}if(t!=="claro"&&t!=="escuro"){t=matchMedia("(prefers-color-scheme: dark)").matches?"escuro":"claro"}document.documentElement.setAttribute("data-tema",t);document.documentElement.classList.add("js")})()</script>
@@ -54,7 +54,7 @@
       <nav class="main-nav" id="menu" aria-label="Navegação principal">
         <a href="#odontograma">Odontograma por voz</a>
         <a href="#voz">Evolução por voz</a>
-        <a href="#whatsapp">Automação e WhatsApp</a>
+        <a href="#whatsapp">WhatsApp automático</a>
         <a href="#agenda">Agenda inteligente</a>
         <a href="#planos">Planos</a>
         <a href="#faq">Dúvidas</a>
@@ -74,6 +74,7 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <h1 id="hero-titulo"><span data-edit="hero_l1">Você atende.</span><br /><span class="grad" data-edit="hero_l2">O Lyra cuida do resto.</span></h1>
+          <p class="lead" data-edit="hero_lead">Agenda, WhatsApp e prontuário por voz em um só lugar. Criado dentro de um consultório odontológico, para você atender mais e digitar menos.</p>
         </div>
       </div>
     </section>
@@ -84,9 +85,9 @@
         <div class="reveal">
           <span class="eyebrow" data-edit="od_eyebrow">Odontograma por voz</span>
           <h2 id="odonto-titulo"><span data-edit="od_l1">Marque dentes e tratamentos</span> <span class="grad" data-edit="od_l2">sem parar para digitar.</span></h2>
-          <p class="lead" data-edit="od_lead">Você diz o dente e o procedimento, e o Lyra marca tudo e deixa o orçamento pronto para montar. É só tocar no microfone.</p>
+          <p class="lead" data-edit="od_lead">Você diz o dente e o procedimento, e o Lyra marca no odontograma. É só tocar no microfone.</p>
           <ul class="checks claro">
-            <li data-edit="od_c2">Veja a lista de tratamentos se montando logo abaixo.</li>
+            <li data-edit="od_c2">A lista de tratamentos se monta sozinha enquanto você fala.</li>
             <li data-edit="od_c3">E passe para o orçamento com um toque, sem refazer nada.</li>
           </ul>
         </div>
@@ -125,9 +126,9 @@
         <div class="reveal">
           <span class="eyebrow" data-edit="voz_eyebrow">Evolução por voz</span>
           <h2 id="voz-titulo"><span data-edit="voz_l1">Você fala.</span><br /><span class="grad" data-edit="voz_l2">O Lyra registra.</span></h2>
-          <p class="lead" data-edit="voz_lead">Você conta como foi o atendimento, e o Lyra escreve a evolução por você. Do seu jeito.</p>
+          <p class="lead" data-edit="voz_lead">Conte como foi o atendimento e o Lyra escreve a evolução no prontuário. Você só confere e salva.</p>
           <ul class="checks">
-            <li data-edit="voz_c1">Acabou a digitação depois do último paciente.</li>
+            <li data-edit="voz_c1">Chega de digitar prontuário depois do último paciente.</li>
             <li data-edit="voz_c2">O Lyra entende os termos da odontologia, os dentes e as medidas que você fala.</li>
             <li data-edit="voz_c3">Fale com as mãos livres, sem tirar as luvas.</li>
           </ul>
@@ -157,13 +158,13 @@
         <div class="reveal">
           <span class="eyebrow" data-edit="wa_eyebrow">WhatsApp automático</span>
           <h2 id="wa-titulo"><span data-edit="wa_l1">Uma clínica que responde,</span><br /><span data-edit="wa_l2">mesmo quando você está atendendo.</span></h2>
-          <p class="lead" data-edit="wa_lead">Você atende, e o Lyra conversa com o seu paciente pelo WhatsApp.</p>
+          <p class="lead" data-edit="wa_lead">Respostas, lembretes e confirmações saem sozinhos, do número da sua clínica.</p>
           <ul class="checks">
             <li data-edit="wa_c1">Seu paciente pergunta horário e endereço e recebe a resposta na hora.</li>
-            <li data-edit="wa_c2">Ele recebe o lembrete e confirma a consulta sem você pedir.</li>
+            <li data-edit="wa_c2">Lembrete e confirmação automáticos: menos faltas e menos horário vazio na agenda.</li>
             <li data-edit="wa_c3">Quando precisa de gente de verdade, o Lyra avisa a sua equipe.</li>
-            <li data-edit="wa_c4">Os parabéns de aniversário saem sozinhos, e o paciente se sente lembrado.</li>
-            <li data-edit="wa_c5">O pedido de avaliação no Google Maps também vai sozinho, e sua clínica ganha confiança.</li>
+            <li data-edit="wa_c4">Os parabéns de aniversário saem sozinhos, e o paciente lembra de você.</li>
+            <li data-edit="wa_c5">O pedido de avaliação no Google Maps também vai sozinho, e sua clínica ganha estrelas no Google.</li>
           </ul>
         </div>
 <div class="wa-demo reveal" id="demo-wa" style="--d:.1s">
@@ -201,7 +202,7 @@
           <ul class="checks">
             <li data-edit="ag_c1">Dia, semana ou mês: você escolhe como quer ver.</li>
             <li data-edit="ag_c2">Horário livre? Toque nele e marque.</li>
-            <li data-edit="ag_c3">Cada status com a sua cor, e a confirmação do WhatsApp entrando sozinha.</li>
+            <li data-edit="ag_c3">Cada status com uma cor, e as confirmações do WhatsApp entram sozinhas.</li>
           </ul>
         </div>
         <div class="reveal celular" style="--d:.12s">
@@ -225,22 +226,19 @@
     </section>
 
         <!-- PLANOS -->
-    <section class="secao clara" id="planos" data-promo="on" aria-labelledby="planos-titulo">
+    <section class="secao clara" id="planos" aria-labelledby="planos-titulo">
       <div class="container">
         <div class="titulo-centro reveal">
           <h2 id="planos-titulo">Tudo o que você viu acima, <span class="grad">em um valor só.</span></h2>
         </div>
         <div class="planos-wrap reveal" style="--d:.05s">
           <div class="planos-troca" role="group" aria-label="Forma de pagamento">
-            <button type="button" data-plano="mensal" aria-pressed="false">Mensal</button>
+            <button type="button" class="on" data-plano="mensal" aria-pressed="true">Mensal</button>
             <button type="button" data-plano="anual" aria-pressed="false">Anual <span class="planos-eco">economize</span></button>
-            <button type="button" class="on" data-plano="promo" data-promo-so aria-pressed="true">Promoção exclusiva</button>
           </div>
           <article class="plano-card">
-            <h3 data-modo="mensal anual">Lyra Dental</h3>
-            <h3 data-modo="promo">Black Friday</h3>
+            <h3>Lyra Dental</h3>
             <div class="plano-preco" data-modo="mensal">
-              <s>R$ 197</s>
               <p class="plano-valor"><span>R$</span>147<small>/mês</small></p>
               <p class="plano-nota">Preço fixo enquanto você for cliente. Sem fidelidade: cancele quando quiser.</p>
             </div>
@@ -249,24 +247,8 @@
               <p class="plano-valor"><span>R$</span>116,66<small>/mês</small></p>
               <p class="plano-nota">Cobrado uma vez por ano: R$ 1.399,90.</p>
             </div>
-            <div class="plano-preco" data-modo="promo">
-              <s>R$ 147</s>
-              <p class="plano-valor"><span>R$</span>79<small>/mês</small><small class="plano-periodo">nos 6 primeiros meses</small></p>
-              <p class="plano-nota"><b>6x de R$ 79 sem juros</b> no cartão (R$ 474 no total).</p>
-            </div>
-            <ul class="plano-lista topo" data-modo="promo">
-              <li>Agenda com confirmação no WhatsApp</li>
-              <li>Evolução e odontograma por voz</li>
-              <li>Prontuário, anamnese e assinatura</li>
-              <li>Orçamentos, financeiro e documentos</li>
-              <li>2 dentistas inclusos (extra: R$ 79/mês)</li>
-              <li>App e web, sem limite de pacientes</li>
-              <li>Suporte pelo WhatsApp</li>
-            </ul>
             <a class="btn btn-lg plano-botao" data-modo="mensal anual" href="https://app.getlyra.com.br/?signup=1">Começar meu teste grátis</a>
-            <a class="btn btn-lg plano-botao" data-modo="promo" href="https://app.getlyra.com.br/?signup=1">Começar agora</a>
-            <p class="plano-micro" data-modo="promo">7 dias grátis, sem cartão. Você só decide no final.</p>
-            <p class="plano-garantia" data-modo="mensal anual">Todo cadastro começa com 7 dias grátis, sem cartão. Se não gostar, cancele antes do fim do teste e não paga nada.</p>
+            <p class="plano-garantia" data-modo="mensal anual">Teste 7 dias grátis, sem cartão. Se não gostar, é só não assinar.</p>
             <ul class="plano-lista" data-modo="mensal anual">
               <li>Agenda com confirmação no WhatsApp</li>
               <li>Evolução e odontograma por voz</li>
@@ -278,13 +260,7 @@
               <li>Suporte pelo WhatsApp</li>
             </ul>
           </article>
-          <div class="plano-detalhes" data-modo="promo">
-            <p class="plano-depois">Depois dos 6 meses: R$ 147/mês, ou R$ 116,66/mês no plano anual (20% de desconto). O preço fica fixo enquanto você for cliente, e nada é cobrado sem você renovar.</p>
-            <ul class="promo-humano">
-              <li>Cuidamos da migração dos seus pacientes, sem custo, depois da contratação</li>
-            </ul>
-          </div>
-          <p class="planos-rodape">Pagamento seguro no cartão de crédito.</p>
+          <p class="planos-rodape">Pagamento seguro no cartão de crédito. Dúvida? Fale com a gente pelo WhatsApp: quem responde é gente, não robô.</p>
         </div>
       </div>
     </section>
@@ -317,7 +293,7 @@
         </div>
         <div class="cards dois">
           <article class="card escuro reveal"><h3 data-edit="seg_c1_t">Acesso protegido</h3><p data-edit="seg_c1_x">Só você e a sua equipe veem os registros da sua clínica. Os dados de cada clínica ficam separados.</p></article>
-          <article class="card escuro reveal" style="--d:.07s"><h3 data-edit="seg_c2_t">Privacidade da voz</h3><p data-edit="seg_c2_x">Sua voz vai por conexão segura para ser transcrita e <strong>não fica guardada</strong> no Lyra.</p></article>
+          <article class="card escuro reveal" style="--d:.07s"><h3 data-edit="seg_c2_t">Seus dados são seus</h3><p data-edit="seg_c2_x">Baixe uma <strong>cópia completa</strong> quando quiser, sem pedir para ninguém.</p></article>
         </div>
       </div>
     </section>
@@ -331,15 +307,16 @@
         <div class="faq-list reveal" style="--d:.1s">
           <details><summary data-edit="faq1_q">O que é o Lyra Dental?</summary><p data-edit="faq1_a">É o seu braço direito no consultório: agenda inteligente, WhatsApp que confirma consultas sozinho, odontograma e evolução clínica por voz, sem trocar de ferramenta a cada tarefa. Funciona como app e no navegador.</p></details>
           <details><summary data-edit="faq2_q">Qual a diferença entre evolução por voz e odontograma por voz?</summary><p data-edit="faq2_a">Na evolução por voz, você conta o atendimento e o Lyra escreve o prontuário. No odontograma por voz, você diz o dente e o procedimento e o Lyra marca e monta a lista de tratamentos.</p></details>
-          <details><summary data-edit="faq3_q">Posso testar antes de assinar?</summary><p data-edit="faq3_a">Pode, e sem pagar nada. O teste é de 7 dias, sem cartão, para todo cadastro. A migração dos seus pacientes de outro sistema a gente faz depois do primeiro pagamento.</p><p class="faq-acao"><a class="btn" href="https://app.getlyra.com.br/?signup=1" rel="noopener">Começar meu teste grátis</a></p></details>
-          <details><summary data-edit="faq4_q">Preciso instalar alguma coisa?</summary><p data-edit="faq4_a">Não precisa instalar nada para começar: o Lyra funciona direto no navegador do computador, e também tem aplicativo para Android.</p></details>
-          <details><summary data-edit="faq5_q">Tem versão para iPhone?</summary><p data-edit="faq5_a">Ainda não, mas está nos nossos planos. Assim que tivermos uma data, você fica sabendo.</p></details>
+          <details><summary data-edit="faq3_q">Posso testar antes de assinar?</summary><p data-edit="faq3_a">Pode, e sem pagar nada. O teste é de 7 dias, sem cartão, para todo cadastro.</p><p class="faq-acao"><a class="btn" href="https://app.getlyra.com.br/?signup=1" rel="noopener">Começar meu teste grátis</a></p></details>
+          <details><summary>Já uso outro sistema. Vou perder meus pacientes?</summary><p>Não. Depois do primeiro pagamento, a gente leva seus pacientes para o Lyra, sem custo.</p></details>
+          <details><summary data-edit="faq4_q">Preciso instalar alguma coisa?</summary><p data-edit="faq4_a">Não precisa instalar nada: o Lyra funciona direto no navegador, no computador, no Android e no iPhone. É só entrar em app.getlyra.com.br.</p></details>
+          <details><summary data-edit="faq5_q">Funciona no iPhone?</summary><p data-edit="faq5_a">Funciona, sim. No iPhone o Lyra abre pelo navegador: é só entrar em app.getlyra.com.br com a sua conta. Dá até para colocar o ícone na tela inicial e usar como um aplicativo.</p></details>
           <details><summary data-edit="faq6_q">Posso conectar o WhatsApp da minha clínica?</summary><p data-edit="faq6_a">Pode, é só ler um QR Code. O Lyra responde as perguntas comuns com os dados da sua clínica e chama a sua equipe quando precisa. O uso segue as regras do próprio WhatsApp.</p></details>
           <details><summary data-edit="faq7_q">O Lyra automatiza a agenda do consultório?</summary><p data-edit="faq7_a">Sim. O Lyra lembra os seus pacientes pelo WhatsApp, e no lembrete vai um link para ele confirmar, pedir para remarcar ou cancelar. Você vê o resultado na agenda e recebe o aviso no app.</p></details>
           <details><summary data-edit="faq8_q">O que acontece com o áudio da voz?</summary><p data-edit="faq8_a">Sua voz vai por conexão segura para ser transcrita e não fica guardada no Lyra. A gravação para sozinha depois de um tempo de silêncio e tem limite de duração.</p></details>
           <details><summary data-edit="faq9_q">Como meus dados são protegidos?</summary><p data-edit="faq9_a">Seus dados ficam na nuvem, protegidos por login e separados de outras clínicas. E você pode baixar uma cópia quando quiser.</p></details>
-          <details><summary data-edit="faq10_q">O Lyra funciona sem internet?</summary><p data-edit="faq10_a">Precisa de internet, sim. Em troca, seus dados ficam sempre atualizados no celular e no computador.</p></details>
-          <details><summary data-edit="faq11_q">Quanto custa?</summary><p data-edit="faq11_a">É um plano só, com tudo incluído. Os valores estão na seção Planos.</p></details>
+          <details><summary data-edit="faq10_q">O Lyra funciona sem internet?</summary><p data-edit="faq10_a">Precisa de internet. Por isso seus dados ficam iguais no celular e no computador, e nada se perde se o aparelho quebrar.</p></details>
+          <details><summary data-edit="faq11_q">Quanto custa?</summary><p data-edit="faq11_a">R$ 147 por mês, ou R$ 1.399,90 por ano (R$ 116,66 por mês no plano anual). Tudo incluído, com 2 dentistas. O preço fica fixo enquanto você for cliente, sem fidelidade.</p></details>
         </div>
       </div>
     </section>
@@ -348,13 +325,10 @@
     <section class="cta-final" aria-labelledby="cta-titulo">
       <div class="container reveal">
         <h2 id="cta-titulo" data-edit="cta_titulo">Quer ver o Lyra funcionando no seu consultório?</h2>
-        <p data-edit="cta_texto">Crie sua conta e veja como o Lyra deixa a sua rotina mais leve.</p>
+        <p data-edit="cta_texto">Crie sua conta agora e teste 7 dias grátis, sem cartão.</p>
         <a class="btn btn-branco btn-lg" href="https://app.getlyra.com.br/?signup=1" data-edit="cta_botao">Começar meu teste grátis</a>
-        <p class="cta-ou"><span data-edit="cta_ou">Prefere conversar?</span> <a data-wa="Olá! Gostaria de falar com um especialista do Lyra Dental." href="#" target="_blank" rel="noopener" data-edit="cta_link">Fale com um especialista</a></p>
-        <div class="lojas" aria-label="Aplicativo nas lojas">
-          <span class="loja" role="img" aria-label="Em breve na App Store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.400 12.600c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.1-2.800.9-3.500.9-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.300.9-1.300 1.300-2.600 1.300-2.700-.1 0-2.500-1-2.500-3.700zM14.200 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.700 1.400-.6.7-1.100 1.800-.9 2.700 1 .1 2-.5 2.700-1.300z"/></svg><span><small>Em breve na</small><b>App Store</b></span></span>
-          <span class="loja" role="img" aria-label="Em breve no Google Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.200v17.600a1 1 0 0 0 1.500.9l14-8.800a1 1 0 0 0 0-1.800l-14-8.800A1 1 0 0 0 5 3.200z"/></svg><span><small>Em breve no</small><b>Google Play</b></span></span>
-        </div>
+        <p class="cta-ou"><span data-edit="cta_ou">Prefere conversar?</span> <a data-wa="Olá! Gostaria de falar com a equipe do Lyra Dental." href="#" target="_blank" rel="noopener" data-edit="cta_link">Fale com a gente pelo WhatsApp</a></p>
+        <p class="cta-ou">Funciona no computador, no Android e no iPhone, direto no navegador.</p>
       </div>
     </section>
   </main>

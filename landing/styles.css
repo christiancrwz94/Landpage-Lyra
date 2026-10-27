@@ -1236,16 +1236,26 @@ body{background:var(--soft)}
 .plano-detalhes .plano-depois{margin:0 0 1rem;font-size:.9rem;line-height:1.5;color:var(--ink);text-align:center}
 .plano-detalhes .promo-humano{margin:0;padding:1rem 0 0;border-top:1px solid rgba(var(--acc-rgb),.25)}
 
-/* Recursos: no celular os cartões viram um carrossel (deslizar para o lado, com pontinhos) */
-.carrossel-pontos{display:none}
+/* Recursos: carrossel (celular: 1 cartão e meio; computador: 3 por vez, com setas e pontinhos) */
+#recursos .cards{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+#recursos .cards::-webkit-scrollbar{display:none}
+#recursos .card,#recursos .card-larga{display:block;flex:0 0 calc((100% - 40px) / 3);scroll-snap-align:start;margin:0}
+#recursos .card.reveal{opacity:1;transform:none}
+#recursos .card-larga .ico{margin:0 0 14px}
+.carrossel-pontos{display:flex;justify-content:center;gap:8px;margin-top:6px}
+.carrossel-pontos button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:rgba(var(--acc-rgb),.28);cursor:pointer;transition:width .25s,background .25s}
+.carrossel-pontos button.on{width:22px;border-radius:6px;background:var(--blue)}
+.rec-wrap{position:relative}
+.rec-seta{position:absolute;top:calc(50% - 30px);width:42px;height:42px;border-radius:50%;border:1px solid rgba(var(--acc-rgb),.4);background:var(--page,#fff);color:var(--ink);display:grid;place-items:center;cursor:pointer;opacity:.9;transition:opacity .2s,transform .2s}
+.rec-seta:hover{opacity:1;transform:scale(1.06)}
+.rec-seta[disabled]{opacity:.25;cursor:default;transform:none}
+.rec-seta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rec-ant{left:-21px}.rec-prox{right:-21px}
+@media (max-width:1240px){.rec-ant{left:-6px}.rec-prox{right:-6px}}
 @media (max-width:720px){
-  #recursos .cards{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:20px;margin-inline:-20px;padding:6px 20px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  #recursos .cards::-webkit-scrollbar{display:none}
-  #recursos .card{flex:0 0 82%;scroll-snap-align:center;margin:0}
-  #recursos .card.reveal{opacity:1;transform:none}
-  #recursos .carrossel-pontos{display:flex;justify-content:center;gap:8px;margin-top:6px}
-  #recursos .carrossel-pontos button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:rgba(var(--acc-rgb),.28);cursor:pointer;transition:width .25s,background .25s}
-  #recursos .carrossel-pontos button.on{width:22px;border-radius:6px;background:var(--blue)}
+  #recursos .cards{gap:12px;scroll-padding-inline:20px;margin-inline:-20px;padding:6px 20px 14px}
+  #recursos .card,#recursos .card-larga{flex:0 0 82%;scroll-snap-align:center}
+  .rec-seta{display:none}
 }
 
 /* Emendas em toda a landing: quem tem o canto arredondado é sempre a parte VERDE.
