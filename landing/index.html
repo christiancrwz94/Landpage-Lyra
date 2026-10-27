@@ -52,8 +52,8 @@
         <span></span><span></span><span></span><span class="sr-only">Abrir menu</span>
       </button>
       <nav class="main-nav" id="menu" aria-label="Navegação principal">
-        <a href="#voz">Evolução por voz</a>
         <a href="#odontograma">Odontograma por voz</a>
+        <a href="#voz">Evolução por voz</a>
         <a href="#whatsapp">Automação e WhatsApp</a>
         <a href="#agenda">Agenda inteligente</a>
         <a href="#planos">Planos</a>
@@ -78,40 +78,8 @@
       </div>
     </section>
 
-    <!-- VOZ -->
-    <section class="secao clara" id="voz" aria-labelledby="voz-titulo">
-      <div class="container voz-grid">
-        <div class="reveal">
-          <span class="eyebrow" data-edit="voz_eyebrow">Evolução por voz</span>
-          <h2 id="voz-titulo"><span data-edit="voz_l1">Você fala.</span><br /><span class="grad" data-edit="voz_l2">O Lyra registra.</span></h2>
-          <p class="lead" data-edit="voz_lead">Você conta como foi o atendimento, e o Lyra escreve a evolução por você. Do seu jeito.</p>
-          <ul class="checks">
-            <li data-edit="voz_c1">Acabou a digitação depois do último paciente.</li>
-            <li data-edit="voz_c2">O Lyra entende os termos da odontologia, os dentes e as medidas que você fala.</li>
-            <li data-edit="voz_c3">Fale com as mãos livres, sem tirar as luvas.</li>
-          </ul>
-        </div>
-
-        <div class="demo reveal" style="--d:.15s">
-          <div class="demo-card" id="demo-voz">
-            <div class="demo-head">
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11z" fill="currentColor"/></svg>
-              <div><strong>Evolução clínica</strong><small id="demo-estado">Pronto para ouvir</small></div>
-            </div>
-            <div class="demo-barra">
-              <span class="rec"><i></i></span>
-              <span class="tempo" id="demo-tempo">0:00</span>
-              <span class="ondas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-              <span class="enviar" aria-hidden="true">➤</span>
-            </div>
-            <div class="demo-texto" id="demo-texto" aria-live="off"><span class="cursor"></span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ODONTOGRAMA POR VOZ -->
-    <section class="secao escura" id="odontograma" aria-labelledby="odonto-titulo">
+    <section class="secao clara" id="odontograma" aria-labelledby="odonto-titulo">
       <div class="container od-grid">
         <div class="reveal">
           <span class="eyebrow" data-edit="od_eyebrow">Odontograma por voz</span>
@@ -146,6 +114,38 @@
               <ul class="od-sheet-l"><li>Dente 14 - Restauração média</li><li>Dente 15 - Tratamento de Canal</li></ul>
               <p class="od-criar">Criar Orçamento</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOZ -->
+    <section class="secao escura" id="voz" aria-labelledby="voz-titulo">
+      <div class="container voz-grid">
+        <div class="reveal">
+          <span class="eyebrow" data-edit="voz_eyebrow">Evolução por voz</span>
+          <h2 id="voz-titulo"><span data-edit="voz_l1">Você fala.</span><br /><span class="grad" data-edit="voz_l2">O Lyra registra.</span></h2>
+          <p class="lead" data-edit="voz_lead">Você conta como foi o atendimento, e o Lyra escreve a evolução por você. Do seu jeito.</p>
+          <ul class="checks">
+            <li data-edit="voz_c1">Acabou a digitação depois do último paciente.</li>
+            <li data-edit="voz_c2">O Lyra entende os termos da odontologia, os dentes e as medidas que você fala.</li>
+            <li data-edit="voz_c3">Fale com as mãos livres, sem tirar as luvas.</li>
+          </ul>
+        </div>
+
+        <div class="demo reveal" style="--d:.15s">
+          <div class="demo-card" id="demo-voz">
+            <div class="demo-head">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11z" fill="currentColor"/></svg>
+              <div><strong>Evolução clínica</strong><small id="demo-estado">Pronto para ouvir</small></div>
+            </div>
+            <div class="demo-barra">
+              <span class="rec"><i></i></span>
+              <span class="tempo" id="demo-tempo">0:00</span>
+              <span class="ondas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="enviar" aria-hidden="true">➤</span>
+            </div>
+            <div class="demo-texto" id="demo-texto" aria-live="off"><span class="cursor"></span></div>
           </div>
         </div>
       </div>
