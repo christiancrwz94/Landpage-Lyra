@@ -316,10 +316,19 @@ p{margin:0 0 1rem}
 .demo-texto{min-height:150px}
 .od-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 @media (min-width:981px){
-  .od-grid>div:first-child{grid-column:2;grid-row:1}
+  .od-grid>div:first-child{grid-column:2;grid-row:1;align-self:start;padding-top:0}
   .od-grid>div:last-child{grid-column:1;grid-row:1}
 }
-@media (max-width:980px){.od-grid{grid-template-columns:1fr;gap:36px}}
+@media (max-width:980px){
+  .od-grid{grid-template-columns:1fr;gap:36px}
+  /* celular/tablet: título, depois o mockup, depois o texto e os itens */
+  :is(#odontograma,#agenda) .od-grid{display:flex;flex-direction:column;gap:0}
+  .od-grid>div:first-child{display:contents}
+  :is(#odontograma,#agenda) .od-grid>div:first-child>h2{order:1;margin:0 0 22px;align-self:stretch;text-align:left}
+  :is(#odontograma,#agenda) .od-grid>.celular{order:2;width:100%;margin:0 auto 26px}
+  :is(#odontograma,#agenda) .od-grid>div:first-child>.lead{order:3;margin:0 0 14px}
+  :is(#odontograma,#agenda) .od-grid>div:first-child>.checks{order:3;margin:0}
+}
 
 /* Odontograma por voz (demonstração fiel à tela do app) */
 .od-app{--azul:#5b84b1;position:relative;max-width:400px;margin-inline:auto;background:#0a0c10;color:#fff;border-radius:30px;padding:14px 12px 14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5),inset 0 0 0 1px rgba(255,255,255,.1)}
@@ -631,6 +640,8 @@ body{background:var(--page);color:var(--ink)}
 ::view-transition-new(root){z-index:2}
 html[data-vt="fecha"]::view-transition-old(root){z-index:2}
 html[data-vt="fecha"]::view-transition-new(root){z-index:1}
+/* abrindo o claro: a tela nova começa escondida; sem isso ela aparecia inteira (flash branco) antes do círculo começar a abrir */
+html[data-vt="abre"]::view-transition-new(root){clip-path:circle(0px at 100% 0)}
 @media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
 
 /* ===== Conversa do WhatsApp com cara de WhatsApp (papel de parede, vistos, hora, barra de mensagem) ===== */
@@ -1270,3 +1281,84 @@ body{background:var(--soft)}
 .btn-topo{order:1;flex:none;margin-left:1rem;padding:.5rem 1.05rem;font-size:.86rem;line-height:1.2;white-space:nowrap;box-shadow:none}
 @media (max-width:1020px){.btn-topo{margin-left:auto}.tema-btn{margin-left:.35rem;margin-right:0}}
 @media (max-width:380px){.btn-topo{padding:.45rem .8rem;font-size:.8rem}}
+
+/* ── Espaço entre as seções ainda menor (29/10/2026); embaixo soma --r porque a seção seguinte sobe --r por cima ── */
+.secao,.secao.escura,.secao:has(+ .secao.escura),.secao:has(+ .cta-final){padding-bottom:calc(40px + var(--r))}
+.secao,.secao.escura,.hero + .secao,.secao.escura + .secao{padding-top:calc(40px + var(--r))}
+@media (max-width:980px){
+  .secao,.secao.escura,.secao:has(+ .secao.escura),.secao:has(+ .cta-final){padding-bottom:calc(32px + var(--r))}
+  .secao,.secao.escura,.hero + .secao,.secao.escura + .secao{padding-top:calc(32px + var(--r))}
+}
+
+/* ── Celular: menu em dois traços (mais estreito que o hambúrguer), para o "Testar grátis" não cobrir o nome.
+   Ao tocar, os traços giram e viram um X com um leve "pulo" ── */
+@media (max-width:800px){
+  .menu-toggle{width:34px;margin-right:-6px}
+  .menu-toggle span:not(.sr-only){left:auto;right:6px;width:22px;height:2.2px;border-radius:2px;
+    transition:top .25s var(--ease),width .25s var(--ease),transform .45s cubic-bezier(.68,-.6,.32,1.6)}
+  .menu-toggle span:nth-child(1){top:16px}
+  .menu-toggle span:nth-child(2){top:25px;width:14px;opacity:1}
+  .menu-toggle span:nth-child(3){display:none}
+  .menu-toggle:hover span:nth-child(2){width:22px}
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){top:21px;transform:rotate(225deg)}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){top:21px;width:22px;opacity:1;transform:rotate(135deg)}
+  .menu-toggle:active{transform:scale(.9)}
+  .menu-toggle{transition:transform .15s}
+}
+@media (max-width:400px){
+  .btn-topo{margin-left:10px;padding:.45rem .85rem;font-size:.82rem}
+  .tema-btn{width:38px;height:38px}
+}
+
+/* ── Celular/tablet: na evolução por voz, título, depois a demonstração, depois o texto e os itens ── */
+@media (max-width:980px){
+  #voz .voz-grid{display:flex;flex-direction:column;gap:0}
+  #voz .voz-grid>div:first-child{display:contents}
+  #voz .voz-grid>div:first-child>h2{order:1;margin:0 0 22px;align-self:stretch;text-align:left}
+  #voz .voz-grid>.demo{order:2;width:100%;margin:0 0 26px}
+  #voz .voz-grid>div:first-child>.lead{order:3;margin:0 0 14px}
+  #voz .voz-grid>div:first-child>.checks{order:3;margin:0}
+}
+
+/* ── Celular/tablet: no WhatsApp, título, depois a conversa, depois o texto e os itens ── */
+@media (max-width:980px){
+  #whatsapp .wa-grid{display:flex;flex-direction:column;gap:0}
+  #whatsapp .wa-grid>div:first-child{display:contents}
+  #whatsapp .wa-grid>div:first-child>.eyebrow{order:1;align-self:flex-start}
+  #whatsapp .wa-grid>div:first-child>h2{order:1;margin:0 0 22px;align-self:stretch;text-align:left}
+  #whatsapp .wa-grid>.wa-demo{order:2;width:100%;margin:0 0 26px}
+  #whatsapp .wa-grid>div:first-child>.lead{order:3;margin:0 0 14px}
+  #whatsapp .wa-grid>div:first-child>.checks{order:3;margin:0}
+}
+@media (max-width:800px){
+  .main-nav a{opacity:0;transform:translateY(-8px);transition:opacity .3s,transform .4s var(--ease)}
+  .main-nav.open a{opacity:1;transform:none}
+  .main-nav.open a:nth-child(2){transition-delay:.04s}.main-nav.open a:nth-child(3){transition-delay:.08s}
+  .main-nav.open a:nth-child(4){transition-delay:.12s}.main-nav.open a:nth-child(5){transition-delay:.16s}
+  .main-nav.open a:nth-child(6){transition-delay:.2s}
+}
+
+/* ── Celular: no verde do topo um brilho passa de tempos em tempos ── */
+@media (max-width:620px){
+  .hero{margin-inline:10px} /* folga igual dos dois lados do verde */
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+    background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.16) 47%,rgba(255,255,255,.04) 53%,transparent 62%) no-repeat;
+    background-size:250% 100%;animation:topo-brilho 5.5s ease-in-out 1s infinite}
+  .hero-grid{z-index:2}
+}
+@keyframes topo-brilho{0%{background-position:130% 0}45%,100%{background-position:-30% 0}}
+@media (prefers-reduced-motion:reduce){.hero::after{animation:none!important}}
+
+/* ── Logo do topo com vida: a estrelinha do desenho gira e acende de tempos em tempos
+   (a estrela original da imagem fica escondida por uma máscara e é redesenhada aqui para poder animar) ── */
+.logo-anim{position:relative;display:inline-block;line-height:0;--logo-cor:#3b5245;--logo-luz:#6f9480}
+:root[data-tema="escuro"] .logo-anim{--logo-cor:#abc0ae;--logo-luz:#dfe9e1}
+@media (prefers-color-scheme:dark){:root:not([data-tema]) .logo-anim{--logo-cor:#abc0ae;--logo-luz:#dfe9e1}}
+.logo-anim img{-webkit-mask:radial-gradient(ellipse 20% 24% at 82% 36%,transparent 97%,#000 100%);mask:radial-gradient(ellipse 20% 24% at 82% 36%,transparent 97%,#000 100%)}
+.logo-anim::before{content:"";position:absolute;left:63%;top:15%;width:37%;height:43%;background:var(--logo-cor);pointer-events:none;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:logo-estrela 4.5s cubic-bezier(.45,0,.55,1) .6s infinite}
+/* mesmo tamanho o tempo todo: dá um giro de 90° (a estrela de 4 pontas volta ao mesmo desenho) e acende no meio do giro; depois descansa */
+@keyframes logo-estrela{0%{transform:rotate(0);background:var(--logo-cor)}18%{background:var(--logo-luz)}36%,100%{transform:rotate(90deg);background:var(--logo-cor)}}
+@media (prefers-reduced-motion:reduce){.logo-anim::before{animation:none}}

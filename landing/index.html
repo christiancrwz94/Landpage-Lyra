@@ -45,7 +45,7 @@
   <header class="site-header" id="topo">
     <div class="container nav-wrap">
       <a class="brand" href="#topo" aria-label="Lyra Dental, início">
-        <img class="logo-claro" src="img/logo-icon-claro.png" alt="" width="34" height="29" /><img class="logo-escuro" src="img/logo-icon-escuro.png" alt="" width="34" height="29" />
+        <span class="logo-anim"><img class="logo-claro" src="img/logo-icon-claro.png" alt="" width="34" height="29" /><img class="logo-escuro" src="img/logo-icon-escuro.png" alt="" width="34" height="29" /></span>
         <span class="brand-name">Lyra <strong>Dental</strong></span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
@@ -74,7 +74,7 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <h1 id="hero-titulo"><span data-edit="hero_l1">Você atende.</span><br /><span class="grad" data-edit="hero_l2">O Lyra cuida do resto.</span></h1>
-          <p class="lead" data-edit="hero_lead">Agenda, WhatsApp e prontuário por voz em um só lugar. Criado dentro de um consultório odontológico, para você atender mais e digitar menos.</p>
+          <p class="lead" data-edit="hero_lead">Criado por quem vive a odontologia. Feito para simplificar cada dia do seu consultório.</p>
         </div>
       </div>
     </section>
@@ -83,7 +83,6 @@
     <section class="secao clara" id="odontograma" aria-labelledby="odonto-titulo">
       <div class="container od-grid">
         <div class="reveal">
-          <span class="eyebrow" data-edit="od_eyebrow">Odontograma por voz</span>
           <h2 id="odonto-titulo"><span data-edit="od_l1">Marque dentes e tratamentos</span> <span class="grad" data-edit="od_l2">sem parar para digitar.</span></h2>
           <p class="lead" data-edit="od_lead">Você diz o dente e o procedimento, e o Lyra marca no odontograma. É só tocar no microfone.</p>
           <ul class="checks claro">
@@ -94,7 +93,7 @@
         <div class="reveal celular" style="--d:.12s">
           <div class="od-app" id="demo-odonto" role="img" aria-label="Demonstração: o dentista diz “dente 14, restauração média” e “dente 15, canal”; o Lyra seleciona os dentes, lista os tratamentos e abre a criação do orçamento.">
             <div class="od-card" aria-hidden="true">
-              <h3 class="od-titulo">Odontograma</h3>
+              <h3 class="od-titulo">Odontograma por voz</h3>
               <p class="od-sub">Toque no dente ou fale para marcar</p>
               <div class="od-fale">
                 <p class="od-fala" id="od-fala">Fale: “dente 16 restauração”</p>
@@ -124,7 +123,6 @@
     <section class="secao escura" id="voz" aria-labelledby="voz-titulo">
       <div class="container voz-grid">
         <div class="reveal">
-          <span class="eyebrow" data-edit="voz_eyebrow">Evolução por voz</span>
           <h2 id="voz-titulo"><span data-edit="voz_l1">Você fala.</span><br /><span class="grad" data-edit="voz_l2">O Lyra registra.</span></h2>
           <p class="lead" data-edit="voz_lead">Conte como foi o atendimento e o Lyra escreve a evolução no prontuário. Você só confere e salva.</p>
           <ul class="checks">
@@ -197,7 +195,6 @@
     <section class="secao escura" id="agenda" aria-labelledby="agenda-titulo">
       <div class="container od-grid">
         <div class="reveal">
-          <span class="eyebrow" data-edit="ag_eyebrow">Agenda inteligente</span>
           <h2 id="agenda-titulo"><span data-edit="ag_l1">Sua agenda</span><br /><span class="grad" data-edit="ag_l2">sempre em dia.</span></h2>
           <ul class="checks">
             <li data-edit="ag_c1">Dia, semana ou mês: você escolhe como quer ver.</li>
@@ -233,8 +230,8 @@
         </div>
         <div class="planos-wrap reveal" style="--d:.05s">
           <div class="planos-troca" role="group" aria-label="Forma de pagamento">
-            <button type="button" class="on" data-plano="mensal" aria-pressed="true">Mensal</button>
-            <button type="button" data-plano="anual" aria-pressed="false">Anual <span class="planos-eco">economize</span></button>
+            <button type="button" class="on" data-plano="anual" aria-pressed="true">Anual <span class="planos-eco">economize</span></button>
+            <button type="button" data-plano="mensal" aria-pressed="false">Mensal</button>
           </div>
           <article class="plano-card">
             <h3>Lyra Dental</h3>

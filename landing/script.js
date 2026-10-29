@@ -49,13 +49,19 @@ if (toggle && menu) {
   };
   aplica(raiz.getAttribute('data-tema') === 'claro' ? 'claro' : 'escuro');
 
+  let emAndamento = null; // troca de tema animada que ainda está rodando
+  let alvo = null;         // último tema pedido (cliques seguidos valem pelo último)
+  const troca = () => {
+    aplica(alvo);
+    try { localStorage.setItem('lyra-tema', alvo); } catch (e) { /* sem armazenamento: vale só nesta visita */ }
+  };
   if (btn) btn.addEventListener('click', () => {
     const novo = raiz.getAttribute('data-tema') === 'escuro' ? 'claro' : 'escuro';
-    const troca = () => {
-      aplica(novo);
-      try { localStorage.setItem('lyra-tema', novo); } catch (e) { /* sem armazenamento: vale só nesta visita */ }
-    };
+    alvo = novo;
     if (reduzMovimento || !document.startViewTransition) { troca(); return; }
+    // Clique antes da animação anterior acabar: encerra a anterior e troca na hora, sem nova animação.
+    // Começar outra animação por cima fazia o navegador fotografar a tela em branco (o "flash" branco).
+    if (emAndamento) { emAndamento.skipTransition(); troca(); return; }
     const r = btn.getBoundingClientRect();
     const x = r.left + r.width / 2;
     const y = r.top + r.height / 2;
@@ -65,16 +71,27 @@ if (toggle && menu) {
     const abre = novo === 'claro';
     raiz.setAttribute('data-vt', abre ? 'abre' : 'fecha');
     const t = document.startViewTransition(troca);
+    emAndamento = t;
+    let circulo = null;
     t.ready.then(() => {
-      raiz.animate(
+      circulo = raiz.animate(
         { clipPath: abre
             ? [`circle(0px at ${x}px ${y}px)`, `circle(${raio}px at ${x}px ${y}px)`]
             : [`circle(${raio}px at ${x}px ${y}px)`, `circle(0px at ${x}px ${y}px)`] },
-        { duration: 600, easing: 'cubic-bezier(.25,1,.5,1)', fill: 'forwards',
+        // Abrir é o fechar ao contrário: começa devagar no botão e acelera (com a mesma curva, o círculo
+        // já nascia quase do tamanho da tela e o efeito de abrir nem aparecia).
+        { duration: 600, easing: abre ? 'cubic-bezier(.5,0,.75,0)' : 'cubic-bezier(.25,1,.5,1)', fill: 'forwards',
           pseudoElement: abre ? '::view-transition-new(root)' : '::view-transition-old(root)' }
       );
     }).catch(() => {});
-    t.finished.finally(() => raiz.removeAttribute('data-vt'));
+    t.finished.finally(() => {
+      // A animação fica presa ao <html> com fill 'forwards'; se não for cancelada, o círculo fechado (0px)
+      // da troca anterior continua valendo na PRÓXIMA troca e esconde a tela antiga: era a tela branca.
+      if (circulo) circulo.cancel();
+      if (emAndamento !== t) return;
+      emAndamento = null;
+      raiz.removeAttribute('data-vt');
+    });
   });
 
   // Se a pessoa nunca escolheu, acompanha mudanças do sistema
@@ -629,7 +646,7 @@ iniciarDemos(document);
     });
   }
   todas.forEach(function (b) { b.addEventListener('click', function () { mostrar(b.getAttribute('data-plano')); }); });
-  mostrar('mensal');
+  mostrar('anual'); // o anual aparece primeiro; o mensal fica a um toque
 })();
 
 /* Recursos (celular): pontinhos do carrossel acompanham o deslize e levam ao cartão ao tocar */
