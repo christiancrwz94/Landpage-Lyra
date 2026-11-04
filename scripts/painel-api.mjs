@@ -64,7 +64,7 @@ export function criarHandler({
           content: Buffer.from(conteudo, 'utf8').toString('base64'),
           branch,
           ...(sha ? { sha } : {}),
-          committer: { name: 'Painel Lyra', email: 'painel@getlyra.com.br' },
+          committer: { name: 'Painel Lyra', email: 'painel@lyradental.com.br' },
         }),
       });
       if (resp.status === 200 || resp.status === 201) return 'gravado';

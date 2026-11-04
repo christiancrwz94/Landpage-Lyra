@@ -2,16 +2,16 @@
 
 // ── Configuração (troque aqui) ───────────────────────────────────────────────
 const LYRA_CONFIG = {
-  // Número do WhatsApp que recebe os contatos (formato internacional, só dígitos).
-  whatsapp: '5524993251138',
+  // E-mail que recebe os contatos.
+  email: 'contato@lyradental.com.br',
 };
 
 const reduzMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Botões que abrem o WhatsApp com mensagem pronta
-document.querySelectorAll('[data-wa]').forEach((a) => {
-  const texto = encodeURIComponent(a.dataset.wa || 'Olá! Quero conhecer o Lyra Dental.');
-  a.href = `https://wa.me/${LYRA_CONFIG.whatsapp}?text=${texto}`;
+// Botões que abrem o e-mail com o assunto pronto
+document.querySelectorAll('[data-email]').forEach((a) => {
+  const assunto = encodeURIComponent(a.dataset.email || 'Quero conhecer o Lyra Dental');
+  a.href = `mailto:${LYRA_CONFIG.email}?subject=${assunto}`;
 });
 
 // Ano no rodapé
@@ -559,7 +559,7 @@ iniciarDemos(document);
   window.addEventListener('resize', () => { if (ativo && !celular.matches) { const b = botoes.find((x) => x.dataset.alvo === ativo); if (b) apontaSeta(b); } });
 })();
 
-// ── Atendimento: botão flutuante do WhatsApp (painel com atalhos; sem aviso automático) ──
+// ── Atendimento: botão flutuante do e-mail (painel com atalhos; sem aviso automático) ──
 (function atendimento() {
   const raiz = document.getElementById('lyra-chat');
   if (!raiz) return;
@@ -578,14 +578,14 @@ iniciarDemos(document);
     raiz.classList.remove('aberto');
     painel.setAttribute('inert', '');
     botao.setAttribute('aria-expanded', 'false');
-    botao.setAttribute('aria-label', 'Falar com o suporte pelo WhatsApp');
+    botao.setAttribute('aria-label', 'Falar com o suporte por e-mail');
     if (devolveFoco) botao.focus({ preventScroll: true });
   }
 
   botao.addEventListener('click', () => (raiz.classList.contains('aberto') ? fecha(false) : abre()));
   fechaPainel.addEventListener('click', () => fecha(true));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && raiz.classList.contains('aberto')) fecha(true); });
-  // Toque fora do painel fecha (os links do painel continuam abrindo o WhatsApp)
+  // Toque fora do painel fecha (os links do painel continuam abrindo o e-mail)
   document.addEventListener('pointerdown', (e) => {
     if (raiz.classList.contains('aberto') && !raiz.contains(e.target)) fecha(false);
   });

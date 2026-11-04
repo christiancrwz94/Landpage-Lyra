@@ -25,10 +25,10 @@ test('sem edições, a página sai idêntica à original (só sem as marcas)', (
   assert.equal(r.js, js);
 });
 
-test('aplica texto, negrito, link, e-mail, WhatsApp e Google', () => {
+test('aplica texto, negrito, link, e-mail e Google', () => {
   const v = {
     hero_l1: 'Novo título & cia', seg_c2_x: 'Texto com **destaque**.', link_cadastro: 'https://exemplo.com/a?b=1&c=2',
-    rod_email: 'oi@exemplo.com', wa_numero: '5511999998888', seo_titulo: 'Meu título', seo_descricao: 'Minha descrição',
+    rod_email: 'oi@exemplo.com', seo_titulo: 'Meu título', seo_descricao: 'Minha descrição',
   };
   const r = aplicar(html, js, v);
   assert.match(r.html, /<span>Novo título &amp; cia<\/span>/);
@@ -37,7 +37,7 @@ test('aplica texto, negrito, link, e-mail, WhatsApp e Google', () => {
   assert.match(r.html, /href="https:\/\/exemplo\.com\/a\?b=1&amp;c=2"/);
   assert.ok(!r.html.includes(EMAIL_PADRAO));
   assert.match(r.html, /mailto:oi@exemplo\.com">oi@exemplo\.com</);
-  assert.match(r.js, /whatsapp: '5511999998888'/);
+  assert.match(r.js, /email: 'oi@exemplo\.com'/);
   assert.match(r.html, /<title>Meu título<\/title>/);
   assert.match(r.html, /og:title" content="Meu título"/);
   assert.match(r.html, /name="description" content="Minha descrição"/);
@@ -52,14 +52,12 @@ test('texto malicioso nunca vira HTML', () => {
   assert.ok(!forcado.html.includes('<b>x</b>'));
 });
 
-test('validação: chave desconhecida, tamanho, link, telefone e e-mail', () => {
+test('validação: chave desconhecida, tamanho, link e e-mail', () => {
   assert.equal(validarValores({ nao_existe: 'x' }, campos).ok, false);
   assert.equal(validarValores({ hero_l1: 'a'.repeat(500) }, campos).ok, false);
   assert.equal(validarValores({ link_cadastro: 'javascript:alert(1)' }, campos).ok, false);
   assert.equal(validarValores({ link_cadastro: 'http://sem-https.com' }, campos).ok, false);
   assert.equal(validarValores({ link_cadastro: 'https://ok.com/x' }, campos).ok, true);
-  assert.equal(validarValores({ wa_numero: '12345' }, campos).ok, false);
-  assert.equal(validarValores({ wa_numero: '5524993251138' }, campos).ok, true);
   assert.equal(validarValores({ rod_email: 'sem-arroba' }, campos).ok, false);
   assert.equal(validarValores({ hero_l1: 123 }, campos).ok, false);
   assert.equal(validarValores([], campos).ok, false);

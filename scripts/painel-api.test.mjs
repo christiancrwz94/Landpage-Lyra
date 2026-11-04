@@ -17,7 +17,7 @@ function res() {
 }
 const req = (extra = {}) => ({
   method: 'POST',
-  headers: { 'x-painel': '1', host: 'www.getlyra.com.br', origin: 'https://www.getlyra.com.br', 'x-forwarded-for': '1.2.3.4' },
+  headers: { 'x-painel': '1', host: 'www.lyradental.com.br', origin: 'https://www.lyradental.com.br', 'x-forwarded-for': '1.2.3.4' },
   body: { senha: SENHA, valores: { hero_l1: 'Novo título' } },
   ...extra,
 });
@@ -41,8 +41,8 @@ const novo = (extra = {}) => {
 test('só aceita POST, com cabeçalho do painel e mesma origem', async () => {
   const { handler } = novo();
   let r = res(); await handler(req({ method: 'GET' }), r); assert.equal(r.statusCode, 405);
-  r = res(); await handler(req({ headers: { host: 'www.getlyra.com.br' } }), r); assert.equal(r.statusCode, 403);
-  r = res(); await handler(req({ headers: { 'x-painel': '1', host: 'www.getlyra.com.br', origin: 'https://outro-site.com' } }), r); assert.equal(r.statusCode, 403);
+  r = res(); await handler(req({ headers: { host: 'www.lyradental.com.br' } }), r); assert.equal(r.statusCode, 403);
+  r = res(); await handler(req({ headers: { 'x-painel': '1', host: 'www.lyradental.com.br', origin: 'https://outro-site.com' } }), r); assert.equal(r.statusCode, 403);
 });
 
 test('sem configuração (senha ou token) responde 503 e não grava', async () => {

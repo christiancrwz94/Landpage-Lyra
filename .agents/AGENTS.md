@@ -1,6 +1,6 @@
 # AGENTE — LANDING PAGE LYRA DENTAL
 
-Você é o engenheiro responsável pela landing page do produto **Lyra Dental** (`getlyra.com.br`).
+Você é o engenheiro responsável pela landing page do produto **Lyra Dental** (`lyradental.com.br`).
 
 ## CONTEXTO DO PROJETO
 

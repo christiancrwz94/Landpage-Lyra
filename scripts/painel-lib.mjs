@@ -5,8 +5,8 @@ const ENT = { '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'
 const desescapar = (t) => t.replace(/&(amp|lt|gt|quot|#39|nbsp);/g, (m) => ENT[m]);
 const escapar = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-export const URL_CADASTRO_PADRAO = 'https://app.getlyra.com.br/?signup=1';
-export const EMAIL_PADRAO = 'contato@getlyra.com.br';
+export const URL_CADASTRO_PADRAO = 'https://app.lyradental.com.br/?signup=1';
+export const EMAIL_PADRAO = 'contato@lyradental.com.br';
 
 // <tag ... data-edit="chave">conteúdo</tag> (o conteúdo só pode ter <br> e <strong>, nunca a própria tag)
 const RX_MARCA = /<(\w+)([^>]*?)\sdata-edit="([a-z0-9_]+)"([^>]*)>([\s\S]*?)<\/\1>/g;
@@ -29,8 +29,6 @@ export function textoParaHtml(texto) {
 export function extrairPadroes(html, js) {
   const padroes = {};
   for (const m of html.matchAll(RX_MARCA)) padroes[m[3]] = htmlParaTexto(m[5]);
-  const wa = /whatsapp:\s*'(\d+)'/.exec(js);
-  if (wa) padroes.wa_numero = wa[1];
   const titulo = /<title>([\s\S]*?)<\/title>/.exec(html);
   if (titulo) padroes.seo_titulo = desescapar(titulo[1]).trim();
   const desc = /<meta name="description" content="([^"]*)"/.exec(html);
@@ -89,6 +87,6 @@ export function aplicar(html, js, valores) {
     if (antigo) h = h.split(`<meta property="og:title" content="${antigo}"`).join(`<meta property="og:title" content="${escapar(valores.seo_titulo)}"`);
   }
   if (valores.seo_descricao) h = h.replace(/(<meta name="description" content=")[^"]*(")/, `$1${escapar(valores.seo_descricao)}$2`);
-  const j = valores.wa_numero ? js.replace(/(whatsapp:\s*')\d+(')/, `$1${valores.wa_numero}$2`) : js;
+  const j = valores.rod_email ? js.replace(/(email:\s*')[^']+(')/, `$1${valores.rod_email}$2`) : js;
   return { html: h, js: j };
 }

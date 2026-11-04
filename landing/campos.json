@@ -686,13 +686,6 @@
   "max": 120
  },
  {
-  "chave": "wa_numero",
-  "grupo": "Contato e links",
-  "label": "Número de WhatsApp dos botões (só números, com 55)",
-  "tipo": "telefone",
-  "max": 15
- },
- {
   "chave": "rod_email",
   "grupo": "Contato e links",
   "label": "E-mail de contato",

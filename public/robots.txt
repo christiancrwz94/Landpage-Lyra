@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.getlyra.com.br/sitemap.xml
+Sitemap: https://www.lyradental.com.br/sitemap.xml
