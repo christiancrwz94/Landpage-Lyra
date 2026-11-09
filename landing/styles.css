@@ -1383,3 +1383,251 @@ body{background:var(--soft)}
 /* mesmo tamanho o tempo todo: dá um giro de 90° (a estrela de 4 pontas volta ao mesmo desenho) e acende no meio do giro; depois descansa */
 @keyframes logo-estrela{0%{transform:rotate(0);background:var(--logo-cor)}18%{background:var(--logo-luz)}36%,100%{transform:rotate(90deg);background:var(--logo-cor)}}
 @media (prefers-reduced-motion:reduce){.logo-anim::before{animation:none}}
+
+/* ===== Financeiro (demonstração animada, mesma moldura da agenda) ===== */
+:root{--fin-pos:#25683f;--fin-neg:#a8443a;--fin-neg-bg:#f5e1dd}
+@media (prefers-color-scheme:dark){:root:not([data-tema]){--fin-pos:#a9dbba;--fin-neg:#f0a39a;--fin-neg-bg:#4a2b27}}
+:root[data-tema="escuro"]{--fin-pos:#a9dbba;--fin-neg:#f0a39a;--fin-neg-bg:#4a2b27}
+:root[data-tema="claro"]{--fin-pos:#25683f;--fin-neg:#a8443a;--fin-neg-bg:#f5e1dd}
+@media (max-width:980px){
+  #financeiro .od-grid{display:flex;flex-direction:column;gap:0}
+  #financeiro .od-grid>div:first-child>.eyebrow{order:1;align-self:flex-start}
+  #financeiro .od-grid>div:first-child>h2{order:1;margin:0 0 22px;align-self:stretch;text-align:left}
+  #financeiro .od-grid>.fin-palco{order:2;width:100%;margin:0 auto 26px}
+  #financeiro .od-grid>div:first-child>.lead{order:3;margin:0 0 14px}
+  #financeiro .od-grid>div:first-child>.checks{order:3;margin:0}
+}
+.fin-app{font-variant-numeric:tabular-nums}
+.fin-top{display:flex;justify-content:space-between;align-items:center;padding:4px 6px 8px}
+.fin-top b{font-family:'Outfit','Montserrat',system-ui,sans-serif;font-size:1.28rem;font-weight:800;letter-spacing:-.01em}
+.fin-olho{width:22px;height:22px;color:var(--o-muted)}
+.fin-mes{display:flex;justify-content:space-between;align-items:center;background:var(--ag-card);border-radius:999px;height:38px;padding:0 14px;font-weight:600;font-size:.88rem;margin-bottom:10px}
+.fin-mes svg{width:9px;height:15px}
+.fin-lucro{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;background:var(--blue);color:var(--on-acc);border-radius:18px;padding:13px 14px 11px 16px;margin-bottom:8px}
+.fin-lucro small{display:block;font-size:.76rem;font-weight:600;opacity:.85}
+.fin-lucro b{display:block;font-size:1.62rem;font-weight:800;letter-spacing:-.01em;margin:1px 0 2px;white-space:nowrap}
+.fin-var{font-size:.72rem;font-weight:700;opacity:.9;white-space:nowrap}
+.fin-barras{display:flex;align-items:flex-end;gap:5px;height:64px}
+.fin-barras span{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px;height:100%}
+.fin-barras i{display:block;width:12px;height:var(--h);border-radius:4px 4px 2px 2px;background:currentColor;opacity:.32;transition:height .9s var(--ease)}
+.fin-barras .agora i{opacity:1}
+.fin-barras em{font-style:normal;font-size:.56rem;font-weight:600;opacity:.75}
+.fin-tres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-bottom:10px}
+.fin-k{background:var(--ag-card);border-radius:14px;padding:9px 10px;min-width:0}
+.fin-k small{display:block;font-size:.68rem;font-weight:600;color:var(--o-muted)}
+.fin-k b{display:block;font-size:.9rem;font-weight:700;white-space:nowrap;margin-top:2px}
+.fin-app .pos{color:var(--fin-pos)}
+.fin-app .neg{color:var(--fin-neg)}
+.fin-lt{margin:0 6px 6px;font-size:.8rem;font-weight:700;color:var(--o-muted)}
+.fin-lista{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.fin-lista li{display:flex;align-items:center;gap:10px;background:var(--ag-card);border-radius:14px;padding:8px 10px;transition:box-shadow .4s}
+.fin-ic{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center}
+.fin-ic svg{width:15px;height:15px}
+.fin-ic.in{background:var(--sg-cc);color:var(--sg-cc-t)}
+.fin-ic.out{background:var(--fin-neg-bg);color:var(--fin-neg)}
+.fin-desc{flex:1;min-width:0}
+.fin-desc b{display:block;font-size:.86rem;font-weight:600;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fin-desc small{display:block;font-size:.69rem;color:var(--o-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fin-val{flex:none;text-align:right}
+.fin-val b{display:block;font-size:.84rem;font-weight:700;white-space:nowrap}
+.fin-st{display:inline-block;margin-top:3px;font-size:.64rem;font-weight:700;padding:2px 8px;border-radius:999px;transition:background .45s,color .45s,transform .3s}
+.fin-st.pend{background:var(--sg-at);color:var(--sg-at-t)}
+.fin-st.ok{background:var(--sg-cc);color:var(--sg-cc-t)}
+.fin-st.pago{background:var(--sg-ag);color:var(--sg-ag-t)}
+.fin-lista li.toque{box-shadow:inset 0 0 0 2px var(--blue)}
+.fin-lista li.toque .fin-st{transform:scale(1.12)}
+/* a taxa da maquininha só aparece quando o pagamento no cartão é recebido */
+.fin-taxa{max-height:0;padding-block:0!important;opacity:0;overflow:hidden;margin-bottom:-6px;transition:max-height .5s var(--ease),padding .5s var(--ease),opacity .4s,margin .5s var(--ease)}
+.fin-app.taxa .fin-taxa{max-height:60px;padding-block:8px!important;opacity:1;margin-bottom:0}
+.fin-aviso{top:auto;bottom:16px;transform:translateY(12px)}
+.fin-app.aviso .fin-aviso{opacity:1;transform:none}
+.fin-recibo{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--o-sheet);border-radius:24px 24px 0 0;padding:16px 16px 18px;box-shadow:0 -14px 34px rgba(0,0,0,.25);transform:translateY(105%);transition:transform .55s var(--ease)}
+.fin-app.recibo .fin-recibo{transform:none}
+.fin-recibo::before{content:"";display:block;width:38px;height:4px;border-radius:2px;background:var(--o-muted);opacity:.4;margin:-4px auto 12px}
+.fin-rt{margin:0;font-size:1.02rem;font-weight:800}
+.fin-rp{margin:2px 0 10px;font-size:.8rem;color:var(--o-muted)}
+.fin-rv{background:var(--ag-card);border-radius:14px;padding:10px 12px;margin-bottom:10px}
+.fin-rv small{display:block;font-size:.7rem;color:var(--o-muted);font-weight:600}
+.fin-rv b{font-size:1.25rem;font-weight:800;color:var(--fin-pos)}
+.fin-ra{display:flex;align-items:center;gap:10px;margin:0;padding:10px 4px;font-size:.86rem;font-weight:600;border-radius:12px;transition:background .3s}
+.fin-ra svg{width:20px;height:20px;flex:none;color:var(--blue)}
+.fin-app.compartilha .fin-share{background:rgba(var(--acc-rgb),.16)}
+@media (max-width:380px){
+  .fin-lucro b{font-size:1.38rem}
+  .fin-barras{gap:3px}
+  .fin-barras i{width:9px}
+  .fin-k{padding:8px}
+  .fin-k b{font-size:.8rem}
+  .fin-desc b{font-size:.8rem}
+  .fin-val b{font-size:.78rem}
+}
+/* Financeiro: a tela "rola" para mostrar o gráfico e os quadros de baixo */
+.fin-janela{position:relative;height:560px;overflow:hidden;margin:0 -2px;padding:0 2px}
+.fin-rolo{position:relative;transition:transform 1.1s var(--ease)}
+.fin-app.parado .fin-janela{height:auto}
+.fin-card{background:var(--ag-card);border-radius:18px;padding:13px 13px 12px;margin-top:10px}
+.fin-ct{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:.9rem;font-weight:700}
+.fin-ct svg{width:18px;height:18px;flex:none;color:var(--blue)}
+.fin-segs{display:flex;gap:6px;margin-bottom:8px}
+.fin-segs span{display:flex;align-items:center;flex:none;border:1px solid var(--ag-line);border-radius:999px;padding:2px}
+.fin-segs i{display:block;font-style:normal;font-size:.68rem;line-height:1.2;font-weight:600;padding:5px 9px;border-radius:999px;white-space:nowrap}
+@media (max-width:380px){.fin-segs{gap:4px}.fin-segs i{font-size:.62rem;padding:4px 7px}}
+.fin-segs i.on{background:var(--blue);color:var(--on-acc)}
+.fin-graf-box{position:relative}
+.fin-graf{display:block;width:100%;height:auto;overflow:visible}
+.g-grade line{stroke:var(--ag-line);stroke-width:1}
+.g-grade text,.g-eixo text{fill:var(--o-muted);font-size:8px;font-family:inherit}
+.g-grade text{text-anchor:end}
+.g-eixo text{text-anchor:middle}
+.g-barras rect{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);transition:transform .5s var(--ease) calc(var(--i) * 45ms)}
+.b-in{fill:#10b981}.b-out{fill:#e5737a}
+.g-area{fill:rgba(16,185,129,.12);opacity:0;transition:opacity .6s .9s}
+.g-linha{fill:none;stroke:var(--blue);stroke-width:2;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s ease-in-out .3s}
+.g-bolas circle{fill:var(--ag-card);stroke:var(--blue);stroke-width:1.4;opacity:0;transition:opacity .4s 1.6s}
+.fin-dica{position:absolute;right:4%;top:2%;background:var(--ag-card);border:1px solid var(--ag-line);border-radius:12px;padding:5px 10px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.12);opacity:0;transform:translateY(6px);transition:opacity .4s 1.9s,transform .4s 1.9s}
+.fin-dica small{display:block;font-size:.62rem;color:var(--o-muted)}
+.fin-dica b{font-size:.92rem;font-weight:800;color:var(--fin-pos)}
+.fin-app.grafico .g-barras rect{transform:none}
+.fin-app.grafico .g-area,.fin-app.grafico .g-bolas circle{opacity:1}
+.fin-app.grafico .g-linha{stroke-dashoffset:0}
+.fin-app.grafico .fin-dica{opacity:1;transform:none}
+.fin-leg{display:flex;flex-wrap:wrap;gap:4px 12px;margin:6px 0 0;font-size:.68rem;color:var(--o-muted)}
+.fin-leg span{display:flex;align-items:center;gap:5px}
+.fin-leg i{width:9px;height:9px;border-radius:2px}
+.q-in{background:#10b981}.q-out{background:#e5737a}
+.fin-rank{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.fin-rank li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:3px 8px}
+.fin-rank li>div{grid-column:1/-1;display:flex;justify-content:space-between;gap:8px;font-size:.8rem}
+.fin-rank li>div span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.fin-rank li>div b{flex:none;font-weight:700}
+.fin-rank i{height:6px;border-radius:3px;background:linear-gradient(90deg,#10b981,#10b981) no-repeat 0 0/0 100%,var(--ag-chip);transition:background-size .9s var(--ease) calc(var(--i) * 120ms)}
+.fin-rank.escuro i{background:linear-gradient(90deg,var(--blue),var(--blue)) no-repeat 0 0/0 100%,var(--ag-chip)}
+.fin-rank small{font-size:.68rem;color:var(--o-muted);min-width:28px;text-align:right}
+.fin-app.barras-proc [data-k="c-proc"] .fin-rank i,.fin-app.barras-pag [data-k="c-pag"] .fin-rank i{background-size:var(--w) 100%,auto}
+.fin-app.parado .fin-rank i{background-size:var(--w) 100%,auto}
+@media (max-width:620px){.fin-janela{height:520px}}
+
+/* ===== Financeiro no computador: notebook com a tela de Financeiro + celular menor no canto ===== */
+.notebook{display:none}
+@media (min-width:981px){
+  #financeiro .od-grid{grid-template-columns:1.35fr 1fr;gap:72px}
+  #financeiro h2{font-size:clamp(1.8rem,2.8vw,2.4rem)}
+  .fin-palco{position:relative;padding:0 0 70px}
+  .notebook{display:block;position:relative;width:100%}
+  .fin-palco>.celular{position:absolute;right:-46px;bottom:0;width:382px;max-width:none;transform:scale(var(--cel-k,.56));transform-origin:100% 100%;z-index:2;filter:drop-shadow(0 30px 40px rgba(0,0,0,.28))}
+}
+.nb-tampa{position:relative;background:#0b0f0d;border-radius:18px 18px 6px 6px;padding:16px 14px 14px;box-shadow:0 0 0 1.5px #59605c,0 40px 70px -20px rgba(0,0,0,.45)}
+.nb-tampa::before{content:"";position:absolute;top:6px;left:50%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#2f3633}
+.nb-tela{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:4px;background:var(--o-bg)}
+.nb-base{position:relative;height:16px;margin:0 -6%;background:linear-gradient(180deg,#d4d9d6,#9aa29d 70%,#7d8581);border-radius:2px 2px 16px 16px;box-shadow:0 18px 30px -14px rgba(0,0,0,.45)}
+.nb-base::before{content:"";position:absolute;top:0;left:50%;width:16%;height:6px;margin-left:-8%;border-radius:0 0 8px 8px;background:#80888a}
+.nb-app{position:absolute;top:0;left:0;width:1000px;height:625px;display:flex;transform-origin:0 0;transform:scale(var(--nb-k,.62));color:var(--o-ink);font-variant-numeric:tabular-nums;font-size:16px}
+.nb-lado{flex:none;width:176px;background:var(--ag-card);border-right:1px solid var(--ag-line);padding:20px 12px}
+.nb-marca{display:block;font-family:'Outfit','Montserrat',system-ui,sans-serif;font-weight:700;font-size:1.2rem;margin:0 8px 22px}
+.nb-lado ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.nb-lado li{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:12px;font-size:.88rem;font-weight:600;color:var(--o-muted)}
+.nb-lado li svg{width:19px;height:19px}
+.nb-lado li.on{background:var(--blue);color:var(--on-acc)}
+.nb-main{flex:1;min-width:0;padding:18px 22px;display:flex;flex-direction:column;gap:12px}
+.nb-topo{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.nb-topo h4{margin:0;font-size:1.5rem;font-weight:800}
+.nb-topo p{margin:2px 0 0;font-size:.8rem;color:var(--o-muted)}
+.nb-acoes{display:flex;gap:10px;align-items:center}
+.nb-acoes .fin-mes{margin:0;gap:14px;height:36px;font-size:.82rem}
+.nb-novo{background:var(--blue);color:var(--on-acc);font-weight:700;font-size:.82rem;padding:9px 16px;border-radius:999px;white-space:nowrap}
+.nb-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.nb-kpis .fin-k{padding:12px 14px;border-radius:16px}
+.nb-kpis .fin-k small{font-size:.74rem}
+.nb-kpis .fin-k b{font-size:1.3rem;font-weight:800}
+.nb-kpis .nb-lucro{background:var(--blue);color:var(--on-acc)}
+.nb-kpis .nb-lucro small,.nb-kpis .nb-lucro span{color:inherit;opacity:.85}
+.nb-kpis .nb-lucro span{display:block;font-size:.68rem;font-weight:700;margin-top:1px}
+.nb-grade{flex:1;min-height:0;display:grid;grid-template-columns:1fr 210px;gap:12px}
+.nb-dupla{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.nb-dupla .fin-card{margin:0}
+.nb-col{display:flex;flex-direction:column;gap:12px;min-height:0}
+.nb-col .fin-card{margin:0}
+.nb-app .fin-ct{font-size:.86rem;margin-bottom:6px}
+.nb-app .fin-graf{width:100%;height:150px}
+.nb-lanc ul{list-style:none;margin:0;padding:0}
+.nb-lanc li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--ag-line);font-size:.74rem}
+.nb-lanc li b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nb-lanc li>div:first-child{min-width:0}
+.nb-lanc li small{display:block;color:var(--o-muted);font-size:.66rem}
+.nb-v{text-align:right;flex:none}
+.nb-v b{font-weight:700}
+.nb-lanc .nb-taxa{display:none}
+.nb-app.taxa .nb-lanc .nb-taxa{display:flex;animation:nb-entra .5s var(--ease)}
+@keyframes nb-entra{from{opacity:0;transform:translateY(-6px)}}
+.nb-app .fin-rank{gap:7px}
+.nb-app .fin-rank li>div{font-size:.78rem}
+.nb-app.grafico .g-barras rect{transform:none}
+.nb-app.grafico .g-area,.nb-app.grafico .g-bolas circle{opacity:1}
+.nb-app.grafico .g-linha{stroke-dashoffset:0}
+.nb-app.grafico .fin-dica{opacity:1;transform:none}
+.nb-app.grafico .fin-rank i{background-size:var(--w) 100%,auto}
+.nb-app .pos{color:var(--fin-pos)}.nb-app .neg{color:var(--fin-neg)}
+.nb-app .fin-st.pisca{animation:nb-pisca .9s ease}
+@keyframes nb-pisca{40%{transform:scale(1.25)}}
+@media (prefers-reduced-motion:reduce){.nb-app .g-barras rect{transform:none}.nb-app .g-area,.nb-app .g-bolas circle,.nb-app .fin-dica{opacity:1;transform:none}.nb-app .g-linha{stroke-dashoffset:0}.nb-app .fin-rank i{background-size:var(--w) 100%,auto}}
+
+/* Notebook chega fechado e abre quando a seção chega ao meio da tela (só no computador) */
+@media (min-width:981px){
+  .notebook{perspective:3000px;perspective-origin:50% calc(100% - 110px)}
+  .nb-lid{position:relative;transform-style:preserve-3d}
+  .nb-tampa,.nb-costas{transform-origin:50% 100%;backface-visibility:hidden;transition:transform 1.5s cubic-bezier(.25,.85,.3,1)}
+  .nb-costas{position:absolute;inset:0;z-index:1;border-radius:18px 18px 6px 6px;background:linear-gradient(180deg,#e2e6e3,#a9b1ac);box-shadow:inset 0 0 0 1.5px #8e9792;transform:rotateY(180deg)}
+  .nb-tela{transition:filter 1.1s .5s}
+  .fin-palco.fechado .nb-tampa{transform:rotateX(-90deg)}
+  .fin-palco.fechado .nb-costas{transform:rotateX(-90deg) rotateY(180deg)}
+  .fin-palco.fechado .nb-tela{filter:brightness(.12);transition-delay:0s}
+  .fin-palco>.celular{transition:opacity .7s 1.1s,translate .9s 1.1s var(--ease)}
+  .fin-palco.fechado>.celular{opacity:0;translate:0 50px;transition-delay:0s}
+}
+@media (prefers-reduced-motion:reduce){.nb-tampa,.nb-costas,.nb-tela,.fin-palco>.celular{transition:none!important}}
+
+/* Computador: celulares desenhados com a proporção de um celular de verdade (71,6 x 147,6 mm) */
+.ag-extra{display:none}
+@media (min-width:981px){
+  .od-grid>.celular{width:382px;zoom:var(--cel-zoom,.78)}
+  .celular .od-app{aspect-ratio:71.6/147.6}
+  .ag-extra{display:flex}
+  .fin-palco>.celular .fin-app{display:flex;flex-direction:column}
+  .fin-palco>.celular .fin-janela{flex:1;height:auto;min-height:0}
+}
+.od-extra{display:none}
+@media (min-width:981px){
+  .od-extra{display:revert}
+  .od-arcada.od-extra{display:grid}
+  .od-inferior .od-dente{transform:scaleY(-1)}
+  .od-inferior{margin-bottom:10px}
+  #demo-odonto{display:flex;flex-direction:column}
+  #demo-odonto .od-card{flex:1}
+}
+/* Computador: texto centralizado na altura do celular/notebook */
+@media (min-width:981px){.od-grid{align-items:center}.od-grid>div:first-child{align-self:center}}
+/* Odontograma no computador: terceiro procedimento e botão "Criar Orçamento" preenchem a tela */
+.od-extra-li{display:none!important}
+.od-btn{margin:auto 0 0;text-align:center;background:var(--blue);color:var(--on-acc);border-radius:999px;padding:12px;font-weight:800;font-size:.95rem;transition:transform .25s,box-shadow .25s}
+.od-btn.toque{transform:scale(.95);box-shadow:0 0 0 5px rgba(var(--acc-rgb),.25)}
+@media (min-width:981px){
+  .od-lista .od-extra-li{display:flex!important}
+  .od-sheet-l .od-extra-li{display:block!important}
+  #demo-odonto .od-card{display:flex;flex-direction:column}
+}
+/* Celulares com sombra em camadas (contato + ambiente), para dar profundidade */
+:root{--cel-sh:16,24,20;--cel-a:1.5}
+@media (prefers-color-scheme:dark){:root:not([data-tema]){--cel-sh:0,0,0;--cel-a:1.8}}
+:root[data-tema="escuro"]{--cel-sh:0,0,0;--cel-a:1.8}
+:root[data-tema="claro"]{--cel-sh:16,24,20;--cel-a:1.5}
+.celular :is(.od-app,.ag-app){box-shadow:
+  0 0 0 3px #8e9792,0 0 0 4.5px #343b38,inset 0 0 0 1.5px rgba(255,255,255,.1),
+  0 2px 3px 3px rgba(var(--cel-sh),calc(.10 * var(--cel-a))),
+  0 10px 18px -2px rgba(var(--cel-sh),calc(.14 * var(--cel-a))),
+  0 28px 44px -10px rgba(var(--cel-sh),calc(.22 * var(--cel-a))),
+  0 60px 90px -24px rgba(var(--cel-sh),calc(.30 * var(--cel-a))),
+  -18px 40px 70px -30px rgba(var(--cel-sh),calc(.18 * var(--cel-a)))}
+/* reflexo suave na moldura, como luz batendo de cima */
+.celular{filter:drop-shadow(0 1px 0 rgba(255,255,255,.35))}
+/* Semana de teste (09/11): sem venda na landing, então as etiquetas "Plano Pro" ficam escondidas */
+.recurso-plano{display:none!important}

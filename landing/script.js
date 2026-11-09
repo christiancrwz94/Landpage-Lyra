@@ -8,6 +8,13 @@ const LYRA_CONFIG = {
 
 const reduzMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// Computador: os celulares desenhados ocupam no máximo 3/4 da altura da tela (e nunca mais que 640 px)
+(function tamanhoDosCelulares() {
+  const ajusta = () => document.documentElement.style.setProperty('--cel-zoom', (Math.min(640, window.innerHeight * 0.75) / 787).toFixed(3));
+  ajusta();
+  window.addEventListener('resize', ajusta, { passive: true });
+})();
+
 // Botões que abrem o e-mail com o assunto pronto
 document.querySelectorAll('[data-email]').forEach((a) => {
   const assunto = encodeURIComponent(a.dataset.email || 'Quero conhecer o Lyra Dental');
@@ -209,6 +216,192 @@ function demoAgenda(raiz) {
   }, { threshold: 0.35 }).observe(app);
 }
 
+// Financeiro: pagamento recebido atualiza o painel, cartão desconta a taxa sozinho, recibo em PDF
+function demoFinanceiro(raiz) {
+  const app = por(raiz, 'demo-financeiro');
+  if (!app) return;
+  const campo = (k) => app.querySelector('[data-k="' + k + '"]');
+  // No computador, o notebook ao lado mostra a mesma tela grande e acompanha o celular
+  const palco = app.closest('.fin-palco') || app;
+  const nb = palco.querySelector('.nb-app');
+  const todos = (k) => palco.querySelectorAll('[data-k="' + k + '"]');
+  const ambos = (acao, ...classes) => { app.classList[acao](...classes); if (nb) nb.classList[acao](...classes); };
+  if (nb && 'ResizeObserver' in window) {
+    const tela = nb.parentElement;
+    new ResizeObserver(() => {
+      nb.style.setProperty('--nb-k', tela.clientWidth / 1000);
+      palco.style.setProperty('--cel-k', (tela.clientWidth * 0.25) / 382); // celular real ao lado de um notebook: ~1/4 da largura da tela // celular do canto acompanha o notebook
+    }).observe(tela);
+  }
+  const juliana = por(app, 'fin-juliana');
+  const felipe = por(app, 'fin-felipe');
+  const barra = campo('barra');
+  const rolo = campo('rolo');
+  // Desce a tela até o quadro pedido (sem passar do fim do conteúdo)
+  function rolaAte(k) {
+    let y = 0;
+    if (k) {
+      const max = rolo.scrollHeight - rolo.parentElement.clientHeight;
+      y = Math.max(0, Math.min(campo(k).offsetTop - 4, max));
+    }
+    rolo.style.transform = y ? 'translateY(' + -y + 'px)' : '';
+  }
+  // Três momentos do mês (números fictícios); o lucro de outubro foi R$ 10.696
+  const ESTADOS = [
+    { ent: 18100, sai: 6120, rec: 2450, barra: 38 },
+    { ent: 18450, sai: 6120, rec: 2100, barra: 42 },
+    { ent: 19350, sai: 6147, rec: 1200, barra: 48 },
+  ];
+  const real = (v) => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+  const variacao = (luc) => '↑ ' + Math.round((luc / 10696 - 1) * 100) + '% sobre outubro';
+  let atual = ESTADOS[0];
+  function mostra(e) {
+    const luc = e.ent - e.sai;
+    const poe = (k, t) => todos(k).forEach((el) => { el.textContent = t; });
+    poe('ent', real(e.ent));
+    poe('sai', real(e.sai));
+    poe('rec', real(e.rec));
+    poe('luc', real(luc));
+    poe('var', variacao(luc));
+  }
+  const status = (li, recebido) => {
+    const nome = li.id.replace('fin-', '');
+    [li.querySelector('.fin-st'), ...palco.querySelectorAll('[data-st="' + nome + '"]')].forEach((st) => {
+      st.className = 'fin-st ' + (recebido ? 'ok pisca' : 'pend');
+      st.textContent = recebido ? 'Recebido' : 'Pendente';
+    });
+  };
+  function vaiPara(i) {
+    atual = ESTADOS[i];
+    mostra(atual);
+    barra.style.setProperty('--h', atual.barra + 'px');
+  }
+
+  // Notebook (computador): começa fechado e abre quando a seção chega ao meio da tela;
+  // fecha de novo quando a seção sai da tela, para abrir outra vez na volta
+  const notebook = palco.querySelector('.notebook');
+  const noPc = () => !!notebook && getComputedStyle(notebook).display !== 'none';
+  let abertoEm = 0;
+  if (notebook && !reduzMovimento && 'IntersectionObserver' in window) {
+    palco.classList.add('fechado');
+    new IntersectionObserver((itens) => {
+      itens.forEach((i) => {
+        if (i.isIntersecting && palco.classList.contains('fechado')) { palco.classList.remove('fechado'); abertoEm = Date.now(); }
+      });
+    }, { rootMargin: '-38% 0px -38% 0px' }).observe(notebook);
+    new IntersectionObserver((itens) => {
+      itens.forEach((i) => { if (!i.isIntersecting) palco.classList.add('fechado'); });
+    }).observe(palco);
+  }
+
+  if (reduzMovimento) {
+    ambos('add', 'taxa', 'grafico');
+    app.classList.add('parado');
+    status(juliana, true);
+    status(felipe, true);
+    vaiPara(2);
+    return;
+  }
+
+  let rodando = false;
+  let cancelado = false;
+  const dorme = async (ms) => {
+    await new Promise((r) => setTimeout(r, ms));
+    if (cancelado) throw CANCELA;
+  };
+  // Os números "sobem" até o valor novo
+  async function anima(i, ms) {
+    const de = atual;
+    const para = ESTADOS[i];
+    barra.style.setProperty('--h', para.barra + 'px');
+    const t0 = performance.now();
+    await new Promise((fim) => {
+      function passo(t) {
+        const p = Math.min(1, (t - t0) / ms);
+        const k = 1 - Math.pow(1 - p, 3);
+        const mix = (a) => de[a] + (para[a] - de[a]) * k;
+        mostra({ ent: mix('ent'), sai: mix('sai'), rec: mix('rec') });
+        if (p < 1 && !cancelado) requestAnimationFrame(passo); else fim();
+      }
+      requestAnimationFrame(passo);
+    });
+    atual = para;
+    if (cancelado) throw CANCELA;
+  }
+  const aviso = (texto) => { campo('aviso').textContent = texto; app.classList.add('aviso'); };
+  function zera() {
+    app.classList.remove('aviso', 'recibo', 'compartilha', 'barras-proc', 'barras-pag');
+    ambos('remove', 'taxa', 'grafico');
+    rolaAte(null);
+    if (nb) setTimeout(() => nb.classList.add('grafico'), 400); // o notebook redesenha o gráfico a cada volta
+    juliana.classList.remove('toque');
+    felipe.classList.remove('toque');
+    status(juliana, false);
+    status(felipe, false);
+    vaiPara(0);
+  }
+  async function ciclo() {
+    zera();
+    await dorme(2200);                          // painel do mês
+    juliana.classList.add('toque');             // marca o Pix da Juliana como recebido
+    await dorme(650);
+    status(juliana, true);
+    juliana.classList.remove('toque');
+    aviso('Pagamento de Juliana Prado registrado');
+    await anima(1, 1100);                       // entradas, lucro e a receber se atualizam
+    await dorme(1600);
+    app.classList.remove('aviso');
+    await dorme(900);
+    felipe.classList.add('toque');              // pagamento no cartão
+    await dorme(650);
+    status(felipe, true);
+    felipe.classList.remove('toque');
+    ambos('add', 'taxa');                       // a taxa da maquininha entra sozinha
+    aviso('Taxa da maquininha descontada sozinha');
+    await anima(2, 1200);
+    await dorme(2000);
+    app.classList.remove('aviso');
+    await dorme(900);
+    app.classList.add('recibo');                // recibo da Juliana em PDF
+    await dorme(1500);
+    app.classList.add('compartilha');
+    await dorme(2200);
+    app.classList.remove('recibo', 'compartilha');
+    await dorme(1200);
+    rolaAte('c-fluxo');                         // desce até o gráfico do mês
+    await dorme(900);
+    app.classList.add('grafico');               // barras sobem e a linha do resultado se desenha
+    await dorme(4200);
+    rolaAte('c-proc');                          // procedimentos que mais faturam
+    await dorme(700);
+    app.classList.add('barras-proc');
+    await dorme(2800);
+    rolaAte('c-pag');                           // como os pacientes pagam
+    await dorme(700);
+    app.classList.add('barras-pag');
+    await dorme(3200);
+    rolaAte(null);                              // volta ao topo
+    await dorme(2500);
+  }
+  // No computador, a animação só começa depois que a tampa do notebook terminou de abrir
+  async function esperaAbrir() {
+    while (noPc() && palco.classList.contains('fechado')) await dorme(200);
+    const falta = abertoEm + 1600 - Date.now();
+    if (noPc() && falta > 0) await dorme(falta);
+  }
+  async function laco() {
+    if (rodando) return;
+    rodando = true;
+    try { while (!cancelado) { await esperaAbrir(); await ciclo(); } } catch (e) { if (e !== CANCELA) throw e; }
+    rodando = false;
+  }
+  new IntersectionObserver((itens) => {
+    itens.forEach((i) => {
+      if (i.isIntersecting) { cancelado = false; laco(); } else { cancelado = true; }
+    });
+  }, { threshold: 0.35 }).observe(app);
+}
+
 // Evolução clínica por voz (texto sendo "ditado")
 function demoVoz(raiz) {
   const cartao = por(raiz, 'demo-voz');
@@ -296,6 +489,9 @@ function demoOdontograma(raiz) {
   const dente = (n) => app.querySelector(`.od-t[data-n="${n}"]`);
   const item = (n) => app.querySelector(`.od-lista li[data-n="${n}"]`);
   const DICA = fala.textContent;
+  // No computador o celular é mais alto: entra um terceiro procedimento e o toque em "Criar Orçamento"
+  const botao = por(app, 'od-btn');
+  const noPc = () => !!botao && getComputedStyle(botao).display !== 'none';
 
   const marca = (n, canal) => {
     const d = dente(n);
@@ -306,6 +502,7 @@ function demoOdontograma(raiz) {
 
   if (reduzMovimento) {
     marca(14); marca(15, true);
+    if (noPc()) marca(46);
     fala.textContent = '“Dente 15, canal.”';
     fala.classList.add('ativa');
     app.classList.add('orc');
@@ -325,6 +522,7 @@ function demoOdontograma(raiz) {
   }
   function zera() {
     app.classList.remove('ouvindo', 'orc');
+    if (botao) botao.classList.remove('toque');
     app.querySelectorAll('.od-t').forEach((d) => d.classList.remove('on', 'canal'));
     app.querySelectorAll('.od-lista li').forEach((l) => l.classList.remove('on'));
     fala.classList.remove('ativa');
@@ -342,9 +540,21 @@ function demoOdontograma(raiz) {
     await dita('“Dente 15, canal.”');                   // 4) segundo procedimento
     await dorme(600);
     marca(15, true);
+    if (noPc()) {
+      await dorme(1500);
+      await dita('“Dente 46, restauração simples.”');  // 5) terceiro procedimento, na arcada de baixo
+      await dorme(600);
+      marca(46);
+    }
     app.classList.remove('ouvindo');
     await dorme(1900);
-    await dorme(450);
+    if (noPc()) {
+      botao.classList.add('toque');                     // toque em "Criar Orçamento"
+      await dorme(450);
+      botao.classList.remove('toque');
+    } else {
+      await dorme(450);
+    }
     app.classList.add('orc');
     await dorme(6000);                                  // 6) resultado fica visível
     app.classList.remove('orc');
@@ -393,6 +603,7 @@ function demoWhats(raiz) {
 
 function iniciarDemos(raiz) {
   demoAgenda(raiz);
+  demoFinanceiro(raiz);
   demoVoz(raiz);
   demoOdontograma(raiz);
   demoWhats(raiz);

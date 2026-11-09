@@ -198,14 +198,98 @@
  {
   "chave": "od_c2",
   "grupo": "Seção Odontograma por voz",
-  "label": "Item 2 da lista",
+  "label": "Item 1 da lista",
   "tipo": "curto",
   "max": 120
  },
  {
   "chave": "od_c3",
   "grupo": "Seção Odontograma por voz",
+  "label": "Item 5 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "od_c4",
+  "grupo": "Seção Odontograma por voz",
+  "label": "Item 2 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "od_c5",
+  "grupo": "Seção Odontograma por voz",
   "label": "Item 3 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "od_c6",
+  "grupo": "Seção Odontograma por voz",
+  "label": "Item 4 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "fin_eyebrow",
+  "grupo": "Seção Financeiro",
+  "label": "Etiqueta acima do título",
+  "tipo": "curto",
+  "max": 60
+ },
+ {
+  "chave": "fin_l1",
+  "grupo": "Seção Financeiro",
+  "label": "Título, linha 1",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "fin_l2",
+  "grupo": "Seção Financeiro",
+  "label": "Título, linha 2 (destacada)",
+  "tipo": "titulo",
+  "max": 140
+ },
+ {
+  "chave": "fin_lead",
+  "grupo": "Seção Financeiro",
+  "label": "Texto de apoio",
+  "tipo": "longo",
+  "max": 600
+ },
+ {
+  "chave": "fin_c1",
+  "grupo": "Seção Financeiro",
+  "label": "Item 1 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "fin_c2",
+  "grupo": "Seção Financeiro",
+  "label": "Item 2 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "fin_c3",
+  "grupo": "Seção Financeiro",
+  "label": "Item 3 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "fin_c4",
+  "grupo": "Seção Financeiro",
+  "label": "Item 4 da lista",
+  "tipo": "curto",
+  "max": 120
+ },
+ {
+  "chave": "fin_c5",
+  "grupo": "Seção Financeiro",
+  "label": "Item 5 da lista",
   "tipo": "curto",
   "max": 120
  },
