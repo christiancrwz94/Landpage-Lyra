@@ -50,7 +50,7 @@
         <div class="marca"><img class="logo-claro" src="img/logo-icon-claro.png" alt=""><img class="logo-escuro" src="img/logo-icon-escuro.png" alt=""><span>Lyra Dental</span></div>
         <p><a href="index.html">← Voltar ao site</a></p>
         <h1>Política de Privacidade - Lyra Dental</h1>
-        <p><em>Última atualização: 26 de outubro de 2026</em></p>
+        <p><em>Última atualização: 10 de novembro de 2026</em></p>
         <p class="nota">O Lyra Dental é um sistema de gestão para clínicas odontológicas. Esta página explica quais dados tratamos, por que, com quem os compartilhamos e como você pode excluí-los. Não vendemos dados, não exibimos anúncios e não usamos rastreadores de publicidade.</p>
 
         <h2>1. Quem é responsável pelos dados</h2>
@@ -81,11 +81,23 @@
             <tr><td>Deepgram</td><td>Transcrição do áudio do ditado por voz, em tempo real.</td></tr>
             <tr><td>Google (Gemini)</td><td>Inteligência artificial: resposta automática a mensagens de pacientes e leitura de imagens de cadastro, quando a clínica usa esses recursos.</td></tr>
             <tr><td>Google (login e Agenda)</td><td>Entrar com a conta Google e sincronizar a agenda, somente se você ativar.</td></tr>
-            <tr><td>Servidor de WhatsApp (Evolution API, hospedado na Alemanha)</td><td>Envio e recebimento das mensagens do WhatsApp da clínica.</td></tr>
+            <tr><td>Meta (WhatsApp Business Platform / Cloud API)</td><td>Envio e recebimento das mensagens do WhatsApp oficial da clínica, quando a clínica conecta o próprio número (servidores nos Estados Unidos).</td></tr>
+            <tr><td>Servidor de WhatsApp (Evolution API, hospedado na Alemanha)</td><td>Envio e recebimento das mensagens do WhatsApp da clínica que ainda não usa o WhatsApp oficial.</td></tr>
             <tr><td>Asaas</td><td>Cobrança e pagamento da assinatura do Lyra.</td></tr>
             <tr><td>Vercel</td><td>Hospedagem da versão web do app.</td></tr>
         </table>
         <p>Esses fornecedores só podem usar os dados para prestar o serviço ao Lyra. Podemos também compartilhar dados quando a lei exigir.</p>
+
+        <h2>4.1. WhatsApp oficial (Meta)</h2>
+        <p>Quando a clínica conecta o próprio número de WhatsApp Business ao Lyra pelo Cadastro Incorporado da Meta (Embedded Signup), ela autoriza o Lyra a usar as permissões <strong>whatsapp_business_messaging</strong> e <strong>whatsapp_business_management</strong> somente para a conta que ela escolheu compartilhar. Com isso, tratamos:</p>
+        <ul>
+            <li><strong>Dados da conta de WhatsApp Business:</strong> identificador da conta (WABA), identificador e número do telefone conectado, nome exibido e situação da forma de pagamento na Meta.</li>
+            <li><strong>Token de acesso</strong> concedido pela clínica: guardado criptografado no servidor, nunca dentro do aplicativo.</li>
+            <li><strong>Modelos de mensagem</strong> da clínica (confirmação e lembrete de consulta) e a situação de aprovação de cada um.</li>
+            <li><strong>Mensagens</strong> enviadas aos pacientes da clínica e as respostas deles (por exemplo, "confirmar" ou "remarcar"), com o telefone do paciente e a situação de entrega.</li>
+        </ul>
+        <p>Esses dados são usados apenas para enviar confirmações e lembretes de consulta da própria clínica e para atualizar a agenda dela com as respostas dos pacientes. Não usamos dados da Meta para publicidade, não os vendemos e não os compartilhamos com outras clínicas. Com o login da Meta (<strong>public_profile</strong>), recebemos apenas o necessário para concluir a conexão.</p>
+        <p>A clínica pode desconectar o Lyra a qualquer momento em Configurações do Negócio da Meta (Integrações empresariais) ou pedindo a exclusão da conta. O paciente pode pedir à clínica, a qualquer momento, para não receber mais mensagens.</p>
 
         <h2>5. Transferência internacional</h2>
         <p>Alguns fornecedores acima ficam fora do Brasil (Estados Unidos e Alemanha). Adotamos fornecedores com medidas de segurança adequadas e tratamos os dados apenas para as finalidades descritas.</p>
