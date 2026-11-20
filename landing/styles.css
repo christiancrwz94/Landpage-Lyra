@@ -1863,12 +1863,14 @@ a.card.vant{display:block;color:inherit;text-decoration:none}
    seletor Mensal | Anual com selo "Economize até 14%", cartões da mesma altura com ícone + nome + selo,
    preço grande com o mensal riscado no anual, botão largo e lista de recursos com ✓ em círculo */
 @media (min-width:701px){
-  .planos-troca{gap:2px;padding:4px;margin-bottom:30px}
-  .planos-troca button{padding:.55rem 1.15rem;font-size:.92rem;display:inline-flex;align-items:center;gap:.5rem}
+  /* troca Mensal | Anual igual à do celular (metades iguais, selo laranja em cima, pílula que desliza) */
+  .planos-troca{display:flex;width:100%;max-width:420px;margin:6px auto 30px;padding:5px;position:relative;gap:4px}
+  .planos-troca button{flex:1;padding:.85rem .5rem;font-size:1rem;position:relative}
   .planos-troca button[data-plano="mensal"]{order:1}
   .planos-troca button[data-plano="anual"]{order:2}
-  .planos-troca .planos-eco{margin:0;padding:.2rem .55rem;border-radius:999px;background:rgba(var(--acc-rgb),.14);color:var(--blue);font-size:.72rem;letter-spacing:0;text-transform:none;font-weight:700}
-  .planos-troca button.on .planos-eco{background:rgba(255,255,255,.2);color:#fff;opacity:1}
+  .planos-troca .planos-eco{position:absolute;top:-11px;right:8px;margin:0;padding:.22rem .5rem;border-radius:999px;background:#c2563a;color:#fff;
+    font-size:.58rem;letter-spacing:.04em;text-transform:uppercase;font-weight:700;opacity:1;box-shadow:0 0 0 3px var(--soft,#f6f2ea);white-space:nowrap}
+  .planos-troca button.on .planos-eco{background:#c2563a;color:#fff;opacity:1}
   .planos-grade{align-items:stretch;gap:22px;max-width:900px;margin:0 auto}
   .planos-grade .plano-card{display:flex;flex-direction:column;padding:28px 28px 30px;border-radius:26px}
   .planos-grade .plano-card>h3{order:-2;display:flex;align-items:center;gap:.55rem;margin:0;font-family:'Montserrat',system-ui,sans-serif;text-transform:none;font-size:1.55rem;font-weight:700;letter-spacing:-.01em}
@@ -1907,8 +1909,8 @@ a.card.vant{display:block;color:inherit;text-decoration:none}
 }
 @media (max-width:700px){.planos-grade .plano-selo-vazio{display:none}}
 .planos-grade .plano-desc{display:none}  /* planos só com os pontos principais (celular e computador) */
-/* celular: troca Mensal | Anual animada (a pílula verde desliza e o preço entra subindo) */
-@media (max-width:700px){
+/* troca Mensal | Anual animada (a pílula verde desliza e o preço entra subindo) — celular e computador */
+@media all{
   .planos-troca::before{content:"";position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:999px;background:var(--blue);
     transition:transform .4s cubic-bezier(.5,0,.2,1.15);z-index:0}
   .planos-troca[data-ativo="anual"]::before{transform:translateX(100%)}
