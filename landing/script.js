@@ -230,7 +230,7 @@ function demoFinanceiro(raiz) {
     const tela = nb.parentElement;
     new ResizeObserver(() => {
       nb.style.setProperty('--nb-k', tela.clientWidth / 1000);
-      palco.style.setProperty('--cel-k', (tela.clientWidth * 0.25) / 382); // celular real ao lado de um notebook: ~1/4 da largura da tela // celular do canto acompanha o notebook
+      palco.style.setProperty('--cel-k', (tela.clientWidth * 0.3) / 382); // celular ao lado do notebook do mesmo tamanho do topo: ~30% da largura da tela // celular do canto acompanha o notebook
     }).observe(tela);
   }
   const juliana = por(app, 'fin-juliana');
@@ -847,6 +847,8 @@ iniciarDemos(document);
   if (!secao || !botoes.length) return;
   var todas = Array.prototype.slice.call(botoes);
   function mostrar(modo) {
+    var troca = todas[0].parentNode;
+    troca.setAttribute('data-ativo', modo);
     todas.forEach(function (o) {
       var on = o.getAttribute('data-plano') === modo;
       o.classList.toggle('on', on);
@@ -856,7 +858,7 @@ iniciarDemos(document);
       el.hidden = el.getAttribute('data-modo').split(' ').indexOf(modo) === -1;
     });
   }
-  todas.forEach(function (b) { b.addEventListener('click', function () { mostrar(b.getAttribute('data-plano')); }); });
+  todas.forEach(function (b) { b.addEventListener('click', function () { secao.classList.add('planos-animar'); mostrar(b.getAttribute('data-plano')); }); });
   mostrar('anual'); // o anual aparece primeiro; o mensal fica a um toque
 })();
 
@@ -916,4 +918,156 @@ iniciarDemos(document);
   trilho.addEventListener('scroll', () => requestAnimationFrame(atualizar), { passive: true });
   window.addEventListener('resize', atualizar);
   atualizar();
+})();
+
+/* Topo "em uso": encaixa telas reais do app no notebook e no celular da foto (perspectiva)
+   e simula alguém usando: mouse no notebook, dedo no celular, cliques, toques e rolagem. */
+(function topoEmUso() {
+  var pc = document.querySelector('.hc-pc'), cel = document.querySelector('.hc-cel-app');
+  if (!pc || !cel || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var quadro = pc.parentNode, LARG = 1672; // largura da foto original (cantos abaixo nessa escala)
+  function resolver(A, b) {
+    var n = b.length, M = A.map(function (r, i) { return r.concat([b[i]]); });
+    for (var c = 0; c < n; c++) {
+      var p = c; for (var r = c + 1; r < n; r++) if (Math.abs(M[r][c]) > Math.abs(M[p][c])) p = r;
+      var t = M[c]; M[c] = M[p]; M[p] = t;
+      for (r = 0; r < n; r++) if (r !== c) { var f = M[r][c] / M[c][c]; for (var k = c; k <= n; k++) M[r][k] -= f * M[c][k]; }
+    }
+    return M.map(function (r, i) { return r[n] / r[i]; });
+  }
+  // cantos da tela na foto: sup. esq., sup. dir., inf. dir., inf. esq.
+  var telas = [
+    [pc, 1440, 884, [[785.63, 283.5], [1337.35, 283.5], [1307.37, 654.71], [746.14, 634.58]]],
+    [cel, 390, 882, [[1389.04, 386.21], [1553.64, 386.77], [1524.52, 764.78], [1357.97, 754.22]]]
+  ];
+  function encaixar() {
+    var esc = quadro.clientWidth / LARG; if (!esc) return;
+    telas.forEach(function (t) {
+      var W = t[1], H = t[2], Q = t[3], src = [[0, 0], [W, 0], [W, H], [0, H]], A = [], b = [];
+      for (var i = 0; i < 4; i++) {
+        var x = src[i][0], y = src[i][1], u = Q[i][0] * esc, v = Q[i][1] * esc;
+        A.push([x, y, 1, 0, 0, 0, -u * x, -u * y]); b.push(u);
+        A.push([0, 0, 0, x, y, 1, -v * x, -v * y]); b.push(v);
+      }
+      var h = resolver(A, b);
+      t[0].style.transform = 'matrix3d(' + [h[0], h[3], 0, h[6], h[1], h[4], 0, h[7], 0, 0, 1, 0, h[2], h[5], 0, 1].join(',') + ')';
+      t[0].classList.add('pronto');
+    });
+  }
+  encaixar();
+  if ('ResizeObserver' in window) new ResizeObserver(encaixar).observe(quadro); else addEventListener('resize', encaixar);
+
+  // Roteiro: lista de [espera em ms, ação]; roda em laço enquanto o topo está visível.
+  function roteiro(passos) {
+    var i = 0, relogio = null;
+    return {
+      ligar: function () { if (relogio) return; (function prox() { relogio = setTimeout(function () { passos[i][1](); i = (i + 1) % passos.length; prox(); }, passos[i][0]); })(); },
+      desligar: function () { clearTimeout(relogio); relogio = null; }
+    };
+  }
+
+  // Notebook: Financeiro (rola até o gráfico) → Agenda → Pacientes → Financeiro
+  var cursor = pc.querySelector('.hc-pc-cursor'), clique = pc.querySelector('.hc-pc-clique');
+  function mover(x, y) { cursor.style.transform = 'translate(' + x + 'px,' + y + 'px)'; }
+  function clicar(x, y) {
+    clique.style.left = x + 'px'; clique.style.top = y + 'px';
+    clique.classList.remove('on'); void clique.offsetWidth; clique.classList.add('on');
+  }
+  mover(820, 560);
+  var notebook = roteiro([
+    [0, function () { pc.setAttribute('data-tela', 'fin'); pc.setAttribute('data-rolar', '0'); mover(820, 560); }],
+    [1400, function () { mover(900, 640); pc.setAttribute('data-rolar', '1'); }],
+    [1500, function () { mover(1045, 525); }],
+    [2200, function () { mover(88, 104); }],
+    [1200, function () { clicar(98, 112); }],
+    [180, function () { pc.setAttribute('data-tela', 'agenda'); pc.setAttribute('data-rolar', '0'); }],
+    [900, function () { mover(1005, 362); }],
+    [2400, function () { mover(93, 151); }],
+    [1200, function () { clicar(103, 159); }],
+    [180, function () { pc.setAttribute('data-tela', 'pacientes'); }],
+    [900, function () { mover(400, 300); }],
+    [1500, function () { mover(380, 405); }],
+    [1800, function () { mover(96, 196); }],
+    [1200, function () { clicar(106, 204); }],
+    [180, function () { pc.setAttribute('data-tela', 'fin'); }],
+    [800, function () { mover(820, 560); }]
+  ]);
+
+  // Celular: agenda (rola) → Pacientes → ficha → odontograma (marca o dente 17) → Financeiro (rola) → Agenda
+  var dedo = cel.querySelector('.hc-cel-dedo'), pags = {};
+  Array.prototype.forEach.call(cel.querySelectorAll('.hc-cel-pag'), function (p) { pags[p.getAttribute('data-p')] = p; });
+  function rolar(nome, px, instante) {
+    var img = pags[nome].querySelector('.hc-cel-rola img');
+    if (instante) img.style.transition = 'none';
+    img.style.transform = 'translateY(' + (-px) + 'px)';
+    if (instante) { void img.offsetWidth; img.style.transition = ''; }
+  }
+  function abrir(nome) {
+    for (var k in pags) pags[k].classList.toggle('on', k === nome);
+  }
+  function posDedo(x, y, ms) {
+    dedo.style.transition = ms ? 'opacity .2s ease,transform .2s ease,left ' + ms + 'ms cubic-bezier(.3,.1,.2,1),top ' + ms + 'ms cubic-bezier(.3,.1,.2,1)' : 'opacity .2s ease,transform .2s ease';
+    dedo.style.left = x + 'px'; dedo.style.top = y + 'px';
+  }
+  function tocar(x, y, depois) {
+    posDedo(x, y); dedo.classList.add('on');
+    setTimeout(function () { dedo.classList.remove('on'); if (depois) depois(); }, 260);
+  }
+  function arrastar(nome, x, y, px) {
+    posDedo(x, y); dedo.classList.add('on');
+    setTimeout(function () { posDedo(x, y - px, 1500); rolar(nome, px); }, 120);
+    setTimeout(function () { dedo.classList.remove('on'); }, 1550);
+  }
+  var celular = roteiro([
+    [0, function () { rolar('agenda', 0, true); rolar('fin', 0, true); abrir('agenda'); }],
+    [1500, function () { arrastar('agenda', 200, 640, 216.7); }],
+    [2900, function () { tocar(146, 806, function () { abrir('pac'); }); }],
+    [1700, function () { tocar(133, 111, function () { abrir('ficha'); }); }],
+    [1800, function () { tocar(117, 301, function () { abrir('odo0'); }); }],
+    [2000, function () { tocar(62, 268, function () { abrir('odo1'); }); }],
+    [1800, function () { tocar(120, 609, function () { abrir('odo2'); }); }],
+    [2600, function () { tocar(28, 31, function () { abrir('ficha'); }); }],
+    [1300, function () { tocar(243, 806, function () { abrir('fin'); }); }],
+    [1500, function () { arrastar('fin', 200, 620, 183.3); }],
+    [2900, function () { tocar(48, 806, function () { abrir('agenda'); rolar('agenda', 0, true); }); }],
+    [400, function () { rolar('fin', 0, true); }]
+  ]);
+
+  var visivel = true;
+  function ligar() { if (visivel && !document.hidden) { notebook.ligar(); celular.ligar(); } }
+  function desligar() { notebook.desligar(); celular.desligar(); }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { visivel = e[0].isIntersecting; if (visivel) ligar(); else desligar(); }).observe(quadro);
+  }
+  document.addEventListener('visibilitychange', function () { if (document.hidden) desligar(); else ligar(); });
+  setTimeout(ligar, 1600);
+})();
+
+/* Financeiro (computador): notebook e celular em 3D acompanham o mouse de leve */
+(function financeiro3d() {
+  var palco = document.querySelector('.fin-palco');
+  if (!palco || matchMedia('(prefers-reduced-motion: reduce)').matches || !matchMedia('(hover: hover)').matches) return;
+  var pedido = 0;
+  palco.addEventListener('mousemove', function (e) {
+    var r = palco.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 2 - 1, y = (e.clientY - r.top) / r.height * 2 - 1;
+    cancelAnimationFrame(pedido);
+    pedido = requestAnimationFrame(function () { palco.style.setProperty('--mx', x.toFixed(3)); palco.style.setProperty('--my', y.toFixed(3)); });
+  });
+  palco.addEventListener('mouseleave', function () { palco.style.setProperty('--mx', '0'); palco.style.setProperty('--my', '0'); });
+})();
+
+/* Celular: marca quando o topo verde saiu da tela (o CSS mostra o "Testar grátis" do cabeçalho só a partir daí) */
+(function botaoDoTopo() {
+  var topo = document.querySelector('.hero'), raiz = document.documentElement;
+  if (!topo || !('IntersectionObserver' in window)) { raiz.classList.add('passou-topo'); return; }
+  var alturaCab = function () { var c = document.querySelector('.site-header, header'); return c ? c.offsetHeight : 64; };
+  new IntersectionObserver(function (e) { raiz.classList.toggle('passou-topo', !e[0].isIntersecting); },
+    { rootMargin: '-' + alturaCab() + 'px 0px 0px 0px' }).observe(topo);
+})();
+
+/* Celular: o botão fixo dos planos aparece enquanto os cartões de plano estão na tela */
+(function botaoFixoDosPlanos() {
+  var grade = document.querySelector('.planos-grade'), raiz = document.documentElement;
+  if (!grade || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (e) { raiz.classList.toggle('ver-planos', e[0].isIntersecting); }, { rootMargin: '0px 0px -30% 0px' }).observe(grade);
 })();
