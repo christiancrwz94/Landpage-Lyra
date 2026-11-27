@@ -1921,3 +1921,25 @@ a.card.vant{display:block;color:inherit;text-decoration:none}
 }
 @keyframes planos-preco{from{opacity:0;transform:translateY(10px) scale(.96);filter:blur(2px)}}
 @media (prefers-reduced-motion:reduce){.planos-troca::before{transition:none}.planos-animar .planos-grade .plano-preco:not([hidden]){animation:none}}
+/* celular: a logo animada não encolhe até sumir ao lado do nome no topo */
+@media (max-width:700px){
+  .brand .logo-anim{flex:none}.brand .logo-anim img{max-width:none;width:34px}
+  /* no alto da página o "Testar grátis" está escondido: não ocupa lugar */
+  html:not(.passou-topo) .btn-topo{position:absolute}
+  html:not(.passou-topo) .tema-btn{margin-left:auto}
+  /* depois de rolar ele aparece: logo, nome e botões ficam um pouco mais justos para tudo caber */
+  html.passou-topo .brand{gap:.3rem}
+  html.passou-topo .brand .logo-anim img{width:26px}
+  html.passou-topo .brand-name{font-size:1.08rem}
+  html.passou-topo .site-header .btn-topo{margin-left:6px;padding:.42rem .65rem;font-size:.78rem}
+  html.passou-topo .site-header .brand{margin-right:auto}
+  html.passou-topo .tema-btn{margin-left:2px;width:34px}
+}
+/* celular: preço do plano cabe dentro do cartão (o "/mês" não sai pela borda) */
+@media (max-width:700px){
+  .planos-grade .plano-card{column-gap:8px}
+  .planos-grade .plano-card>h3{font-size:1.3rem}
+  .planos-grade .plano-valor{font-size:1.2rem}
+  .planos-grade .plano-valor small{font-size:.8em;font-weight:700}
+  .planos-grade .plano-nota{font-size:.76rem}
+}

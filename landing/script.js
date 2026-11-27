@@ -342,46 +342,46 @@ function demoFinanceiro(raiz) {
   }
   async function ciclo() {
     zera();
-    await dorme(2200);                          // painel do mês
+    await dorme(1200);                          // painel do mês
     juliana.classList.add('toque');             // marca o Pix da Juliana como recebido
-    await dorme(650);
+    await dorme(450);
     status(juliana, true);
     juliana.classList.remove('toque');
     aviso('Pagamento de Juliana Prado registrado');
-    await anima(1, 1100);                       // entradas, lucro e a receber se atualizam
-    await dorme(1600);
+    await anima(1, 800);                        // entradas, lucro e a receber se atualizam
+    await dorme(1000);
     app.classList.remove('aviso');
-    await dorme(900);
+    await dorme(300);
     felipe.classList.add('toque');              // pagamento no cartão
-    await dorme(650);
+    await dorme(450);
     status(felipe, true);
     felipe.classList.remove('toque');
     ambos('add', 'taxa');                       // a taxa da maquininha entra sozinha
     aviso('Taxa da maquininha descontada sozinha');
-    await anima(2, 1200);
-    await dorme(2000);
+    await anima(2, 800);
+    await dorme(1100);
     app.classList.remove('aviso');
-    await dorme(900);
+    await dorme(300);
     app.classList.add('recibo');                // recibo da Juliana em PDF
-    await dorme(1500);
+    await dorme(1000);
     app.classList.add('compartilha');
-    await dorme(2200);
+    await dorme(1500);
     app.classList.remove('recibo', 'compartilha');
-    await dorme(1200);
+    await dorme(600);
     rolaAte('c-fluxo');                         // desce até o gráfico do mês
-    await dorme(900);
+    await dorme(700);
     app.classList.add('grafico');               // barras sobem e a linha do resultado se desenha
-    await dorme(4200);
+    await dorme(3000);
     rolaAte('c-proc');                          // procedimentos que mais faturam
-    await dorme(700);
+    await dorme(600);
     app.classList.add('barras-proc');
-    await dorme(2800);
+    await dorme(2000);
     rolaAte('c-pag');                           // como os pacientes pagam
-    await dorme(700);
+    await dorme(600);
     app.classList.add('barras-pag');
-    await dorme(3200);
+    await dorme(2200);
     rolaAte(null);                              // volta ao topo
-    await dorme(2500);
+    await dorme(1200);
   }
   // No computador, a animação só começa depois que a tampa do notebook terminou de abrir
   async function esperaAbrir() {
@@ -838,6 +838,28 @@ iniciarDemos(document);
   function soltar() { arrasto = null; mostrar(); }
   barra.addEventListener('pointerup', soltar);
   barra.addEventListener('pointercancel', soltar);
+})();
+
+/* Planos: alterna entre mensal e anual. */
+(function () {
+  var secao = document.getElementById('planos');
+  var botoes = document.querySelectorAll('.planos-troca button');
+  if (!secao || !botoes.length) return;
+  var todas = Array.prototype.slice.call(botoes);
+  function mostrar(modo) {
+    var troca = todas[0].parentNode;
+    troca.setAttribute('data-ativo', modo);
+    todas.forEach(function (o) {
+      var on = o.getAttribute('data-plano') === modo;
+      o.classList.toggle('on', on);
+      o.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    secao.querySelectorAll('[data-modo]').forEach(function (el) {
+      el.hidden = el.getAttribute('data-modo').split(' ').indexOf(modo) === -1;
+    });
+  }
+  todas.forEach(function (b) { b.addEventListener('click', function () { secao.classList.add('planos-animar'); mostrar(b.getAttribute('data-plano')); }); });
+  mostrar('anual'); // o anual aparece primeiro; o mensal fica a um toque
 })();
 
 /* Recursos (celular): pontinhos do carrossel acompanham o deslize e levam ao cartão ao tocar */
