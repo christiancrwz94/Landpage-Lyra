@@ -840,28 +840,6 @@ iniciarDemos(document);
   barra.addEventListener('pointercancel', soltar);
 })();
 
-/* Planos: alterna entre mensal e anual. */
-(function () {
-  var secao = document.getElementById('planos');
-  var botoes = document.querySelectorAll('.planos-troca button');
-  if (!secao || !botoes.length) return;
-  var todas = Array.prototype.slice.call(botoes);
-  function mostrar(modo) {
-    var troca = todas[0].parentNode;
-    troca.setAttribute('data-ativo', modo);
-    todas.forEach(function (o) {
-      var on = o.getAttribute('data-plano') === modo;
-      o.classList.toggle('on', on);
-      o.setAttribute('aria-pressed', on ? 'true' : 'false');
-    });
-    secao.querySelectorAll('[data-modo]').forEach(function (el) {
-      el.hidden = el.getAttribute('data-modo').split(' ').indexOf(modo) === -1;
-    });
-  }
-  todas.forEach(function (b) { b.addEventListener('click', function () { secao.classList.add('planos-animar'); mostrar(b.getAttribute('data-plano')); }); });
-  mostrar('anual'); // o anual aparece primeiro; o mensal fica a um toque
-})();
-
 /* Recursos (celular): pontinhos do carrossel acompanham o deslize e levam ao cartão ao tocar */
 (function carrosselRecursos() {
   const trilho = document.querySelector('#recursos .cards');
