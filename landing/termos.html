@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - Lyra Dental</title>
+    <meta name="color-scheme" content="light dark">
+    <script>(function(){var t;try{t=localStorage.getItem("lyra-tema")}catch(e){}if(t!=="claro"&&t!=="escuro"){t=matchMedia("(prefers-color-scheme: dark)").matches?"escuro":"claro"}document.documentElement.setAttribute("data-tema",t)})()</script>
+    <style>
+        :root { color-scheme:light; --pg:#f8f6ef;--cd:#ffffff;--tx:#29342e;--tx2:#3e4a43;--az:#435e52;--h2:#2c4238;--ln:#e3dacb;--th:#eef2ea;--nb:#e8eee8;--mt:#5b675f;--mc:#29342e;--bt:rgba(41,52,46,.07); }
+        @media (prefers-color-scheme:dark) { :root:not([data-tema]) { color-scheme:dark; --pg:#111715;--cd:#18211d;--tx:#f2f4ef;--tx2:#c9d4cc;--az:#a7c3ae;--h2:#a7c3ae;--ln:rgba(255,255,255,.12);--th:#1f2a25;--nb:#24302a;--mt:#c7cec7;--mc:#ffffff;--bt:rgba(255,255,255,.1); } }
+        :root[data-tema="claro"] { color-scheme:light; --pg:#f8f6ef;--cd:#ffffff;--tx:#29342e;--tx2:#3e4a43;--az:#435e52;--h2:#2c4238;--ln:#e3dacb;--th:#eef2ea;--nb:#e8eee8;--mt:#5b675f;--mc:#29342e;--bt:rgba(41,52,46,.07); }
+        :root[data-tema="escuro"] { color-scheme:dark; --pg:#111715;--cd:#18211d;--tx:#f2f4ef;--tx2:#c9d4cc;--az:#a7c3ae;--h2:#a7c3ae;--ln:rgba(255,255,255,.12);--th:#1f2a25;--nb:#24302a;--mt:#c7cec7;--mc:#ffffff;--bt:rgba(255,255,255,.1); }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background:var(--pg); color:var(--tx); line-height:1.65; margin:0; padding:24px; }
+        .container { max-width:760px; margin:0 auto; background:var(--cd); padding:36px; border-radius:16px; border:1px solid var(--ln); position:relative; }
+        h1 { font-family:'Fraunces',Georgia,serif; font-weight:500; color:var(--az); margin-top:0; font-size:1.7rem; }
+        h2 { font-family:'Fraunces',Georgia,serif; font-weight:600; color:var(--h2); font-size:1.15rem; margin-top:28px; }
+        p, li { font-size:0.96rem; color:var(--tx2); }
+        li { margin-bottom:6px; }
+        a { color:var(--az); }
+        table { width:100%; border-collapse:collapse; font-size:0.9rem; margin:10px 0; }
+        th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--ln); vertical-align:top; }
+        th { background:var(--th); }
+        .nota { background:var(--nb); border-left:4px solid var(--az); padding:12px 16px; border-radius:8px; }
+        .footer { margin-top:36px; border-top:1px solid var(--ln); padding-top:18px; font-size:0.85rem; color:var(--mt); }
+            @font-face { font-family:'Outfit'; font-weight:700; font-display:swap; src:url('fonts/Outfit-latin.woff2') format('woff2'); }
+            @font-face { font-family:'Fraunces'; font-weight:500 600; font-display:swap; src:url('fonts/Fraunces-variable-latin.woff2') format('woff2'); }
+        .marca { display:flex; align-items:center; gap:10px; margin-bottom:22px; font-family:'Outfit','Montserrat',system-ui,sans-serif; font-weight:600; font-size:1.65rem; letter-spacing:-.01em; color:var(--mc); }
+        .marca img { width:36px; height:auto; }
+        .logo-escuro { display:none; }
+        :root[data-tema="escuro"] .logo-claro { display:none; }
+        :root[data-tema="escuro"] .logo-escuro { display:block; }
+        @media (prefers-color-scheme:dark) { :root:not([data-tema]) .logo-claro { display:none; } :root:not([data-tema]) .logo-escuro { display:block; } }
+        .tema-btn { position:absolute; top:28px; right:28px; width:42px; height:42px; padding:0; border:0; border-radius:50%; background:transparent; color:var(--mc); cursor:pointer; display:grid; place-items:center; }
+        .tema-btn:hover { background:var(--bt); }
+        .tema-btn:focus-visible { outline:3px solid var(--az); outline-offset:2px; }
+        .tema-btn svg { width:22px; height:22px; grid-area:1/1; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+        .tema-btn .i-sol { display:none; }
+        :root[data-tema="escuro"] .tema-btn .i-lua { display:none; }
+        :root[data-tema="escuro"] .tema-btn .i-sol { display:block; }
+        @media (prefers-color-scheme:dark) { :root:not([data-tema]) .tema-btn .i-lua { display:none; } :root:not([data-tema]) .tema-btn .i-sol { display:block; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="tema-btn" id="tema-btn" type="button" aria-label="Trocar o tema">
+            <svg class="i-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></svg>
+            <svg class="i-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+        </button>
+        <div class="marca"><img class="logo-claro" src="img/logo-icon-claro.png" alt=""><img class="logo-escuro" src="img/logo-icon-escuro.png" alt=""><span>Lyra Dental</span></div>
+        <p><a href="index.html">← Voltar ao site</a></p>
+        <h1>Termos de Uso - Lyra Dental</h1>
+        <p><em>Última atualização: 27 de novembro de 2026</em></p>
+        <p class="nota">Estes termos explicam as regras para usar o Lyra Dental: teste grátis, assinatura, cancelamento, responsabilidades e uso dos dados. Ao criar uma conta, você concorda com eles. Leia também a <a href="privacidade.html">Política de Privacidade</a>.</p>
+
+        <h2>1. Quem oferece o Lyra</h2>
+        <p>O Lyra Dental é um sistema de gestão para consultórios e clínicas odontológicas, oferecido por <strong>68.671.170 Christian da Silva Cruz</strong>, CNPJ <strong>68.671.170/0001-31</strong>, com sede em Resende/RJ. Contato: <a href="mailto:contato@lyradental.com.br">contato@lyradental.com.br</a>.</p>
+
+        <h2>2. Quem pode usar</h2>
+        <p>Dentistas, clínicas e suas equipes, maiores de 18 anos. Quem cria a conta é o titular: responde por ela e por quem convidar para a equipe.</p>
+
+        <h2>3. Teste grátis</h2>
+        <ul>
+            <li>Toda conta nova ganha <strong>7 dias grátis</strong>, com todos os recursos do plano Pro. Não é preciso cadastrar cartão para testar.</li>
+            <li>Para continuar depois do teste, é preciso escolher um plano. Quem assina durante o teste só é cobrado quando ele termina.</li>
+            <li>Cancelar durante o teste não gera nenhuma cobrança.</li>
+        </ul>
+
+        <h2>4. Planos e pagamento</h2>
+        <table>
+            <tr><th>Plano</th><th>Valor</th><th>Inclui</th></tr>
+            <tr><td>Essencial</td><td>R$ 39,00 por mês</td><td>1 dentista</td></tr>
+            <tr><td>Pro</td><td>R$ 69,00 por mês</td><td>2 dentistas e 200 minutos de voz por mês</td></tr>
+        </table>
+        <ul>
+            <li>A cobrança é mensal e automática no cartão de crédito, feita pelo Asaas. O Lyra não guarda o número do seu cartão.</li>
+            <li><strong>Dentista extra:</strong> R$ 29,90 por mês para cada dentista ativo além dos incluídos no plano, cobrado junto com a mensalidade a partir da cobrança seguinte. Desativar um dentista reduz o valor na cobrança seguinte.</li>
+            <li>O valor que vale é o mostrado na tela de assinatura antes de você confirmar.</li>
+            <li><strong>Atraso:</strong> se o pagamento não for confirmado, o acesso pode ser suspenso depois de 3 dias. Seus dados continuam guardados.</li>
+        </ul>
+
+        <h2>5. Cancelamento e reembolso</h2>
+        <ul>
+            <li>Sem fidelidade. Cancele quando quiser em <strong>Configurações &gt; Conta &gt; Minha assinatura</strong>. A cobrança para e o acesso continua até o fim do mês já pago.</li>
+            <li><strong>Direito de arrependimento:</strong> você pode pedir a devolução integral da primeira mensalidade em até 7 dias depois da cobrança, por e-mail para <a href="mailto:contato@lyradental.com.br">contato@lyradental.com.br</a>.</li>
+            <li>Fora desse prazo, não há devolução proporcional dos dias não usados do mês.</li>
+        </ul>
+
+        <h2>6. Migração de dados</h2>
+        <p>Trazemos os pacientes do seu sistema anterior <strong>sem custo</strong>, depois da contratação, mediante autorização assinada pela clínica.</p>
+
+        <h2>7. WhatsApp</h2>
+        <ul>
+            <li>As mensagens automáticas saem do número de WhatsApp da própria clínica, conectado por ela.</li>
+            <li>No WhatsApp oficial, a Meta (e o provedor escolhido pela clínica) cobra pelas mensagens diretamente da clínica. Esse custo não está incluído na assinatura do Lyra.</li>
+            <li>A entrega depende do WhatsApp e das regras da Meta. O Lyra não garante a entrega de cada mensagem.</li>
+            <li>A clínica só deve enviar mensagens a pacientes que aceitaram receber, e o paciente pode pedir para parar a qualquer momento.</li>
+        </ul>
+
+        <h2>8. Uso aceitável</h2>
+        <p>Não é permitido usar o Lyra para fins ilegais, enviar mensagens em massa sem consentimento, tentar acessar dados de outras clínicas, repassar o acesso a pessoas de fora da equipe ou sobrecarregar o sistema de propósito. Nesses casos, a conta pode ser suspensa.</p>
+
+        <h2>9. Responsabilidades</h2>
+        <ul>
+            <li><strong>Da clínica:</strong> a veracidade dos dados, o prontuário, o consentimento dos pacientes e o cumprimento da LGPD e das normas do Conselho de Odontologia. A clínica é a responsável (controladora) pelos dados dos pacientes; o Lyra atua como operador.</li>
+            <li><strong>Do Lyra:</strong> manter o sistema funcionando com esforço razoável, proteger os dados e fazer cópias de segurança diárias. Não garantimos funcionamento sem nenhuma interrupção; manutenções programadas serão avisadas quando possível.</li>
+            <li>Os recursos de inteligência artificial (ditado, odontograma por voz, respostas automáticas) são apoio e devem ser conferidos pelo profissional. A decisão clínica é sempre do dentista.</li>
+            <li>A responsabilidade do Lyra fica limitada ao valor pago nos últimos 12 meses, salvo nos casos em que a lei não permite essa limitação.</li>
+        </ul>
+
+        <h2>10. Seus dados</h2>
+        <p>Os dados da clínica pertencem à clínica. Você pode pedir uma cópia e excluir a conta quando quiser: veja <a href="excluir-conta.html">Como excluir minha conta</a>. Ao excluir, os dados são apagados em até 30 dias e as cópias de segurança em até 90 dias.</p>
+
+        <h2>11. Mudanças nestes termos e nos preços</h2>
+        <p>Podemos atualizar estes termos. Mudanças relevantes serão avisadas pelo app ou por e-mail. Um aumento de preço para quem já assina só vale depois de um aviso com 30 dias de antecedência, e você pode cancelar antes dele.</p>
+
+        <h2>12. Foro</h2>
+        <p>Fica eleito o foro da Comarca de Resende/RJ, ressalvado o direito do consumidor de usar o foro do próprio domicílio quando a lei permitir.</p>
+
+        <div class="footer">Lyra Dental · CNPJ 68.671.170/0001-31 · contato@lyradental.com.br</div>
+    </div>
+    <script>
+    (function(){
+      var raiz=document.documentElement, b=document.getElementById('tema-btn');
+      function rotulo(){ b.setAttribute('aria-label', raiz.getAttribute('data-tema')==='escuro' ? 'Trocar para o tema claro' : 'Trocar para o tema escuro'); }
+      rotulo();
+      b.addEventListener('click', function(){
+        var novo = raiz.getAttribute('data-tema')==='escuro' ? 'claro' : 'escuro';
+        raiz.setAttribute('data-tema', novo);
+        try{ localStorage.setItem('lyra-tema', novo); }catch(e){}
+        rotulo();
+      });
+    })();
+    </script>
+</body>
+</html>
